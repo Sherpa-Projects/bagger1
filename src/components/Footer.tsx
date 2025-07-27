@@ -1,4 +1,5 @@
 import { footerData } from "@/lib/content/footerData";
+import { locationData } from "@/lib/content/locationData";
 import { navigationData } from "@/lib/content/navigationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -6,8 +7,9 @@ import {
   faEnvelope,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { FooterPageProps } from "@/app/types/pages/FooterPageProps";
 
-const Footer = () => {
+const Footer = ({ currentLocation }: FooterPageProps) => {
   return (
     <>
       <footer className="bg-black text-white">
@@ -16,20 +18,20 @@ const Footer = () => {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-0 lg:gap-x-32 gap-y-12 lg:gap-y-0">
             <div className="space-y-3 text-center lg:text-left flex items-center lg:items-start flex-col">
               <p className="text-lg text-yellow-400">
-                {footerData.contact.companyName}
+                {footerData.companyName}
               </p>
               <div className="flex items-center text-center">
                 <FontAwesomeIcon className="mr-2" icon={faLocationDot} />
-                <p>{footerData.contact.companyAddress}</p>
+                <p>{currentLocation.adress}</p>
               </div>
               <div className="flex items-center">
                 <FontAwesomeIcon className="mr-2" icon={faPhone} />
                 <p>
                   <a
-                    href={`tel:${footerData.contact.telephoneNumber}`}
+                    href={`tel:${currentLocation.contact.telephone}`}
                     className="hover:text-underline"
                   >
-                    {footerData.contact.telephoneNumber}
+                    {currentLocation.contact.telephone}
                   </a>
                 </p>
               </div>
@@ -37,10 +39,10 @@ const Footer = () => {
                 <p>
                   <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
                   <a
-                    href={`mailto:${footerData.contact.email}`}
+                    href={`mailto:${currentLocation.contact.email}`}
                     className="hover:text-underline"
                   >
-                    {footerData.contact.email}
+                    {currentLocation.contact.email}
                   </a>
                 </p>
               </div>

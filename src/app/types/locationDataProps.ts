@@ -1,10 +1,7 @@
 export type LocationDataProps = {
   name: string;
   slug: string;
-  adress: {
-    street: string;
-    city: string;
-  };
+  adress: string;
   contact: {
     telephone: string;
     email: string;

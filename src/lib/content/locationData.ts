@@ -4,10 +4,7 @@ export const locationData: LocationDataProps[] = [
   {
     name: "Mannheim",
     slug: "mannheim",
-    adress: {
-      street: "",
-      city: "",
-    },
+    adress: "teststraße 15, 12345 Mannheim",
     contact: {
       telephone: "123",
       email: "test@bagger1.de",
@@ -16,10 +13,7 @@ export const locationData: LocationDataProps[] = [
   {
     name: "Karlsruhe",
     slug: "karlsruhe",
-    adress: {
-      street: "",
-      city: "",
-    },
+    adress: "teststraße 15, 12345 Karlsruhe",
     contact: {
       telephone: "123",
       email: "test@bagger1.de",
@@ -28,10 +22,7 @@ export const locationData: LocationDataProps[] = [
   {
     name: "Heidelberg",
     slug: "heidelberg",
-    adress: {
-      street: "",
-      city: "",
-    },
+    adress: "teststraße 15, 12345 Heidelberg",
     contact: {
       telephone: "123",
       email: "test@bagger1.de",
@@ -40,10 +31,7 @@ export const locationData: LocationDataProps[] = [
   {
     name: "Waghäusel",
     slug: "waghaeusel",
-    adress: {
-      street: "",
-      city: "",
-    },
+    adress: "teststraße 15, 12345 Waghäusel",
     contact: {
       telephone: "123",
       email: "test@bagger1.de",
@@ -52,10 +40,7 @@ export const locationData: LocationDataProps[] = [
   {
     name: "Dortmund",
     slug: "dortmund",
-    adress: {
-      street: "",
-      city: "",
-    },
+    adress: "teststraße 15, 12345 Dortmund",
     contact: {
       telephone: "123",
       email: "test@bagger1.de",

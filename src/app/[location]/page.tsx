@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { use } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { locationData } from "@/lib/content/locationData";
 
 import { isValidLocation, validMachines } from "@/lib/utils";
 
@@ -14,6 +15,9 @@ export default function LocationPage({
   const { location } = use(params);
 
   if (!isValidLocation(location)) return notFound();
+
+  const currentLocation = locationData.find((l) => l.slug === location);
+  if (!currentLocation) return notFound();
 
   const machines = validMachines[location];
 
@@ -35,7 +39,7 @@ export default function LocationPage({
           ))}
         </ul>
       </main>
-      <Footer />
+      <Footer currentLocation={currentLocation} />
     </>
   );
 }
