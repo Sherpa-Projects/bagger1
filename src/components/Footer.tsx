@@ -1,6 +1,5 @@
 import { footerData } from "@/lib/content/footerData";
 import { locationData } from "@/lib/content/locationData";
-import { navigationData } from "@/lib/content/navigationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,
@@ -84,12 +83,12 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
               )}
             </div>
 
-            <div className="space-y-3 md:text-right text-center lg:text-left">
+            <div className="space-y-3 text-center lg:text-left">
               <p className="text-lg text-yellow-400">Standorte</p>
               <ul className="space-y-3">
-                {navigationData.map((location, index) => (
+                {locationData.map((location, index) => (
                   <li key={index}>
-                    <a href={location.url} className="hover:underline">
+                    <a href={location.slug} className="hover:underline">
                       {location.name}
                     </a>
                   </li>
@@ -97,7 +96,7 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
               </ul>
             </div>
 
-            <div className="space-y-3 md:text-right text-center lg:text-left">
+            <div className="space-y-3 text-center lg:text-left">
               <p className="text-lg text-yellow-400">
                 {footerData.openingHours.title}
               </p>
@@ -108,7 +107,7 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
               </ul>
             </div>
 
-            <div className="md:text-right text-center lg:text-left">
+            <div className="text-center lg:text-left">
               <ul className="space-y-3">
                 {footerData.legalInformation.map((information, index) => (
                   <li key={index}>

@@ -9,7 +9,6 @@ import {
   faChevronDown,
   faBars,
   faTimes,
-  faLocationDot,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 

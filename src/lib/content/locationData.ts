@@ -9,6 +9,10 @@ export const locationData: LocationDataProps[] = [
       telephone: "123",
       email: "test@bagger1.de",
     },
+    image: {
+      url: "/images/locations/mannheim.jpg",
+      alt: "Luftaufnahme von Mannheim",
+    },
   },
   {
     name: "Karlsruhe",
@@ -17,6 +21,10 @@ export const locationData: LocationDataProps[] = [
     contact: {
       telephone: "123",
       email: "test@bagger1.de",
+    },
+    image: {
+      url: "/images/locations/karlsruhe.jpg",
+      alt: "Aufnahme vom Karlsruher Schloss",
     },
   },
   {
@@ -27,6 +35,10 @@ export const locationData: LocationDataProps[] = [
       telephone: "123",
       email: "test@bagger1.de",
     },
+    image: {
+      url: "/images/locations/heidelberg.jpg",
+      alt: "Aufnahme von der Heidelberger Brücke",
+    },
   },
   {
     name: "Waghäusel",
@@ -36,6 +48,10 @@ export const locationData: LocationDataProps[] = [
       telephone: "123",
       email: "test@bagger1.de",
     },
+    image: {
+      url: "",
+      alt: "",
+    },
   },
   {
     name: "Dortmund",
@@ -44,6 +60,10 @@ export const locationData: LocationDataProps[] = [
     contact: {
       telephone: "123",
       email: "test@bagger1.de",
+    },
+    image: {
+      url: "",
+      alt: "",
     },
   },
 ];

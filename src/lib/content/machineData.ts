@@ -5,8 +5,8 @@ export const machineData: MachineDataProps[] = [
     name: "Bagger 1",
     slug: "bagger1",
     image: {
-      url: "",
-      alt: "",
+      url: "/images/machines/bagger1.jpg",
+      alt: "Gelber Bagger steht auf einem Hügel",
     },
     pricePerDay: 120,
     availableAt: ["mannheim", "heidelberg"],
@@ -15,8 +15,8 @@ export const machineData: MachineDataProps[] = [
     name: "Radlader 3000",
     slug: "radlader-3000",
     image: {
-      url: "",
-      alt: "",
+      url: "/images/machines/bagger1.jpg",
+      alt: "Gelber Bagger steht auf einem Hügel",
     },
     pricePerDay: 95,
     availableAt: ["mannheim"],

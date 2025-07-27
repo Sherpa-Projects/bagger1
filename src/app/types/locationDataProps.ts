@@ -6,6 +6,10 @@ export type LocationDataProps = {
     telephone: string;
     email: string;
   };
+  image: {
+    url: string;
+    alt: string;
+  };
 };
 
 import { locationData } from "@/lib/content/locationData";
