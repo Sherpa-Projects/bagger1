@@ -1,5 +1,5 @@
-import { footerData } from "@/lib/content/footer";
-import { navigationData } from "@/lib/content/navigation";
+import { footerData } from "@/lib/content/footerData";
+import { navigationData } from "@/lib/content/navigationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPhone,

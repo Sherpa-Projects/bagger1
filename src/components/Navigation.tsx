@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navigationData } from "@/lib/content/navigation";
+import { navigationData } from "@/lib/content/navigationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
@@ -72,14 +72,14 @@ export default function NavigationDatanavigationData() {
                       </div>
                       <div className="fixed top-[68px] left-0 w-full bg-white shadow-lg opacity-0 translate-y-[-10px] invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-500 ease-in-out z-40 pt-2 border-t border-gray-300">
                         <div className="max-w-7xl mx-auto px-6 py-8 grid lg:grid-cols-5 gap-6">
-                          {item.subData?.map((item, subIndex) => (
+                          {item.subData?.map((subItem, subIndex) => (
                             <Link
                               key={subIndex}
-                              href={item.url}
+                              href={subItem.url}
                               className="text-gray-800 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
                             >
                               <div className="flex items-center justify-center">
-                                <span>{item.name}</span>
+                                <span>{subItem.name}</span>
                                 <span className="ml-2 text-yellow-500 inline-block transition-transform duration-300 group-hover:translate-x-1">
                                   <FontAwesomeIcon icon={faArrowRight} />
                                 </span>
@@ -148,26 +148,34 @@ export default function NavigationDatanavigationData() {
               <div className="flex flex-col items-start px-8 py-6">
                 <div className="w-full space-y-8">
                   {navigationData.map((item, index) => (
-                    <div className="border-b border-gray-300 last:border-none pb-8" key={index}>
+                    <div
+                      className="border-b border-gray-300 last:border-none pb-8"
+                      key={index}
+                    >
                       {!item.subData && item.url ? (
                         <Link
                           href={item.url}
                           className="text-gray-800 cursor-pointer text-3xl flex items-center"
                         >
-                          {item.icon && <FontAwesomeIcon className="mr-2 text-yellow-500 inline-block" icon={item.icon} />}
+                          {item.icon && (
+                            <FontAwesomeIcon
+                              className="mr-2 text-yellow-500 inline-block"
+                              icon={item.icon}
+                            />
+                          )}
                           <span>{item.name}</span>
                         </Link>
                       ) : (
                         <>
                           <div className="text-xl mb-8">{item.name}</div>
                           <div className="pl-4 space-y-6 text-3xl flex flex-col">
-                            {item.subData?.map((location, subIndex) => (
+                            {item.subData?.map((subItem, subIndex) => (
                               <Link
-                                href={location.url}
+                                href={subItem.url}
                                 key={subIndex}
                                 className="text-gray-800 cursor-pointer"
                               >
-                                <span>{location.name}</span>
+                                <span>{subItem.name}</span>
                                 <span className="ml-2 text-yellow-500 inline-block">
                                   <FontAwesomeIcon icon={faArrowRight} />
                                 </span>
