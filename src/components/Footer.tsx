@@ -20,32 +20,68 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
               <p className="text-lg text-yellow-400">
                 {footerData.companyName}
               </p>
-              <div className="flex items-center text-center">
-                <FontAwesomeIcon className="mr-2" icon={faLocationDot} />
-                <p>{currentLocation.adress}</p>
-              </div>
-              <div className="flex items-center">
-                <FontAwesomeIcon className="mr-2" icon={faPhone} />
-                <p>
-                  <a
-                    href={`tel:${currentLocation.contact.telephone}`}
-                    className="hover:text-underline"
-                  >
-                    {currentLocation.contact.telephone}
-                  </a>
-                </p>
-              </div>
-              <div className="flex items-center">
-                <p>
-                  <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
-                  <a
-                    href={`mailto:${currentLocation.contact.email}`}
-                    className="hover:text-underline"
-                  >
-                    {currentLocation.contact.email}
-                  </a>
-                </p>
-              </div>
+              {currentLocation && currentLocation.adress ? (
+                <div className="flex items-center text-center">
+                  <FontAwesomeIcon className="mr-2" icon={faLocationDot} />
+                  <p>{currentLocation.adress}</p>
+                </div>
+              ) : (
+                <div className="flex items-center text-center">
+                  <FontAwesomeIcon className="mr-2" icon={faLocationDot} />
+                  <p>{footerData.adress}</p>
+                </div>
+              )}
+              {currentLocation && currentLocation.contact ? (
+                <>
+                  <div className="flex items-center">
+                    <FontAwesomeIcon className="mr-2" icon={faPhone} />
+                    <p>
+                      <a
+                        href={`tel:${currentLocation.contact.telephone}`}
+                        className="hover:text-underline"
+                      >
+                        {currentLocation.contact.telephone}
+                      </a>
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    <p>
+                      <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
+                      <a
+                        href={`mailto:${currentLocation.contact.email}`}
+                        className="hover:text-underline"
+                      >
+                        {currentLocation.contact.email}
+                      </a>
+                    </p>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="flex items-center">
+                    <FontAwesomeIcon className="mr-2" icon={faPhone} />
+                    <p>
+                      <a
+                        href={`tel:${footerData.contact.telephone}`}
+                        className="hover:text-underline"
+                      >
+                        {footerData.contact.telephone}
+                      </a>
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    <p>
+                      <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
+                      <a
+                        href={`mailto:${footerData.contact.email}`}
+                        className="hover:text-underline"
+                      >
+                        {footerData.contact.email}
+                      </a>
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
 
             <div className="space-y-3 md:text-right text-center lg:text-left">
