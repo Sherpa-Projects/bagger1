@@ -28,7 +28,7 @@ export default function NavigationDatanavigationData() {
       <nav className="bg-white fixed w-full top-0 z-50 duration-300 boder border-b border-neutral-300">
         <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-3 lg:py-1">
           <div className="hidden lg:flex justify-between items-center">
-            <a href="/">
+            <Link href="/">
               <div className="flex items-center lg:transform lg:transition-transform lg:duration-300 ease-in-out lg:hover:scale-110">
                 <Image
                   src={`/images/logo_neu.png`}
@@ -43,7 +43,7 @@ export default function NavigationDatanavigationData() {
                   verleih
                 </span>
               </div>
-            </a>
+            </Link>
             <div className="relative flex items-center space-x-12">
               {navigationData.map((item, index) => (
                 <div key={index}>

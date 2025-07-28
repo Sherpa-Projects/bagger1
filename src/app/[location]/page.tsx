@@ -69,12 +69,14 @@ export default function LocationPage({
                       </p>
                     </div>
 
-                    <button className="group text-xl mt-6 cursor-pointer self-start">
-                      Mehr Infos
-                      <span className="ml-2 text-yellow-500 inline-block group-hover:translate-x-1 transition-transform duration-300">
-                        <FontAwesomeIcon icon={faArrowRight} />
-                      </span>
-                    </button>
+                    <div className="w-full flex justify-end lg:justify-start">
+                      <button className="group text-xl mt-6 cursor-pointer self-start hover:text-yellow-500 transition-all duration-300 transform">
+                        Mehr Infos
+                        <span className="ml-2 text-yellow-500 inline-block group-hover:translate-x-1 transition-transform duration-300">
+                          <FontAwesomeIcon icon={faArrowRight} />
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </a>
               </li>
