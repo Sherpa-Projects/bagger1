@@ -1,7 +1,7 @@
-"use client"
-
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { locationData } from "@/lib/content/locationData";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -29,33 +29,27 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-10 lg:py-16 px-4">
+      <main className="py-10 lg:py-16 px-4">
         <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
           <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-0 lg:pb-4 lg:leading-tight text-center">
             Bagger mieten in
           </h2>
           <div className="flex flex-col items-center mx-auto space-y-4 py-8 lg:max-w-3xl">
-            {[
-              "Mannheim",
-              "Karlsruhe",
-              "Heidelberg",
-              "Waghäusel",
-              "Dortmund",
-            ].map((label, index) => (
-              <a
+            {locationData.map((location, index) => (
+              <Link
                 key={index}
-                href="#"
-                className="bg-white group border border-neutral-400 shadow-sm hover:shadow-md w-full py-3 text-center text-2xl font-semibold text-gray-800 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
+                href={location.slug}
+                className="bg-white group border border-gray-300 rounded-lg hover:shadow-md w-full py-3 text-center text-2xl font-semibold text-gray-800 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
               >
-                {label}
+                {location.name}
                 <span className="ml-2 text-yellow-500 inline-block transition-transform duration-300 group-hover:translate-x-1">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </>
   );
