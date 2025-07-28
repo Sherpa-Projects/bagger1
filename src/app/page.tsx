@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
@@ -35,7 +36,7 @@ export default function Home() {
           </h2>
           <div className="flex flex-col items-center mx-auto space-y-4 py-8 lg:max-w-3xl">
             {locationData.map((location, index) => (
-              <a
+              <Link
                 key={index}
                 href={location.slug}
                 className="bg-white group border border-gray-300 rounded-lg hover:shadow-md w-full py-3 text-center text-2xl font-semibold text-gray-800 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
@@ -44,7 +45,7 @@ export default function Home() {
                 <span className="ml-2 text-yellow-500 inline-block transition-transform duration-300 group-hover:translate-x-1">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { footerData } from "@/lib/content/footerData";
 import { locationData } from "@/lib/content/locationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,23 +36,23 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
                   <div className="flex items-center lg:text-left">
                     <FontAwesomeIcon className="mr-2" icon={faPhone} />
                     <p>
-                      <a
+                      <Link
                         href={`tel:${currentLocation.contact.telephone}`}
                         className="hover:text-underline"
                       >
                         {currentLocation.contact.telephone}
-                      </a>
+                      </Link>
                     </p>
                   </div>
                   <div className="flex items-center lg:text-left">
                     <p>
                       <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
-                      <a
+                      <Link
                         href={`mailto:${currentLocation.contact.email}`}
                         className="hover:text-underline"
                       >
                         {currentLocation.contact.email}
-                      </a>
+                      </Link>
                     </p>
                   </div>
                 </>
@@ -60,23 +61,23 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
                   <div className="flex items-center lg:text-left">
                     <FontAwesomeIcon className="mr-2" icon={faPhone} />
                     <p>
-                      <a
+                      <Link
                         href={`tel:${footerData.contact.telephone}`}
                         className="hover:text-underline"
                       >
                         {footerData.contact.telephone}
-                      </a>
+                      </Link>
                     </p>
                   </div>
                   <div className="flex items-center lg:text-left">
                     <p>
                       <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
-                      <a
+                      <Link
                         href={`mailto:${footerData.contact.email}`}
                         className="hover:text-underline"
                       >
                         {footerData.contact.email}
-                      </a>
+                      </Link>
                     </p>
                   </div>
                 </>
@@ -88,9 +89,9 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
               <ul className="space-y-3">
                 {locationData.map((location, index) => (
                   <li key={index}>
-                    <a href={location.slug} className="hover:underline">
+                    <Link href={location.slug} className="hover:underline">
                       {location.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -111,9 +112,9 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
               <ul className="space-y-3">
                 {footerData.legalInformation.map((information, index) => (
                   <li key={index}>
-                    <a href={information.url} className="hover:underline">
+                    <Link href={information.url} className="hover:underline">
                       {information.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
