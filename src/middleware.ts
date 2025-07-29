@@ -1,14 +1,14 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const basicAuthUser = process.env.BASIC_AUTH_USER || "";
-const basicAuthPass = process.env.BASIC_AUTH_PASS || "";
-
 function decodeBase64(str: string) {
   return Buffer.from(str, "base64").toString("utf-8");
 }
 
 export function middleware(request: NextRequest) {
+  const basicAuthUser = process.env.BASIC_AUTH_USER || "";
+  const basicAuthPass = process.env.BASIC_AUTH_PASS || "";
+
   const authHeader = request.headers.get("authorization");
 
   if (authHeader) {
