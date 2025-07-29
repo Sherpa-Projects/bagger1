@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
@@ -15,19 +16,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="de">
       <>
-        <script
-          type="module"
+        <Script
           src="https://cdn.rtr-io.com/widgets.js"
-        ></script>
-        <script
+          strategy="afterInteractive"
+          type="module"
+        />
+        <Script
+          id="rtr-access-token"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `
-              window.RTR_ACCESS_TOKEN = 'W714a858bbc2ca6b6ff34cbbdcc2188a8';
-            `,
+            __html: `window.RTR_ACCESS_TOKEN = 'W714a858bbc2ca6b6ff34cbbdcc2188a8';`,
           }}
-        ></script>
+        />
       </>
 
       <body>
