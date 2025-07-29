@@ -11,7 +11,7 @@ declare module "react" {
         "article-id": string;
         view?: string;
         class?: string;
-        [key: string]: any;
+        style?: React.CSSProperties;
       };
     }
   }
