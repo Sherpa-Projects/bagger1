@@ -16,7 +16,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <>
+        <script
+          type="module"
+          src="https://cdn.rtr-io.com/widgets.js"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.RTR_ACCESS_TOKEN = 'W714a858bbc2ca6b6ff34cbbdcc2188a8';
+            `,
+          }}
+        ></script>
+      </>
+
+      <body>
+        {children}
+        <rtr-checkout></rtr-checkout>
+      </body>
     </html>
   );
 }

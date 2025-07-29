@@ -44,6 +44,13 @@ export default function LocationPage({
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-0 lg:pb-4 lg:leading-tight text-center">
             Bagger mieten in {currentLocation.name}
           </h1>
+          <rtr-search
+            view="default"
+            show-location="on"
+            load-behaviour="extended"
+            locations="86991b26-cb9f-4bec-771b-43f08ea7d6b9, d66c9463-801f-41ad-723f-681374293372"
+          ></rtr-search>
+
           <ul className="mt-8 grid md:grid-cols-2 gap-10">
             {machines.map((machine, index) => (
               <li key={index}>
