@@ -95,20 +95,22 @@ export default function NavigationDatanavigationData() {
           </div>
 
           <div className="flex lg:hidden justify-between items-center">
-            <div className="flex items-center">
-              <Image
-                src={`/images/logo_neu.png`}
-                alt="Bagger1 Logo"
-                width={60}
-                height={60}
-                className="mx-auto"
-              />
-              <span className="font-oswald ml-2 text-base/5">
-                Baumaschinen-
-                <br />
-                verleih
-              </span>
-            </div>
+            <Link href="/">
+              <div className="flex items-center">
+                <Image
+                  src={`/images/logo_neu.png`}
+                  alt="Bagger1 Logo"
+                  width={60}
+                  height={60}
+                  className="mx-auto"
+                />
+                <span className="font-oswald ml-2 text-base/5">
+                  Baumaschinen-
+                  <br />
+                  verleih
+                </span>
+              </div>
+            </Link>
 
             <button
               onClick={() => setIsMenuOpen(true)}
