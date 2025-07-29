@@ -13,6 +13,14 @@ declare module "react" {
         class?: string;
         style?: React.CSSProperties;
       };
+      "rtr-search": {
+        view?: string;
+        "show-location"?: string;
+        "load-behaviour"?: string;
+        locations?: string;
+        class?: string;
+        style?: React.CSSProperties;
+      };
     }
   }
 }
