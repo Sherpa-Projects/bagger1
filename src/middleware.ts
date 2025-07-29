@@ -20,12 +20,14 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  return new NextResponse("Authentication required", {
-    status: 401,
-    headers: {
-      "WWW-Authenticate": 'Basic realm="Secure Area"',
-    },
-  });
+  return new Response("Hello from middleware", { status: 200 });
+
+//   return new NextResponse("Authentication required", {
+//     status: 401,
+//     headers: {
+//       "WWW-Authenticate": 'Basic realm="Secure Area"',
+//     },
+//   });
 }
 
 export const config = {
