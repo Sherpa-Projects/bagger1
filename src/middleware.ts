@@ -20,7 +20,9 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  return new Response("Hello from middleware", { status: 200 });
+    return new Response(`USER: ${basicAuthUser} — PASS: ${basicAuthPass}`, {
+    status: 200,
+  });
 
 //   return new NextResponse("Authentication required", {
 //     status: 401,
