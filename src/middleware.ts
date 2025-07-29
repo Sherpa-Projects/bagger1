@@ -20,16 +20,12 @@ export function middleware(request: NextRequest) {
     }
   }
 
-    return new Response(`USER: ${basicAuthUser} — PASS: ${basicAuthPass}`, {
-    status: 200,
+  return new NextResponse("Authentication required", {
+    status: 401,
+    headers: {
+      "WWW-Authenticate": 'Basic realm="Secure Area"',
+    },
   });
-
-//   return new NextResponse("Authentication required", {
-//     status: 401,
-//     headers: {
-//       "WWW-Authenticate": 'Basic realm="Secure Area"',
-//     },
-//   });
 }
 
 export const config = {
