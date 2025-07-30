@@ -172,7 +172,7 @@ export default function NavigationDatanavigationData() {
                           <div className="pl-4 space-y-6 text-3xl flex flex-col">
                             {item.subData?.map((subItem, subIndex) => (
                               <Link
-                                href={subItem.url}
+                                href={`/${subItem.url}`}
                                 key={subIndex}
                                 className="text-gray-800 cursor-pointer"
                               >
