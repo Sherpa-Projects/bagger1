@@ -32,11 +32,12 @@ export default function Home() {
       <main className="py-10 lg:py-16 px-4">
         <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
           <rtr-search
-            view="default"
+            view="cards"
             show-location="on"
             load-behaviour="extended"
             locations="86991b26-cb9f-4bec-771b-43f08ea7d6b9, d66c9463-801f-41ad-723f-681374293372"
           ></rtr-search>
+
           {/* <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-0 lg:pb-4 lg:leading-tight text-center">
             Bagger mieten in
           </h2>

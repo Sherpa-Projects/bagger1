@@ -26,8 +26,6 @@ export default function LocationPage({
   const machineSlugs = validMachines[location];
   const machines = machineData.filter((m) => machineSlugs.includes(m.slug));
 
-  console.log(machines);
-
   return (
     <>
       <Navigation />
