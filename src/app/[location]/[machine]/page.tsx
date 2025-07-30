@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { machineData } from "@/lib/content/machineData";
 
 import { isValidLocation, isValidMachine, Location } from "@/lib/utils";
+import { MachineDataProps } from "@/app/types/machineDataProps";
 
 export default function MachinePage({
   params,
@@ -22,7 +23,7 @@ export default function MachinePage({
 
   if (!isMachineValid) return notFound();
 
-  const selectedMachine = machineData.find((m: any) => m.slug === machine);
+  const selectedMachine = machineData.find((m: MachineDataProps) => m.slug === machine);
 
   return (
     <>
