@@ -23,15 +23,19 @@ export default function MachinePage({
 
   if (!isMachineValid) return notFound();
 
-  const selectedMachine = machineData.find((m: MachineDataProps) => m.slug === machine);
+  const selectedMachine = machineData.find(
+    (m: MachineDataProps) => m.slug === machine
+  );
+  const currentLocation =
+    location.charAt(0).toUpperCase() + location.slice(1).toLowerCase();
 
   return (
     <>
       <Navigation />
-      <main className="pb-16 pt-30 px-4">
+      <main className="pb-16 pt-10 lgpt-30 px-4">
         <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-0 lg:pb-4 lg:leading-tight text-center">
-            {machine} in {location}
+            {selectedMachine?.name} in {currentLocation}
           </h1>
           <div className="mt-8 grid lg:grid-cols-3 gap-10 lg:gap-0 mx-auto lg:px-8">
             <div className="w-full max-w-lg mx-auto lg:mx-0 p-6 lg:col-span-2 order-2 lg:order-1 flex lg:block flex-col">

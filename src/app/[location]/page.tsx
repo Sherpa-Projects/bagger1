@@ -8,7 +8,6 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
-
 import { isValidLocation, validMachines } from "@/lib/utils";
 
 export default function LocationPage({
@@ -37,7 +36,7 @@ export default function LocationPage({
       >
         <div className="absolute inset-0 bg-black/50 z-0" />
       </div>
-      <main className="pb-16 pt-30 lg:pt-16 px-4">
+      <main className="pb-16 pt-10 lg:pt-30 px-4">
         <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-0 lg:pb-4 lg:leading-tight text-center">
             Bagger mieten in {currentLocation.name}

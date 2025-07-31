@@ -25,8 +25,8 @@ export default function NavigationDatanavigationData() {
 
   return (
     <>
-      <nav className="bg-white fixed w-full top-0 z-50 duration-300 boder border-b border-neutral-300">
-        <div className="px-4 text-center text-sm w-full flex items-center justify-center animate-gradient bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2">
+      <nav className="bg-white sticky top-0 z-50 border-b border-gray-300">
+        <div className="px-4 text-center text-sm w-full flex items-center justify-center bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 animate-gradient-x py-2">
           <Image
             className="mr-2"
             src={`/images/bbi_logo.png`}
