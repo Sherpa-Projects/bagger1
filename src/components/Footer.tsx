@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { footerData } from "@/lib/content/footerData";
 import { locationData } from "@/lib/content/locationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,6 +13,17 @@ import { FooterPageProps } from "@/app/types/pages/FooterPageProps";
 const Footer = ({ currentLocation }: FooterPageProps) => {
   return (
     <>
+      <div className="bg-white border-t border-gray-300 py-2">
+        <Link href="https://www.bbi-online.org/" target="_blank">
+          <Image
+            src={`/images/bbi.jpg`}
+            alt="BBI Logo"
+            width={300}
+            height={300}
+            className="mx-auto"
+          />
+        </Link>
+      </div>
       <footer className="bg-black text-white">
         <div className="h-12 w-full bg-[repeating-linear-gradient(45deg,_black_0px,_black_10px,_#facc15_10px,_#facc15_20px)]"></div>
         <div className="container py-18 mx-auto max-w-8xl px-6 lg:px-8  md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">

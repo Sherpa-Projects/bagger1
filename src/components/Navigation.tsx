@@ -26,6 +26,17 @@ export default function NavigationDatanavigationData() {
   return (
     <>
       <nav className="bg-white fixed w-full top-0 z-50 duration-300 boder border-b border-neutral-300">
+        <div className="px-4 text-center text-sm w-full flex items-center justify-center animate-gradient bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2">
+          <Image
+            className="mr-2"
+            src={`/images/bbi_logo.png`}
+            alt="BBI Logo"
+            width={30}
+            height={30}
+          />
+          Offizielles Mitglied im Bundesverband der Baumaschinen-, Baugeräte-
+          und Industriemaschinen-Firmen e.V.
+        </div>
         <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-3 lg:py-1">
           <div className="hidden lg:flex justify-between items-center">
             <Link href="/">
@@ -44,6 +55,7 @@ export default function NavigationDatanavigationData() {
                 </span>
               </div>
             </Link>
+
             <div className="relative flex items-center space-x-12">
               {navigationData.map((item, index) => (
                 <div key={index}>
@@ -69,7 +81,7 @@ export default function NavigationDatanavigationData() {
                         <span className="ml-2 mr-2">{item.name}</span>
                         <FontAwesomeIcon icon={faChevronDown} />
                       </div>
-                      <div className="fixed top-[68px] left-0 w-full bg-white shadow-lg opacity-0 translate-y-[-10px] invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-500 ease-in-out z-40 pt-2 border-t border-gray-300">
+                      <div className="fixed top-[112px] left-0 w-full bg-white shadow-lg opacity-0 translate-y-[-10px] invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-500 ease-in-out z-40 pt-2 border-t border-gray-300">
                         <div className="max-w-7xl mx-auto px-6 py-8 grid lg:grid-cols-5 gap-6">
                           {item.subData?.map((subItem, subIndex) => (
                             <Link
@@ -122,6 +134,17 @@ export default function NavigationDatanavigationData() {
 
           {isMenuOpen && (
             <div className="fixed top-0 left-0 w-full h-full bg-white z-20 overflow-scroll">
+              <div className="px-4 text-center text-sm w-full flex items-center justify-center animate-gradient bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2">
+                <Image
+                  className="mr-2"
+                  src={`/images/bbi_logo.png`}
+                  alt="BBI Logo"
+                  width={30}
+                  height={30}
+                />
+                Offizielles Mitglied im Bundesverband der Baumaschinen-,
+                Baugeräte- und Industriemaschinen-Firmen e.V.
+              </div>
               <div className="container mx-auto flex items-center justify-between py-3 px-6 lg:px-8">
                 <div className="flex items-center">
                   <Image
