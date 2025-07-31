@@ -25,8 +25,8 @@ export default function NavigationDatanavigationData() {
 
   return (
     <>
-      <nav className="bg-white sticky top-0 z-50 border-b border-gray-300">
-        <div className="px-4 text-center text-sm w-full flex items-center justify-center bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 animate-gradient-x py-2">
+      <nav className="bg-white fixed w-full top-0 z-50 border-b border-gray-300">
+        <div className="px-4 text-center text-sm w-full flex items-center justify-center bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 animate-gradient-x py-2 lg:py-1">
           <Image
             className="mr-2"
             src={`/images/bbi_logo.png`}
@@ -37,7 +37,7 @@ export default function NavigationDatanavigationData() {
           Offizielles Mitglied im Bundesverband der Baumaschinen-, Baugeräte-
           und Industriemaschinen-Firmen e.V.
         </div>
-        <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-3 lg:py-1">
+        <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-1">
           <div className="hidden lg:flex justify-between items-center">
             <Link href="/">
               <div className="flex items-center lg:transform lg:transition-transform lg:duration-300 ease-in-out lg:hover:scale-110">
@@ -134,7 +134,7 @@ export default function NavigationDatanavigationData() {
 
           {isMenuOpen && (
             <div className="fixed top-0 left-0 w-full h-full bg-white z-20 overflow-scroll">
-              <div className="px-4 text-center text-sm w-full flex items-center justify-center animate-gradient bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2">
+              <div className="px-4 text-center text-sm w-full flex items-center justify-center animate-gradient bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2 lg:py-1">
                 <Image
                   className="mr-2"
                   src={`/images/bbi_logo.png`}
@@ -145,7 +145,7 @@ export default function NavigationDatanavigationData() {
                 Offizielles Mitglied im Bundesverband der Baumaschinen-,
                 Baugeräte- und Industriemaschinen-Firmen e.V.
               </div>
-              <div className="container mx-auto flex items-center justify-between py-3 px-6 lg:px-8">
+              <div className="container mx-auto flex items-center justify-between px-6 lg:px-8 py-1">
                 <div className="flex items-center">
                   <Image
                     src={`/images/logo_neu.png`}
