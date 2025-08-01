@@ -19,7 +19,7 @@ export const locationData: LocationDataProps[] = [
     slug: "karlsruhe",
     adress: "teststraße 15, 12345 Karlsruhe",
     contact: {
-      telephone: "123",
+      telephone: "1234",
       email: "test@bagger1.de",
     },
     image: {

@@ -1,5 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
+import { Metadata } from "next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { notFound } from "next/navigation";
@@ -9,6 +10,41 @@ import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
 import { isValidLocation, validMachines } from "@/lib/utils";
+
+type Props = {
+  params: { location: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { location } = params;
+  const currentLocation = locationData.find((l) => l.slug === location);
+  if (!currentLocation) return {};
+
+  const title = `Baumaschinenverleih in ${currentLocation.name} | Bagger1`;
+  const description = `Finde verfügbare Bagger und andere Baumaschinen in ${currentLocation.name}. Flexible Zeiträume, transparente Preise und schnelle Buchung online.`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://bagger1.de/${location}`,
+      images: {
+        url: "/images/meta.png",
+        width: 1200,
+        height: 630,
+        alt: `Bagger mieten in ${currentLocation.name}`,
+      },
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/images/meta.png"],
+    },
+  };
+}
 
 export default function LocationPage({
   params,

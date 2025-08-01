@@ -81,7 +81,7 @@ export default function NavigationDatanavigationData() {
                         <span className="ml-2 mr-2">{item.name}</span>
                         <FontAwesomeIcon icon={faChevronDown} />
                       </div>
-                      <div className="fixed top-[112px] left-0 w-full bg-white shadow-lg opacity-0 translate-y-[-10px] invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-500 ease-in-out z-40 pt-2 border-t border-gray-300">
+                      <div className="fixed top-[106px] left-0 w-full bg-white shadow-lg opacity-0 translate-y-[-10px] invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-500 ease-in-out z-40 pt-2 border-t border-gray-300">
                         <div className="max-w-7xl mx-auto px-6 py-8 grid lg:grid-cols-5 gap-6">
                           {item.subData?.map((subItem, subIndex) => (
                             <Link

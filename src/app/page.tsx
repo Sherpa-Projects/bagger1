@@ -1,9 +1,41 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+export const generateMetadata = (): Metadata => {
+  const title = "Baumaschinenverleih in deiner Gegend | Bagger1";
+  const description =
+    "Finde verfügbare Bagger und andere Baumaschinen in deiner Nähe. Flexible Zeiträume, transparente Preise und schnelle Buchung online.";
+  const imageUrl = "/images/meta.png";
+
+  return {
+    title,
+    description,
+    robots: "index, follow",
+    openGraph: {
+      title,
+      description,
+      url: "https://bagger1.de",
+      siteName: "Baumaschinenverleih in deiner Gegend | Bagger1",
+      images: {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: "Startseite | Bagger1",
+      },
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [imageUrl],
+    },
+  };
+};
 
 export default function Home() {
   return (
