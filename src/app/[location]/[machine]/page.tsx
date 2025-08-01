@@ -1,6 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
-import { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import { notFound } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -9,11 +9,10 @@ import { locationData } from "@/lib/content/locationData";
 import { isValidLocation, isValidMachine, Location } from "@/lib/utils";
 import { MachineDataProps } from "@/app/types/machineDataProps";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { location: string; machine: string };
-}): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: { location: string; machine: string } },
+  _parent: ResolvingMetadata
+): Promise<Metadata> {
   const { location, machine } = params;
 
   if (!isValidLocation(location)) return {};
