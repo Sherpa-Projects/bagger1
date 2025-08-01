@@ -2,7 +2,6 @@ import * as React from "react";
 import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { use } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { machineData } from "@/lib/content/machineData";
@@ -10,11 +9,11 @@ import { locationData } from "@/lib/content/locationData";
 import { isValidLocation, isValidMachine, Location } from "@/lib/utils";
 import { MachineDataProps } from "@/app/types/machineDataProps";
 
-export const generateMetadata = ({
-  params,
-}: {
+type Props = {
   params: { location: string; machine: string };
-}) => {
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { location, machine } = params;
 
   if (!isValidLocation(location)) return {};
@@ -54,7 +53,7 @@ export const generateMetadata = ({
       images: ["/images/meta.png"],
     },
   };
-};
+}
 
 export default function MachinePage({
   params,
