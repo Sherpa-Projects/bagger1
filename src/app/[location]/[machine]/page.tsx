@@ -13,7 +13,7 @@ type MachinePageProps = {
   params: { location: string; machine: string };
 };
 
-export async function generateMetadata({ params }: MachinePageProps): Promise<Metadata> {
+export function generateMetadata({ params }: MachinePageProps): Metadata {
   const { location, machine } = params;
 
   if (!isValidLocation(location)) return {};
