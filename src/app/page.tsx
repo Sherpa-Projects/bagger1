@@ -1,10 +1,6 @@
-import Link from "next/link";
 import { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { locationData } from "@/lib/content/locationData";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const generateMetadata = (): Metadata => {
   const title = "Baumaschinenverleih in deiner Gegend | Bagger1";
