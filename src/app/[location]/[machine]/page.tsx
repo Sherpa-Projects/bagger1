@@ -10,11 +10,11 @@ import { locationData } from "@/lib/content/locationData";
 import { isValidLocation, isValidMachine, Location } from "@/lib/utils";
 import { MachineDataProps } from "@/app/types/machineDataProps";
 
-export async function generateMetadata({
+export const generateMetadata = ({
   params,
 }: {
   params: { location: string; machine: string };
-}): Promise<Metadata> {
+}) => {
   const { location, machine } = params;
 
   if (!isValidLocation(location)) return {};
@@ -54,7 +54,7 @@ export async function generateMetadata({
       images: ["/images/meta.png"],
     },
   };
-}
+};
 
 export default function MachinePage({
   params,
