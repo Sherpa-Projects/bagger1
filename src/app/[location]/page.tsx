@@ -16,6 +16,7 @@ export async function generateMetadata(
   _parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { location } = params;
+
   const currentLocation = locationData.find((l) => l.slug === location);
   if (!currentLocation) return {};
 
