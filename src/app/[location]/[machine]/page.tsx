@@ -9,11 +9,11 @@ import { locationData } from "@/lib/content/locationData";
 import { isValidLocation, isValidMachine, Location } from "@/lib/utils";
 import { MachineDataProps } from "@/app/types/machineDataProps";
 
-type Props = {
+type MachinePageProps = {
   params: { location: string; machine: string };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: MachinePageProps): Promise<Metadata> {
   const { location, machine } = params;
 
   if (!isValidLocation(location)) return {};
