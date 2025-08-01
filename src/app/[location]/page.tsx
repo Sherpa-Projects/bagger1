@@ -1,5 +1,5 @@
 import * as React from "react";
-import type { Metadata, ResolvingMetadata } from "next";
+import { Metadata } from "next";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -11,17 +11,19 @@ import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
 import { isValidLocation, validMachines } from "@/lib/utils";
 
-export async function generateMetadata(
-  { params }: { params: { location: string } },
-  _parent: ResolvingMetadata
-): Promise<Metadata> {
-  const { location } = params;
+const validLocations = ["berlin", "hamburg", "muenchen"];
 
-  const currentLocation = locationData.find((l) => l.slug === location);
-  if (!currentLocation) return {};
+export async function generateMetadata({
+  params,
+}: {
+  params: { location: string };
+}): Promise<Metadata> {
+  const location = params.location;
+  if (!validLocations.includes(location)) return {};
 
-  const title = `Baumaschinenverleih in ${currentLocation.name} | Bagger1`;
-  const description = `Finde verfügbare Bagger und andere Baumaschinen in ${currentLocation.name}. Flexible Zeiträume, transparente Preise und schnelle Buchung online.`;
+  const capitalized = location.charAt(0).toUpperCase() + location.slice(1);
+  const title = `Baumaschinenverleih in ${capitalized} | Bagger1`;
+  const description = `Jetzt Baumaschinen in ${capitalized} mieten – schnell & günstig.`;
 
   return {
     title,
@@ -30,12 +32,14 @@ export async function generateMetadata(
       title,
       description,
       url: `https://bagger1.de/${location}`,
-      images: {
-        url: "/images/meta.png",
-        width: 1200,
-        height: 630,
-        alt: `Bagger mieten in ${currentLocation.name}`,
-      },
+      images: [
+        {
+          url: "/images/meta.png",
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
