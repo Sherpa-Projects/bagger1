@@ -4,18 +4,19 @@ import { Metadata } from "next";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { notFound } from "next/navigation";
-import { use } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
 import { isValidLocation, validMachines } from "@/lib/utils";
 
-type Props = {
+type LocationPageProps = {
   params: { location: string };
 };
 
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: LocationPageProps): Promise<Metadata> {
   const { location } = params;
   const currentLocation = locationData.find((l) => l.slug === location);
   if (!currentLocation) return {};
@@ -49,9 +50,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default function LocationPage({
   params,
 }: {
-  params: Promise<{ location: string }>;
+  params: { location: string };
 }) {
-  const { location } = use(params);
+  const { location } = params;
 
   if (!isValidLocation(location)) return notFound();
 
