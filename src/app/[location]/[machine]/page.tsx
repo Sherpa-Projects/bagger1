@@ -1,4 +1,5 @@
 import * as React from "react";
+import { use } from "react";
 import Image from "next/image";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -9,14 +10,58 @@ import { locationData } from "@/lib/content/locationData";
 import { isValidLocation, isValidMachine, Location } from "@/lib/utils";
 import { MachineDataProps } from "@/app/types/machineDataProps";
 
+export async function generateMetadata({
+  params,
+}: {
+  params: { location: string; machine: string };
+}): Promise<Metadata> {
+  const { location, machine } = params;
 
+  if (!isValidLocation(location)) return {};
+
+  const currentLocation = locationData.find((l) => l.slug === location);
+  const currentMachine = machineData.find((m) => m.slug === machine);
+
+  if (!currentLocation || !currentMachine) return {};
+
+  const capitalizedLocation =
+    currentLocation.name.charAt(0).toUpperCase() +
+    currentLocation.name.slice(1);
+
+  const title = `${currentMachine.name} mieten in ${capitalizedLocation} | Bagger1`;
+  const description = `Jetzt ${currentMachine.name} günstig in ${capitalizedLocation} mieten. Flexible Zeiträume, transparente Preise, direkt online buchen bei Bagger1.`;
+
+  return {
+    title,
+    description,
+    robots: "index, follow",
+    openGraph: {
+      title,
+      description,
+      url: `https://bagger1.de/${location}/${machine}`,
+      siteName: "Baumaschinenverleih in deiner Gegend | Bagger1",
+      images: {
+        url: "/images/meta.png",
+        width: 1200,
+        height: 630,
+        alt: title,
+      },
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/images/meta.png"],
+    },
+  };
+}
 
 export default function MachinePage({
   params,
 }: {
-  params: { location: string; machine: string };
+  params: Promise<{ location: string; machine: string }>;
 }) {
-  const { location, machine } = params;
+  const { location, machine } = use(params);
 
   if (!isValidLocation(location)) return notFound();
 
