@@ -59,9 +59,9 @@ export async function generateMetadata({
 export default function MachinePage({
   params,
 }: {
-  params: Promise<{ location: string; machine: string }>;
+  params: { location: string; machine: string };
 }) {
-  const { location, machine } = use(params);
+  const { location, machine } = params;
 
   if (!isValidLocation(location)) return notFound();
 
