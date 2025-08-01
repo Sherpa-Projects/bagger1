@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Metadata } from "next";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -10,45 +9,6 @@ import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
 import { isValidLocation, validMachines } from "@/lib/utils";
-
-const validLocations = ["berlin", "hamburg", "muenchen"];
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { location: string };
-}): Promise<Metadata> {
-  const location = params.location;
-  if (!validLocations.includes(location)) return {};
-
-  const capitalized = location.charAt(0).toUpperCase() + location.slice(1);
-  const title = `Baumaschinenverleih in ${capitalized} | Bagger1`;
-  const description = `Jetzt Baumaschinen in ${capitalized} mieten – schnell & günstig.`;
-
-  return {
-    title,
-    description,
-    openGraph: {
-      title,
-      description,
-      url: `https://bagger1.de/${location}`,
-      images: [
-        {
-          url: "/images/meta.png",
-          width: 1200,
-          height: 630,
-          alt: title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: ["/images/meta.png"],
-    },
-  };
-}
 
 export default function LocationPage({
   params,
