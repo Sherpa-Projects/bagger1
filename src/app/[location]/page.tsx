@@ -13,7 +13,7 @@ import { isValidLocation, validMachines } from "@/lib/utils";
 
 export async function generateMetadata(
   { params }: { params: { location: string } },
-  parent: ResolvingMetadata
+  _parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { location } = params;
   const currentLocation = locationData.find((l) => l.slug === location);
