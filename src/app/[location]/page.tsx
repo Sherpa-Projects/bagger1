@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Metadata } from "next";
+import type { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -11,13 +11,10 @@ import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
 import { isValidLocation, validMachines } from "@/lib/utils";
 
-type LocationPageProps = {
-  params: { location: string };
-};
-
-export async function generateMetadata({
-  params,
-}: LocationPageProps): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: { params: { location: string } },
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   const { location } = params;
   const currentLocation = locationData.find((l) => l.slug === location);
   if (!currentLocation) return {};
