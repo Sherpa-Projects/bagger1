@@ -1,6 +1,6 @@
 export const footerData = {
-  companyName: "Bagger1 GmbH",
-  adress: "teststraße 15, 12345 teststadt",
+  companyName: "Baumaschinenverleih Jens Wetzstein",
+  adress: "Wittenberger Weg 2, 68309 Mannheim",
   contact: {
     telephone: "1234567",
     email: "test@bagger1.de",

@@ -4,7 +4,7 @@ export const locationData: LocationDataProps[] = [
   {
     name: "Mannheim",
     slug: "mannheim",
-    adress: "teststraße 15, 12345 Mannheim",
+    adress: "Wittenberger Weg 2, 68309 Mannheim",
     contact: {
       telephone: "123",
       email: "test@bagger1.de",
@@ -15,55 +15,29 @@ export const locationData: LocationDataProps[] = [
     },
   },
   {
-    name: "Karlsruhe",
-    slug: "karlsruhe",
-    adress: "teststraße 15, 12345 Karlsruhe",
-    contact: {
-      telephone: "1234",
-      email: "test@bagger1.de",
-    },
-    image: {
-      url: "/images/locations/karlsruhe.jpg",
-      alt: "Aufnahme vom Karlsruher Schloss",
-    },
-  },
-  {
-    name: "Heidelberg",
-    slug: "heidelberg",
-    adress: "teststraße 15, 12345 Heidelberg",
+    name: "Hennef",
+    slug: "hennef",
+    adress: "Kapelenhügel 3, 53773 Hennef",
     contact: {
       telephone: "123",
       email: "test@bagger1.de",
     },
     image: {
-      url: "/images/locations/heidelberg.jpg",
-      alt: "Aufnahme von der Heidelberger Brücke",
+      url: "/images/locations/hennef.jpg",
+      alt: "Luftaufnahme von Hennef",
     },
   },
   {
-    name: "Waghäusel",
-    slug: "waghaeusel",
-    adress: "teststraße 15, 12345 Waghäusel",
+    name: "Bruchsal",
+    slug: "bruchsal",
+    adress: "teststraße 15, 76694 Forst",
     contact: {
       telephone: "123",
       email: "test@bagger1.de",
     },
     image: {
-      url: "",
-      alt: "",
-    },
-  },
-  {
-    name: "Dortmund",
-    slug: "dortmund",
-    adress: "teststraße 15, 12345 Dortmund",
-    contact: {
-      telephone: "123",
-      email: "test@bagger1.de",
-    },
-    image: {
-      url: "",
-      alt: "",
+      url: "/images/locations/bruchsal.jpg",
+      alt: "Bruchsaler Schloss",
     },
   },
 ];

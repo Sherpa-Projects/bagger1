@@ -27,7 +27,7 @@ export default function RootLayout({
           id="rtr-access-token"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `window.RTR_ACCESS_TOKEN = 'W714a858bbc2ca6b6ff34cbbdcc2188a8';`,
+            __html: `window.RTR_ACCESS_TOKEN = 'Wd1285b3297330ea1ae4731ab48fe16fe';`,
           }}
         />
       </>
