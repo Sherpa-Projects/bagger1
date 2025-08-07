@@ -1,13 +1,42 @@
 import * as React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { use } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { machineData } from "@/lib/content/machineData";
-
 import { isValidLocation, isValidMachine, Location } from "@/lib/utils";
 import { MachineDataProps } from "@/app/types/machineDataProps";
+
+export const metadata: Metadata = {
+  title: "Baumaschine mieten – Modelle & Preise | Bagger1",
+  description:
+    "Alle Infos zur ausgewählten Baumaschine: Modell, Tagespreis und Verfügbarkeit an deinem Standort. Jetzt direkt online mieten bei Bagger1.",
+  openGraph: {
+    title: "Baumaschine mieten – Modelle & Preise | Bagger1",
+    description:
+      "Alle Details zu dieser Baumaschine findest du hier: Technische Daten, Preise und Verfügbarkeit. Jetzt unverbindlich online anfragen.",
+    url: "https://bagger1.de",
+    siteName: "Bagger1",
+    images: [
+      {
+        url: "",
+        width: 1200,
+        height: 630,
+        alt: "Bagger1 Maschinenübersicht",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Baumaschine mieten bei Bagger1",
+    description:
+      "Finde Preise und Infos zu deiner Wunschmaschine – schnell & einfach.",
+    images: ["/images/meta.png"],
+  },
+  robots: "index, follow",
+};
 
 export default function MachinePage({
   params,
