@@ -1,4 +1,5 @@
 import * as React from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -9,6 +10,35 @@ import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
 import { isValidLocation, validMachines } from "@/lib/utils";
+
+export const metadata: Metadata = {
+  title: "Baumaschinen mieten in deiner Nähe | Bagger1",
+  description:
+    "Jetzt Baumaschinen wie Bagger, Kipphänger oder Rüttelplatten direkt online mieten. Transparent. Flexibel. Einfach mit Bagger1.",
+  openGraph: {
+    title: "Baumaschinen mieten in deiner Nähe | Bagger1",
+    description:
+      "Jetzt Baumaschinen wie Bagger, Kipphänger oder Rüttelplatten direkt online mieten. Transparent. Flexibel. Einfach mit Bagger1.",
+    url: "https://bagger1.de",
+    siteName: "Bagger1",
+    images: [
+      {
+        url: "",
+        width: 1200,
+        height: 630,
+        alt: "Bagger1 Baumaschinen",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Baumaschinen mieten mit Bagger1",
+    description:
+      "Finde verfügbare Maschinen in deiner Region und buche direkt online.",
+    images: ["/images/meta.png"],
+  },
+  robots: "index, follow",
+};
 
 export default function LocationPage({
   params,
@@ -62,7 +92,9 @@ export default function LocationPage({
                         <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold capitalize mb-2">
                           {machine.name}
                         </p>
-                        <p className="lg:text-sm text-neutral-500">{machine.model}</p>
+                        <p className="lg:text-sm text-neutral-500">
+                          {machine.model}
+                        </p>
                       </div>
                       <p className="text-2xl lg:text-lg xl:text-xl capitalize">
                         {machine.pricePerDay}€ / Tag
