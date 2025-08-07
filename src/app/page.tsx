@@ -1,6 +1,10 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { locationData } from "@/lib/content/locationData";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export const generateMetadata = (): Metadata => {
   const title = "Baumaschinenverleih in deiner Gegend | Bagger1";
@@ -59,14 +63,7 @@ export default function Home() {
 
       <main className="py-10 lg:py-16 px-4">
         <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-          <rtr-search
-            view="cards"
-            show-location="on"
-            load-behaviour="extended"
-            locations="86991b26-cb9f-4bec-771b-43f08ea7d6b9, d66c9463-801f-41ad-723f-681374293372"
-          ></rtr-search>
-
-          {/* <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-0 lg:pb-4 lg:leading-tight text-center">
+          <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-0 lg:pb-4 lg:leading-tight text-center">
             Bagger mieten in
           </h2>
           <div className="flex flex-col items-center mx-auto space-y-4 py-8 lg:max-w-3xl">
@@ -82,7 +79,7 @@ export default function Home() {
                 </span>
               </Link>
             ))}
-          </div> */}
+          </div>
         </div>
       </main>
       <Footer />
