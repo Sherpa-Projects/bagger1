@@ -17,7 +17,7 @@ export const footerData = {
       url: "/impressum",
     },
     {
-      name: "datenschutz",
+      name: "Datenschutz",
       url: "/datenschutz",
     },
   ],
