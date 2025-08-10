@@ -10,7 +10,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
-import { isValidLocation, validMachines } from "@/lib/utils";
+import { isValidLocation } from "@/lib/utils";
 import { getPricePerDayForLocation } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -49,7 +49,6 @@ export default function LocationPage({
 }) {
   const { location } = use(params);
 
-  // (optional) Schutz, falls jemand ungültiges reinschreibt:
   if (!isValidLocation(location)) return notFound();
 
   const currentLocation = locationData.find((l) => l.slug === location);
