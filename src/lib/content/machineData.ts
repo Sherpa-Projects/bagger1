@@ -6,8 +6,11 @@ export const machineData: Machine[] = [
     slug: "18t-bagger-zusatzanbauten",
     model: "Kubota HE28 inkl. Zusatzanbauten",
     category: "Bagger",
-    image: { url: "/images/machines/Kubota_HE28.jpeg", alt: "Gelber Bagger auf Hügel" },
-    price: { perDay: 120, perWeek: 500, perMonth: 2000 },
+    image: {
+      url: "/images/machines/Kubota_HE28.jpeg",
+      alt: "Gelber Bagger auf Hügel",
+    },
+    price: { perDay: 100, perWeek: 700, perMonth: 3000 },
     content: {
       title: "test title",
       description: "test description",
@@ -17,8 +20,9 @@ export const machineData: Machine[] = [
       },
     },
     inventory: {
-      hennef:   [{ articleId: "F5596I" }],
-      mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
+      hennef: [{ articleId: "F5596I" }],
+      mannheim: [{ articleId: "2AT3K3" }],
+      // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
       bruchsal: [{ articleId: "3HIBNP" }, { articleId: "XYZ123" }],
     },
   },
