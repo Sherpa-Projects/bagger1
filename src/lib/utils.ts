@@ -1,4 +1,6 @@
 import { machineData } from "./content/machineData";
+import { Machine } from "@/app/types/Machine";
+import { InventoryEntry } from "@/app/types/Machine";
 
 export const validLocations = ["mannheim", "hennef", "bruchsal"] as const;
 export type Location = (typeof validLocations)[number];
@@ -22,13 +24,15 @@ export function isValidMachine(location: Location, machine: string): boolean {
 }
 
 export function getPricePerDayForLocation(
-  machine: {
-    price: { perDay: number };
-    inventory: Record<string, { priceOverride?: { perDay?: number } }[]>;
-  },
-  location: string
-) {
-  const entries = machine.inventory[location];
-  const first = entries?.[0];
-  return first?.priceOverride?.perDay ?? machine.price.perDay;
+  machine: Machine,
+  location: Location
+): number {
+  const base = machine.price.perDay;
+
+  const entries = (machine.inventory?.[location] ?? []) as InventoryEntry[];
+
+  const override = entries.find((e) => e.priceOverride?.perDay !== undefined)
+    ?.priceOverride?.perDay;
+
+  return override ?? base;
 }

@@ -12,6 +12,7 @@ import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
 import { isValidLocation } from "@/lib/utils";
 import { getPricePerDayForLocation } from "@/lib/utils";
+import { Machine } from "../types/Machine";
 
 export const metadata: Metadata = {
   title: "Baumaschinen mieten in deiner Nähe | Bagger1",
@@ -54,7 +55,6 @@ export default function LocationPage({
   const currentLocation = locationData.find((l) => l.slug === location);
   if (!currentLocation) return notFound();
 
-  // Maschinen, die an diesem Standort Bestand haben
   const machines = machineData.filter(
     (m) => (m.inventory[location]?.length ?? 0) > 0
   );
@@ -78,7 +78,7 @@ export default function LocationPage({
           <ul className="mt-8 grid md:grid-cols-2 gap-10">
             {machines.map((machine, index) => {
               const pricePerDay = getPricePerDayForLocation(
-                machine as any,
+                machine as Machine,
                 location
               );
 
