@@ -6,8 +6,8 @@ import { use } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { machineData } from "@/lib/content/machineData";
-import { isValidLocation, isValidMachine, Location } from "@/lib/utils";
-import { MachineDataProps } from "@/app/types/machineDataProps";
+import { isValidLocation, type Location } from "@/lib/utils";
+import type { Machine } from "@/app/types/Machine";
 
 export const metadata: Metadata = {
   title: "Baumaschine mieten – Modelle & Preise | Bagger1",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: "Bagger1",
     images: [
       {
-        url: "",
+        url: "/images/meta.png",
         width: 1200,
         height: 630,
         alt: "Bagger1 Maschinenübersicht",
@@ -43,18 +43,30 @@ export default function MachinePage({
 }: {
   params: Promise<{ location: string; machine: string }>;
 }) {
-  const { location, machine } = use(params);
+  const { location: rawLocation, machine: machineSlug } = use(params);
 
-  if (!isValidLocation(location)) return notFound();
-
-  const typedLocation: Location = location;
-  const isMachineValid = isValidMachine(typedLocation, machine);
-
-  if (!isMachineValid) return notFound();
+  if (!isValidLocation(rawLocation)) return notFound();
+  const location = rawLocation as Location;
 
   const selectedMachine = machineData.find(
-    (m: MachineDataProps) => m.slug === machine
+    (m: Machine) => m.slug === machineSlug
   );
+  if (!selectedMachine) return notFound();
+
+  const inventoryAtLocation = selectedMachine.inventory[location] ?? [];
+  if (inventoryAtLocation.length === 0) return notFound();
+
+  const primaryArticle = inventoryAtLocation[0];
+
+  const effectivePrice = {
+    perDay:
+      primaryArticle.priceOverride?.perDay ?? selectedMachine.price.perDay,
+    perWeek:
+      primaryArticle.priceOverride?.perWeek ?? selectedMachine.price.perWeek,
+    perMonth:
+      primaryArticle.priceOverride?.perMonth ?? selectedMachine.price.perMonth,
+  };
+
   const currentLocation =
     location.charAt(0).toUpperCase() + location.slice(1).toLowerCase();
 
@@ -64,20 +76,23 @@ export default function MachinePage({
       <main className="pb-16 pt-40 px-4">
         <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-0 lg:pb-4 lg:leading-tight text-center">
-            {selectedMachine?.name} in {currentLocation}
+            {selectedMachine.name} in {currentLocation}
           </h1>
+
           <div className="mt-8 grid lg:grid-cols-3 gap-10 lg:gap-0 mx-auto lg:px-8">
+            {/* Linke Spalte: Bild + Inhalte */}
             <div className="w-full max-w-lg mx-auto lg:mx-0 p-6 lg:col-span-2 order-2 lg:order-1 flex lg:block flex-col">
-              {selectedMachine?.image && (
+              {selectedMachine.image?.url ? (
                 <Image
                   className="mb-12 rounded-lg mx-auto"
-                  src={selectedMachine?.image.url}
-                  alt={selectedMachine?.image.alt}
+                  src={selectedMachine.image.url}
+                  alt={selectedMachine.image.alt || selectedMachine.name}
                   width={500}
                   height={500}
                 />
-              )}
-              {selectedMachine?.content && (
+              ) : null}
+
+              {selectedMachine.content && (
                 <>
                   <div>
                     <h3 className="text-3xl font-bold mb-2">
@@ -87,6 +102,8 @@ export default function MachinePage({
                       {selectedMachine.content.description}
                     </p>
                   </div>
+
+                  {/* Technische Daten (optional) */}
                   <div className="mt-12">
                     {selectedMachine.content.dataSheet && (
                       <div className="text-lg space-y-4">
@@ -147,25 +164,25 @@ export default function MachinePage({
                             </ul>
                           </div>
                         )}
+
                         {selectedMachine.content.dataSheet.power && (
                           <p>
                             Leistung: {selectedMachine.content.dataSheet.power}
                           </p>
                         )}
-                        {selectedMachine.content.dataSheet.workingRange && (
+
+                        {selectedMachine.content.dataSheet.workingRange
+                          ?.maxDepth && (
                           <div>
                             <h4 className="font-bold">Arbeitsbereich:</h4>
                             <ul>
-                              {selectedMachine.content.dataSheet.workingRange
-                                .maxDepth && (
-                                <li>
-                                  Max. Grabtiefe:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet
-                                      .workingRange.maxDepth
-                                  }
-                                </li>
-                              )}
+                              <li>
+                                Max. Grabtiefe:{" "}
+                                {
+                                  selectedMachine.content.dataSheet.workingRange
+                                    .maxDepth
+                                }
+                              </li>
                             </ul>
                           </div>
                         )}
@@ -174,35 +191,33 @@ export default function MachinePage({
                   </div>
                 </>
               )}
-              <div></div>
             </div>
+
             <div className="order-1 lg:order-2 lg:col-span-1 flex justify-center rounded-xl p-6">
               <div className="flex flex-col space-y-12">
-                {selectedMachine?.articleId && (
+                {primaryArticle.articleId && (
                   <rtr-article-booking
-                    article-id={selectedMachine?.articleId}
+                    article-id={primaryArticle.articleId}
                     view="calendar"
-                  ></rtr-article-booking>
+                  />
                 )}
 
                 <h2 className="text-3xl font-bold mb-6">Preise</h2>
                 <ul className="border border-gray-200 text-lg">
                   <li className="bg-yellow-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                    <span>1 Tag </span>
-                    <span className="font-bold">
-                      {selectedMachine?.pricePerDay} €
-                    </span>
+                    <span>1 Tag</span>
+                    <span className="font-bold">{effectivePrice.perDay} €</span>
                   </li>
                   <li className="bg-white flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                    <span>Woche </span>
+                    <span>Woche</span>
                     <span className="font-bold">
-                      {selectedMachine?.pricePerWeek} €
+                      {effectivePrice.perWeek} €
                     </span>
                   </li>
                   <li className="bg-yellow-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                    <span>Woche </span>
+                    <span>Monat</span>
                     <span className="font-bold">
-                      {selectedMachine?.pricePerMonth} €
+                      {effectivePrice.perMonth} €
                     </span>
                   </li>
                 </ul>

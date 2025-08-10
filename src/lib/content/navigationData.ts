@@ -2,7 +2,7 @@ import { NavigationDataProps } from "@/app/types/navigationDataProps";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { locationData } from "./locationData";
 
-export const navigationData: NavigationDataProps = [
+export const NavigationData: NavigationDataProps = [
   {
     name: "Standorte",
     icon: faLocationDot,

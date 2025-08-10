@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navigationData } from "@/lib/content/navigationData";
+import { NavigationData } from "@/lib/content/NavigationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
@@ -12,7 +12,7 @@ import {
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function NavigationDatanavigationData() {
+export default function NavigationDataNavigationData() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export default function NavigationDatanavigationData() {
             </Link>
 
             <div className="relative flex items-center space-x-12">
-              {navigationData.map((item, index) => (
+              {NavigationData.map((item, index) => (
                 <div key={index}>
                   {!item.subData && item.url ? (
                     <Link
@@ -171,7 +171,7 @@ export default function NavigationDatanavigationData() {
 
               <div className="flex flex-col items-start px-8 py-6">
                 <div className="w-full space-y-8">
-                  {navigationData.map((item, index) => (
+                  {NavigationData.map((item, index) => (
                     <div
                       className="border-b border-gray-300 last:border-none pb-8"
                       key={index}

@@ -1,6 +1,8 @@
+import { Location } from "@/lib/utils";
+
 export type LocationDataProps = {
   name: string;
-  slug: string;
+  slug: Location;
   adress: string;
   contact: {
     telephone: string;
