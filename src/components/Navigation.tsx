@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { NavigationData } from "@/lib/content/NavigationData";
+import { navigationData } from "@/lib/content/NavigationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronDown,
@@ -57,7 +57,7 @@ export default function NavigationDataNavigationData() {
             </Link>
 
             <div className="relative flex items-center space-x-12">
-              {NavigationData.map((item, index) => (
+              {navigationData.map((item, index) => (
                 <div key={index}>
                   {!item.subData && item.url ? (
                     <Link
@@ -171,7 +171,7 @@ export default function NavigationDataNavigationData() {
 
               <div className="flex flex-col items-start px-8 py-6">
                 <div className="w-full space-y-8">
-                  {NavigationData.map((item, index) => (
+                  {navigationData.map((item, index) => (
                     <div
                       className="border-b border-gray-300 last:border-none pb-8"
                       key={index}
