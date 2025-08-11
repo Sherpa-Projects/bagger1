@@ -45,17 +45,19 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
               )}
               {currentLocation && currentLocation.contact ? (
                 <>
-                  <div className="flex items-center lg:text-left">
-                    <FontAwesomeIcon className="mr-2" icon={faPhone} />
-                    <p>
-                      <Link
-                        href={`tel:${currentLocation.contact.telephone}`}
-                        className="hover:text-underline"
-                      >
-                        {currentLocation.contact.telephone}
-                      </Link>
-                    </p>
-                  </div>
+                  {currentLocation.contact.telephone && (
+                    <div className="flex items-center lg:text-left">
+                      <FontAwesomeIcon className="mr-2" icon={faPhone} />
+                      <p>
+                        <Link
+                          href={`tel:${currentLocation.contact.telephone}`}
+                          className="hover:text-underline"
+                        >
+                          {currentLocation.contact.telephone}
+                        </Link>
+                      </p>
+                    </div>
+                  )}
                   <div className="flex items-center lg:text-left">
                     <p>
                       <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
@@ -70,17 +72,6 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
                 </>
               ) : (
                 <>
-                  <div className="flex items-center lg:text-left">
-                    <FontAwesomeIcon className="mr-2" icon={faPhone} />
-                    <p>
-                      <Link
-                        href={`tel:${footerData.contact.telephone}`}
-                        className="hover:text-underline"
-                      >
-                        {footerData.contact.telephone}
-                      </Link>
-                    </p>
-                  </div>
                   <div className="flex items-center lg:text-left">
                     <p>
                       <FontAwesomeIcon className="mr-2" icon={faEnvelope} />

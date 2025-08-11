@@ -5,7 +5,7 @@ export type LocationDataProps = {
   slug: Location;
   adress: string;
   contact: {
-    telephone: string;
+    telephone?: string;
     email: string;
   };
   image: {

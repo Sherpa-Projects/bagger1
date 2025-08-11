@@ -2,8 +2,7 @@ export const footerData = {
   companyName: "Baumaschinenverleih Jens Wetzstein",
   adress: "Wittenberger Weg 2, 68309 Mannheim",
   contact: {
-    telephone: "1234567",
-    email: "test@bagger1.de",
+    email: "info@bagger1.de",
   },
   openingHours: {
     title: "Geschäftszeiten",
