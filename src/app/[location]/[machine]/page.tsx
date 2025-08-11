@@ -104,130 +104,152 @@ export default function MachinePage({
                   </div>
 
                   <div className="mt-12">
-                    {selectedMachine.content.dataSheet && (
-                      <div className="space-y-4">
-                        {selectedMachine.content.dataSheet.dimensions && (
-                          <div>
-                            <h4 className="font-bold">Bemessung:</h4>
-                            <ul>
-                              {selectedMachine.content.dataSheet.dimensions
-                                .width && (
-                                <li>
-                                  Gesamtbreite:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet.dimensions
-                                      .width
-                                  }
-                                </li>
-                              )}
-                              {selectedMachine.content.dataSheet.dimensions
-                                .length && (
-                                <li>
-                                  Gesamtlänge:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet.dimensions
-                                      .length
-                                  }
-                                </li>
-                              )}
-                              {selectedMachine.content.dataSheet.dimensions
-                                .height && (
-                                <li>
-                                  Gesamthöhe:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet.dimensions
-                                      .height
-                                  }
-                                </li>
-                              )}
-                              {selectedMachine.content.dataSheet.dimensions
-                                .weight && (
-                                <li>
-                                  Betriebsgewicht:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet.dimensions
-                                      .weight
-                                  }
-                                </li>
-                              )}
-                              {selectedMachine.content.dataSheet.dimensions
-                                .volume && (
-                                <li>
-                                  Löffelvolumen:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet.dimensions
-                                      .volume
-                                  }
-                                </li>
-                              )}
-                            </ul>
-                          </div>
-                        )}
+                    <details className="group rounded-xl border border-gray-200 bg-white">
+                      <summary className="flex items-center justify-between cursor-pointer select-none px-4 py-3">
+                        <span className="text-xl font-semibold">
+                          Datenblatt
+                        </span>
+                        <svg
+                          className="h-5 w-5 transition-transform duration-300 group-open:rotate-180"
+                          viewBox="0 0 20 20"
+                          fill="currentColor"
+                          aria-hidden="true"
+                        >
+                          <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
+                        </svg>
+                      </summary>
 
-                        {selectedMachine.content.dataSheet.power && (
-                          <p>
-                            Leistung: {selectedMachine.content.dataSheet.power}
-                          </p>
-                        )}
-                        {selectedMachine.content.dataSheet.workingRange && (
-                          <div>
-                            <h4 className="font-bold">Arbeitsbereich:</h4>
-                            <ul>
-                              {selectedMachine.content.dataSheet.workingRange
-                                .maxDepth && (
-                                <li>
-                                  Max. Grabtiefe:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet
-                                      .workingRange.maxDepth
-                                  }
-                                </li>
-                              )}
-                              {selectedMachine.content.dataSheet.workingRange
-                                .maxReach && (
-                                <li>
-                                  Max. Reichweite:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet
-                                      .workingRange.maxReach
-                                  }
-                                </li>
-                              )}
-                              {selectedMachine.content.dataSheet.workingRange
-                                .minSwingRadius && (
-                                <li>
-                                  Min. Schwenkradius:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet
-                                      .workingRange.minSwingRadius
-                                  }
-                                </li>
-                              )}
-                              {selectedMachine.content.dataSheet.workingRange
-                                .bucketBreakoutForceISO && (
-                                <li>
-                                  Löffellosbrechkraft ISO:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet
-                                      .workingRange.bucketBreakoutForceISO
-                                  }
-                                </li>
-                              )}
-                              {selectedMachine.content.dataSheet.workingRange
-                                .armTearOutForceISO && (
-                                <li>
-                                  Stiel Reißkraft ISO:{" "}
-                                  {
-                                    selectedMachine.content.dataSheet
-                                      .workingRange.armTearOutForceISO
-                                  }
-                                </li>
-                              )}
-                            </ul>
+                      <div className="px-4 pb-4 pt-2 space-y-4 text-gray-800">
+                        <div className="mb-4">
+                          Modell: {selectedMachine.model}
+                        </div>
+                        {selectedMachine.content.dataSheet && (
+                          <div className="space-y-4">
+                            {selectedMachine.content.dataSheet.dimensions && (
+                              <div>
+                                <h4 className="font-bold">Bemessung:</h4>
+                                <ul>
+                                  {selectedMachine.content.dataSheet.dimensions
+                                    .width && (
+                                    <li>
+                                      Gesamtbreite:{" "}
+                                      {
+                                        selectedMachine.content.dataSheet
+                                          .dimensions.width
+                                      }
+                                    </li>
+                                  )}
+                                  {selectedMachine.content.dataSheet.dimensions
+                                    .length && (
+                                    <li>
+                                      Gesamtlänge:{" "}
+                                      {
+                                        selectedMachine.content.dataSheet
+                                          .dimensions.length
+                                      }
+                                    </li>
+                                  )}
+                                  {selectedMachine.content.dataSheet.dimensions
+                                    .height && (
+                                    <li>
+                                      Gesamthöhe:{" "}
+                                      {
+                                        selectedMachine.content.dataSheet
+                                          .dimensions.height
+                                      }
+                                    </li>
+                                  )}
+                                  {selectedMachine.content.dataSheet.dimensions
+                                    .weight && (
+                                    <li>
+                                      Betriebsgewicht:{" "}
+                                      {
+                                        selectedMachine.content.dataSheet
+                                          .dimensions.weight
+                                      }
+                                    </li>
+                                  )}
+                                  {selectedMachine.content.dataSheet.dimensions
+                                    .volume && (
+                                    <li>
+                                      Löffelvolumen:{" "}
+                                      {
+                                        selectedMachine.content.dataSheet
+                                          .dimensions.volume
+                                      }
+                                    </li>
+                                  )}
+                                </ul>
+                              </div>
+                            )}
+
+                            {selectedMachine.content.dataSheet.power && (
+                              <p>
+                                Leistung:{" "}
+                                {selectedMachine.content.dataSheet.power}
+                              </p>
+                            )}
+                            {selectedMachine.content.dataSheet.workingRange && (
+                              <div>
+                                <h4 className="font-bold">Arbeitsbereich:</h4>
+                                <ul>
+                                  {selectedMachine.content.dataSheet
+                                    .workingRange.maxDepth && (
+                                    <li>
+                                      Max. Grabtiefe:{" "}
+                                      {
+                                        selectedMachine.content.dataSheet
+                                          .workingRange.maxDepth
+                                      }
+                                    </li>
+                                  )}
+                                  {selectedMachine.content.dataSheet
+                                    .workingRange.maxReach && (
+                                    <li>
+                                      Max. Reichweite:{" "}
+                                      {
+                                        selectedMachine.content.dataSheet
+                                          .workingRange.maxReach
+                                      }
+                                    </li>
+                                  )}
+                                  {selectedMachine.content.dataSheet
+                                    .workingRange.minSwingRadius && (
+                                    <li>
+                                      Min. Schwenkradius:{" "}
+                                      {
+                                        selectedMachine.content.dataSheet
+                                          .workingRange.minSwingRadius
+                                      }
+                                    </li>
+                                  )}
+                                  {selectedMachine.content.dataSheet
+                                    .workingRange.bucketBreakoutForceISO && (
+                                    <li>
+                                      Löffellosbrechkraft ISO:{" "}
+                                      {
+                                        selectedMachine.content.dataSheet
+                                          .workingRange.bucketBreakoutForceISO
+                                      }
+                                    </li>
+                                  )}
+                                  {selectedMachine.content.dataSheet
+                                    .workingRange.armTearOutForceISO && (
+                                    <li>
+                                      Stiel Reißkraft ISO:{" "}
+                                      {
+                                        selectedMachine.content.dataSheet
+                                          .workingRange.armTearOutForceISO
+                                      }
+                                    </li>
+                                  )}
+                                </ul>
+                              </div>
+                            )}
                           </div>
                         )}
                       </div>
-                    )}
+                    </details>
                   </div>
                 </>
               )}

@@ -55,9 +55,9 @@ export default function Page() {
 
         <section>
           <h2 className="text-lg lg:text-xl font-bold mb-2">Kontakt</h2>
-          <p>Telefon: </p>
+          <p>Telefon: +49 159 0652 5276</p>
           <p>
-            E-Mail: <a href="mailto:contact@jaimo-solutions.com"></a>
+            E-Mail: <a href="mailto:"></a>
           </p>
         </section>
 

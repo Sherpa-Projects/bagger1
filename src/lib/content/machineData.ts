@@ -3,8 +3,8 @@ import { Machine } from "@/app/types/Machine";
 export const machineData: Machine[] = [
   {
     name: "1,8t Bagger",
-    slug: "18t-bagger-zusatzanbauten",
-    model: "Kubota HE28 inkl. Zusatzanbauten",
+    slug: "18t-bagger",
+    model: "Kubota HE28",
     category: "Bagger",
     image: {
       url: "/images/machines/Kubota_HE28.jpeg",
