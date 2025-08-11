@@ -57,22 +57,13 @@ export default function Page() {
           <h2 className="text-lg lg:text-xl font-bold mb-2">Kontakt</h2>
           <p>Telefon: +49 159 0652 5276</p>
           <p>
-            E-Mail: <a href="mailto:"></a>
+            E-Mail: <a href="mailto:info@bagger1.de">info@bagger1.de</a>
           </p>
         </section>
 
         <section>
           <h2 className="text-lg lg:text-xl font-bold mb-2">Inhaber</h2>
           <p>Jens Wetzstein </p>
-        </section>
-
-        <section>
-          <h2 className="text-lg lg:text-xl font-bold mb-2">Umsatzsteuer-ID</h2>
-          <p>
-            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
-            <br />
-            DE
-          </p>
         </section>
 
         <section>
