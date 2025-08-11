@@ -12,11 +12,24 @@ export const machineData: Machine[] = [
     },
     price: { perDay: 100, perWeek: 700, perMonth: 3000 },
     content: {
-      title: "test title",
-      description: "test description",
+      title: "",
+      description: "",
       dataSheet: {
-        dimensions: { width: "", height: "", weight: "", volume: "" },
-        workingRange: { maxDepth: "" },
+        dimensions: {
+          width: "980/1 350 mm",
+          height: "2 390 mm",
+          length: "3 640 mm",
+          weight: "1 825 kg",
+          volume: "0.04 m³",
+        },
+        power: "14.6 kW 2 400 U/min",
+        workingRange: {
+          maxDepth: "2 360 mm",
+          maxReach: "4 000 mm",
+          minSwingRadius: "1 705 mm",
+          bucketBreakoutForceISO: "15.2 kN",
+          armTearOutForceISO: "9.2 kN",
+        },
       },
     },
     inventory: {

@@ -103,10 +103,9 @@ export default function MachinePage({
                     </p>
                   </div>
 
-                  {/* Technische Daten (optional) */}
                   <div className="mt-12">
                     {selectedMachine.content.dataSheet && (
-                      <div className="text-lg space-y-4">
+                      <div className="space-y-4">
                         {selectedMachine.content.dataSheet.dimensions && (
                           <div>
                             <h4 className="font-bold">Bemessung:</h4>
@@ -170,19 +169,60 @@ export default function MachinePage({
                             Leistung: {selectedMachine.content.dataSheet.power}
                           </p>
                         )}
-
-                        {selectedMachine.content.dataSheet.workingRange
-                          ?.maxDepth && (
+                        {selectedMachine.content.dataSheet.workingRange && (
                           <div>
                             <h4 className="font-bold">Arbeitsbereich:</h4>
                             <ul>
-                              <li>
-                                Max. Grabtiefe:{" "}
-                                {
-                                  selectedMachine.content.dataSheet.workingRange
-                                    .maxDepth
-                                }
-                              </li>
+                              {selectedMachine.content.dataSheet.workingRange
+                                .maxDepth && (
+                                <li>
+                                  Max. Grabtiefe:{" "}
+                                  {
+                                    selectedMachine.content.dataSheet
+                                      .workingRange.maxDepth
+                                  }
+                                </li>
+                              )}
+                              {selectedMachine.content.dataSheet.workingRange
+                                .maxReach && (
+                                <li>
+                                  Max. Reichweite:{" "}
+                                  {
+                                    selectedMachine.content.dataSheet
+                                      .workingRange.maxReach
+                                  }
+                                </li>
+                              )}
+                              {selectedMachine.content.dataSheet.workingRange
+                                .minSwingRadius && (
+                                <li>
+                                  Min. Schwenkradius:{" "}
+                                  {
+                                    selectedMachine.content.dataSheet
+                                      .workingRange.minSwingRadius
+                                  }
+                                </li>
+                              )}
+                              {selectedMachine.content.dataSheet.workingRange
+                                .bucketBreakoutForceISO && (
+                                <li>
+                                  Löffellosbrechkraft ISO:{" "}
+                                  {
+                                    selectedMachine.content.dataSheet
+                                      .workingRange.bucketBreakoutForceISO
+                                  }
+                                </li>
+                              )}
+                              {selectedMachine.content.dataSheet.workingRange
+                                .armTearOutForceISO && (
+                                <li>
+                                  Stiel Reißkraft ISO:{" "}
+                                  {
+                                    selectedMachine.content.dataSheet
+                                      .workingRange.armTearOutForceISO
+                                  }
+                                </li>
+                              )}
                             </ul>
                           </div>
                         )}

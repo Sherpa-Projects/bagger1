@@ -33,7 +33,13 @@ export type Machine = {
         volume?: string;
       };
       power?: string;
-      workingRange?: { maxDepth?: string };
+      workingRange?: {
+        maxDepth?: string; // Max. Grabtiefe
+        maxReach?: string; // Max. Reichweite
+        minSwingRadius?: string; // Min. Schwenkradius
+        bucketBreakoutForceISO?: string; // Löffellosbrechkraft ISO
+        armTearOutForceISO?: string; // Stiel Reißkraft ISO
+      };
     };
   };
   inventory: InventoryByLocation;

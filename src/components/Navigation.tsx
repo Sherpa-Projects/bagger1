@@ -44,14 +44,13 @@ export default function NavigationDataNavigationData() {
                 <Image
                   src={`/images/logo_neu.png`}
                   alt="Bagger1 Logo"
-                  width={60}
-                  height={60}
+                  width={50}
+                  height={50}
                   className="mx-auto"
                 />
-                <span className="font-oswald ml-2 text-base/5">
-                  Baumaschinen-
+                <span className="font-oswald ml-2 text-lg">
+                  Bagger1
                   <br />
-                  verleih
                 </span>
               </div>
             </Link>
