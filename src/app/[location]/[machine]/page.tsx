@@ -81,7 +81,7 @@ export default function MachinePage({
 
           <div className="mt-8 grid lg:grid-cols-3 gap-10 lg:gap-0 mx-auto lg:px-8">
             {/* Linke Spalte: Bild + Inhalte */}
-            <div className="w-full max-w-lg mx-auto lg:mx-0 p-6 lg:col-span-2 order-2 lg:order-1 flex lg:block flex-col">
+            <div className="w-full max-w-lg mx-auto lg:mx-0 lg:p-6 lg:col-span-2 order-2 lg:order-1 flex lg:block flex-col">
               {selectedMachine.image?.url ? (
                 <Image
                   className="mb-12 rounded-lg mx-auto"
@@ -103,7 +103,7 @@ export default function MachinePage({
                     </p>
                   </div>
 
-                  <div className="mt-12">
+                  <div className="lg:mt-12">
                     <details className="group rounded-xl border border-gray-200 bg-white">
                       <summary className="flex items-center justify-between cursor-pointer select-none px-4 py-3">
                         <span className="text-xl font-semibold">
@@ -255,7 +255,7 @@ export default function MachinePage({
               )}
             </div>
 
-            <div className="order-1 lg:order-2 lg:col-span-1 flex justify-center rounded-xl p-6">
+            <div className="order-1 lg:order-2 lg:col-span-1 flex justify-center rounded-xl lg:p-6">
               <div className="flex flex-col space-y-12">
                 {primaryArticle.articleId && (
                   <rtr-article-booking
