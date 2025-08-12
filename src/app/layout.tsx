@@ -26,20 +26,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <>
+      <head>
         <Script
-          src="https://cdn.rtr-io.com/widgets.js"
-          strategy="afterInteractive"
+          id="rtr-init"
           type="module"
-        />
-        <Script
-          id="rtr-access-token"
           strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `window.RTR_ACCESS_TOKEN = 'Wd1285b3297330ea1ae4731ab48fe16fe';`,
-          }}
-        />
-      </>
+          crossOrigin="anonymous"
+        >
+          {`
+            window.RTR_ACCESS_TOKEN = 'Wd1285b3297330ea1ae4731ab48fe16fe';
+            import('https://cdn.rtr-io.com/widgets.js');
+          `}
+        </Script>
+      </head>
 
       <body>
         {children}
