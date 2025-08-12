@@ -34,7 +34,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         >
           {`
-            window.RTR_ACCESS_TOKEN = 'Wd1285b3297330ea1ae4731ab48fe16fe';
+            window.RTR_ACCESS_TOKEN = '${process.env.NEXT_PUBLIC_RTR_ACCESS_TOKEN ?? ""}';
             import('https://cdn.rtr-io.com/widgets.js');
           `}
         </Script>
