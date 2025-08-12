@@ -26,20 +26,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de">
-      <>
+      <head>
+        <Script id="rtr-access-token" strategy="beforeInteractive">
+          {`window.RTR_ACCESS_TOKEN = '${process.env.NEXT_PUBLIC_RTR_ACCESS_TOKEN ?? "REPLACE_ME"}';`}
+        </Script>
+
         <Script
+          id="rtr-widgets"
           src="https://cdn.rtr-io.com/widgets.js"
-          strategy="afterInteractive"
           type="module"
+          strategy="beforeInteractive"
         />
-        <Script
-          id="rtr-access-token"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `window.RTR_ACCESS_TOKEN = 'Wd1285b3297330ea1ae4731ab48fe16fe';`,
-          }}
-        />
-      </>
+      </head>
 
       <body>
         {children}
