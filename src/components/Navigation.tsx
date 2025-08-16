@@ -57,49 +57,21 @@ export default function NavigationDataNavigationData() {
 
             <div className="relative flex items-center space-x-12">
               {navigationData.map((item, index) => (
-                <div key={index}>
-                  {!item.subData && item.url ? (
+                <div key={index} className="relative flex items-center space-x-12">
+                  {item.subData?.map((subItem, subIndex) => (
                     <Link
-                      href={item.url}
+                      key={subIndex}
+                      href={subItem.url}
                       className="text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
                     >
-                      {item.icon && (
-                        <FontAwesomeIcon className="text-lg" icon={item.icon} />
-                      )}
-                      <span className="ml-2 mr-2">{item.name}</span>
+                      <div className="flex items-center justify-center">
+                        <span>Mieten in {subItem.name}</span>
+                        <span className="ml-2 text-primary inline-block transition-transform duration-300 group-hover:translate-x-1">
+                          <FontAwesomeIcon icon={faArrowRight} />
+                        </span>
+                      </div>
                     </Link>
-                  ) : (
-                    <div className="relative group">
-                      <div className="text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer">
-                        {item.icon && (
-                          <FontAwesomeIcon
-                            className="text-lg"
-                            icon={item.icon}
-                          />
-                        )}
-                        <span className="ml-2 mr-2">{item.name}</span>
-                        <FontAwesomeIcon icon={faChevronDown} />
-                      </div>
-                      <div className="fixed top-[96px] left-0 w-full bg-white shadow-lg opacity-0 translate-y-[-10px] invisible group-hover:opacity-100 group-hover:translate-y-0 group-hover:visible transition-all duration-500 ease-in-out z-40 pt-2 border-t border-gray-300">
-                        <div className="max-w-7xl mx-auto px-6 py-8 flex space-x-40 justify-end">
-                          {item.subData?.map((subItem, subIndex) => (
-                            <Link
-                              key={subIndex}
-                              href={subItem.url}
-                              className="text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
-                            >
-                              <div className="flex items-center justify-center">
-                                <span>{subItem.name}</span>
-                                <span className="ml-2 text-primary inline-block transition-transform duration-300 group-hover:translate-x-1">
-                                  <FontAwesomeIcon icon={faArrowRight} />
-                                </span>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                  ))}
                 </div>
               ))}
             </div>
@@ -133,7 +105,7 @@ export default function NavigationDataNavigationData() {
 
           {isMenuOpen && (
             <div className="fixed top-0 left-0 w-full h-full bg-white z-20 overflow-scroll">
-              <div className="px-4 text-center text-sm w-full flex items-center justify-center animate-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-primary bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2 lg:py-1">
+              <div className="px-4 text-center text-sm w-full md:flex items-center justify-center animate-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-primary bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2 lg:py-1 hidden">
                 <Image
                   className="mr-2"
                   src={`/images/bbi_logo.png`}
@@ -190,7 +162,7 @@ export default function NavigationDataNavigationData() {
                         </Link>
                       ) : (
                         <>
-                          <div className="text-xl mb-8">{item.name}</div>
+                          <div className="text-xl mb-8">Mieten in:</div>
                           <div className="pl-4 space-y-6 text-3xl flex flex-col">
                             {item.subData?.map((subItem, subIndex) => (
                               <Link
