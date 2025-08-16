@@ -26,6 +26,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: #ffa421;
+  --color-secondary: #1a1d2a;
+  --color-acent: #2781bb;
 }
 
 body {

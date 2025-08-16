@@ -116,9 +116,9 @@ export default function LocationPage({
                       </div>
 
                       <div className="w-full flex justify-end lg:justify-start">
-                        <span className="group text-xl mt-6 self-start group-hover:text-yellow-500 transition-all duration-300 transform">
+                        <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
                           Mehr Infos
-                          <span className="ml-2 text-yellow-500 inline-block group-hover:translate-x-1 transition-transform duration-300">
+                          <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
                             <FontAwesomeIcon icon={faArrowRight} />
                           </span>
                         </span>

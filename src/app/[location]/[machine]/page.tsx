@@ -266,7 +266,7 @@ export default function MachinePage({
 
                 <h2 className="text-3xl font-bold mb-6">Preise</h2>
                 <ul className="border border-gray-200 text-lg">
-                  <li className="bg-yellow-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
+                  <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>1 Tag</span>
                     <span className="font-bold">{effectivePrice.perDay} €</span>
                   </li>
@@ -276,7 +276,7 @@ export default function MachinePage({
                       {effectivePrice.perWeek} €
                     </span>
                   </li>
-                  <li className="bg-yellow-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
+                  <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>Monat</span>
                     <span className="font-bold">
                       {effectivePrice.perMonth} €

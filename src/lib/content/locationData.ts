@@ -28,7 +28,7 @@ export const locationData: LocationDataProps[] = [
   {
     name: "Bruchsal",
     slug: "bruchsal",
-    adress: "Wittenberger Weg 2, 68309 Mannheim",
+    adress: "Schlesierstr. 5, 76694 Forst",
     contact: {
       email: "info@bagger1.de",
     },

@@ -26,7 +26,7 @@ export default function NavigationDataNavigationData() {
   return (
     <>
       <nav className="bg-white fixed w-full top-0 z-50 border-b border-gray-300">
-        <div className="px-4 text-center text-sm w-full flex items-center justify-center bg-gradient-to-r from-yellow-500 via-yellow-300 to-yellow-500 animate-gradient-x py-2 lg:py-1">
+        <div className="hidden px-4 text-center text-sm w-full md:flex items-center justify-center bg-gradient-to-r bg-primary animate-gradient-x py-2 lg:py-1">
           <Image
             className="mr-2"
             src={`/images/bbi_logo.png`}
@@ -61,7 +61,7 @@ export default function NavigationDataNavigationData() {
                   {!item.subData && item.url ? (
                     <Link
                       href={item.url}
-                      className="text-gray-800 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
+                      className="text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
                     >
                       {item.icon && (
                         <FontAwesomeIcon className="text-lg" icon={item.icon} />
@@ -70,7 +70,7 @@ export default function NavigationDataNavigationData() {
                     </Link>
                   ) : (
                     <div className="relative group">
-                      <div className="text-gray-800 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer">
+                      <div className="text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer">
                         {item.icon && (
                           <FontAwesomeIcon
                             className="text-lg"
@@ -86,11 +86,11 @@ export default function NavigationDataNavigationData() {
                             <Link
                               key={subIndex}
                               href={subItem.url}
-                              className="text-gray-800 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
+                              className="text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
                             >
                               <div className="flex items-center justify-center">
                                 <span>{subItem.name}</span>
-                                <span className="ml-2 text-yellow-500 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                                <span className="ml-2 text-primary inline-block transition-transform duration-300 group-hover:translate-x-1">
                                   <FontAwesomeIcon icon={faArrowRight} />
                                 </span>
                               </div>
@@ -133,7 +133,7 @@ export default function NavigationDataNavigationData() {
 
           {isMenuOpen && (
             <div className="fixed top-0 left-0 w-full h-full bg-white z-20 overflow-scroll">
-              <div className="px-4 text-center text-sm w-full flex items-center justify-center animate-gradient bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-500 bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2 lg:py-1">
+              <div className="px-4 text-center text-sm w-full flex items-center justify-center animate-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-primary bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2 lg:py-1">
                 <Image
                   className="mr-2"
                   src={`/images/bbi_logo.png`}
@@ -182,7 +182,7 @@ export default function NavigationDataNavigationData() {
                         >
                           {item.icon && (
                             <FontAwesomeIcon
-                              className="mr-2 text-yellow-500 inline-block"
+                              className="mr-2 text-primary inline-block"
                               icon={item.icon}
                             />
                           )}
@@ -199,7 +199,7 @@ export default function NavigationDataNavigationData() {
                                 className="text-gray-800 cursor-pointer"
                               >
                                 <span>{subItem.name}</span>
-                                <span className="ml-2 text-yellow-500 inline-block">
+                                <span className="ml-2 text-primary inline-block">
                                   <FontAwesomeIcon icon={faArrowRight} />
                                 </span>
                               </Link>

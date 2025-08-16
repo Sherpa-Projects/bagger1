@@ -24,12 +24,12 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
           />
         </Link>
       </div>
-      <footer className="bg-black text-white">
-        <div className="h-12 w-full bg-[repeating-linear-gradient(45deg,_black_0px,_black_10px,_#facc15_10px,_#facc15_20px)]"></div>
+      <footer className="bg-secondary text-white">
+        <div className="h-12 w-full bg-[repeating-linear-gradient(45deg,_#1a1d2a_0px,_#1a1d2a_10px,_#ffa421_10px,_#ffa421_20px)]"></div>
         <div className="container py-18 mx-auto max-w-8xl px-6 lg:px-8  md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-0 lg:gap-x-32 gap-y-12 lg:gap-y-0">
             <div className="space-y-3 text-center lg:text-left flex items-center lg:items-start flex-col">
-              <p className="text-lg text-yellow-400">
+              <p className="text-lg text-primary">
                 {footerData.companyName}
               </p>
               {currentLocation && currentLocation.adress ? (
@@ -88,7 +88,7 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
             </div>
 
             <div className="space-y-3 text-center lg:text-left">
-              <p className="text-lg text-yellow-400">Standorte</p>
+              <p className="text-lg text-primary">Standorte</p>
               <ul className="space-y-3">
                 {locationData.map((location, index) => (
                   <li key={index}>
@@ -101,7 +101,7 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
             </div>
 
             <div className="space-y-3 text-center lg:text-left">
-              <p className="text-lg text-yellow-400">
+              <p className="text-lg text-primary">
                 {footerData.openingHours.title}
               </p>
               <ul className="space-y-3">

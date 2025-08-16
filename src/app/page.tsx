@@ -47,21 +47,21 @@ export default function Home() {
           backgroundImage: `url("/images/hero.jpg")`,
         }}
       >
-        <div className="absolute inset-0 bg-black/50 z-0" />
+        <div className="absolute inset-0 bg-secondary/50 z-0" />
 
         <div className="relative z-10 flex justify-center items-center mx-4 md:mx-0">
           <div className="text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
             <h1 className="text-6xl lg:text-9xl font-extrabold uppercase mb-6 lg:mb-8">
-              Bagger1
+              Bagger<span className="text-primary">1</span>
             </h1>
             <p className="text-4xl lg:text-6xl font-semibold leading-normal">
-              Die Nummer 1 für Baggervermietung
+              Ihre <span className="text-primary">Nummer 1</span> für Bagger & Baumaschinen
             </p>
           </div>
         </div>
       </div>
 
-      <main className="py-10 lg:py-16 px-4">
+      <main className="py-10 lg:py-16 px-4 text-secondary">
         <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
           <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-0 lg:pb-4 lg:leading-tight text-center">
             Bagger mieten in
@@ -71,10 +71,10 @@ export default function Home() {
               <Link
                 key={index}
                 href={location.slug}
-                className="bg-white group border border-gray-300 rounded-lg hover:shadow-md w-full py-3 text-center text-2xl font-semibold text-gray-800 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
+                className="bg-white group border border-gray-300 rounded-lg hover:shadow-md w-full py-3 text-center text-2xl font-semibold text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
               >
                 {location.name}
-                <span className="ml-2 text-yellow-500 inline-block transition-transform duration-300 group-hover:translate-x-1">
+                <span className="ml-2 text-primary inline-block transition-transform duration-300 group-hover:translate-x-1">
                   <FontAwesomeIcon icon={faArrowRight} />
                 </span>
               </Link>
