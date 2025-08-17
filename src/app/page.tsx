@@ -38,24 +38,25 @@ export default function Home() {
   return (
     <>
       <Navigation />
-      <div
-        className="mt-17 md:mt-24 relative h-48 lg:h-72 flex justify-center items-center bg-cover bg-center"
-        style={{
-          backgroundImage: 'url("/images/hero2.jpg")',
-        }}
-      >
-        <div className="absolute inset-0 bg-black/50 z-0" />
-
-        <div className="relative z-10 text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-4">
-          <p className="text-5xl lg:text-7xl font-semibold leading-normal">
-            Bagger1
-          </p>
-          <h1 className="text-2xl lg:text-5xl">
-            Ihre Nummer 1 für Baggervermietung
-          </h1>
+      <main>
+        <div
+          className="mt-17 md:mt-24 relative h-48 lg:h-72 flex justify-center items-center bg-cover bg-center"
+          style={{
+            backgroundImage: 'url("/images/hero2.jpg")',
+          }}
+        >
+          <div className="absolute inset-0 bg-black/50 z-0" />
+          <div className="relative z-10 text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-4">
+            <p className="text-5xl lg:text-7xl font-semibold leading-normal">
+              Bagger1
+            </p>
+            <h1 className="text-2xl lg:text-5xl">
+              Ihre Nummer 1 für Baggervermietung
+            </h1>
+          </div>
         </div>
-      </div>
-      <BranchCard />
+        <BranchCard />
+      </main>
       <Footer />
     </>
   );

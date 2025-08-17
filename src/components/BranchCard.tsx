@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
@@ -17,9 +17,9 @@ export default function BranchCard() {
   return (
     <div className="py-10 lg:py-20 px-4">
       <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-        <div className="grid lg:grid-cols-3 gap-4">
+        <div className="grid lg:grid-cols-3 gap-6">
           {locationData.map((loc, index) => (
-            <div key={index} className="border border-gray-300 p-6 rounded-md">
+            <div key={index} className="border border-gray-300 p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2">
               {/* {consent && ( */}
               <iframe
                 src={loc.map}
