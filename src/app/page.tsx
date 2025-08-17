@@ -1,10 +1,6 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { locationData } from "@/lib/content/locationData";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import BranchCard from "../components/BranchCard";
 
 export const generateMetadata = (): Metadata => {
@@ -43,19 +39,20 @@ export default function Home() {
     <>
       <Navigation />
       <div
-        className="lg:mt-24 hidden relative h-72 lg:flex justify-center items-center bg-cover bg-center"
+        className="mt-17 md:mt-24 relative h-48 lg:h-72 flex justify-center items-center bg-cover bg-center"
         style={{
           backgroundImage: 'url("/images/hero2.jpg")',
         }}
       >
         <div className="absolute inset-0 bg-black/50 z-0" />
 
-        <div className="relative z-10 flex justify-center items-center mx-4 md:mx-0">
-          <div className="text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
-            <h1 className="text-4xl lg:text-6xl font-semibold leading-normal">
-              Bagger1<br></br>Ihre Nummer 1 für Baggervermietung
-            </h1>
-          </div>
+        <div className="relative z-10 text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-4">
+          <p className="text-5xl lg:text-7xl font-semibold leading-normal">
+            Bagger1
+          </p>
+          <h1 className="text-2xl lg:text-5xl">
+            Ihre Nummer 1 für Baggervermietung
+          </h1>
         </div>
       </div>
       <BranchCard />
