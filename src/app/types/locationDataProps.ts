@@ -12,6 +12,7 @@ export type LocationDataProps = {
     url: string;
     alt: string;
   };
+  map: string;
 };
 
 import { locationData } from "@/lib/content/locationData";

@@ -73,7 +73,7 @@ export default function MachinePage({
   return (
     <>
       <Navigation />
-      <main className="pb-16 pt-40 px-4">
+      <main className="pb-16 pt-30 md:pt-36 lg:pt-40 px-4">
         <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
           <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl pb-0 lg:pb-4 lg:leading-tight text-center">
             {selectedMachine.name} in {currentLocation}

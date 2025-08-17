@@ -63,7 +63,7 @@ export default function LocationPage({
     <>
       <Navigation />
       <div
-        className="hidden relative h-90 bg-center bg-cover lg:flex justify-center items-center"
+        className="lg:mt-24 hidden relative h-72 bg-center bg-cover lg:flex justify-center items-center"
         style={{ backgroundImage: `url(${currentLocation.image.url})` }}
       >
         <div className="absolute inset-0 bg-black/30 z-0" />

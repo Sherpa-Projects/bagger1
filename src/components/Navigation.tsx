@@ -6,7 +6,6 @@ import Link from "next/link";
 import { navigationData } from "@/lib/content/navigationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChevronDown,
   faBars,
   faTimes,
   faArrowRight,
