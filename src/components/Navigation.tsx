@@ -48,7 +48,7 @@ export default function NavigationDataNavigationData() {
                   className="mx-auto"
                 />
                 <span className="font-oswald ml-2 text-lg">
-                  Bagger1
+                  Bagger<span className="text-primary">1</span>
                   <br />
                 </span>
               </div>
@@ -56,7 +56,10 @@ export default function NavigationDataNavigationData() {
 
             <div className="relative flex items-center space-x-12">
               {navigationData.map((item, index) => (
-                <div key={index} className="relative flex items-center space-x-12">
+                <div
+                  key={index}
+                  className="relative flex items-center space-x-12"
+                >
                   {item.subData?.map((subItem, subIndex) => (
                     <Link
                       key={subIndex}
@@ -86,10 +89,8 @@ export default function NavigationDataNavigationData() {
                   height={60}
                   className="mx-auto"
                 />
-                <span className="font-oswald ml-2 text-base/5">
-                  Baumaschinen-
-                  <br />
-                  verleih
+                <span className="font-oswald ml-2 text-xl">
+                  Bagger<span className="text-primary">1</span>
                 </span>
               </div>
             </Link>
@@ -124,10 +125,8 @@ export default function NavigationDataNavigationData() {
                     height={60}
                     className="mx-auto"
                   />
-                  <span className="font-oswald ml-2 text-base/5">
-                    Baumaschinen-
-                    <br />
-                    verleih
+                  <span className="font-oswald ml-2 text-xl">
+                    Bagger<span className="text-primary">1</span>
                   </span>
                 </div>
 
