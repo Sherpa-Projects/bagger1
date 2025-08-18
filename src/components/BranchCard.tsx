@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
@@ -14,20 +14,32 @@ import { locationData } from "@/lib/content/locationData";
 import Link from "next/link";
 
 export default function BranchCard() {
+  const [consent, setConsent] = useState(false);
+
+  useEffect(() => {
+    const savedConsent = localStorage.getItem("userConsent");
+    if (savedConsent === "true") {
+      setConsent(true);
+    }
+  }, []);
+
   return (
     <div className="py-10 lg:py-20 px-4">
       <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
         <div className="grid lg:grid-cols-3 gap-6">
           {locationData.map((loc, index) => (
-            <div key={index} className="border border-gray-300 p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2">
-              {/* {consent && ( */}
-              <iframe
-                src={loc.map}
-                className="w-full h-64 border-0 mb-4"
-                allowFullScreen
-                loading="lazy"
-              ></iframe>
-              {/* )} */}
+            <div
+              key={index}
+              className="border border-gray-300 p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2"
+            >
+              {consent && (
+                <iframe
+                  src={loc.map}
+                  className="w-full h-64 border-0 mb-4"
+                  allowFullScreen
+                  loading="lazy"
+                ></iframe>
+              )}
               <h3 className="text-xl font-semibold mb-4">{loc.name}</h3>
               <div className="mb-4">
                 <div className="flex items-center">

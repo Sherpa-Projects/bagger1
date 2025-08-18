@@ -76,7 +76,7 @@ export default function LocationPage({
         </div>
         <div className="py-10 lg:py-20 px-4">
           <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-            <ul className="grid md:grid-cols-2 gap-10">
+            <ul className="grid md:grid-cols-2 gap-6">
               {machines.map((machine, index) => {
                 const pricePerDay = getPricePerDayForLocation(
                   machine as Machine,
@@ -86,7 +86,7 @@ export default function LocationPage({
                   <li key={index}>
                     <Link
                       href={`/${location}/${machine.slug}`}
-                      className="group border border-gray-300 rounded-lg lg:hover:shadow-sm p-6 lg:p-4 grid lg:grid-cols-5 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
+                      className="group border border-gray-300 rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-5 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
                     >
                       <Image
                         className="rounded w-full lg:w-50 mb-6 lg:mb-0 lg:col-span-2"

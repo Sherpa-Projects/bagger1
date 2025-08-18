@@ -1,29 +1,27 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState, useEffect } from "react";
 import Script from "next/script";
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
-
-export const metadata = {
-  title: "Bagger1",
-  description: "Baumaschinen mieten in deiner Nähe.",
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-    ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
-  },
-  manifest: "/site.webmanifest",
-};
+import Consent from "@/components/Consent";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [consent, setConsent] = useState(false);
+
+  useEffect(() => {
+    const savedConsent = localStorage.getItem("userConsent");
+    if (savedConsent === "true") {
+      setConsent(true);
+    }
+  }, []);
+
   return (
     <html lang="de">
       <head>
@@ -34,13 +32,16 @@ export default function RootLayout({
           crossOrigin="anonymous"
         >
           {`
-            window.RTR_ACCESS_TOKEN = '${process.env.NEXT_PUBLIC_RTR_ACCESS_TOKEN ?? ""}';
+            window.RTR_ACCESS_TOKEN = '${
+              process.env.NEXT_PUBLIC_RTR_ACCESS_TOKEN ?? ""
+            }';
             import('https://cdn.rtr-io.com/widgets.js');
           `}
         </Script>
       </head>
 
       <body>
+        {!consent && <Consent />}
         {children}
         <rtr-checkout></rtr-checkout>
       </body>
