@@ -29,7 +29,7 @@ const Consent = () => {
 
   return (
     <div
-      className="text-white fixed bottom-0 left-0 right-0 py-4 lg:py-8 px-4 lg:px-6 flex flex-col md:flex-row justify-between items-center z-10 mx-4 lg:w-[80%] lg:mx-auto mb-6 border border-black/20 bg-black/80 backdrop-blur-xl rounded-lg shadow-lg"
+      className="text-white fixed bottom-0 left-0 right-0 py-4 lg:py-8 px-4 lg:px-6 flex flex-col md:flex-row justify-between items-center z-10 mx-4 lg:w-[80%] lg:mx-auto mb-6 border border-gray-600 bg-secondary/80 backdrop-blur-xl rounded-lg shadow-lg"
     >
       <div className="lg:max-w-6xl mx-auto">
         <p className="text-sm">
