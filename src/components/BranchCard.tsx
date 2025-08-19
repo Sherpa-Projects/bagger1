@@ -3,13 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import {
-  faLocationDot,
-  faPhone,
-  faClock,
-  faEnvelope,
-  faArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { locationData } from "@/lib/content/locationData";
 import Link from "next/link";
 
@@ -43,13 +38,19 @@ export default function BranchCard() {
               <h3 className="text-xl font-semibold mb-4">{loc.name}</h3>
               <div className="mb-4">
                 <div className="flex items-center">
-                  <FontAwesomeIcon className="mr-1.5" icon={faClock} />
+                  <FontAwesomeIcon
+                    className="mr-1.5 text-primary"
+                    icon={faClock}
+                  />
                   <p>Mo.-Fr.: 7.00-12.00 und 13.00-17.30 Uhr</p>
                 </div>
               </div>
               <div className="mb-4">
                 <div className="flex items-center">
-                  <FontAwesomeIcon className="mr-1.5" icon={faLocationDot} />
+                  <FontAwesomeIcon
+                    className="mr-1.5 text-primary"
+                    icon={faLocationDot}
+                  />
                   <a
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
                       loc.adress
@@ -64,7 +65,7 @@ export default function BranchCard() {
               </div>
               {/* <div>
                 <div className="flex items-center">
-                  <FontAwesomeIcon className="mr-1.5" icon={faPhone} />
+                  <FontAwesomeIcon className="mr-1.5 text-primary" icon={faPhone} />
                   <a
                     href={`tel:${loc.contact.telephone}`}
                     className="hover:underline"
@@ -75,7 +76,7 @@ export default function BranchCard() {
               </div> */}
               {/* <div>
                 <div className="flex items-center">
-                  <FontAwesomeIcon className="mr-1.5" icon={faEnvelope} />
+                  <FontAwesomeIcon className="mr-1.5 text-primary" icon={faEnvelope} />
                   <a
                     href={`tel:${loc.contact.email}`}
                     className="hover:underline"
