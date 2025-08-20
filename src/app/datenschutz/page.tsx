@@ -490,6 +490,62 @@ export default function Page() {
             Name, E-Mail-Adresse, Mietzeitraum) zur Bearbeitung der Anfrage
             sowie zur Vertragsdurchführung gemäß Art. 6 Abs. 1 lit. b DSGVO.
           </p>
+
+          <h3 className="text-lg lg:text-xl font-bold mb-2">Google Maps</h3>
+          <p>
+            Diese Website nutzt den Kartendienst <strong>Google Maps</strong>.
+            Anbieter ist die Google Ireland Limited, Gordon House, Barrow
+            Street, Dublin 4, Irland.
+          </p>
+          <p>
+            Zur Nutzung der Funktionen von Google Maps ist es erforderlich, Ihre
+            IP-Adresse zu speichern. Diese Informationen werden in der Regel an
+            einen Server von Google in den USA übertragen und dort gespeichert.
+            Der Anbieter dieser Seite hat keinen Einfluss auf diese
+            Datenübertragung.
+          </p>
+          <p>
+            <strong>Welche Daten werden verarbeitet?</strong> IP-Adresse,
+            Standortdaten (falls vom Nutzer freigegeben), Browser- und
+            Gerätedaten.
+          </p>
+          <p>
+            <strong>Zweck der Verarbeitung:</strong> Anzeige interaktiver Karten
+            und leichte Auffindbarkeit der von uns angegebenen Orte.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Die Verarbeitung erfolgt
+            ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit.
+            a DSGVO, § 25 Abs. 1 TDDDG). Diese Einwilligung erteilen Sie über
+            unseren Consent-Banner, bevor Google Maps geladen wird. Sie können
+            Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.
+          </p>
+          <p>
+            <strong>Datenübermittlung in Drittstaaten:</strong> Die Verarbeitung
+            kann auch auf Servern in den USA erfolgen. Für die USA liegt kein
+            Angemessenheitsbeschluss der EU-Kommission vor. Wir haben mit Google
+            Standardvertragsklauseln (SCC) abgeschlossen, die ein angemessenes
+            Datenschutzniveau gewährleisten sollen. Dennoch können Risiken nicht
+            ausgeschlossen werden (z. B. Zugriff durch US-Behörden).
+          </p>
+          <p>
+            <strong>Widerrufsmöglichkeit:</strong> Sie können die Einwilligung
+            jederzeit widerrufen, indem Sie die Einstellung im Consent-Banner
+            ändern. Bitte beachten Sie, dass die Kartenanzeige dann nicht mehr
+            funktioniert.
+          </p>
+          <p>
+            Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der{" "}
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline"
+            >
+              Datenschutzerklärung von Google
+            </a>
+            .
+          </p>
         </section>
 
         <div>
