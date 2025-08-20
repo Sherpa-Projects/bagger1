@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 
@@ -536,26 +537,26 @@ export default function Page() {
           </p>
           <p>
             Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der{" "}
-            <a
+            <Link
               href="https://policies.google.com/privacy"
               target="_blank"
               rel="noopener noreferrer"
               className="text-primary hover:underline"
             >
               Datenschutzerklärung von Google
-            </a>
+            </Link>
             .
           </p>
         </section>
 
         <div>
           Quelle:{" "}
-          <a
+          <Link
             className="text-primary hover:underline"
             href="https://www.e-recht24.de"
           >
             https://www.e-recht24.de
-          </a>
+          </Link>
         </div>
       </main>
       <Footer />
