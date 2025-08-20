@@ -540,7 +540,7 @@ export default function Page() {
               href="https://policies.google.com/privacy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary underline"
+              className="text-primary hover:underline"
             >
               Datenschutzerklärung von Google
             </a>
@@ -551,7 +551,7 @@ export default function Page() {
         <div>
           Quelle:{" "}
           <a
-            className="text-blue-500 hover:underline"
+            className="text-primary hover:underline"
             href="https://www.e-recht24.de"
           >
             https://www.e-recht24.de
