@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 const Consent = () => {
   const [consent, setConsent] = useState<boolean | null>(null);
@@ -37,18 +38,18 @@ const Consent = () => {
           werden. Rechtsgrundlage ist Ihre Einwilligung (Art. 6 Abs. 1 lit. a
           DSGVO). Sie können diese jederzeit widerrufen. Weitere Informationen
           finden Sie in unserer{" "}
-          <a href="/datenschutz" className="text-primary underline ml-1">
+          <Link href="/datenschutz" className="text-primary underline ml-1">
             Datenschutzerklärung
-          </a>{" "}
+          </Link>{" "}
           sowie in der{" "}
-          <a
+          <Link
             href="https://policies.google.com/privacy"
             target="_blank"
             rel="noopener noreferrer"
             className="text-primary underline"
           >
             Datenschutzerklärung von Google
-          </a>
+          </Link>
           .
         </p>
         <div className="mt-4 flex space-x-2">
