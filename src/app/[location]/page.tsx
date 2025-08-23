@@ -13,6 +13,7 @@ import { machineData } from "@/lib/content/machineData";
 import { isValidLocation } from "@/lib/utils";
 import { getPricePerDayForLocation } from "@/lib/utils";
 import { Machine } from "../types/Machine";
+import BranchCard from "@/components/BranchCard";
 
 export const metadata: Metadata = {
   title: "Baumaschinen mieten in deiner Nähe | Bagger1",
@@ -131,6 +132,7 @@ export default function LocationPage({
             </ul>
           </div>
         </div>
+        <BranchCard />
       </main>
 
       <Footer currentLocation={currentLocation} />
