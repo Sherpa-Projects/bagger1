@@ -62,7 +62,7 @@ export default function Home() {
           }}
         >
           <div className="absolute inset-0 bg-black/50 z-0" />
-          <div className="relative z-10 text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-4">
+          <div className="relative text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-4">
             <p className="text-5xl lg:text-7xl font-semibold leading-normal">
               Bagger1
             </p>
