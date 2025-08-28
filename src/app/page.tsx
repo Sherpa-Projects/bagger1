@@ -3,10 +3,6 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import BranchCard from "../components/BranchCard";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChartSimple,
-} from "@fortawesome/free-solid-svg-icons";
 import { BadgeEuro, Wrench, Zap, Target, ChartNoAxesCombined } from "lucide-react";
 
 export const generateMetadata = (): Metadata => {
