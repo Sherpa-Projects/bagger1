@@ -87,7 +87,7 @@ export default function LocationPage({
                   <li key={index}>
                     <Link
                       href={`/${location}/${machine.slug}`}
-                      className="group border border-gray-300 rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-5 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
+                      className="group border border-gray-300 bg-white rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-5 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
                     >
                       <Image
                         className="rounded w-full lg:w-50 mb-6 lg:mb-0 lg:col-span-2"

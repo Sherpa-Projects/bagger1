@@ -50,7 +50,7 @@ export default function BranchCard() {
           {locations.map((loc, index) => (
             <div
               key={index}
-              className={`border border-gray-300 p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2 ${
+              className={`border border-gray-300 bg-white p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2 ${
                 locations.length === 1 &&
                 "w-full lg:w-auto lg:min-w-lg xl:min-w-xl"
               }`}
