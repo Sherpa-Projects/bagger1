@@ -5,11 +5,9 @@ import Footer from "@/components/Footer";
 import BranchCard from "../components/BranchCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faChartLine,
   faChartSimple,
-  faCircleInfo,
 } from "@fortawesome/free-solid-svg-icons";
-import { BadgeEuro, Wrench, Truck, Zap, Target } from "lucide-react";
+import { BadgeEuro, Wrench, Zap, Target, ChartNoAxesCombined } from "lucide-react";
 
 export const generateMetadata = (): Metadata => {
   const title = "Baumaschinenverleih in deiner Gegend | Bagger1";
@@ -129,10 +127,7 @@ export default function Home() {
                     Landwirtschaft, Kommunalbetrieb oder sogar im Bergbau.
                   </p>
                   <div className="border border-yellow-300 p-6 lg:p-4 rounded-lg lg:text-sm flex flex-col md:flex-row gap-4 items-center bg-yellow-50 mt-4">
-                    <FontAwesomeIcon
-                      className="text-primary text-4xl md:text-lg"
-                      icon={faChartSimple}
-                    />
+                    <ChartNoAxesCombined size={40} className="text-primary" />
                     <p className="text-center md:text-left">
                       Bagger1 wächst: Als Teil eines jungen, dynamischen
                       Franchise-Netzwerks sind wir ständig dabei, neue Standorte
