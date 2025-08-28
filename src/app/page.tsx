@@ -4,13 +4,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import BranchCard from "../components/BranchCard";
-import {
-  BadgeEuro,
-  Truck,
-  Zap,
-  Shapes,
-  ChartNoAxesCombined,
-} from "lucide-react";
+import { BadgeEuro, Truck, Zap, Shapes } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -108,11 +102,13 @@ export default function Home() {
 
         <div className="py-10 lg:py-20 px-4">
           <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid lg:grid-cols-2 gap-16">
               <div>
                 <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight">
-                  Faire Preise. Keine versteckten Kosten. Rundum-Service von
-                  Profis.
+                  Faire Preise. Keine versteckten Kosten.{" "}
+                  <span className="text-primary">
+                    Rundum-Service von Profis.
+                  </span>
                 </h2>
                 <div className="space-y-4 text-lg">
                   <p>
@@ -139,43 +135,43 @@ export default function Home() {
               <div className="mx-auto">
                 <Image
                   className="rounded-lg"
-                  src="/images/claim.jpg"
+                  src="/images/claim.png"
                   alt=""
-                  width={400}
-                  height={400}
+                  width={500}
+                  height={500}
                 />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="py-10 lg:py-20 px-4">
-          <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-            <div className="border border-gray-300 bg-white p-6 rounded-lg">
-              <div className="flex space-x-2 justify-center items-center pb-4 lg:pb-6">
-                <ChartNoAxesCombined size={40} className="text-primary" />
-                <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl lg:leading-tight text-center">
-                  Bagger1 wächst
-                </h2>
-              </div>
-
-              <p className="text-center text-lg">
-                Als Teil eines jungen, dynamischen Franchise-Netzwerks sind wir
-                ständig dabei, neue Standorte zu erschließen und noch näher bei
-                unseren Kunden zu sein.
-              </p>
-              <div className="flex justify-center items-center">
-                <Link href="/" className="group">
-                  <div className="w-full flex justify-end lg:justify-start">
-                    <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
-                      Mehr erfahren
-                      <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
-                        <FontAwesomeIcon icon={faArrowRight} />
-                      </span>
+        <div
+          className="mt-17 md:mt-24 relative py-12 flex justify-center items-center bg-cover bg-center my-20"
+          style={{
+            backgroundImage: 'url("/images/team.jpg")',
+          }}
+        >
+          <div className="absolute inset-0 bg-black/70 z-0" />
+          <div className="relative z-10 text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-6">
+            <h2 className="text-4xl lg:text-6xl font-semibold leading-normal">
+              Bagger1 wächst
+            </h2>
+            <p className="text-center text-xl lg:text-3xl max-w-3xl leading-normal lg:leading-snug">
+              Als Teil eines jungen, dynamischen Franchise-Netzwerks sind wir
+              ständig dabei, neue Standorte zu erschließen und noch näher bei
+              unseren Kunden zu sein.
+            </p>
+            <div className="flex justify-center items-center">
+              <Link href="/" className="group">
+                <div className="w-full flex justify-end lg:justify-start py-3 px-4 bg-white/20 rounded-xl border border-white/30 backdrop-blur-md shadow-md">
+                  <span className="group text-xl self-start group-hover:text-primary transition-all duration-300 transform">
+                    Mehr erfahren
+                    <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
+                      <FontAwesomeIcon icon={faArrowRight} />
                     </span>
-                  </div>
-                </Link>
-              </div>
+                  </span>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
