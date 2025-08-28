@@ -7,7 +7,7 @@ import {
   BadgeEuro,
   Wrench,
   Zap,
-  Target,
+  Package,
   ChartNoAxesCombined,
 } from "lucide-react";
 
@@ -51,7 +51,7 @@ export default function Home() {
     { label: "Faire Preise", Icon: BadgeEuro },
     { label: "Rundum‑Service", Icon: Wrench },
     { label: "Schnell & zuverlässig", Icon: Zap },
-    { label: "Individuelle Lösungen", Icon: Target },
+    { label: "Breites Sortiment", Icon: Package },
   ];
 
   return (
