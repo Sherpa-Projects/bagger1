@@ -5,9 +5,9 @@ import Footer from "@/components/Footer";
 import BranchCard from "../components/BranchCard";
 import {
   BadgeEuro,
-  Wrench,
+  Truck,
   Zap,
-  Package,
+  Shapes,
   ChartNoAxesCombined,
 } from "lucide-react";
 
@@ -49,9 +49,9 @@ export default function Home() {
     sr?: string;
   }[] = [
     { label: "Faire Preise", Icon: BadgeEuro },
-    { label: "Rundum‑Service", Icon: Wrench },
+    { label: "Rundum‑Service", Icon: Truck },
     { label: "Schnell & zuverlässig", Icon: Zap },
-    { label: "Breites Sortiment", Icon: Package },
+    { label: "Breites Sortiment", Icon: Shapes },
   ];
 
   return (
