@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import BranchCard from "../components/BranchCard";
@@ -10,6 +11,8 @@ import {
   Shapes,
   ChartNoAxesCombined,
 } from "lucide-react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export const generateMetadata = (): Metadata => {
   const title = "Baumaschinenverleih in deiner Gegend | Bagger1";
@@ -78,6 +81,9 @@ export default function Home() {
 
         <div className="py-10 px-4">
           <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+            <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
+              Unser versprechen an Sie
+            </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {items.map(({ label, Icon }, i) => (
                 <div
@@ -128,14 +134,6 @@ export default function Home() {
                     zugeschnitten auf die Bedürfnisse Ihrer Branche – ob
                     Landwirtschaft, Kommunalbetrieb oder sogar im Bergbau.
                   </p>
-                  <div className="border border-yellow-300 p-6 lg:p-4 rounded-lg lg:text-sm flex flex-col md:flex-row gap-4 items-center bg-yellow-50 mt-4">
-                    <ChartNoAxesCombined size={40} className="text-primary" />
-                    <p className="text-center md:text-left">
-                      Bagger1 wächst: Als Teil eines jungen, dynamischen
-                      Franchise-Netzwerks sind wir ständig dabei, neue Standorte
-                      zu erschließen und noch näher bei unseren Kunden zu sein.
-                    </p>
-                  </div>
                 </div>
               </div>
               <div className="mx-auto">
@@ -146,6 +144,37 @@ export default function Home() {
                   width={400}
                   height={400}
                 />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="py-10 lg:py-20 px-4">
+          <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+            <div className="border border-gray-300 bg-white p-6 rounded-lg">
+              <div className="flex space-x-2 justify-center items-center pb-4 lg:pb-6">
+                <ChartNoAxesCombined size={40} className="text-primary" />
+                <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl lg:leading-tight text-center">
+                  Bagger1 wächst
+                </h2>
+              </div>
+
+              <p className="text-center text-lg">
+                Als Teil eines jungen, dynamischen Franchise-Netzwerks sind wir
+                ständig dabei, neue Standorte zu erschließen und noch näher bei
+                unseren Kunden zu sein.
+              </p>
+              <div className="flex justify-center items-center">
+                <Link href="/" className="group">
+                  <div className="w-full flex justify-end lg:justify-start">
+                    <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
+                      Mehr erfahren
+                      <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
+                        <FontAwesomeIcon icon={faArrowRight} />
+                      </span>
+                    </span>
+                  </div>
+                </Link>
               </div>
             </div>
           </div>
