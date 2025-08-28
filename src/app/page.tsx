@@ -3,7 +3,13 @@ import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import BranchCard from "../components/BranchCard";
-import { BadgeEuro, Wrench, Zap, Target, ChartNoAxesCombined } from "lucide-react";
+import {
+  BadgeEuro,
+  Wrench,
+  Zap,
+  Target,
+  ChartNoAxesCombined,
+} from "lucide-react";
 
 export const generateMetadata = (): Metadata => {
   const title = "Baumaschinenverleih in deiner Gegend | Bagger1";
@@ -39,7 +45,7 @@ export const generateMetadata = (): Metadata => {
 export default function Home() {
   const items: {
     label: string;
-    Icon: React.ComponentType<any>;
+    Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
     sr?: string;
   }[] = [
     { label: "Faire Preise", Icon: BadgeEuro },
