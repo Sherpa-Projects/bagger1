@@ -152,7 +152,7 @@ export default function Home() {
           }}
         >
           <div className="absolute inset-0 bg-black/70 z-0" />
-          <div className="relative z-10 text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-6">
+          <div className="relative text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-6">
             <h2 className="text-4xl lg:text-6xl font-semibold leading-normal">
               Bagger1 wächst
             </h2>
