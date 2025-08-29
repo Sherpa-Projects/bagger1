@@ -76,7 +76,7 @@ export default function Home() {
         <div className="py-10 px-4">
           <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
             <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
-              Unser versprechen an Sie
+              Unser Versprechen an Sie
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {items.map(({ label, Icon }, i) => (
