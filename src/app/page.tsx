@@ -104,8 +104,10 @@ export default function Home() {
           <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
             <div className="grid lg:grid-cols-2 gap-16">
               <div>
-                <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight">
-                  Faire Preise. Keine versteckten Kosten.{" "}
+                <h2 className="font-bold text-3xl md:text-4xl pb-4 lg:pb-6 lg:leading-tight">
+                  Faire Preise.
+                  <br />
+                  Keine versteckten Kosten. <br />
                   <span className="text-primary">
                     Rundum-Service von Profis.
                   </span>
