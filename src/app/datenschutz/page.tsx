@@ -492,6 +492,7 @@ export default function Page() {
             sowie zur Vertragsdurchführung gemäß Art. 6 Abs. 1 lit. b DSGVO.
           </p>
 
+          <div></div>
           <h3 className="text-lg lg:text-xl font-bold mb-2">Google Maps</h3>
           <p>
             Diese Website nutzt den Kartendienst <strong>Google Maps</strong>.
@@ -544,6 +545,61 @@ export default function Page() {
               className="text-primary hover:underline"
             >
               Datenschutzerklärung von Google
+            </Link>
+            .
+          </p>
+
+          <h3 className="text-lg lg:text-xl font-bold mb-2">Stripe</h3>
+          <p>
+            Diese Website nutzt für die Zahlungsabwicklung und die Darstellung
+            des Warenkorbs den Zahlungsdienstleister <strong>Stripe</strong>.
+            Anbieter ist die Stripe Payments Europe, Ltd., 1 Grand Canal Street
+            Lower, Grand Canal Dock, Dublin, Irland. Für bestimmte
+            Verarbeitungen kann auch die Stripe, Inc., 354 Oyster Point
+            Boulevard, South San Francisco, CA 94080, USA, verantwortlich sein.
+          </p>
+          <p>
+            Stripe ermöglicht uns die sichere Annahme von Zahlungen über unsere
+            Website sowie die Bereitstellung von Buchungs- und
+            Checkout-Funktionen. Dabei werden personenbezogene Daten wie
+            z.&nbsp;B. Name, E-Mail-Adresse, Zahlungsinformationen (z.&nbsp;B.
+            Kreditkartendaten), Rechnungs- und Lieferadresse sowie IP-Adresse
+            verarbeitet. Stripe kann zudem Cookies setzen, um den Bezahlvorgang
+            technisch zu ermöglichen.
+          </p>
+          <p>
+            <strong>Zweck der Verarbeitung:</strong> Abwicklung von Zahlungen,
+            Betrugsprävention, technische Bereitstellung des Warenkorbs und
+            Sicherstellung der Funktionsfähigkeit unseres Buchungssystems.
+          </p>
+          <p>
+            <strong>Rechtsgrundlage:</strong> Die Verarbeitung ist zur Erfüllung
+            des Vertrags (Art. 6 Abs. 1 lit. b DSGVO) erforderlich, da ohne
+            Stripe keine Zahlungen und Buchungen abgewickelt werden können.
+            Soweit Stripe Cookies oder ähnliche Technologien für die Funktion
+            einsetzt, stützen wir dies auf Art. 6 Abs. 1 lit. f DSGVO
+            (berechtigtes Interesse an einem funktionierenden, sicheren
+            Bezahlvorgang).
+          </p>
+          <p>
+            <strong>Datenübermittlung in Drittstaaten:</strong> Stripe kann
+            Daten auch in die USA übertragen. Für die USA liegt kein
+            Angemessenheitsbeschluss der EU-Kommission vor. Stripe stützt
+            Übermittlungen jedoch auf die sog. Standardvertragsklauseln (SCC),
+            um ein angemessenes Datenschutzniveau sicherzustellen. Dennoch
+            können Risiken nicht ausgeschlossen werden (z.&nbsp;B. Zugriff durch
+            US-Behörden).
+          </p>
+          <p>
+            Weitere Informationen zur Datenverarbeitung durch Stripe finden Sie
+            in der{" "}
+            <Link
+              href="https://stripe.com/privacy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:underline"
+            >
+              Datenschutzerklärung von Stripe
             </Link>
             .
           </p>
