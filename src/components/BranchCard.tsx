@@ -8,10 +8,21 @@ import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { locationData } from "@/lib/content/locationData";
 import { LocationDataProps } from "@/app/types/locationDataProps";
 import Link from "next/link";
+import { ConsentLevel, readConsent } from "@/lib/consent";
 
 export default function BranchCard() {
-  const [consent, setConsent] = useState(false);
   const [locations, setLocations] = useState<LocationDataProps[]>([]);
+  const [level, setLevel] = useState<ConsentLevel>("unset");
+
+  useEffect(() => {
+    setLevel(readConsent());
+    // Reagiere live, wenn sich Consent in einem anderen Tab ändert
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === "consentLevel") setLevel(readConsent());
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -22,13 +33,6 @@ export default function BranchCard() {
       setLocations(filteredLocation);
     } else {
       setLocations(locationData);
-    }
-  }, []);
-
-  useEffect(() => {
-    const savedConsent = localStorage.getItem("userConsent");
-    if (savedConsent === "true") {
-      setConsent(true);
     }
   }, []);
 
@@ -55,7 +59,7 @@ export default function BranchCard() {
                 "w-full lg:w-auto lg:min-w-lg xl:min-w-xl"
               }`}
             >
-              {consent && (
+              {level === "all" && (
                 <iframe
                   src={loc.map}
                   className="w-full h-64 border-0 mb-4"
