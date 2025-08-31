@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import { machineData } from "@/lib/content/machineData";
 import { isValidLocation, type Location } from "@/lib/utils";
 import type { Machine } from "@/app/types/Machine";
+import BookingWidget from "@/components/BookingWidget";
 
 export const metadata: Metadata = {
   title: "Baumaschine mieten – Modelle & Preise | Bagger1",
@@ -80,7 +81,6 @@ export default function MachinePage({
           </h1>
 
           <div className="mt-8 grid lg:grid-cols-3 gap-10 lg:gap-0 mx-auto lg:px-8">
-            {/* Linke Spalte: Bild + Inhalte */}
             <div className="w-full max-w-lg mx-auto lg:mx-0 lg:p-6 lg:col-span-2 order-2 lg:order-1 flex lg:block flex-col">
               {selectedMachine.image?.url ? (
                 <Image
@@ -257,12 +257,7 @@ export default function MachinePage({
 
             <div className="order-1 lg:order-2 lg:col-span-1 flex justify-center rounded-xl lg:p-6">
               <div className="flex flex-col space-y-12">
-                {primaryArticle.articleId && (
-                  <rtr-article-booking
-                    article-id={primaryArticle.articleId}
-                    view="calendar"
-                  />
-                )}
+                <BookingWidget articleId={primaryArticle.articleId} />
 
                 <h2 className="text-3xl font-bold mb-6">Preise</h2>
                 <ul className="border border-gray-200 text-lg">
