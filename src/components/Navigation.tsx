@@ -10,6 +10,7 @@ import {
   faTimes,
   faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
+import { Handshake } from "lucide-react";
 
 export default function NavigationDataNavigationData() {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -38,21 +39,31 @@ export default function NavigationDataNavigationData() {
         </div>
         <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-1">
           <div className="hidden lg:flex justify-between items-center">
-            <Link href="/">
-              <div className="flex items-center lg:transform lg:transition-transform lg:duration-300 ease-in-out lg:hover:scale-110">
-                <Image
-                  src={`/images/logo_neu.png`}
-                  alt="Bagger1 Logo"
-                  width={50}
-                  height={50}
-                  className="mx-auto"
-                />
-                <span className="font-oswald ml-2 text-lg">
-                  Bagger<span className="text-primary">1</span>
-                  <br />
-                </span>
-              </div>
-            </Link>
+            <div className="flex items-center gap-6">
+              <Link href="/">
+                <div className="flex items-center lg:transform lg:transition-transform lg:duration-300 ease-in-out lg:hover:scale-110">
+                  <Image
+                    src={`/images/logo_neu.png`}
+                    alt="Bagger1 Logo"
+                    width={50}
+                    height={50}
+                    className="mx-auto"
+                  />
+                  <span className="font-oswald ml-2 text-lg">
+                    Bagger<span className="text-primary">1</span>
+                    <br />
+                  </span>
+                </div>
+              </Link>
+              <div className="border-l border-gray-300 h-6" />
+              <Link
+                className="flex items-center text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
+                href="/"
+              >
+                <Handshake className="w-5 h-5 text-primary mr-2" />
+                Partner werden
+              </Link>
+            </div>
 
             <div className="relative flex items-center space-x-12">
               {navigationData.map((item, index) => (
