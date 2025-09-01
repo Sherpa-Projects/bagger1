@@ -164,7 +164,7 @@ export default function Home() {
               unseren Kunden zu sein.
             </p>
             <div className="flex justify-center items-center">
-              <Link href="/" className="group">
+              <Link href="/partner" className="group">
                 <div className="w-full flex justify-end lg:justify-start py-3 px-4 bg-white/20 rounded-xl border border-white/30 backdrop-blur-md shadow-md">
                   <span className="group text-xl self-start group-hover:text-primary transition-all duration-300 transform">
                     Mehr erfahren

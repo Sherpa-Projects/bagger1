@@ -58,7 +58,7 @@ export default function NavigationDataNavigationData() {
               <div className="border-l border-gray-300 h-6" />
               <Link
                 className="flex items-center text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
-                href="/"
+                href="/partner"
               >
                 <Handshake className="w-5 h-5 text-primary mr-2" />
                 Partner werden
