@@ -78,7 +78,7 @@ export default function PartnerPage() {
           </div>
         </div>
         <div className="py-10 lg:py-20 px-4">
-          <div className="container mx-auto md:max-w-4xl grid lg:grid-cols-6 lg:gap-20">
+          <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl grid lg:grid-cols-6 lg:gap-20">
             <div className="lg:col-span-4">
               <h2 className="font-bold text-3xl md:text-4xl pb-4 lg:pb-6 lg:leading-tight">
                 Flexibler Nebenjob.
@@ -105,7 +105,7 @@ export default function PartnerPage() {
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary mr-2">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </div>
-                      <p className="text-base">{text}</p>
+                      <p className="text-lg">{text}</p>
                     </li>
                   ))}
                 </ul>
@@ -118,7 +118,7 @@ export default function PartnerPage() {
                       <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary mr-2">
                         <Icon className="h-5 w-5" aria-hidden="true" />
                       </div>
-                      <p className="text-base">{text}</p>
+                      <p className="text-lg">{text}</p>
                     </li>
                   ))}
                 </ul>
