@@ -110,7 +110,7 @@ export default function Home() {
                 <Image
                   className="rounded-lg"
                   src="/images/claim.png"
-                  alt=""
+                  alt="Freundlicher Bauarbeiter in orangefarbener Weste und Helm steht auf einer Baustelle vor einem Bagger, lächelt und zeigt Daumen hoch neben einem Arbeitstisch mit Werkzeugen und Bauplan."
                   width={500}
                   height={500}
                 />
