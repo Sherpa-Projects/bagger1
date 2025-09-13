@@ -24,7 +24,7 @@ export default function CookieBanner() {
   const allowEssential = () => {
     writeConsent("essential");
     setConsent("essential");
-    location.reload(); 
+    location.reload();
   };
 
   const allowAll = () => {
@@ -39,15 +39,23 @@ export default function CookieBanner() {
         <p className="text-sm space-y-4">
           <span className="block">
             Für die Funktion unseres <strong>Warenkorbs und der Buchung</strong>{" "}
-            setzen wir
-            <strong> Stripe</strong> ein. Die eingesetzten Cookies und Skripte
-            sind technisch notwendig und werden immer geladen, da sonst keine
-            Buchung möglich ist (Art. 6 Abs. 1 lit. b DSGVO). Weitere
-            Informationen finden Sie in unserer{" "}
+            setzen wir <strong>Rentware</strong> mit <strong> Stripe</strong>{" "}
+            ein. Die eingesetzten Cookies und Skripte sind technisch notwendig
+            und werden immer geladen, da sonst keine Buchung möglich ist (Art. 6
+            Abs. 1 lit. b DSGVO). Weitere Informationen finden Sie in unserer{" "}
             <Link href="/datenschutz" className="text-primary underline">
               Datenschutzerklärung
             </Link>{" "}
             sowie in der{" "}
+            <Link
+              href="https://rentware.com/datenschutz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary underline"
+            >
+              Datenschutzerklärung von Rentware
+            </Link>
+            {" "}und der{" "}
             <Link
               href="https://stripe.com/privacy"
               target="_blank"
