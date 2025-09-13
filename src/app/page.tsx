@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 export const generateMetadata = (): Metadata => {
-  const title = "Baumaschinenverleih in deiner Gegend | Bagger1";
+  const title = "Ihre Nummer 1 für Bagger und Baumaschinen | Bagger1";
   const description =
     "Finde verfügbare Bagger und andere Baumaschinen in deiner Nähe. Flexible Zeiträume, transparente Preise und schnelle Buchung online.";
   const imageUrl = "/images/meta.png";
@@ -67,36 +67,8 @@ export default function Home() {
               Bagger1
             </p>
             <h1 className="text-2xl lg:text-5xl">
-              Ihre Nummer 1 für Bagger und Maschinen
+              Ihre Nummer 1 für Bagger und Baumaschinen
             </h1>
-          </div>
-        </div>
-        <BranchCard />
-
-        <div className="py-10 px-4">
-          <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-            <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
-              Unser Versprechen an Sie
-            </h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {items.map(({ label, Icon }, i) => (
-                <div
-                  key={i}
-                  className="relative overflow-hidden rounded-2xl border border-gray-300 bg-white p-6"
-                >
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary">
-                      <Icon className="h-6 w-6" aria-hidden="true" />
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-lg font-semibold leading-tight">
-                        {label}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
 
@@ -146,6 +118,35 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <div className="py-10 px-4">
+          <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+            <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
+              Unser Versprechen an Sie
+            </h2>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {items.map(({ label, Icon }, i) => (
+                <div
+                  key={i}
+                  className="relative overflow-hidden rounded-2xl border border-gray-300 bg-white p-6"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary">
+                      <Icon className="h-6 w-6" aria-hidden="true" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-lg font-semibold leading-tight">
+                        {label}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <BranchCard />
 
         <div
           className="mt-17 md:mt-24 relative py-12 flex justify-center items-center bg-cover bg-center my-20"
