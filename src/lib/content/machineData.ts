@@ -14,7 +14,7 @@ export const machineData: Machine[] = [
     content: {
       title: "",
       description: "",
-      dataSheet: {
+      specifications: {
         dimensions: {
           width: "980/1 350 mm",
           height: "2 390 mm",
@@ -52,7 +52,7 @@ export const machineData: Machine[] = [
     content: {
       title: "",
       description: "",
-      dataSheet: {
+      specifications: {
         dimensions: {
           width: "980/1 350 mm",
           height: "2 390 mm",
@@ -90,7 +90,7 @@ export const machineData: Machine[] = [
     content: {
       title: "",
       description: "",
-      dataSheet: {
+      specifications: {
         dimensions: {
           width: "980/1 350 mm",
           height: "2 390 mm",
@@ -128,7 +128,7 @@ export const machineData: Machine[] = [
     content: {
       title: "",
       description: "",
-      dataSheet: {
+      specifications: {
         dimensions: {
           width: "980/1 350 mm",
           height: "2 390 mm",
@@ -166,7 +166,7 @@ export const machineData: Machine[] = [
     content: {
       title: "",
       description: "",
-      dataSheet: {
+      specifications: {
         dimensions: {
           width: "980/1 350 mm",
           height: "2 390 mm",
@@ -204,7 +204,7 @@ export const machineData: Machine[] = [
     content: {
       title: "",
       description: "",
-      dataSheet: {
+      specifications: {
         dimensions: {
           width: "980/1 350 mm",
           height: "2 390 mm",
@@ -242,7 +242,7 @@ export const machineData: Machine[] = [
     content: {
       title: "",
       description: "",
-      dataSheet: {
+      specifications: {
         dimensions: {
           width: "980/1 350 mm",
           height: "2 390 mm",
@@ -282,7 +282,7 @@ export const machineData: Machine[] = [
   //   content: {
   //     title: "",
   //     description: "",
-  //     dataSheet: {
+  //     specifications: {
   //       dimensions: {
   //         width: "",
   //         length: "",
@@ -313,7 +313,7 @@ export const machineData: Machine[] = [
   //   content: {
   //     title: "",
   //     description: "",
-  //     dataSheet: {
+  //     specifications: {
   //       dimensions: {
   //         width: "",
   //         length: "",
@@ -344,7 +344,7 @@ export const machineData: Machine[] = [
   //   content: {
   //     title: "",
   //     description: "",
-  //     dataSheet: {
+  //     specifications: {
   //       dimensions: {
   //         width: "",
   //         length: "",
@@ -375,7 +375,7 @@ export const machineData: Machine[] = [
   //   content: {
   //     title: "",
   //     description: "",
-  //     dataSheet: {
+  //     specifications: {
   //       dimensions: {
   //         width: "",
   //         length: "",
@@ -406,7 +406,7 @@ export const machineData: Machine[] = [
   //   content: {
   //     title: "",
   //     description: "",
-  //     dataSheet: {
+  //     specifications: {
   //       dimensions: {
   //         width: "",
   //         length: "",

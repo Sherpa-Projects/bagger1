@@ -9,15 +9,14 @@ import { machineData } from "@/lib/content/machineData";
 import { isValidLocation, type Location } from "@/lib/utils";
 import type { Machine } from "@/app/types/Machine";
 import BookingWidget from "@/components/BookingWidget";
+import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
 
 export const metadata: Metadata = {
-  title: "Baumaschine mieten – Modelle & Preise | Bagger1",
-  description:
-    "Alle Infos zur ausgewählten Baumaschine: Modell, Tagespreis und Verfügbarkeit an deinem Standort. Jetzt direkt online mieten bei Bagger1.",
+  title: `${machinePageData.seo.metaTitle}`,
+  description: `${machinePageData.seo.metaDescription}`,
   openGraph: {
-    title: "Baumaschine mieten – Modelle & Preise | Bagger1",
-    description:
-      "Alle Details zu dieser Baumaschine findest du hier: Technische Daten, Preise und Verfügbarkeit. Jetzt unverbindlich online anfragen.",
+    title: `${machinePageData.seo.metaTitle}`,
+    description: `${machinePageData.seo.metaDescription}`,
     url: "https://bagger1.de",
     siteName: "Bagger1",
     images: [
@@ -31,9 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Baumaschine mieten bei Bagger1",
-    description:
-      "Finde Preise und Infos zu deiner Wunschmaschine – schnell & einfach.",
+    title: `${machinePageData.seo.metaTitle}`,
+    description: `${machinePageData.seo.metaDescription}`,
     images: ["/images/meta.png"],
   },
   robots: "index, follow",
@@ -45,6 +43,7 @@ export default function MachinePage({
   params: Promise<{ location: string; machine: string }>;
 }) {
   const { location: rawLocation, machine: machineSlug } = use(params);
+  const { timeTable } = machinePageData;
 
   if (!isValidLocation(rawLocation)) return notFound();
   const location = rawLocation as Location;
@@ -107,7 +106,7 @@ export default function MachinePage({
                     <details className="group rounded-xl border border-gray-200 bg-white">
                       <summary className="flex items-center justify-between cursor-pointer select-none px-4 py-3">
                         <span className="text-xl font-semibold">
-                          Datenblatt
+                          {machinePageData.specifications.title}
                         </span>
                         <svg
                           className="h-5 w-5 transition-transform duration-300 group-open:rotate-180"
@@ -123,58 +122,78 @@ export default function MachinePage({
                         <div className="mb-4">
                           Modell: {selectedMachine.model}
                         </div>
-                        {selectedMachine.content.dataSheet && (
+                        {selectedMachine.content.specifications && (
                           <div className="space-y-4">
-                            {selectedMachine.content.dataSheet.dimensions && (
+                            {selectedMachine.content.specifications.dimensions && (
                               <div>
                                 <h4 className="font-bold">Bemessung:</h4>
                                 <ul>
-                                  {selectedMachine.content.dataSheet.dimensions
+                                  {selectedMachine.content.specifications.dimensions
                                     .width && (
                                     <li>
-                                      Gesamtbreite:{" "}
                                       {
-                                        selectedMachine.content.dataSheet
+                                        machinePageData.specifications.dimensions
+                                          .width
+                                      }
+                                      :{" "}
+                                      {
+                                        selectedMachine.content.specifications
                                           .dimensions.width
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.dataSheet.dimensions
+                                  {selectedMachine.content.specifications.dimensions
                                     .length && (
                                     <li>
-                                      Gesamtlänge:{" "}
                                       {
-                                        selectedMachine.content.dataSheet
+                                        machinePageData.specifications.dimensions
+                                          .length
+                                      }
+                                      :{" "}
+                                      {
+                                        selectedMachine.content.specifications
                                           .dimensions.length
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.dataSheet.dimensions
+                                  {selectedMachine.content.specifications.dimensions
                                     .height && (
                                     <li>
-                                      Gesamthöhe:{" "}
                                       {
-                                        selectedMachine.content.dataSheet
+                                        machinePageData.specifications.dimensions
+                                          .height
+                                      }
+                                      :{" "}
+                                      {
+                                        selectedMachine.content.specifications
                                           .dimensions.height
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.dataSheet.dimensions
+                                  {selectedMachine.content.specifications.dimensions
                                     .weight && (
                                     <li>
-                                      Betriebsgewicht:{" "}
                                       {
-                                        selectedMachine.content.dataSheet
+                                        machinePageData.specifications.dimensions
+                                          .weight
+                                      }
+                                      :{" "}
+                                      {
+                                        selectedMachine.content.specifications
                                           .dimensions.weight
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.dataSheet.dimensions
+                                  {selectedMachine.content.specifications.dimensions
                                     .volume && (
                                     <li>
-                                      Löffelvolumen:{" "}
                                       {
-                                        selectedMachine.content.dataSheet
+                                        machinePageData.specifications.dimensions
+                                          .volume
+                                      }
+                                      :{" "}
+                                      {
+                                        selectedMachine.content.specifications
                                           .dimensions.volume
                                       }
                                     </li>
@@ -183,62 +202,65 @@ export default function MachinePage({
                               </div>
                             )}
 
-                            {selectedMachine.content.dataSheet.power && (
+                            {selectedMachine.content.specifications.power && (
                               <p>
-                                Leistung:{" "}
-                                {selectedMachine.content.dataSheet.power}
+                                {machinePageData.specifications.power.title}:{" "}
+                                {selectedMachine.content.specifications.power}
                               </p>
                             )}
-                            {selectedMachine.content.dataSheet.workingRange && (
+                            {selectedMachine.content.specifications.workingRange && (
                               <div>
-                                <h4 className="font-bold">Arbeitsbereich:</h4>
+                                <h4 className="font-bold">
+                                  {machinePageData.specifications.workingRange.title}
+                                  :
+                                </h4>
                                 <ul>
-                                  {selectedMachine.content.dataSheet
+                                  {selectedMachine.content.specifications
                                     .workingRange.maxDepth && (
                                     <li>
                                       Max. Grabtiefe:{" "}
                                       {
-                                        selectedMachine.content.dataSheet
+                                        selectedMachine.content.specifications
                                           .workingRange.maxDepth
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.dataSheet
+                                  {selectedMachine.content.specifications
                                     .workingRange.maxReach && (
                                     <li>
                                       Max. Reichweite:{" "}
                                       {
-                                        selectedMachine.content.dataSheet
+                                        selectedMachine.content.specifications
                                           .workingRange.maxReach
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.dataSheet
+                                  {selectedMachine.content.specifications
                                     .workingRange.minSwingRadius && (
                                     <li>
                                       Min. Schwenkradius:{" "}
                                       {
-                                        selectedMachine.content.dataSheet
+                                        selectedMachine.content.specifications
                                           .workingRange.minSwingRadius
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.dataSheet
+                                  {selectedMachine.content.specifications
                                     .workingRange.bucketBreakoutForceISO && (
                                     <li>
                                       Löffellosbrechkraft ISO:{" "}
                                       {
-                                        selectedMachine.content.dataSheet
+                                        selectedMachine.content.specifications
                                           .workingRange.bucketBreakoutForceISO
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.dataSheet
+                                  {selectedMachine.content.specifications
                                     .workingRange.armTearOutForceISO && (
                                     <li>
                                       Stiel Reißkraft ISO:{" "}
                                       {
-                                        selectedMachine.content.dataSheet
+                                        selectedMachine.content.specifications
                                           .workingRange.armTearOutForceISO
                                       }
                                     </li>
@@ -262,17 +284,17 @@ export default function MachinePage({
                 <h2 className="text-3xl font-bold mb-6">Preise</h2>
                 <ul className="border border-gray-200 text-lg">
                   <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                    <span>1 Tag</span>
+                    <span>{timeTable.rowOne}</span>
                     <span className="font-bold">{effectivePrice.perDay} €</span>
                   </li>
                   <li className="bg-white flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                    <span>Woche</span>
+                    <span>{timeTable.rowTwo}</span>
                     <span className="font-bold">
                       {effectivePrice.perWeek} €
                     </span>
                   </li>
                   <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                    <span>Monat</span>
+                    <span>{timeTable.rowThree}</span>
                     <span className="font-bold">
                       {effectivePrice.perMonth} €
                     </span>

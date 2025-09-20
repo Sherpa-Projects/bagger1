@@ -14,15 +14,14 @@ import { isValidLocation } from "@/lib/utils";
 import { getPricePerDayForLocation } from "@/lib/utils";
 import { Machine } from "../types/Machine";
 import BranchCard from "@/components/BranchCard";
+import { locationPageData } from "@/lib/content/pages/location/locationPageData";
 
 export const metadata: Metadata = {
-  title: "Baumaschinen mieten in deiner Nähe | Bagger1",
-  description:
-    "Jetzt Baumaschinen wie Bagger, Kipphänger oder Rüttelplatten direkt online mieten. Transparent. Flexibel. Einfach mit Bagger1.",
+  title: `${locationPageData.seo.metaTitle}`,
+  description: `${locationPageData.seo.metaDescription}`,
   openGraph: {
-    title: "Baumaschinen mieten in deiner Nähe | Bagger1",
-    description:
-      "Jetzt Baumaschinen wie Bagger, Kipphänger oder Rüttelplatten direkt online mieten. Transparent. Flexibel. Einfach mit Bagger1.",
+    title: `${locationPageData.seo.metaTitle}`,
+    description: `${locationPageData.seo.metaDescription}`,
     url: "https://bagger1.de",
     siteName: "Bagger1",
     images: [
@@ -36,9 +35,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Baumaschinen mieten mit Bagger1",
-    description:
-      "Finde verfügbare Maschinen in deiner Region und buche direkt online.",
+    title: `${locationPageData.seo.metaTitle}`,
+    description: `${locationPageData.seo.metaDescription}`,
     images: ["/images/meta.png"],
   },
   robots: "index, follow",
@@ -49,6 +47,7 @@ export default function LocationPage({
 }: {
   params: Promise<{ location: string }>;
 }) {
+  const { hero, machineCard } = locationPageData;
   const { location } = use(params);
 
   if (!isValidLocation(location)) return notFound();
@@ -71,7 +70,7 @@ export default function LocationPage({
           <div className="absolute inset-0 bg-black/50 z-0" />
           <div className="relative z-10 text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-4">
             <h1 className="text-5xl lg:text-7xl font-semibold leading-normal">
-              Bagger mieten in {currentLocation.name}
+              {hero.title} {currentLocation.name}
             </h1>
           </div>
         </div>
@@ -118,7 +117,7 @@ export default function LocationPage({
 
                         <div className="w-full flex justify-end lg:justify-start">
                           <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
-                            Mehr Infos
+                            {machineCard.cta}
                             <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
                               <FontAwesomeIcon icon={faArrowRight} />
                             </span>

@@ -13,7 +13,7 @@ export default function NotFound() {
         <h2 className="text-2xl md:text-3xl font-semibold mb-2">
           Seite nicht gefunden
         </h2>
-        <p className="text-gray-600 mb-6">Die gesuchte Seite existiert.</p>
+        <p className="text-gray-600 mb-6">Die gesuchte Seite existiert nicht.</p>
         <Link
           href="/"
           className="bg-white group border border-gray-300 rounded-lg hover:shadow-md px-6 py-3 text-center text-xl font-semibold text-gray-800 hover:text-yellow-500 transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"

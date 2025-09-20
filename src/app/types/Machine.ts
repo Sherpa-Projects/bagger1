@@ -24,7 +24,7 @@ export type Machine = {
   content?: {
     title?: string;
     description?: string;
-    dataSheet?: {
+    specifications?: {
       dimensions?: {
         width?: string;
         height?: string;
