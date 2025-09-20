@@ -15,7 +15,7 @@ export const homePageData = {
   hero: {
     title: "Bagger1",
     subtitle: "Ihre Nummer 1 für Bagger und Baumaschinen",
-    image: "/images/hero2.jpg",
+    image: "/images/hero.jpg",
   },
   intro: {
     title: (
