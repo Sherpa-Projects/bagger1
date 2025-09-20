@@ -86,18 +86,20 @@ export default function LocationPage({
                   <li key={index}>
                     <Link
                       href={`/${location}/${machine.slug}`}
-                      className="group border border-gray-300 bg-white rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-5 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
+                      className="group border border-gray-300 bg-white rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-2 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
                     >
-                      <Image
-                        className="rounded w-full lg:w-50 mb-6 lg:mb-0 lg:col-span-2"
-                        src={machine.image.url}
-                        alt={machine.image.alt}
-                        width={0}
-                        height={0}
-                        sizes="100vw"
-                      />
+                      <div className="flex items-center justify-center">
+                        <Image
+                          className="rounded w-full mb-6 lg:mb-0"
+                          src={machine.image.url}
+                          alt={machine.image.alt}
+                          width={0}
+                          height={0}
+                          sizes="100vw"
+                        />
+                      </div>
 
-                      <div className="flex flex-col justify-between h-full py-2 lg:col-span-3">
+                      <div className="flex flex-col justify-between h-full py-2">
                         <div className="space-y-4">
                           <div>
                             <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold capitalize mb-2">
