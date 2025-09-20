@@ -8,7 +8,7 @@ import {
   faEnvelope,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import { FooterPageProps } from "@/app/types/pages/FooterPageProps";
+import { FooterPageProps } from "@/app/types/FooterPageProps";
 
 const Footer = ({ currentLocation }: FooterPageProps) => {
   return (

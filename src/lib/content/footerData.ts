@@ -19,5 +19,13 @@ export const footerData = {
       name: "Datenschutz",
       url: "/datenschutz",
     },
+    {
+      name: "AGB Geschäftskunden",
+      url: "/agb/b2b",
+    },
+    {
+      name: "AGB Privatkunden",
+      url: "/agb/b2c",
+    },
   ],
 };
