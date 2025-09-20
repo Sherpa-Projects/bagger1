@@ -13,10 +13,10 @@ import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
 
 export const metadata: Metadata = {
   title: `${machinePageData.seo.metaTitle}`,
-  description: `${machinePageData.seo.metaDescription}`,
+  description: `${machinePageData.seo.metaDescription.google}`,
   openGraph: {
     title: `${machinePageData.seo.metaTitle}`,
-    description: `${machinePageData.seo.metaDescription}`,
+    description: `${machinePageData.seo.metaDescription.openGraph}`,
     url: "https://bagger1.de",
     siteName: "Bagger1",
     images: [
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${machinePageData.seo.metaTitle}`,
-    description: `${machinePageData.seo.metaDescription}`,
+    description: `${machinePageData.seo.metaDescription.twitter}`,
     images: ["/images/meta.png"],
   },
   robots: "index, follow",
@@ -124,16 +124,17 @@ export default function MachinePage({
                         </div>
                         {selectedMachine.content.specifications && (
                           <div className="space-y-4">
-                            {selectedMachine.content.specifications.dimensions && (
+                            {selectedMachine.content.specifications
+                              .dimensions && (
                               <div>
                                 <h4 className="font-bold">Bemessung:</h4>
                                 <ul>
-                                  {selectedMachine.content.specifications.dimensions
-                                    .width && (
+                                  {selectedMachine.content.specifications
+                                    .dimensions.width && (
                                     <li>
                                       {
-                                        machinePageData.specifications.dimensions
-                                          .width
+                                        machinePageData.specifications
+                                          .dimensions.width
                                       }
                                       :{" "}
                                       {
@@ -142,12 +143,12 @@ export default function MachinePage({
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.specifications.dimensions
-                                    .length && (
+                                  {selectedMachine.content.specifications
+                                    .dimensions.length && (
                                     <li>
                                       {
-                                        machinePageData.specifications.dimensions
-                                          .length
+                                        machinePageData.specifications
+                                          .dimensions.length
                                       }
                                       :{" "}
                                       {
@@ -156,12 +157,12 @@ export default function MachinePage({
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.specifications.dimensions
-                                    .height && (
+                                  {selectedMachine.content.specifications
+                                    .dimensions.height && (
                                     <li>
                                       {
-                                        machinePageData.specifications.dimensions
-                                          .height
+                                        machinePageData.specifications
+                                          .dimensions.height
                                       }
                                       :{" "}
                                       {
@@ -170,12 +171,12 @@ export default function MachinePage({
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.specifications.dimensions
-                                    .weight && (
+                                  {selectedMachine.content.specifications
+                                    .dimensions.weight && (
                                     <li>
                                       {
-                                        machinePageData.specifications.dimensions
-                                          .weight
+                                        machinePageData.specifications
+                                          .dimensions.weight
                                       }
                                       :{" "}
                                       {
@@ -184,12 +185,12 @@ export default function MachinePage({
                                       }
                                     </li>
                                   )}
-                                  {selectedMachine.content.specifications.dimensions
-                                    .volume && (
+                                  {selectedMachine.content.specifications
+                                    .dimensions.volume && (
                                     <li>
                                       {
-                                        machinePageData.specifications.dimensions
-                                          .volume
+                                        machinePageData.specifications
+                                          .dimensions.volume
                                       }
                                       :{" "}
                                       {
@@ -208,10 +209,14 @@ export default function MachinePage({
                                 {selectedMachine.content.specifications.power}
                               </p>
                             )}
-                            {selectedMachine.content.specifications.workingRange && (
+                            {selectedMachine.content.specifications
+                              .workingRange && (
                               <div>
                                 <h4 className="font-bold">
-                                  {machinePageData.specifications.workingRange.title}
+                                  {
+                                    machinePageData.specifications.workingRange
+                                      .title
+                                  }
                                   :
                                 </h4>
                                 <ul>

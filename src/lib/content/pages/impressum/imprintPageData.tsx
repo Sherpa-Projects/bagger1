@@ -1,7 +1,13 @@
 export const imprintPageData = {
   metaTitle: "Impressum",
-  metaDescription:
-    "Impressum der Bagger1 Website mit Angaben gemäß § 5 TMG. Verantwortlich für Inhalte, Kontaktdaten und rechtliche Hinweise.",
+  metaDescription: {
+    google:
+      "Impressum der Bagger1 Website gemäß § 5 TMG – mit allen Pflichtangaben, Kontaktdaten und rechtlichen Hinweisen.",
+    openGraph:
+      "Impressum von Bagger1 mit allen gesetzlich vorgeschriebenen Angaben nach § 5 TMG: Ansprechpartner, Kontaktinformationen und rechtliche Hinweise auf einen Blick.",
+    twitter:
+      "Impressum von Bagger1 – alle Pflichtangaben nach § 5 TMG kompakt zusammengefasst.",
+  },
   Body: () => (
     <>
       <main className="px-4 md:px-8 pt-40 pb-20 max-w-4xl mx-auto space-y-10 prose prose-sm sm:prose lg:prose-lg xl:prose-xl prose-neutral">

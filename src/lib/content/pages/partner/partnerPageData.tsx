@@ -12,8 +12,14 @@ import {
 export const partnerPageData = {
   seo: {
     metaTitle: "Flexibler Nebenjob mit fairer Bezahlung | Bagger1",
-    metaDescription:
-      "Werden Sie Teil von Bagger1! Starten Sie als Fahrer (m/w/d) im Minijob: flexible Arbeitszeiten, faire Bezahlung, klare Prozesse und direkter Draht zum Team.",
+    metaDescription: {
+      google:
+        "Jetzt als Fahrer (m/w/d) im Minijob bei Bagger1 starten – mit flexiblen Arbeitszeiten, fairer Bezahlung und direktem Draht zum Team.",
+      openGraph:
+        "Minijob als Fahrer (m/w/d) bei Bagger1: Flexible Arbeitszeiten, faire Bezahlung, klare Prozesse und ein Team, das zusammenhält. Jetzt Teil von Bagger1 werden!",
+      twitter:
+        "Minijob bei Bagger1: Starte als Fahrer (m/w/d) – fair bezahlt & flexibel!",
+    },
   },
   hero: {
     title: "Werde Teil von Bagger1",

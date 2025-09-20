@@ -5,10 +5,10 @@ import { imprintPageData } from "@/lib/content/pages/impressum/imprintPageData";
 
 export const metadata: Metadata = {
   title: `${imprintPageData.metaTitle} | Bagger1`,
-  description: `${imprintPageData.metaDescription}`,
+  description: `${imprintPageData.metaDescription.google}`,
   openGraph: {
     title: `${imprintPageData.metaTitle} | Bagger1`,
-    description: `${imprintPageData.metaDescription}`,
+    description: `${imprintPageData.metaDescription.openGraph}`,
     url: "https://bagger1.de/impressum",
     siteName: "Bagger1",
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${imprintPageData.metaTitle} | Bagger1`,
-    description: `${imprintPageData.metaDescription}`,
+    description: `${imprintPageData.metaDescription.twitter}`,
     images: ["/images/meta.png"],
   },
   robots: "noindex, follow",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function Page() {
   const { Body } = imprintPageData;
-  
+
   return (
     <>
       <Navigation />

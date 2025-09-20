@@ -2,8 +2,14 @@ import Link from "next/link";
 
 export const privacyPageData = {
   metaTitle: "Datenschutzerklärung",
-  metaDescription:
-    "Erfahre, wie Bagger1 mit personenbezogenen Daten umgeht. Unsere Datenschutzerklärung gemäß DSGVO gibt dir einen Überblick über Art, Umfang und Zweck der Datenverarbeitung.",
+  metaDescription: {
+    google:
+      "Datenschutzerklärung von Bagger1 gemäß DSGVO – alle Infos zur Art, dem Umfang und dem Zweck der Verarbeitung deiner personenbezogenen Daten.",
+    openGraph:
+      "Wie geht Bagger1 mit deinen Daten um? Unsere Datenschutzerklärung erklärt dir transparent und verständlich, welche personenbezogenen Daten wir wofür verarbeiten – gemäß DSGVO.",
+    twitter:
+      "Bagger1 & Datenschutz: Erfahre, wie wir deine Daten gemäß DSGVO verarbeiten.“",
+  },
   Body: () => (
     <>
       <main className="px-4 md:px-8 pt-40 pb-20 max-w-4xl mx-auto space-y-10 prose prose-sm sm:prose lg:prose-lg xl:prose-xl prose-neutral">

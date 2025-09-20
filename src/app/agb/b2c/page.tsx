@@ -5,10 +5,10 @@ import { b2cPageData } from "@/lib/content/pages/agb/b2cPageData";
 
 export const metadata: Metadata = {
   title: `${b2cPageData.metaTitle}`,
-  description: `${b2cPageData.metaDescription}`,
+  description: `${b2cPageData.metaDescription.google}`,
   openGraph: {
     title: `${b2cPageData.metaTitle} | Bagger1`,
-    description: `${b2cPageData.metaDescription}`,
+    description: `${b2cPageData.metaDescription.openGraph}`,
     url: "https://bagger1.de/impressum",
     siteName: "Bagger1",
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${b2cPageData.metaTitle} | Bagger1`,
-    description: `${b2cPageData.metaDescription}`,
+    description: `${b2cPageData.metaDescription.twitter}`,
     images: ["/images/meta.png"],
   },
   robots: "noindex, follow",

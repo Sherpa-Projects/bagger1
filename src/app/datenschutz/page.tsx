@@ -5,10 +5,10 @@ import { privacyPageData } from "@/lib/content/pages/datenschutz/privacyPageData
 
 export const metadata: Metadata = {
   title: `${privacyPageData.metaTitle} | Bagger1`,
-  description: `${privacyPageData.metaDescription}`,
+  description: `${privacyPageData.metaDescription.google}`,
   openGraph: {
     title: `${privacyPageData.metaTitle} | Bagger1`,
-    description: `${privacyPageData.metaDescription}`,
+    description: `${privacyPageData.metaDescription.openGraph}`,
     url: "https://bagger1.de/datenschutz",
     siteName: "Bagger1",
     images: [
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${privacyPageData.metaTitle} | Bagger1`,
-    description: `${privacyPageData.metaDescription}`,
+    description: `${privacyPageData.metaDescription.twitter}`,
     images: ["/images/meta.png"],
   },
   robots: "noindex, follow",

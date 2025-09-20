@@ -18,10 +18,10 @@ import { locationPageData } from "@/lib/content/pages/location/locationPageData"
 
 export const metadata: Metadata = {
   title: `${locationPageData.seo.metaTitle}`,
-  description: `${locationPageData.seo.metaDescription}`,
+  description: `${locationPageData.seo.metaDescription.google}`,
   openGraph: {
     title: `${locationPageData.seo.metaTitle}`,
-    description: `${locationPageData.seo.metaDescription}`,
+    description: `${locationPageData.seo.metaDescription.openGraph}`,
     url: "https://bagger1.de",
     siteName: "Bagger1",
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${locationPageData.seo.metaTitle}`,
-    description: `${locationPageData.seo.metaDescription}`,
+    description: `${locationPageData.seo.metaDescription.twitter}`,
     images: ["/images/meta.png"],
   },
   robots: "index, follow",

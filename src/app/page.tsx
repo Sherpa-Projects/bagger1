@@ -12,11 +12,11 @@ import { homePageData } from "@/lib/content/pages/home/homePageData";
 export const generateMetadata = (): Metadata => {
   return {
     title: `${homePageData.seo.metaTitle}`,
-    description: `${homePageData.seo.metaDescription}`,
+    description: `${homePageData.seo.metaDescription.google}`,
     robots: "index, follow",
     openGraph: {
       title: `${homePageData.seo.metaTitle}`,
-      description: `${homePageData.seo.metaDescription}`,
+      description: `${homePageData.seo.metaDescription.openGraph}`,
       url: "https://bagger1.de",
       siteName: "Baumaschinenverleih in deiner Gegend | Bagger1",
       images: {
@@ -29,7 +29,7 @@ export const generateMetadata = (): Metadata => {
     twitter: {
       card: "summary_large_image",
       title: `${homePageData.seo.metaTitle}`,
-      description: `${homePageData.seo.metaDescription}`,
+      description: `${homePageData.seo.metaDescription.twitter}`,
       images: ["/images/meta.png"],
     },
   };
