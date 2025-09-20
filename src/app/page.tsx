@@ -20,7 +20,7 @@ export const generateMetadata = (): Metadata => {
       url: "https://bagger1.de",
       siteName: "Baumaschinenverleih in deiner Gegend | Bagger1",
       images: {
-        url: "/images/meta.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Startseite | Bagger1",
@@ -30,7 +30,7 @@ export const generateMetadata = (): Metadata => {
       card: "summary_large_image",
       title: `${homePageData.seo.metaTitle}`,
       description: `${homePageData.seo.metaDescription.twitter}`,
-      images: ["/images/meta.png"],
+      images: ["/images/og-image.png"],
     },
   };
 };

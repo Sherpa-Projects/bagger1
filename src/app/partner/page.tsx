@@ -15,17 +15,17 @@ export const generateMetadata = (): Metadata => {
       url: "https://bagger1.de",
       siteName: "Baumaschinenverleih in deiner Gegend | Bagger1",
       images: {
-        url: "/images/meta.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Startseite | Bagger1",
+        alt: "Gelber Hintergrund mit schwarzem Text: ‚Bagger 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
       },
     },
     twitter: {
       card: "summary_large_image",
       title: `${partnerPageData.seo.metaTitle}`,
       description: `${partnerPageData.seo.metaDescription.twitter}`,
-      images: ["/images/meta.png"],
+      images: ["/images/og-image.png"],
     },
   };
 };

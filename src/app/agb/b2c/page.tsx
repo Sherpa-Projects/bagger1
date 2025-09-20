@@ -13,10 +13,10 @@ export const metadata: Metadata = {
     siteName: "Bagger1",
     images: [
       {
-        url: "/images/meta.png",
+        url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Bagger1 allgemeine Geschäftsbedingungen",
+        alt: "Gelber Hintergrund mit schwarzem Text: ‚Bagger 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
       },
     ],
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${b2cPageData.metaTitle} | Bagger1`,
     description: `${b2cPageData.metaDescription.twitter}`,
-    images: ["/images/meta.png"],
+    images: ["/images/og-image.png"],
   },
   robots: "noindex, follow",
 };
