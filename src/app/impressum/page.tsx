@@ -4,11 +4,11 @@ import Footer from "@/components/Footer";
 import { imprintPageData } from "@/lib/content/pages/impressum/imprintPageData";
 
 export const metadata: Metadata = {
-  title: `${imprintPageData.metaTitle} | Bagger1`,
-  description: `${imprintPageData.metaDescription.google}`,
+  title: imprintPageData.metaTitle,
+  description: imprintPageData.metaDescription.google,
   openGraph: {
-    title: `${imprintPageData.metaTitle} | Bagger1`,
-    description: `${imprintPageData.metaDescription.openGraph}`,
+    title: imprintPageData.metaTitle,
+    description: imprintPageData.metaDescription.openGraph,
     url: "https://bagger1.de/impressum",
     siteName: "Bagger1",
     images: [
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${imprintPageData.metaTitle} | Bagger1`,
-    description: `${imprintPageData.metaDescription.twitter}`,
+    title: imprintPageData.metaTitle,
+    description: imprintPageData.metaDescription.twitter,
     images: ["/images/og-image.png"],
   },
   robots: "noindex, follow",

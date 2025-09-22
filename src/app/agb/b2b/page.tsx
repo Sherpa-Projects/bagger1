@@ -4,11 +4,11 @@ import Footer from "@/components/Footer";
 import { b2bPageData } from "@/lib/content/pages/agb/b2bPageData";
 
 export const metadata: Metadata = {
-  title: `${b2bPageData.metaTitle}`,
-  description: `${b2bPageData.metaDescription.google}`,
+  title: b2bPageData.metaTitle,
+  description: b2bPageData.metaDescription.google,
   openGraph: {
-    title: `${b2bPageData.metaTitle} | Bagger1`,
-    description: `${b2bPageData.metaDescription.openGraph}`,
+    title: b2bPageData.metaTitle,
+    description: b2bPageData.metaDescription.openGraph,
     url: "https://bagger1.de/impressum",
     siteName: "Bagger1",
     images: [
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${b2bPageData.metaTitle} | Bagger1`,
-    description: `${b2bPageData.metaDescription.twitter}`,
+    title: b2bPageData.metaTitle,
+    description: b2bPageData.metaDescription.twitter,
     images: ["/images/og-image.png"],
   },
   robots: "noindex, follow",

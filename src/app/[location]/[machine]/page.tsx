@@ -21,7 +21,7 @@ function humanizeSlug(slug: string) {
 export async function generateMetadata({
   params,
 }: {
-  params: { machine: string };
+  params: Promise<{ machine: string }>;
 }): Promise<Metadata> {
   const { machine } = await params;
   const selectedMachine = machineData.find((m: Machine) => m.slug === machine);

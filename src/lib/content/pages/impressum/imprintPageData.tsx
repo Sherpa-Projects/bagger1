@@ -1,5 +1,5 @@
 export const imprintPageData = {
-  metaTitle: "Impressum",
+  metaTitle: "Impressum | Bagger1",
   metaDescription: {
     google:
       "Impressum der Bagger1 Website gemäß § 5 TMG – mit allen Pflichtangaben, Kontaktdaten und rechtlichen Hinweisen.",

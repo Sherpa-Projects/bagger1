@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const privacyPageData = {
-  metaTitle: "Datenschutzerklärung",
+  metaTitle: "Datenschutzerklärung | Bagger1",
   metaDescription: {
     google:
       "Datenschutzerklärung von Bagger1 gemäß DSGVO – alle Infos zur Art, dem Umfang und dem Zweck der Verarbeitung deiner personenbezogenen Daten.",
