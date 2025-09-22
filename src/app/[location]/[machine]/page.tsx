@@ -11,31 +11,81 @@ import type { Machine } from "@/app/types/Machine";
 import BookingWidget from "@/components/BookingWidget";
 import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
 
-export const metadata: Metadata = {
-  title: `${machinePageData.seo.metaTitle}`,
-  description: `${machinePageData.seo.metaDescription.google}`,
-  openGraph: {
-    title: `${machinePageData.seo.metaTitle}`,
-    description: `${machinePageData.seo.metaDescription.openGraph}`,
-    url: "https://bagger1.de",
-    siteName: "Bagger1",
-    images: [
-      {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Gelber Hintergrund mit schwarzem Text: ‚Bagger 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
+function humanizeSlug(slug: string) {
+  return slug
+    .split("-")
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w))
+    .join(" ");
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { machine: string };
+}): Promise<Metadata> {
+  const { machine } = await params;
+  const selectedMachine = machineData.find((m: Machine) => m.slug === machine);
+
+  if (!selectedMachine) {
+    return {
+      title: machinePageData.seo.metaTitle,
+      description: machinePageData.seo.metaDescription.google,
+      openGraph: {
+        title: machinePageData.seo.metaTitle,
+        description: machinePageData.seo.metaDescription.openGraph,
+        url: "https://bagger1.de",
+        siteName: "Bagger1",
+        images: [
+          {
+            url: "/images/og-image.png",
+            width: 1200,
+            height: 630,
+            alt: "Gelber Hintergrund mit schwarzem Text: ‚Bagger 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
+          },
+        ],
       },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: `${machinePageData.seo.metaTitle}`,
-    description: `${machinePageData.seo.metaDescription.twitter}`,
-    images: ["/images/og-image.png"],
-  },
-  robots: "index, follow",
-};
+      twitter: {
+        card: "summary_large_image",
+        title: machinePageData.seo.metaTitle,
+        description: machinePageData.seo.metaDescription.twitter,
+        images: ["/images/og-image.png"],
+      },
+      robots: "index, follow",
+    };
+  }
+
+  const machineName = selectedMachine.name ?? humanizeSlug(machine);
+  const model = selectedMachine.model ? ` ${selectedMachine.model}` : "";
+
+  const title = `Baumaschine mieten – ${machineName}${model} | Bagger1`;
+  const url = `https://bagger1.de/${machine}`;
+
+  return {
+    title,
+    description: machinePageData.seo.metaDescription.google,
+    openGraph: {
+      title: machinePageData.seo.metaTitle,
+      description: machinePageData.seo.metaDescription.openGraph,
+      url,
+      siteName: "Bagger1",
+      images: [
+        {
+          url: "/images/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "Gelber Hintergrund mit schwarzem Text: ‚Bagger 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: machinePageData.seo.metaTitle,
+      description: machinePageData.seo.metaDescription.twitter,
+      images: ["/images/og-image.png"],
+    },
+    robots: "index, follow",
+  };
+}
 
 export default function MachinePage({
   params,
