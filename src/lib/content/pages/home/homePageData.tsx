@@ -14,7 +14,7 @@ export const homePageData = {
   },
   hero: {
     title: "Bagger1",
-    subtitle: "Ihre Nummer 1 für Bagger und Baumaschinen",
+    subtitle: "Ihre Nummer 1 für Bagger und Maschinen",
     image: "/images/hero.jpg",
   },
   intro: {

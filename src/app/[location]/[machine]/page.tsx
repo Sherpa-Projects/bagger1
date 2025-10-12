@@ -10,6 +10,7 @@ import { isValidLocation, type Location } from "@/lib/utils";
 import type { Machine } from "@/app/types/Machine";
 import BookingWidget from "@/components/BookingWidget";
 import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
+import BookingSteps from "@/components/BookingSteps";
 
 function humanizeSlug(slug: string) {
   return slug
@@ -359,6 +360,7 @@ export default function MachinePage({
             </div>
           </div>
         </div>
+        <BookingSteps />
       </main>
       <Footer />
     </>

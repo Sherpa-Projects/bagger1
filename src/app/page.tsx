@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import BranchCard from "../components/BranchCard";
+import BookingSteps from "@/components/BookingSteps";
 import type { LucideIcon } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -114,6 +115,7 @@ export default function Home() {
         </div>
 
         <BranchCard />
+        <BookingSteps />
 
         <div
           className="mt-17 md:mt-24 relative py-12 flex justify-center items-center bg-cover bg-center my-20"

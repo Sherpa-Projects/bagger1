@@ -23,7 +23,7 @@ export const partnerPageData = {
   },
   hero: {
     title: "Werde Teil von Bagger1",
-    subtitle: "Fahrer & Auslieferung (m/w/d) im Minijob",
+    subtitle: "Fahrer & Auslieferung (m/w/d)",
     image: "/images/partner.jpg",
   },
   intro: {
