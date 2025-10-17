@@ -20,7 +20,7 @@ export default function BookingSteps() {
             >
               <span
                 aria-hidden
-                className="absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-gradient-to-r from-primary/0 via-primary/15 to-primary/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                className="absolute inset-x-0 top-0 h-1 rounded-t-2xl opacity-0 transition-opacity duration-500 group-hover:opacity-100"
               />
 
               <div>

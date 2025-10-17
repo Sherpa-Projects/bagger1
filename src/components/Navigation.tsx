@@ -41,9 +41,9 @@ export default function NavigationDataNavigationData() {
           <div className="hidden lg:flex justify-between items-center">
             <div className="flex items-center gap-6">
               <Link href="/">
-                <div className="flex items-center lg:transform lg:transition-transform lg:duration-300 ease-in-out lg:hover:scale-110">
+                <div className="flex items-center lg:transform lg:transition-transform lg:duration-300 ease-in-out lg:hover:scale-110 p-1">
                   <Image
-                    src={`/images/logo_neu.png`}
+                    src={`/images/logo.svg`}
                     alt="Bagger1 Logo"
                     width={50}
                     height={50}

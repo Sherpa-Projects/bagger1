@@ -7,8 +7,8 @@ export const footerData = {
   openingHours: {
     title: "Geschäftszeiten",
     weekday: "Mo.-Fr.: 7.00-12.00 und 13.00-17.30 Uhr",
-    saturday: "7.30-14.00 Uhr",
-    sunday: "geschlossen",
+    saturday: "Sa.: 7.30-14.00 Uhr",
+    sunday: "So.: geschlossen",
   },
   legalInformation: [
     {
