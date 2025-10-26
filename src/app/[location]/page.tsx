@@ -113,65 +113,70 @@ export default function LocationPage({
             </h1>
           </div>
         </div>
-        <div className="py-10 lg:py-20 px-4">
-          <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-            <ul className="grid md:grid-cols-2 gap-6">
-              {machines.map((machine, index) => {
-                const pricePerDay = getPricePerDayForLocation(
-                  machine as Machine,
-                  location
-                );
-                return (
-                  <li key={index}>
-                    <Link
-                      href={`/${location}/${machine.slug}`}
-                      className="group border border-gray-300 bg-white rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-2 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
-                    >
-                      <div className="flex items-center justify-center">
-                        <Image
-                          className="rounded w-full mb-6 lg:mb-0"
-                          src={machine.image.url}
-                          alt={machine.image.alt}
-                          width={0}
-                          height={0}
-                          sizes="100vw"
-                        />
-                      </div>
+        {machines.length > 0 && (
+          <div className="py-10 lg:py-20 px-4">
+            <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+              <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
+                Unsere Maschinen
+              </h2>
+              <ul className="grid md:grid-cols-2 gap-6">
+                {machines.map((machine, index) => {
+                  const pricePerDay = getPricePerDayForLocation(
+                    machine as Machine,
+                    location
+                  );
+                  return (
+                    <li key={index}>
+                      <Link
+                        href={`/${location}/${machine.slug}`}
+                        className="group border border-gray-300 bg-white rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-2 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
+                      >
+                        <div className="flex items-center justify-center">
+                          <Image
+                            className="rounded w-full mb-6 lg:mb-0"
+                            src={machine.image.url}
+                            alt={machine.image.alt}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                          />
+                        </div>
 
-                      <div className="flex flex-col justify-between h-full py-2">
-                        <div className="space-y-4">
-                          <div>
-                            <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold capitalize mb-2">
-                              {machine.name}
-                            </p>
-                            {machine.model && (
-                              <p className="lg:text-sm text-neutral-500">
-                                {machine.model}
+                        <div className="flex flex-col justify-between h-full py-2">
+                          <div className="space-y-4">
+                            <div>
+                              <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold capitalize mb-2">
+                                {machine.name}
                               </p>
-                            )}
+                              {machine.model && (
+                                <p className="lg:text-sm text-neutral-500">
+                                  {machine.model}
+                                </p>
+                              )}
+                            </div>
+
+                            <p className="text-2xl lg:text-lg xl:text-xl capitalize">
+                              {pricePerDay}€ / Tag
+                            </p>
                           </div>
 
-                          <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                            {pricePerDay}€ / Tag
-                          </p>
-                        </div>
-
-                        <div className="w-full flex justify-end lg:justify-start">
-                          <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
-                            {machineCard.cta}
-                            <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
-                              <FontAwesomeIcon icon={faArrowRight} />
+                          <div className="w-full flex justify-end lg:justify-start">
+                            <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
+                              {machineCard.cta}
+                              <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
+                                <FontAwesomeIcon icon={faArrowRight} />
+                              </span>
                             </span>
-                          </span>
+                          </div>
                         </div>
-                      </div>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
           </div>
-        </div>
+        )}
         <BranchCard />
       </main>
 
