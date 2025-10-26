@@ -15,6 +15,7 @@ import { getPricePerDayForLocation } from "@/lib/utils";
 import { Machine } from "../types/Machine";
 import BranchCard from "@/components/BranchCard";
 import { locationPageData } from "@/lib/content/pages/location/locationPageData";
+import { getCityName } from "@/lib/utils";
 
 export async function generateMetadata({
   params,
@@ -23,7 +24,6 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { location } = await params;
 
-  // Fallback: wenn ungültig, nimm die generischen SEO-Texte
   if (!isValidLocation(location)) {
     return {
       title: locationPageData.seo.metaTitle,
@@ -51,13 +51,7 @@ export async function generateMetadata({
       robots: "index, follow",
     };
   }
-
-  // Schönen Namen zum Slug finden (z. B. "Mannheim")
-  const loc = locationData.find((l) => l.slug === location);
-  const cityName =
-    loc?.name ??
-    location.charAt(0).toUpperCase() + location.slice(1).toLowerCase();
-
+  const cityName = getCityName(location);
   const title = `Baumaschinen mieten in ${cityName} | Bagger1`;
 
   return {
@@ -107,7 +101,7 @@ export default function LocationPage({
   return (
     <>
       <main>
-        <Navigation />
+        <Navigation slug={location} />
         <div
           className="mt-17 md:mt-24 relative h-48 lg:h-72 flex justify-center items-center bg-cover bg-center"
           style={{ backgroundImage: `url(${currentLocation.image.url})` }}

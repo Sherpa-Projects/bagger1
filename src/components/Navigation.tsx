@@ -9,11 +9,20 @@ import {
   faBars,
   faTimes,
   faArrowRight,
+  faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { Handshake } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { getCityName } from "@/lib/utils";
 
-export default function NavigationDataNavigationData() {
+type NavigationProps = {
+  slug?: string;
+};
+
+export default function Navigation({ slug }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isOverlayOpen, setIsOverlayOpen] = useState<boolean>(false);
+  const [location, setLocation] = useState<string>("Standort wählen");
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -22,6 +31,38 @@ export default function NavigationDataNavigationData() {
       document.body.style.overflow = "auto";
     }
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    if (isOverlayOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsOverlayOpen(false);
+      }
+    };
+
+    if (isOverlayOpen) {
+      window.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOverlayOpen]);
+
+  useEffect(() => {
+    if (!slug) {
+      setLocation("Standort auswählen");
+      return;
+    }
+
+    setLocation(getCityName(slug));
+  }, [slug]);
 
   return (
     <>
@@ -37,7 +78,7 @@ export default function NavigationDataNavigationData() {
           Offizielles Mitglied im Bundesverband der Baumaschinen-, Baugeräte-
           und Industriemaschinen-Firmen e.V.
         </div>
-        <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-1">
+        <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-4 lg:py-1">
           <div className="hidden lg:flex justify-between items-center">
             <div className="flex items-center gap-6">
               <Link href="/">
@@ -45,9 +86,9 @@ export default function NavigationDataNavigationData() {
                   <Image
                     src={`/images/logo.svg`}
                     alt="Bagger1 Logo"
-                    width={50}
-                    height={50}
-                    className="mx-auto"
+                    width={48}
+                    height={48}
+                    className="mx-auto p-1"
                   />
                   <span className="font-oswald ml-2 text-lg">
                     Bagger<span className="text-primary">1</span>
@@ -66,39 +107,90 @@ export default function NavigationDataNavigationData() {
             </div>
 
             <div className="relative flex items-center space-x-12">
-              {navigationData.map((item, index) => (
-                <div
-                  key={index}
-                  className="relative flex items-center space-x-12"
-                >
-                  {item.subData?.map((subItem, subIndex) => (
-                    <Link
-                      key={subIndex}
-                      href={subItem.url}
-                      className="text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
-                    >
-                      <div className="flex items-center justify-center">
-                        <span>Mieten in {subItem.name}</span>
-                        <span className="ml-2 text-primary inline-block transition-transform duration-300 group-hover:translate-x-1">
-                          <FontAwesomeIcon icon={faArrowRight} />
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
+              <button
+                onClick={() => setIsOverlayOpen(true)}
+                className="py-2 px-4 rounded-full border border-gray-300 cursor-pointer group"
+              >
+                <div className="flex items-center">
+                  <span className="mr-1 text-primary inline-block will-change-transform group-hover:animate-hop">
+                    <FontAwesomeIcon icon={faLocationDot} />
+                  </span>
+                  <span className="text-gray-600 group-hover:text-primary duration-300">
+                    {location}
+                  </span>
                 </div>
-              ))}
+              </button>
             </div>
           </div>
+
+          <AnimatePresence>
+            {isOverlayOpen && (
+              <motion.div
+                key="overlay"
+                onClick={() => setIsOverlayOpen(false)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50"
+              >
+                <motion.div
+                  key="modal"
+                  onClick={(e) => e.stopPropagation()}
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.95, opacity: 0 }}
+                  transition={{ duration: 0.2, ease: "easeOut" }}
+                  className="bg-white rounded-lg shadow-lg p-10 w-100 max-w-[90%] relative"
+                >
+                  <button
+                    onClick={() => setIsOverlayOpen(false)}
+                    className="absolute top-3 right-3 text-gray-400 hover:text-primary cursor-pointer border border-gray-300 h-9 w-9 rounded-full"
+                  >
+                    <FontAwesomeIcon icon={faTimes} />
+                  </button>
+
+                  <h2 className="text-lg font-semibold mb-6 text-gray-800 text-center">
+                    Standort auswählen
+                  </h2>
+
+                  <ul>
+                    {navigationData.map((item, index) => (
+                      <div key={index} className="space-y-4">
+                        {item.subData?.map((subItem, subIndex) => (
+                          <li key={subIndex} className="group">
+                            <Link
+                              onClick={() => {
+                                setIsOverlayOpen(false);
+                              }}
+                              href={subItem.url}
+                              className="text-gray-800 hover:text-primary transition-all duration-300 transform cursor-pointer"
+                            >
+                              <div className="flex items-center text-lg">
+                                <span>{subItem.name}</span>
+                                <span className="ml-2 text-primary inline-block transition-transform duration-300 group-hover:translate-x-1">
+                                  <FontAwesomeIcon icon={faArrowRight} />
+                                </span>
+                              </div>
+                            </Link>
+                          </li>
+                        ))}
+                      </div>
+                    ))}
+                  </ul>
+                </motion.div>
+              </motion.div>
+            )}
+          </AnimatePresence>
 
           <div className="flex lg:hidden justify-between items-center">
             <Link href="/">
               <div className="flex items-center">
                 <Image
-                  src={`/images/logo_neu.png`}
+                  src={`/images/logo.svg`}
                   alt="Bagger1 Logo"
-                  width={60}
-                  height={60}
-                  className="mx-auto"
+                  width={50}
+                  height={50}
+                  className="mx-auto p-1"
                 />
                 <span className="font-oswald ml-2 text-xl">
                   Bagger<span className="text-primary">1</span>
@@ -127,14 +219,14 @@ export default function NavigationDataNavigationData() {
                 Offizielles Mitglied im Bundesverband der Baumaschinen-,
                 Baugeräte- und Industriemaschinen-Firmen e.V.
               </div>
-              <div className="container mx-auto flex items-center justify-between px-6 lg:px-8 py-1">
+              <div className="container mx-auto flex items-center justify-between px-6 lg:px-8 py-4">
                 <div className="flex items-center">
                   <Image
-                    src={`/images/logo_neu.png`}
+                    src={`/images/logo.svg`}
                     alt="Bagger1 Logo"
-                    width={60}
-                    height={60}
-                    className="mx-auto"
+                    width={50}
+                    height={50}
+                    className="mx-auto p-1"
                   />
                   <span className="font-oswald ml-2 text-xl">
                     Bagger<span className="text-primary">1</span>
