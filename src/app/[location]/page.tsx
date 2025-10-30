@@ -113,7 +113,7 @@ export default function LocationPage({
             </h1>
           </div>
         </div>
-        {machines.length > 0 && (
+        {machines.length > 0 ? (
           <div className="py-10 lg:py-20 px-4">
             <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
               <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
@@ -174,6 +174,15 @@ export default function LocationPage({
                   );
                 })}
               </ul>
+            </div>
+          </div>
+        ) : (
+          <div className="py-10 lg:py-20 px-4">
+            <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+              <p className="text-lg text-center text-gray-400">
+                Hier werden bald Maschinen verfügbar sein. Schauen Sie in ein
+                paar Tagen nochmal vorbei!
+              </p>
             </div>
           </div>
         )}
