@@ -86,8 +86,8 @@ export default function BranchCard() {
                   loading="lazy"
                 ></iframe>
               )}
-              <h3 className="text-xl font-semibold mb-4">{loc.name}</h3>
-              <div className="mb-4">
+              <div className="space-y-4">
+                <h3 className="text-xl font-semibold">{loc.name}</h3>
                 <div className="flex items-center">
                   <FontAwesomeIcon
                     className="mr-1.5 text-primary"
@@ -95,59 +95,19 @@ export default function BranchCard() {
                   />
                   <p>Mo.-Fr.: 7.00-12.00 und 13.00-17.30 Uhr</p>
                 </div>
-              </div>
-              <div className="mb-4">
-                <div className="flex items-center">
-                  <FontAwesomeIcon
-                    className="mr-1.5 text-primary"
-                    icon={faLocationDot}
-                  />
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                      loc.adress
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline"
-                  >
-                    {loc.adress}
-                  </a>
-                </div>
-              </div>
-              {/* <div>
-                <div className="flex items-center">
-                  <FontAwesomeIcon className="mr-1.5 text-primary" icon={faPhone} />
-                  <a
-                    href={`tel:${loc.contact.telephone}`}
-                    className="hover:underline"
-                  >
-                    {loc.contact.telephone}
-                  </a>
-                </div>
-              </div> */}
-              {/* <div>
-                <div className="flex items-center">
-                  <FontAwesomeIcon className="mr-1.5 text-primary" icon={faEnvelope} />
-                  <a
-                    href={`tel:${loc.contact.email}`}
-                    className="hover:underline"
-                  >
-                    {loc.contact.email}
-                  </a>
-                </div>
-              </div> */}
-              {locations.length > 1 && (
-                <Link href={`/${loc.slug}`} className="group">
-                  <div className="w-full flex justify-end lg:justify-start">
-                    <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
-                      Zum Standort
-                      <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
-                        <FontAwesomeIcon icon={faArrowRight} />
+                {locations.length > 1 && (
+                  <Link href={`/${loc.slug}`} className="group">
+                    <div className="w-full flex justify-end lg:justify-start">
+                      <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
+                        Zum Standort
+                        <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
+                          <FontAwesomeIcon icon={faArrowRight} />
+                        </span>
                       </span>
-                    </span>
-                  </div>
-                </Link>
-              )}
+                    </div>
+                  </Link>
+                )}
+              </div>
             </div>
           ))}
           {isHome && (
