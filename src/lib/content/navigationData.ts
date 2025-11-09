@@ -8,7 +8,7 @@ export const navigationData: NavigationDataProps = [
     icon: faLocationDot,
     subData: locationData.map((location) => ({
       name: location.name,
-      url: location.slug,
+      url: `/${location.slug.replace(/^\/?/, "")}`,
     })),
   },
 ];

@@ -26,10 +26,38 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: #ffa421;
+  --color-secondary: #1a1d2a;
+  --color-acent: #2781bb;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Oswald', sans-serif;
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 6s ease infinite;
+  background-size: 200% 200%;
+  background-position: 0% 50%;
+}
+
+@keyframes hop {
+  0%, 100% { transform: translateY(0); }
+  35%      { transform: translateY(-4px); }
+  55%      { transform: translateY(0); }
+}
+
+.group:hover .group-hover\:animate-hop {
+  animation: hop 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }

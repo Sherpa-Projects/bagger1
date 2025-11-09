@@ -1,15 +1,18 @@
+import { Location } from "@/lib/utils";
+
 export type LocationDataProps = {
   name: string;
-  slug: string;
+  slug: Location;
   adress: string;
   contact: {
-    telephone: string;
+    telephone?: string;
     email: string;
   };
   image: {
     url: string;
     alt: string;
   };
+  map: string;
 };
 
 import { locationData } from "@/lib/content/locationData";
