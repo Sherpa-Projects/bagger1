@@ -42,10 +42,18 @@ export const imprintPageData = {
         </section>
 
         <section>
+          <h2 className="text-lg lg:text-xl font-bold mb-2">Umsatzsteuer-ID</h2>
           <p>
-            Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV: Jens Wetzstein
-            Wittenberger Weg 2 68309 Mannheim
+            Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
           </p>
+          <p>DE340433839</p>
+        </section>
+
+        <section>
+          <h2 className="text-lg lg:text-xl font-bold mb-2">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</h2>
+          <p>Jens Wetzstein</p>
+          <p>Wittenberger Weg 2</p>
+          <p>68309 Mannheim</p>
         </section>
 
         <section>
