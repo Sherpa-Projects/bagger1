@@ -12,8 +12,8 @@ export const machinePageData = {
   },
   timeTable: {
     rowOne: "1 Tag",
-    rowTwo: "Woche",
-    rowThree: "Monat",
+    rowTwo: "ab 4 Tage",
+    rowThree: "ab 19 Tage",
   },
   specifications: {
     title: "Datenblatt",

@@ -1,270 +1,116 @@
 import { Machine } from "@/app/types/Machine";
 
 export const machineData: Machine[] = [
-  // {
-  //   name: "1,8t Bagger",
-  //   slug: "18t-bagger",
-  //   model: "Kubota HE28",
-  //   category: "Bagger",
-  //   image: {
-  //     url: "/images/machines/Kubota_HE28.jpeg",
-  //     alt: "Gelber Bagger auf Hügel",
-  //   },
-  //   price: { perDay: 100, perWeek: 700, perMonth: 3000 },
-  //   content: {
-  //     title: "",
-  //     description: "",
-  //     specifications: {
-  //       dimensions: {
-  //         width: "980/1 350 mm",
-  //         height: "2 390 mm",
-  //         length: "3 640 mm",
-  //         weight: "1 825 kg",
-  //         volume: "0.04 m³",
-  //       },
-  //       power: "14.6 kW 2 400 U/min",
-  //       workingRange: {
-  //         maxDepth: "2 360 mm",
-  //         maxReach: "4 000 mm",
-  //         minSwingRadius: "1 705 mm",
-  //         bucketBreakoutForceISO: "15.2 kN",
-  //         armTearOutForceISO: "9.2 kN",
-  //       },
-  //     },
-  //   },
-  //   inventory: {
-  //     hennef: [{ articleId: "F5596I" }],
-  //     mannheim: [{ articleId: "2AT3K3" }],
-  //     // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
-  //     bruchsal: [{ articleId: "3HIBNP" }, { articleId: "XYZ123" }],
-  //   },
-  // },
-  //   {
-  //   name: "1,8t Bagger",
-  //   slug: "18t-bagger",
-  //   model: "Kubota HE28",
-  //   category: "Bagger",
-  //   image: {
-  //     url: "/images/machines/Kubota_HE28.jpeg",
-  //     alt: "Gelber Bagger auf Hügel",
-  //   },
-  //   price: { perDay: 100, perWeek: 700, perMonth: 3000 },
-  //   content: {
-  //     title: "",
-  //     description: "",
-  //     specifications: {
-  //       dimensions: {
-  //         width: "980/1 350 mm",
-  //         height: "2 390 mm",
-  //         length: "3 640 mm",
-  //         weight: "1 825 kg",
-  //         volume: "0.04 m³",
-  //       },
-  //       power: "14.6 kW 2 400 U/min",
-  //       workingRange: {
-  //         maxDepth: "2 360 mm",
-  //         maxReach: "4 000 mm",
-  //         minSwingRadius: "1 705 mm",
-  //         bucketBreakoutForceISO: "15.2 kN",
-  //         armTearOutForceISO: "9.2 kN",
-  //       },
-  //     },
-  //   },
-  //   inventory: {
-  //     hennef: [{ articleId: "F5596I" }],
-  //     mannheim: [{ articleId: "2AT3K3" }],
-  //     // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
-  //     bruchsal: [{ articleId: "3HIBNP" }, { articleId: "XYZ123" }],
-  //   },
-  // },
-  //   {
-  //   name: "1,8t Bagger",
-  //   slug: "18t-bagger",
-  //   model: "Kubota HE28",
-  //   category: "Bagger",
-  //   image: {
-  //     url: "/images/machines/Kubota_HE28.jpeg",
-  //     alt: "Gelber Bagger auf Hügel",
-  //   },
-  //   price: { perDay: 100, perWeek: 700, perMonth: 3000 },
-  //   content: {
-  //     title: "",
-  //     description: "",
-  //     specifications: {
-  //       dimensions: {
-  //         width: "980/1 350 mm",
-  //         height: "2 390 mm",
-  //         length: "3 640 mm",
-  //         weight: "1 825 kg",
-  //         volume: "0.04 m³",
-  //       },
-  //       power: "14.6 kW 2 400 U/min",
-  //       workingRange: {
-  //         maxDepth: "2 360 mm",
-  //         maxReach: "4 000 mm",
-  //         minSwingRadius: "1 705 mm",
-  //         bucketBreakoutForceISO: "15.2 kN",
-  //         armTearOutForceISO: "9.2 kN",
-  //       },
-  //     },
-  //   },
-  //   inventory: {
-  //     hennef: [{ articleId: "F5596I" }],
-  //     mannheim: [{ articleId: "2AT3K3" }],
-  //     // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
-  //     bruchsal: [{ articleId: "3HIBNP" }, { articleId: "XYZ123" }],
-  //   },
-  // },
-  //   {
-  //   name: "1,8t Bagger",
-  //   slug: "18t-bagger",
-  //   model: "Kubota HE28",
-  //   category: "Bagger",
-  //   image: {
-  //     url: "/images/machines/Kubota_HE28.jpeg",
-  //     alt: "Gelber Bagger auf Hügel",
-  //   },
-  //   price: { perDay: 100, perWeek: 700, perMonth: 3000 },
-  //   content: {
-  //     title: "",
-  //     description: "",
-  //     specifications: {
-  //       dimensions: {
-  //         width: "980/1 350 mm",
-  //         height: "2 390 mm",
-  //         length: "3 640 mm",
-  //         weight: "1 825 kg",
-  //         volume: "0.04 m³",
-  //       },
-  //       power: "14.6 kW 2 400 U/min",
-  //       workingRange: {
-  //         maxDepth: "2 360 mm",
-  //         maxReach: "4 000 mm",
-  //         minSwingRadius: "1 705 mm",
-  //         bucketBreakoutForceISO: "15.2 kN",
-  //         armTearOutForceISO: "9.2 kN",
-  //       },
-  //     },
-  //   },
-  //   inventory: {
-  //     hennef: [{ articleId: "F5596I" }],
-  //     mannheim: [{ articleId: "2AT3K3" }],
-  //     // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
-  //     bruchsal: [{ articleId: "3HIBNP" }, { articleId: "XYZ123" }],
-  //   },
-  // },
-  //   {
-  //   name: "1,8t Bagger",
-  //   slug: "18t-bagger",
-  //   model: "Kubota HE28",
-  //   category: "Bagger",
-  //   image: {
-  //     url: "/images/machines/Kubota_HE28.jpeg",
-  //     alt: "Gelber Bagger auf Hügel",
-  //   },
-  //   price: { perDay: 100, perWeek: 700, perMonth: 3000 },
-  //   content: {
-  //     title: "",
-  //     description: "",
-  //     specifications: {
-  //       dimensions: {
-  //         width: "980/1 350 mm",
-  //         height: "2 390 mm",
-  //         length: "3 640 mm",
-  //         weight: "1 825 kg",
-  //         volume: "0.04 m³",
-  //       },
-  //       power: "14.6 kW 2 400 U/min",
-  //       workingRange: {
-  //         maxDepth: "2 360 mm",
-  //         maxReach: "4 000 mm",
-  //         minSwingRadius: "1 705 mm",
-  //         bucketBreakoutForceISO: "15.2 kN",
-  //         armTearOutForceISO: "9.2 kN",
-  //       },
-  //     },
-  //   },
-  //   inventory: {
-  //     hennef: [{ articleId: "F5596I" }],
-  //     mannheim: [{ articleId: "2AT3K3" }],
-  //     // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
-  //     bruchsal: [{ articleId: "3HIBNP" }, { articleId: "XYZ123" }],
-  //   },
-  // },
-  //   {
-  //   name: "1,8t Bagger",
-  //   slug: "18t-bagger",
-  //   model: "Kubota HE28",
-  //   category: "Bagger",
-  //   image: {
-  //     url: "/images/machines/Kubota_HE28.jpeg",
-  //     alt: "Gelber Bagger auf Hügel",
-  //   },
-  //   price: { perDay: 100, perWeek: 700, perMonth: 3000 },
-  //   content: {
-  //     title: "",
-  //     description: "",
-  //     specifications: {
-  //       dimensions: {
-  //         width: "980/1 350 mm",
-  //         height: "2 390 mm",
-  //         length: "3 640 mm",
-  //         weight: "1 825 kg",
-  //         volume: "0.04 m³",
-  //       },
-  //       power: "14.6 kW 2 400 U/min",
-  //       workingRange: {
-  //         maxDepth: "2 360 mm",
-  //         maxReach: "4 000 mm",
-  //         minSwingRadius: "1 705 mm",
-  //         bucketBreakoutForceISO: "15.2 kN",
-  //         armTearOutForceISO: "9.2 kN",
-  //       },
-  //     },
-  //   },
-  //   inventory: {
-  //     hennef: [{ articleId: "F5596I" }],
-  //     mannheim: [{ articleId: "2AT3K3" }],
-  //     // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
-  //     bruchsal: [{ articleId: "3HIBNP" }, { articleId: "XYZ123" }],
-  //   },
-  // },
-  //   {
-  //   name: "1,8t Bagger",
-  //   slug: "18t-bagger",
-  //   model: "Kubota HE28",
-  //   category: "Bagger",
-  //   image: {
-  //     url: "/images/machines/Kubota_HE28.jpeg",
-  //     alt: "Gelber Bagger auf Hügel",
-  //   },
-  //   price: { perDay: 100, perWeek: 700, perMonth: 3000 },
-  //   content: {
-  //     title: "",
-  //     description: "",
-  //     specifications: {
-  //       dimensions: {
-  //         width: "980/1 350 mm",
-  //         height: "2 390 mm",
-  //         length: "3 640 mm",
-  //         weight: "1 825 kg",
-  //         volume: "0.04 m³",
-  //       },
-  //       power: "14.6 kW 2 400 U/min",
-  //       workingRange: {
-  //         maxDepth: "2 360 mm",
-  //         maxReach: "4 000 mm",
-  //         minSwingRadius: "1 705 mm",
-  //         bucketBreakoutForceISO: "15.2 kN",
-  //         armTearOutForceISO: "9.2 kN",
-  //       },
-  //     },
-  //   },
-  //   inventory: {
-  //     hennef: [{ articleId: "F5596I" }],
-  //     mannheim: [{ articleId: "2AT3K3" }],
-  //     // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
-  //     bruchsal: [{ articleId: "3HIBNP" }, { articleId: "XYZ123" }],
-  //   },
-  // },
+  {
+    name: "2,7t Bagger",
+    slug: "hitachi-zx26u-5",
+    model: "Hitachi Zx26U-5",
+    category: "Bagger",
+    image: {
+      url: "/images/machines/hitachi-Zx26U-5.jpg",
+      alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
+    },
+    price: { perDay: 120, perWeek: 96, perMonth: 60 },
+    content: {
+      title: "",
+      description: "",
+      specifications: {
+        dimensions: {
+          width: "1,50 m",
+          weight: "ca. 2,7 t",
+        },
+        workingRange: {
+          maxDepth: "ca. 2,73 m",
+        },
+      },
+    },
+    inventory: {
+      hennef: [{ articleId: "OCVQU4" }],
+      // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
+    },
+  },
+  {
+    name: "1,6t Bagger",
+    slug: "kubota-kx016-4",
+    model: "Kubota KX016-4",
+    category: "Bagger",
+    image: {
+      url: "/images/machines/kubota-kx016-4.jpg",
+      alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
+    },
+    price: { perDay: 100, perWeek: 80, perMonth: 50 },
+    content: {
+      title: "",
+      description: "",
+      specifications: {
+        dimensions: {
+          width: "1,50 m",
+          weight: "1,6 t",
+        },
+        power: "9,6 kW (13 PS)",
+        workingRange: {
+          maxDepth: "2,25 m",
+        },
+      },
+    },
+    inventory: {
+      mannheim: [{ articleId: "TK9WPV" }],
+      bruchsal: [{ articleId: "ZHLFH1" }],
+    },
+  },
+  {
+    name: "1,8t Bagger",
+    slug: "kubota-kx019-4",
+    model: "Kubota KX019-4",
+    category: "Bagger",
+    image: {
+      url: "/images/machines/kubota-kx019-4.jpg",
+      alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
+    },
+    price: { perDay: 110, perWeek: 88, perMonth: 55 },
+    content: {
+      title: "",
+      description: "",
+      specifications: {
+        dimensions: {
+          width: "0,99 m bis 1,3 m",
+          weight: "ca. 1,8 t",
+        },
+        workingRange: {
+          maxDepth: "ca. 2,58 m",
+        },
+      },
+    },
+    inventory: {
+      stockstadt: [{ articleId: "ACEQK6" }],
+    },
+  },
+  {
+    name: "1,1t Bagger",
+    slug: "kubota-u10-5",
+    model: "Kubota U10-5",
+    category: "Bagger",
+    image: {
+      url: "/images/machines/kubota-u10-5.jpg",
+      alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
+    },
+    price: { perDay: 90, perWeek: 72, perMonth: 45 },
+    content: {
+      title: "Neuer Kubota U10-5 mit Schnellwechsler",
+      description: "ROPS BAR - Hydraulischer Unterwagen",
+      specifications: {
+        dimensions: {
+          width: "750–990 mm",
+          weight: "1,1 t",
+        },
+        power: "7,4 kW (10,2 PS)",
+        workingRange: {
+          maxDepth: "1,8 m",
+        },
+      },
+    },
+    inventory: {
+      hennef: [{ articleId: "QHP8S7" }],
+    },
+  },
 ] as const;

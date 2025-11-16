@@ -334,25 +334,25 @@ export default function MachinePage({
             </div>
 
             <div className="order-1 lg:order-2 lg:col-span-1 flex justify-center rounded-xl lg:p-6">
-              <div className="flex flex-col space-y-12">
+              <div className="flex flex-col space-y-12 min-w-full">
                 <BookingWidget articleId={primaryArticle.articleId} />
 
                 <h2 className="text-3xl font-bold mb-6">Preise</h2>
                 <ul className="border border-gray-200 text-lg">
                   <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>{timeTable.rowOne}</span>
-                    <span className="font-bold">{effectivePrice.perDay} €</span>
+                    <span className="font-bold">{effectivePrice.perDay} €/Tag</span>
                   </li>
                   <li className="bg-white flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>{timeTable.rowTwo}</span>
                     <span className="font-bold">
-                      {effectivePrice.perWeek} €
+                      {effectivePrice.perWeek} €/Tag
                     </span>
                   </li>
                   <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>{timeTable.rowThree}</span>
                     <span className="font-bold">
-                      {effectivePrice.perMonth} €
+                      {effectivePrice.perMonth} €/Tag
                     </span>
                   </li>
                 </ul>
