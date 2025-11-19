@@ -29,20 +29,7 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
         <div className="container py-18 mx-auto max-w-8xl px-6 lg:px-8  md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-0 lg:gap-x-32 gap-y-12 lg:gap-y-0">
             <div className="space-y-3 text-center lg:text-left flex items-center lg:items-start flex-col">
-              <p className="text-lg text-primary">
-                {footerData.companyName}
-              </p>
-              {currentLocation && currentLocation.adress ? (
-                <div className="flex items-center text-center lg:text-left">
-                  <FontAwesomeIcon className="mr-2" icon={faLocationDot} />
-                  <p>{currentLocation.adress}</p>
-                </div>
-              ) : (
-                <div className="flex items-center text-center lg:text-left">
-                  <FontAwesomeIcon className="mr-2" icon={faLocationDot} />
-                  <p>{footerData.adress}</p>
-                </div>
-              )}
+              <p className="text-lg text-primary">{footerData.companyName}</p>
               {currentLocation && currentLocation.contact ? (
                 <>
                   {currentLocation.contact.telephone && (
@@ -72,6 +59,19 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
                 </>
               ) : (
                 <>
+                  {footerData.contact.telephone && (
+                    <div className="flex items-center lg:text-left">
+                      <FontAwesomeIcon className="mr-2" icon={faPhone} />
+                      <p>
+                        <Link
+                          href={`tel:${footerData.contact.telephone}`}
+                          className="hover:text-underline"
+                        >
+                          {footerData.contact.telephone}
+                        </Link>
+                      </p>
+                    </div>
+                  )}
                   <div className="flex items-center lg:text-left">
                     <p>
                       <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
@@ -92,7 +92,10 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
               <ul className="space-y-3">
                 {locationData.map((location, index) => (
                   <li key={index}>
-                    <Link href={location.slug} className="hover:underline">
+                    <Link
+                      href={`/${location.slug}`}
+                      className="hover:underline"
+                    >
                       {location.name}
                     </Link>
                   </li>

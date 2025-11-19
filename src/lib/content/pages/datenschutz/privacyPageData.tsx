@@ -433,7 +433,7 @@ export const privacyPageData = {
 
         <h2 className="text-3xl mt-20">4. Datenerfassung auf dieser Website</h2>
         <section className="space-y-6">
-          <div>
+          <div className="space-y-3">
             <h3 className="text-lg lg:text-xl font-bold mb-2">
               Anfrage per E-Mail oder Telefon
             </h3>
@@ -469,15 +469,28 @@ export const privacyPageData = {
               Name, E-Mail-Adresse, Mietzeitraum) zur Bearbeitung der Anfrage
               sowie zur Vertragsdurchführung gemäß Art. 6 Abs. 1 lit. b DSGVO.
             </p>
+            <p>
+              Informationen zur Verarbeitung personenbezogener Daten im
+              Zusammenhang mit dem Abschluss und der Durchführung von
+              Mietverträgen (einschließlich der GPS-Überwachung vermieteter
+              Geräte) finden Sie in den gesonderten Datenschutzhinweisen im
+              Rahmen des Mietvertrags.
+            </p>
           </div>
 
-          <div>
+          <div className="space-y-4">
             <h3 className="text-lg lg:text-xl font-bold mb-2">Google Maps</h3>
-            <p>
-              Diese Website nutzt den Kartendienst <strong>Google Maps</strong>.
-              Anbieter ist die Google Ireland Limited, Gordon House, Barrow
-              Street, Dublin 4, Irland.
-            </p>
+
+            <div>
+              <h4 className="font-bold mb-1">
+                Diese Website nutzt den Kartendienst
+              </h4>
+              <p>
+                Anbieter ist die Google Ireland Limited, Gordon House, Barrow
+                Street, Dublin 4, Irland.
+              </p>
+            </div>
+
             <p>
               Zur Nutzung der Funktionen von Google Maps ist es erforderlich,
               Ihre IP-Adresse zu speichern. Diese Informationen werden in der
@@ -485,38 +498,58 @@ export const privacyPageData = {
               gespeichert. Der Anbieter dieser Seite hat keinen Einfluss auf
               diese Datenübertragung.
             </p>
-            <p>
-              <strong>Welche Daten werden verarbeitet?</strong> IP-Adresse,
-              Standortdaten (falls vom Nutzer freigegeben), Browser- und
-              Gerätedaten.
-            </p>
-            <p>
-              <strong>Zweck der Verarbeitung:</strong> Anzeige interaktiver
-              Karten und leichte Auffindbarkeit der von uns angegebenen Orte.
-            </p>
-            <p>
-              <strong>Rechtsgrundlage:</strong> Die Verarbeitung erfolgt
-              ausschließlich auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1
-              lit. a DSGVO, § 25 Abs. 1 TDDDG). Diese Einwilligung erteilen Sie
-              über unseren Consent-Banner, bevor Google Maps geladen wird. Sie
-              können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft
-              widerrufen.
-            </p>
-            <p>
-              <strong>Datenübermittlung in Drittstaaten:</strong> Die
-              Verarbeitung kann auch auf Servern in den USA erfolgen. Für die
-              USA liegt kein Angemessenheitsbeschluss der EU-Kommission vor. Wir
-              haben mit Google Standardvertragsklauseln (SCC) abgeschlossen, die
-              ein angemessenes Datenschutzniveau gewährleisten sollen. Dennoch
-              können Risiken nicht ausgeschlossen werden (z. B. Zugriff durch
-              US-Behörden).
-            </p>
-            <p>
-              <strong>Widerrufsmöglichkeit:</strong> Sie können die Einwilligung
-              jederzeit widerrufen, indem Sie die Einstellung im Consent-Banner
-              ändern. Bitte beachten Sie, dass die Kartenanzeige dann nicht mehr
-              funktioniert.
-            </p>
+
+            <div>
+              <h4 className="font-bold mb-1">
+                Welche Daten werden verarbeitet?
+              </h4>
+              <p>
+                IP-Adresse, Standortdaten (falls vom Nutzer freigegeben),
+                Browser- und Gerätedaten.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-1">Zweck der Verarbeitung</h4>
+              <p>
+                Karten und leichte Auffindbarkeit der von uns angegebenen Orte.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-1">Rechtsgrundlage</h4>
+              <p>
+                Die Verarbeitung erfolgt ausschließlich auf Grundlage Ihrer
+                Einwilligung (Art. 6 Abs. 1 lit. a DSGVO, § 25 Abs. 1 TDDDG).
+                Diese Einwilligung erteilen Sie über unseren Consent-Banner,
+                bevor Google Maps geladen wird. Sie können Ihre Einwilligung
+                jederzeit mit Wirkung für die Zukunft widerrufen.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-1">
+                Datenübermittlung in Drittstaaten
+              </h4>
+              <p>
+                Die Verarbeitung kann auch auf Servern in den USA erfolgen. Für
+                die USA liegt kein Angemessenheitsbeschluss der EU-Kommission
+                vor. Wir haben mit Google Standardvertragsklauseln (SCC)
+                abgeschlossen, die ein angemessenes Datenschutzniveau
+                gewährleisten sollen. Dennoch können Risiken nicht
+                ausgeschlossen werden (z. B. Zugriff durch US-Behörden).
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-1">Widerrufsmöglichkeit</h4>
+              <p>
+                Sie können die Einwilligung jederzeit widerrufen, indem Sie die
+                Einstellung im Consent-Banner ändern. Bitte beachten Sie, dass
+                die Kartenanzeige dann nicht mehr funktioniert.
+              </p>
+            </div>
+
             <p>
               Weitere Informationen zum Umgang mit Nutzerdaten finden Sie in der{" "}
               <Link
@@ -531,7 +564,7 @@ export const privacyPageData = {
             </p>
           </div>
 
-          <div>
+          <div className="space-y-4">
             <h3 className="text-lg lg:text-xl font-bold mb-2">Stripe</h3>
             <p>
               Diese Website nutzt für die Zahlungsabwicklung und die Darstellung
@@ -551,29 +584,42 @@ export const privacyPageData = {
               verarbeitet. Stripe kann zudem Cookies setzen, um den
               Bezahlvorgang technisch zu ermöglichen.
             </p>
-            <p>
-              <strong>Zweck der Verarbeitung:</strong> Abwicklung von Zahlungen,
-              Betrugsprävention, technische Bereitstellung des Warenkorbs und
-              Sicherstellung der Funktionsfähigkeit unseres Buchungssystems.
-            </p>
-            <p>
-              <strong>Rechtsgrundlage:</strong> Die Verarbeitung ist zur
-              Erfüllung des Vertrags (Art. 6 Abs. 1 lit. b DSGVO) erforderlich,
-              da ohne Stripe keine Zahlungen und Buchungen abgewickelt werden
-              können. Soweit Stripe Cookies oder ähnliche Technologien für die
-              Funktion einsetzt, stützen wir dies auf Art. 6 Abs. 1 lit. f DSGVO
-              (berechtigtes Interesse an einem funktionierenden, sicheren
-              Bezahlvorgang).
-            </p>
-            <p>
-              <strong>Datenübermittlung in Drittstaaten:</strong> Stripe kann
-              Daten auch in die USA übertragen. Für die USA liegt kein
-              Angemessenheitsbeschluss der EU-Kommission vor. Stripe stützt
-              Übermittlungen jedoch auf die sog. Standardvertragsklauseln (SCC),
-              um ein angemessenes Datenschutzniveau sicherzustellen. Dennoch
-              können Risiken nicht ausgeschlossen werden (z.&nbsp;B. Zugriff
-              durch US-Behörden).
-            </p>
+
+            <div>
+              <h4 className="font-bold mb-1">Zweck der Verarbeitung</h4>
+              <p>
+                Abwicklung von Zahlungen, Betrugsprävention, technische
+                Bereitstellung des Warenkorbs und Sicherstellung der
+                Funktionsfähigkeit unseres Buchungssystems.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-1">Rechtsgrundlage</h4>
+              <p>
+                Die Verarbeitung ist zur Erfüllung des Vertrags (Art. 6 Abs. 1
+                lit. b DSGVO) erforderlich, da ohne Stripe keine Zahlungen und
+                Buchungen abgewickelt werden können. Soweit Stripe Cookies oder
+                ähnliche Technologien für die Funktion einsetzt, stützen wir
+                dies auf Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+                einem funktionierenden, sicheren Bezahlvorgang).
+              </p>
+            </div>
+
+            <div>
+              <h4 className="font-bold mb-1">
+                Datenübermittlung in Drittstaaten
+              </h4>
+              <p>
+                Stripe kann Daten auch in die USA übertragen. Für die USA liegt
+                kein Angemessenheitsbeschluss der EU-Kommission vor. Stripe
+                stützt Übermittlungen jedoch auf die sog.
+                Standardvertragsklauseln (SCC), um ein angemessenes
+                Datenschutzniveau sicherzustellen. Dennoch können Risiken nicht
+                ausgeschlossen werden (z.&nbsp;B. Zugriff durch US-Behörden).
+              </p>
+            </div>
+
             <p>
               Weitere Informationen zur Datenverarbeitung durch Stripe finden
               Sie in der{" "}
@@ -589,7 +635,7 @@ export const privacyPageData = {
             </p>
           </div>
 
-          <div>
+          <div className="space-y-4">
             <h3 className="text-lg lg:text-xl font-bold mb-2">
               Rentware (Buchungssystem)
             </h3>
@@ -621,72 +667,91 @@ export const privacyPageData = {
               </div>
             </div>
 
-            <p>
-              <strong>Welche Daten werden verarbeitet?</strong> Insbesondere
-              Stammdaten (z.&nbsp;B. Name, Anschrift), Kontaktdaten (E-Mail,
-              Telefonnummer), Buchungs- und Vertragsdaten (gewählte
-              Produkte/Zeiträume, Preise), Kommunikationsinhalte, sowie
-              technisch erforderliche Nutzungs-/Gerätedaten (z.&nbsp;B.
-              IP-Adresse, Browser-/Geräteinformationen, Zeitstempel). Soweit
-              Zahlungen über angebundene Zahlungsdienste erfolgen, werden
-              Zahlungsdaten dort verarbeitet (siehe dazu separaten Abschnitt
-              „Stripe“).
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">
+                Welche Daten werden verarbeitet?
+              </h4>
+              <p>
+                Insbesondere Stammdaten (z.&nbsp;B. Name, Anschrift),
+                Kontaktdaten (E-Mail, Telefonnummer), Buchungs- und
+                Vertragsdaten (gewählte Produkte/Zeiträume, Preise),
+                Kommunikationsinhalte, sowie technisch erforderliche
+                Nutzungs-/Gerätedaten (z.&nbsp;B. IP-Adresse,
+                Browser-/Geräteinformationen, Zeitstempel). Soweit Zahlungen
+                über angebundene Zahlungsdienste erfolgen, werden Zahlungsdaten
+                dort verarbeitet (siehe dazu separaten Abschnitt „Stripe“).
+              </p>
+            </div>
 
-            <p>
-              <strong>Zweck der Verarbeitung:</strong> Online-Buchung,
-              Vertragsdurchführung, Kundenkommunikation,
-              Termin-/Bestellverwaltung, Betrugsprävention sowie Stabilität und
-              Sicherheit des Dienstes.
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">Zweck der Verarbeitung</h4>
+              <p>
+                Online-Buchung, Vertragsdurchführung, Kundenkommunikation,
+                Termin-/Bestellverwaltung, Betrugsprävention sowie Stabilität
+                und Sicherheit des Dienstes.
+              </p>
+            </div>
 
-            <p>
-              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO
-              (Vertrag/ vorvertragliche Maßnahmen); ergänzend Art. 6 Abs. 1 lit.
-              f DSGVO (berechtigtes Interesse an effizienter und sicherer
-              Abwicklung). Sofern für einzelne Komfortfunktionen Cookies oder
-              ähnliche Technologien genutzt werden, erfolgt dies – soweit nicht
-              technisch notwendig – auf Grundlage Ihrer Einwilligung (Art. 6
-              Abs. 1 lit. a DSGVO i.V.m. § 25 Abs. 1 TDDDG).
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">Rechtsgrundlage</h4>
+              <p>
+                Art. 6 Abs. 1 lit. b DSGVO (Vertrag/ vorvertragliche Maßnahmen);
+                ergänzend Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an
+                effizienter und sicherer Abwicklung). Sofern für einzelne
+                Komfortfunktionen Cookies oder ähnliche Technologien genutzt
+                werden, erfolgt dies – soweit nicht technisch notwendig – auf
+                Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO i.V.m.
+                § 25 Abs. 1 TDDDG).
+              </p>
+            </div>
 
-            <p>
-              <strong>Hosting/Weitergabe:</strong> Rentware nutzt für das
-              Hosting u.&nbsp;a. externe Infrastruktur-Dienstleister. Nach
-              Angaben des Anbieters kann es hierbei zur Verarbeitung auf Servern
-              außerhalb der EU (z.&nbsp;B. USA) kommen. In diesen Fällen werden
-              geeignete Garantien (z.&nbsp;B. EU-Standardvertragsklauseln)
-              eingesetzt, um ein angemessenes Datenschutzniveau zu
-              gewährleisten. Gleichwohl können Restrisiken – etwa behördliche
-              Zugriffe – nicht vollständig ausgeschlossen werden.
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">Hosting/Weitergabe</h4>
+              <p>
+                Rentware nutzt für das Hosting u.&nbsp;a. externe
+                Infrastruktur-Dienstleister. Nach Angaben des Anbieters kann es
+                hierbei zur Verarbeitung auf Servern außerhalb der EU
+                (z.&nbsp;B. USA) kommen. In diesen Fällen werden geeignete
+                Garantien (z.&nbsp;B. EU-Standardvertragsklauseln) eingesetzt,
+                um ein angemessenes Datenschutzniveau zu gewährleisten.
+                Gleichwohl können Restrisiken – etwa behördliche Zugriffe –
+                nicht vollständig ausgeschlossen werden.
+              </p>
+            </div>
 
-            <p>
-              <strong>Auftragsverarbeitung:</strong> Mit Rentware wurde ein
-              Vertrag zur Auftragsverarbeitung (Art. 28 DSGVO) geschlossen.
-              Rentware verarbeitet personenbezogene Daten ausschließlich gemäß
-              unseren Weisungen.
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">Auftragsverarbeitung</h4>
+              <p>
+                Mit Rentware wurde ein Vertrag zur Auftragsverarbeitung (Art. 28
+                DSGVO) geschlossen. Rentware verarbeitet personenbezogene Daten
+                ausschließlich gemäß unseren Weisungen.
+              </p>
+            </div>
 
-            <p>
-              <strong>Speicherdauer:</strong> Personenbezogene Daten werden so
-              lange gespeichert, wie dies zur Vertragsabwicklung (einschließlich
-              gesetzlicher Aufbewahrungsfristen, z.&nbsp;B. nach Handels- und
-              Steuerrecht) erforderlich ist. Protokoll- und technische Daten
-              werden gelöscht, sobald sie für die genannten Zwecke nicht mehr
-              benötigt werden.
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">Speicherdauer</h4>
+              <p>
+                Personenbezogene Daten werden so lange gespeichert, wie dies zur
+                Vertragsabwicklung (einschließlich gesetzlicher
+                Aufbewahrungsfristen, z.&nbsp;B. nach Handels- und Steuerrecht)
+                erforderlich ist. Protokoll- und technische Daten werden
+                gelöscht, sobald sie für die genannten Zwecke nicht mehr
+                benötigt werden.
+              </p>
+            </div>
 
-            <p>
-              <strong>Erforderlichkeit/Einwilligung:</strong> Die Einbindung von
-              Rentware ist für die Durchführung von Online-Buchungen technisch
-              und vertraglich erforderlich. Ohne diese Verarbeitung ist eine
-              Buchung über die Website nicht möglich. Soweit darüber
-              hinausgehende, nicht essenzielle Funktionen verwendet werden,
-              fragen wir hierfür Ihre Einwilligung über unseren Consent-Banner
-              ab; diese können Sie jederzeit mit Wirkung für die Zukunft
-              widerrufen.
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">Erforderlichkeit/Einwilligung</h4>
+              <p>
+                Die Einbindung von Rentware ist für die Durchführung von
+                Online-Buchungen technisch und vertraglich erforderlich. Ohne
+                diese Verarbeitung ist eine Buchung über die Website nicht
+                möglich. Soweit darüber hinausgehende, nicht essenzielle
+                Funktionen verwendet werden, fragen wir hierfür Ihre
+                Einwilligung über unseren Consent-Banner ab; diese können Sie
+                jederzeit mit Wirkung für die Zukunft widerrufen.
+              </p>
+            </div>
 
             <p>
               Weitere Informationen erhältst du direkt beim Anbieter (Kontakt
@@ -702,7 +767,7 @@ export const privacyPageData = {
             </p>
           </div>
 
-          <div>
+          <div className="space-y-3">
             <h3 className="text-lg lg:text-xl font-bold mb-2">
               Lexware (Rechnungsstellung)
             </h3>
@@ -738,48 +803,61 @@ export const privacyPageData = {
               </div>
             </div>
 
-            <p>
-              <strong>Welche Daten werden verarbeitet?</strong> Stammdaten
-              (z.&nbsp;B. Name, Anschrift), Kontaktdaten (E-Mail-Adresse),
-              Vertrags- und Rechnungsdaten (Rechnungsnummer,
-              Leistungsbeschreibung, Preise, Zahlungsinformationen) sowie ggf.
-              Kommunikationsdaten.
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">
+                Welche Daten werden verarbeitet?
+              </h4>
+              <p>
+                Stammdaten (z.&nbsp;B. Name, Anschrift), Kontaktdaten
+                (E-Mail-Adresse), Vertrags- und Rechnungsdaten (Rechnungsnummer,
+                Leistungsbeschreibung, Preise, Zahlungsinformationen) sowie ggf.
+                Kommunikationsdaten.
+              </p>
+            </div>
 
-            <p>
-              <strong>Zweck der Verarbeitung:</strong> Erstellung, Verwaltung
-              und Versendung von Rechnungen, Erfüllung gesetzlicher
-              Buchhaltungs-/Steuerpflichten, Vertragsabwicklung sowie
-              Kommunikation mit Kunden.
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">Zweck der Verarbeitung</h4>
+              <p>
+                Erstellung, Verwaltung und Versendung von Rechnungen, Erfüllung
+                gesetzlicher Buchhaltungs-/Steuerpflichten, Vertragsabwicklung
+                sowie Kommunikation mit Kunden.
+              </p>
+            </div>
 
-            <p>
-              <strong>Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO
-              (Erfüllung eines Vertrags) sowie Art. 6 Abs. 1 lit. c DSGVO
-              (gesetzliche Verpflichtungen, z.&nbsp;B. nach Handels- und
-              Steuerrecht). Ergänzend können Daten auch auf Grundlage
-              berechtigter Interessen (Art. 6 Abs. 1 lit. f DSGVO) verarbeitet
-              werden, etwa zur Missbrauchs- und Betrugsprävention oder zur
-              Geltendmachung/Verteidigung von Rechtsansprüchen.
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">Rechtsgrundlage</h4>
+              <p>
+                Art. 6 Abs. 1 lit. b DSGVO (Erfüllung eines Vertrags) sowie Art.
+                6 Abs. 1 lit. c DSGVO (gesetzliche Verpflichtungen, z.&nbsp;B.
+                nach Handels- und Steuerrecht). Ergänzend können Daten auch auf
+                Grundlage berechtigter Interessen (Art. 6 Abs. 1 lit. f DSGVO)
+                verarbeitet werden, etwa zur Missbrauchs- und Betrugsprävention
+                oder zur Geltendmachung/Verteidigung von Rechtsansprüchen.
+              </p>
+            </div>
 
-            <p>
-              <strong>Hosting/Weitergabe:</strong> Lexware verarbeitet Daten
-              innerhalb der Haufe Group sowie über beauftragte Support- und
-              Hostingdienstleister. In Ausnahmefällen kann eine Übermittlung in
-              Drittstaaten (z.&nbsp;B. USA) im Rahmen von Supportmaßnahmen
-              erfolgen. Hierbei werden EU-Standardvertragsklauseln eingesetzt,
-              um ein angemessenes Datenschutzniveau sicherzustellen.
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">Hosting/Weitergabe</h4>
+              <p>
+                Lexware verarbeitet Daten innerhalb der Haufe Group sowie über
+                beauftragte Support- und Hostingdienstleister. In Ausnahmefällen
+                kann eine Übermittlung in Drittstaaten (z.&nbsp;B. USA) im
+                Rahmen von Supportmaßnahmen erfolgen. Hierbei werden
+                EU-Standardvertragsklauseln eingesetzt, um ein angemessenes
+                Datenschutzniveau sicherzustellen.
+              </p>
+            </div>
 
-            <p>
-              <strong>Speicherdauer:</strong> Personenbezogene Daten im
-              Zusammenhang mit der Rechnungsstellung werden gemäß den
-              gesetzlichen Aufbewahrungsfristen (regelmäßig 10 Jahre nach § 147
-              AO, § 257 HGB) gespeichert. Danach werden die Daten gelöscht,
-              sofern keine weiteren rechtlichen Pflichten oder berechtigten
-              Interessen einer Löschung entgegenstehen.
-            </p>
+            <div>
+              <h4 className="font-bold mb-1">Speicherdauer</h4>
+              <p>
+                Personenbezogene Daten im Zusammenhang mit der Rechnungsstellung
+                werden gemäß den gesetzlichen Aufbewahrungsfristen (regelmäßig
+                10 Jahre nach § 147 AO, § 257 HGB) gespeichert. Danach werden
+                die Daten gelöscht, sofern keine weiteren rechtlichen Pflichten
+                oder berechtigten Interessen einer Löschung entgegenstehen.
+              </p>
+            </div>
 
             <p>
               Weitere Informationen zur Datenverarbeitung durch Lexware finden

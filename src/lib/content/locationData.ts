@@ -6,6 +6,7 @@ export const locationData: LocationDataProps[] = [
     slug: "mannheim",
     adress: "Wittenberger Weg 2, 68309 Mannheim",
     contact: {
+      telephone: "0800/2244371",
       email: "info@bagger1.de",
     },
     image: {
@@ -19,6 +20,7 @@ export const locationData: LocationDataProps[] = [
     slug: "hennef",
     adress: "Kapellenhügel 3, 53773 Hennef",
     contact: {
+      telephone: "0800/2244371",
       email: "info@bagger1.de",
     },
     image: {
@@ -32,6 +34,7 @@ export const locationData: LocationDataProps[] = [
     slug: "bruchsal",
     adress: "Schlesierstr. 5, 76694 Forst",
     contact: {
+      telephone: "0800/2244371",
       email: "info@bagger1.de",
     },
     image: {
@@ -45,6 +48,7 @@ export const locationData: LocationDataProps[] = [
     slug: "stockstadt",
     adress: "Spessartstr. 7, 63811 Stockstadt",
     contact: {
+      telephone: "0800/2244371",
       email: "info@bagger1.de",
     },
     image: {

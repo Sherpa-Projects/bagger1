@@ -12,6 +12,7 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { Handshake } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCityName } from "@/lib/utils";
 
@@ -20,6 +21,11 @@ type NavigationProps = {
 };
 
 export default function Navigation({ slug }: NavigationProps) {
+  const instagramLink =
+    "https://www.instagram.com/bagger1.de?igsh=MWRuZ2J3cTd0bDJ5bg==";
+  const kleinanzeigenLink =
+    "https://www.kleinanzeigen.de/s-bestandsliste.html?userId=156249218";
+
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState<boolean>(false);
   const [location, setLocation] = useState<string>("Standort wählen");
@@ -106,7 +112,26 @@ export default function Navigation({ slug }: NavigationProps) {
               </Link>
             </div>
 
-            <div className="relative flex items-center space-x-12">
+            <div className="relative flex items-center space-x-6">
+              <Link
+                className="transition-all duration-300 transform hover:scale-105"
+                href={kleinanzeigenLink}
+                target="_blank"
+              >
+                <Image
+                  src="/images/kleinanzeigen.png"
+                  height={50}
+                  width={120}
+                  alt="Kleinanzeigen Logo"
+                />
+              </Link>
+              <Link
+                className="transition-all duration-300 transform hover:scale-105"
+                href={instagramLink}
+                target="_blank"
+              >
+                <Instagram className="w-6 h-6 text-pink-500" />
+              </Link>
               <button
                 onClick={() => setIsOverlayOpen(true)}
                 className="py-2 px-4 rounded-full border border-gray-300 cursor-pointer group"
@@ -277,6 +302,34 @@ export default function Navigation({ slug }: NavigationProps) {
                                 </span>
                               </Link>
                             ))}
+                            <div className="border-t border-gray-400 my-4" />
+                            <div className="space-y-6 pt-6">
+                              <div>
+                                <Link
+                                  className="transition-all duration-300 transform hover:scale-105"
+                                  href={kleinanzeigenLink}
+                                  target="_blank"
+                                >
+                                  <Image
+                                    src="/images/kleinanzeigen.png"
+                                    height={50}
+                                    width={200}
+                                    alt="Kleinanzeigen Logo"
+                                  />
+                                </Link>
+                              </div>
+
+                              <div>
+                                <Link
+                                  className="transition-all duration-300 transform hover:scale-105 flex items-center"
+                                  href={instagramLink}
+                                  target="_blank"
+                                >
+                                  <Instagram className="w-8 h-8 text-pink-500 mr-2" />
+                                  <p className="text-md">Instagram</p>
+                                </Link>
+                              </div>
+                            </div>
                           </div>
                         </>
                       )}
