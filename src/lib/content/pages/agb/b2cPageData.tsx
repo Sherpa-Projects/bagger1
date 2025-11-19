@@ -18,7 +18,7 @@ export const b2cPageData = {
         </h1>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">1. Geltungsbereich</h2>
+          <h2 className="text-3xl mt-20 text-primary">1. Geltungsbereich</h2>
           <p>
             Diese Mietbedingungen gelten ausschließlich für Verträge mit
             Verbrauchern im Sinne des § 13 BGB. Verbraucher ist jede natürliche
@@ -65,7 +65,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">2. Plichten des Mieters</h2>
+          <h2 className="text-3xl mt-20 text-primary">2. Plichten des Mieters</h2>
           <p>
             Der Mieter ist verpflichtet, den Mietgegenstand sorgfältig zu
             behandeln und vor Überbeanspruchung in jeder Weise zu schützen. Die
@@ -106,7 +106,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">
+          <h2 className="text-3xl mt-20 text-primary">
             3. Überlassung des Mietgegenstandes, Verzug des Vermieters
           </h2>
           <p>
@@ -145,7 +145,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">
+          <h2 className="text-3xl mt-20 text-primary">
             4. Mietzeit, Berechnung und Kündigung
           </h2>
           <p>
@@ -189,7 +189,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">5. Rückgabe des Mietgegenstandes</h2>
+          <h2 className="text-3xl mt-20 text-primary">5. Rückgabe des Mietgegenstandes</h2>
           <p>
             Der Mieter hat den Mietgegenstand vollständig, in ordnungsgemäßem,
             betriebsfähigem und gereinigtem Zustand zurückzugeben. Fehlteile
@@ -218,7 +218,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">
+          <h2 className="text-3xl mt-20 text-primary">
             6. Mängelanzeige und Haftung des Vermieters
           </h2>
           <p>
@@ -279,7 +279,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">7. Obhut und Pflichten des Mieters</h2>
+          <h2 className="text-3xl mt-20 text-primary">7. Obhut und Pflichten des Mieters</h2>
           <p>
             Der Mieter ist verpflichtet, den Mietgegenstand vor
             Überbeanspruchung und Witterungseinflüssen zu schützen, ihn
@@ -352,7 +352,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">
+          <h2 className="text-3xl mt-20 text-primary">
             8. Mietpreis, Nebenkosten und Zahlung
           </h2>
           <p>
@@ -406,7 +406,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">9. Kaution, Sicherheiten, Verzug</h2>
+          <h2 className="text-3xl mt-20 text-primary">9. Kaution, Sicherheiten, Verzug</h2>
           <p>
             Der Vermieter ist berechtigt, bei Vertragsschluss eine Kaution zu
             verlangen. Die Kaution dient der Sicherung sämtlicher Ansprüche des
@@ -434,7 +434,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">
+          <h2 className="text-3xl mt-20 text-primary">
             10. Schäden am Mietgegenstand und Verlust des Mietgegenstandes
           </h2>
           <p>
@@ -503,7 +503,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">11. Weitere Pflichten des Mieters</h2>
+          <h2 className="text-3xl mt-20 text-primary">11. Weitere Pflichten des Mieters</h2>
           <p>
             Sollte ein Dritter durch Beschlagnahme, Pfändung oder dergleichen,
             Rechte an dem Mietgegenstand geltend machen, so ist der Mieter
@@ -528,7 +528,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">
+          <h2 className="text-3xl mt-20 text-primary">
             12. Versicherung & Haftungsbegrenzung
           </h2>
           <p>
@@ -607,7 +607,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">
+          <h2 className="text-3xl mt-20 text-primary">
             14. Fristlose Kündigung durch den Vermieter
           </h2>
           <div>
@@ -638,7 +638,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">15. Anwendbares Recht</h2>
+          <h2 className="text-3xl mt-20 text-primary">15. Anwendbares Recht</h2>
           <p>
             Es gilt ausschließlich das Recht der Bundesrepublik Deutschland.
           </p>
@@ -653,7 +653,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">16. Streitbeilegungsverfahren</h2>
+          <h2 className="text-3xl mt-20 text-primary">16. Streitbeilegungsverfahren</h2>
           <p>
             Der Vermieter ist nicht verpflichtet und nicht bereit, an
             Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
@@ -662,7 +662,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">
+          <h2 className="text-3xl mt-20 text-primary">
             17. Vorrang individueller Vereinbarungen
           </h2>
           <p>
@@ -677,7 +677,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">18. Schriftform / Textform</h2>
+          <h2 className="text-3xl mt-20 text-primary">18. Schriftform / Textform</h2>
           <p>
             Änderungen und Ergänzungen des Vertrages sowie rechtserhebliche
             Erklärungen nach Vertragsschluss bedürfen der Textform.
@@ -687,7 +687,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">
+          <h2 className="text-3xl mt-20 text-primary">
             19. Eigentumsschutz / Drittzugriffe
           </h2>
           <p>
@@ -699,7 +699,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">20. Datenschutz & Telemetrie</h2>
+          <h2 className="text-3xl mt-20 text-primary">20. Datenschutz & Telemetrie</h2>
           <p>
             Ein Teil der Mietgeräte ist mit GPS-Ortung ausgestattet. Der Zugriff
             erfolgt durch einen eingeschränkten Personenkreis ausschließlich zu
@@ -711,7 +711,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">21. Salvatorische Klausel</h2>
+          <h2 className="text-3xl mt-20 text-primary">21. Salvatorische Klausel</h2>
           <p>
             Sollte eine Bestimmung dieses Vertrages unwirksam sein, wird die
             Wirksamkeit der übrigen Bestimmungen hiervon nicht berührt. Die
@@ -721,7 +721,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">22. Abtretungsverbot</h2>
+          <h2 className="text-3xl mt-20 text-primary">22. Abtretungsverbot</h2>
           <p>
             Vertrag durch den Mieter bedarf der Zustimmung des Vermieters in
             Textform.
@@ -729,7 +729,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20">23. Werbung auf Mietgeräten</h2>
+          <h2 className="text-3xl mt-20 text-primary">23. Werbung auf Mietgeräten</h2>
           <p>
             Der Vermieter darf Werbung an den Mietgeräten anbringen. Der Mieter
             hat dies zu dulden, solange der Gebrauch nicht beeinträchtigt wird.

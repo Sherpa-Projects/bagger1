@@ -92,7 +92,10 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
               <ul className="space-y-3">
                 {locationData.map((location, index) => (
                   <li key={index}>
-                    <Link href={location.slug} className="hover:underline">
+                    <Link
+                      href={`/${location.slug}`}
+                      className="hover:underline"
+                    >
                       {location.name}
                     </Link>
                   </li>
