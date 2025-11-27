@@ -280,7 +280,7 @@ export const b2bPageData = {
           </p>
           <div>
             <p>Der Mieter ist verpflichtet,</p>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside py-2 space-y-1">
               <li>
                 den Mietgegenstand vor Überbeanspruchung in jeder Weise zu
                 schützen;
@@ -497,7 +497,7 @@ export const b2bPageData = {
               Mietgegenstand selbst entstanden sind, können vom Mieter nur
               geltend gemacht werden bei:
             </p>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside py-2 space-y-1">
               <li>einer vorsätzlichen Pflichtverletzung des Vermieters;</li>
               <li>
                 einer grob fahrlässigen Pflichtverletzung des Vermieters oder
@@ -567,7 +567,7 @@ export const b2bPageData = {
             richtet.{" "}
           </p>
           <div>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside py-2 space-y-1">
               <li>
                 1 - 4 Tage: Anmietung entspricht die Frist einem Tag für die
                 Kündigung.
