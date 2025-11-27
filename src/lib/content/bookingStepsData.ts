@@ -17,9 +17,9 @@ type Step = {
 
 export const steps: Step[] = [
   {
-    title: "Maschine wählen",
+    title: "Standort & Maschine wählen",
     description:
-      "Wählen Sie genau die Maschine, die Sie brauchen – vom Minibagger bis zum Zubehör.",
+      "Wählen Sie Ihren Standort und die Maschine, die Sie brauchen – vom Minibagger bis zum Zubehör.",
     Icon: SquareMousePointer,
     image: "/images/illustrations/choose.svg",
   },
