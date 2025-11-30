@@ -162,7 +162,7 @@ export const b2cPageData = {
               einer Frist gekündigt werden, die sich nach der Abrechnungseinheit
               richtet.
             </p>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside py-2 space-y-1">
               <li>
                 1 - 4 Tage: Anmietung entspricht die Frist einem Tag für die
                 Kündigung.
@@ -299,7 +299,7 @@ export const b2cPageData = {
           </p>
           <div>
             <p>Der Mieter ist verpflichtet,</p>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside py-2 space-y-1">
               <li>
                 den Mietgegenstand vor Überbeanspruchung in jeder Weise zu
                 schützen;
@@ -547,7 +547,7 @@ export const b2cPageData = {
               selbst entstanden sind, können vom Mieter nur geltend gemacht
               werden bei:
             </p>
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside py-2 space-y-1">
               <li>einer vorsätzlichen Pflichtverletzung des Vermieters;</li>
               <li>
                 einer grob fahrlässigen Pflichtverletzung des Vermieters oder
@@ -608,7 +608,7 @@ export const b2cPageData = {
 
         <section className="space-y-3">
           <h2 className="text-3xl mt-20 text-primary">
-            14. Fristlose Kündigung durch den Vermieter
+            13. Fristlose Kündigung durch den Vermieter
           </h2>
           <div>
             <p>Der Vermieter kann den Vertrag fristlos kündigen, wenn:</p>
@@ -638,7 +638,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">15. Anwendbares Recht</h2>
+          <h2 className="text-3xl mt-20 text-primary">14. Anwendbares Recht</h2>
           <p>
             Es gilt ausschließlich das Recht der Bundesrepublik Deutschland.
           </p>
@@ -653,7 +653,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">16. Streitbeilegungsverfahren</h2>
+          <h2 className="text-3xl mt-20 text-primary">15. Streitbeilegungsverfahren</h2>
           <p>
             Der Vermieter ist nicht verpflichtet und nicht bereit, an
             Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
@@ -663,7 +663,7 @@ export const b2cPageData = {
 
         <section className="space-y-3">
           <h2 className="text-3xl mt-20 text-primary">
-            17. Vorrang individueller Vereinbarungen
+            16. Vorrang individueller Vereinbarungen
           </h2>
           <p>
             Individuelle Vertragsabreden haben Vorrang vor diesen
@@ -677,7 +677,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">18. Schriftform / Textform</h2>
+          <h2 className="text-3xl mt-20 text-primary">17. Schriftform / Textform</h2>
           <p>
             Änderungen und Ergänzungen des Vertrages sowie rechtserhebliche
             Erklärungen nach Vertragsschluss bedürfen der Textform.
@@ -688,7 +688,7 @@ export const b2cPageData = {
 
         <section className="space-y-3">
           <h2 className="text-3xl mt-20 text-primary">
-            19. Eigentumsschutz / Drittzugriffe
+            18. Eigentumsschutz / Drittzugriffe
           </h2>
           <p>
             Bei Pfändung oder sonstigen Zugriffen Dritter ist der Mieter
@@ -699,7 +699,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">20. Datenschutz & Telemetrie</h2>
+          <h2 className="text-3xl mt-20 text-primary">19. Datenschutz & Telemetrie</h2>
           <p>
             Ein Teil der Mietgeräte ist mit GPS-Ortung ausgestattet. Der Zugriff
             erfolgt durch einen eingeschränkten Personenkreis ausschließlich zu
@@ -711,7 +711,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">21. Salvatorische Klausel</h2>
+          <h2 className="text-3xl mt-20 text-primary">20. Salvatorische Klausel</h2>
           <p>
             Sollte eine Bestimmung dieses Vertrages unwirksam sein, wird die
             Wirksamkeit der übrigen Bestimmungen hiervon nicht berührt. Die
@@ -721,7 +721,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">22. Abtretungsverbot</h2>
+          <h2 className="text-3xl mt-20 text-primary">21. Abtretungsverbot</h2>
           <p>
             Vertrag durch den Mieter bedarf der Zustimmung des Vermieters in
             Textform.
@@ -729,7 +729,7 @@ export const b2cPageData = {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">23. Werbung auf Mietgeräten</h2>
+          <h2 className="text-3xl mt-20 text-primary">22. Werbung auf Mietgeräten</h2>
           <p>
             Der Vermieter darf Werbung an den Mietgeräten anbringen. Der Mieter
             hat dies zu dulden, solange der Gebrauch nicht beeinträchtigt wird.
