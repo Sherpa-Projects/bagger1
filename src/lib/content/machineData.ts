@@ -10,7 +10,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/hitachi-Zx26U-5.jpg",
       alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
     },
-    price: { perDay: 120, perWeek: 96, perMonth: 60 },
+    price: { perDay: 120 },
     content: {
       title: "",
       description: "",
@@ -38,7 +38,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/kubota-kx016-4.jpg",
       alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
     },
-    price: { perDay: 100, perWeek: 80, perMonth: 50 },
+    price: { perDay: 100 },
     content: {
       title: "",
       description: "",
@@ -67,7 +67,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/kubota-kx019-4.jpg",
       alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
     },
-    price: { perDay: 110, perWeek: 88, perMonth: 55 },
+    price: { perDay: 110 },
     content: {
       title: "",
       description: "",
