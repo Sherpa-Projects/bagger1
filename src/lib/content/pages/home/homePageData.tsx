@@ -2,14 +2,14 @@ import { BadgeEuro, Truck, Zap, Shapes } from "lucide-react";
 
 export const homePageData = {
   seo: {
-    metaTitle: "Ihre Nummer 1 für Bagger und Baumaschinen | Bagger1",
+    metaTitle: "Ihre Nummer 1 für Bagger und Maschinen | Bagger1",
     metaDescription: {
       google:
-        "Verfügbare Bagger & Baumaschinen in deiner Nähe finden – flexibel mieten, transparent buchen und direkt online reservieren bei Bagger1.",
+        "Verfügbare Bagger & Maschinen in deiner Nähe finden – flexibel mieten, transparent buchen und direkt online reservieren bei Bagger1.",
       openGraph:
-        "Finde jetzt verfügbare Bagger und Baumaschinen an deinem Standort. Mit flexiblen Zeiträumen, transparenten Preisen und direkter Online-Buchung bei Bagger1.",
+        "Finde jetzt verfügbare Bagger und Maschinen an deinem Standort. Mit flexiblen Zeiträumen, transparenten Preisen und direkter Online-Buchung bei Bagger1.",
       twitter:
-        "Bagger & Baumaschinen in deiner Nähe – flexibel mieten & direkt online buchen bei Bagger1.",
+        "Bagger & Maschinen in deiner Nähe – flexibel mieten & direkt online buchen bei Bagger1.",
     },
   },
   hero: {

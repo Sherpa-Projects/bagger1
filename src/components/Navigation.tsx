@@ -103,6 +103,20 @@ export default function Navigation({ slug }: NavigationProps) {
                 </div>
               </Link>
               <div className="border-l border-gray-300 h-6" />
+              <button
+                onClick={() => setIsOverlayOpen(true)}
+                className="py-2 px-4 rounded-full border border-gray-300 cursor-pointer group"
+              >
+                <div className="flex items-center">
+                  <span className="mr-1 text-primary inline-block will-change-transform group-hover:animate-hop">
+                    <FontAwesomeIcon icon={faLocationDot} />
+                  </span>
+                  <span className="text-gray-600 group-hover:text-primary duration-300">
+                    {location}
+                  </span>
+                </div>
+              </button>
+              <div className="border-l border-gray-300 h-6" />
               <Link
                 className="flex items-center text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
                 href="/partner"
@@ -132,19 +146,6 @@ export default function Navigation({ slug }: NavigationProps) {
               >
                 <Instagram className="w-6 h-6 text-pink-500" />
               </Link>
-              <button
-                onClick={() => setIsOverlayOpen(true)}
-                className="py-2 px-4 rounded-full border border-gray-300 cursor-pointer group"
-              >
-                <div className="flex items-center">
-                  <span className="mr-1 text-primary inline-block will-change-transform group-hover:animate-hop">
-                    <FontAwesomeIcon icon={faLocationDot} />
-                  </span>
-                  <span className="text-gray-600 group-hover:text-primary duration-300">
-                    {location}
-                  </span>
-                </div>
-              </button>
             </div>
           </div>
 
