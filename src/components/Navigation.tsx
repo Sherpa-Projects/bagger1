@@ -105,7 +105,7 @@ export default function Navigation({ slug }: NavigationProps) {
               <div className="border-l border-gray-300 h-6" />
               <button
                 onClick={() => setIsOverlayOpen(true)}
-                className="py-2 px-4 rounded-full border border-gray-300 cursor-pointer group"
+                className="py-2 px-4 rounded-full border border-primary bg-orange-50 shadow-sm cursor-pointer group"
               >
                 <div className="flex items-center">
                   <span className="mr-1 text-primary inline-block will-change-transform group-hover:animate-hop">
@@ -118,7 +118,7 @@ export default function Navigation({ slug }: NavigationProps) {
               </button>
               <div className="border-l border-gray-300 h-6" />
               <Link
-                className="flex items-center text-gray-800 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
+                className="flex items-center text-gray-600 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
                 href="/partner"
               >
                 <Handshake className="w-5 h-5 text-primary mr-2" />
@@ -128,7 +128,7 @@ export default function Navigation({ slug }: NavigationProps) {
 
             <div className="relative flex items-center space-x-6">
               <Link
-                className="transition-all duration-300 transform hover:scale-105"
+                className="transition-all duration-300 transform hover:scale-105 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
                 href={kleinanzeigenLink}
                 target="_blank"
               >
@@ -144,7 +144,7 @@ export default function Navigation({ slug }: NavigationProps) {
                 href={instagramLink}
                 target="_blank"
               >
-                <Instagram className="w-6 h-6 text-pink-500" />
+                <Instagram className="w-6 h-6 text-gray-600 hover:text-pink-500 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded" />
               </Link>
             </div>
           </div>
