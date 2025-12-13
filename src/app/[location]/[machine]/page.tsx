@@ -154,7 +154,7 @@ export default function MachinePage({
                   </div>
 
                   <div className="lg:mt-12">
-                    <details className="group rounded-xl border border-gray-200 bg-white">
+                    <details open className="group rounded-xl border border-gray-200 bg-white">
                       <summary className="flex items-center justify-between cursor-pointer select-none px-4 py-3">
                         <span className="text-xl font-semibold">
                           {machinePageData.specifications.title}
@@ -337,22 +337,22 @@ export default function MachinePage({
               <div className="flex flex-col space-y-12 min-w-full">
                 <BookingWidget articleId={primaryArticle.articleId} />
 
-                <h2 className="text-3xl font-bold mb-6">Preise</h2>
+                <h2 className="text-2xl font-bold mb-6">Preise & Rabatte</h2>
                 <ul className="border border-gray-200 text-lg">
                   <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>{timeTable.rowOne}</span>
-                    <span className="font-bold">{effectivePrice.perDay} €/Tag</span>
+                    <span className="font-bold">{effectivePrice.perDay} € netto/Tag</span>
                   </li>
                   <li className="bg-white flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>{timeTable.rowTwo}</span>
                     <span className="font-bold">
-                      {effectivePrice.perWeek} €/Tag
+                      20% Rabatt
                     </span>
                   </li>
                   <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>{timeTable.rowThree}</span>
                     <span className="font-bold">
-                      {effectivePrice.perMonth} €/Tag
+                      50% Rabatt
                     </span>
                   </li>
                 </ul>

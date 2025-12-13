@@ -71,43 +71,45 @@ export default function BranchCard() {
           }`}
         >
           {locations.map((loc, index) => (
-            <div
-              key={index}
-              className={`border border-gray-300 bg-white p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2 ${
-                locations.length === 1 &&
-                "w-full lg:w-auto lg:min-w-lg xl:min-w-xl"
-              }`}
-            >
-              {level === "all" && (
-                <iframe
-                  src={loc.map}
-                  className="w-full h-64 border-0 mb-4"
-                  allowFullScreen
-                  loading="lazy"
-                ></iframe>
-              )}
-              <div className="space-y-4">
-                <h3 className="text-xl font-semibold">{loc.name}</h3>
-                <div className="flex items-center">
-                  <FontAwesomeIcon
-                    className="mr-1.5 text-primary"
-                    icon={faClock}
-                  />
-                  <p>Mo.-Fr.: 7.00-12.00 und 13.00-17.30 Uhr</p>
-                </div>
-                {locations.length > 1 && (
-                  <Link href={`/${loc.slug}`} className="group">
-                    <div className="w-full flex justify-end lg:justify-start">
-                      <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
-                        Zum Standort
-                        <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
-                          <FontAwesomeIcon icon={faArrowRight} />
+            <div key={index}>
+              {locations.length > 1 && (
+                <Link href={`/${loc.slug}`} className="group">
+                  <div
+                    className={`border border-gray-300 bg-white p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2 ${
+                      locations.length === 1 &&
+                      "w-full lg:w-auto lg:min-w-lg xl:min-w-xl"
+                    }`}
+                  >
+                    {level === "all" && (
+                      <iframe
+                        src={loc.map}
+                        className="w-full h-64 border-0 mb-4"
+                        allowFullScreen
+                        loading="lazy"
+                      ></iframe>
+                    )}
+                    <div className="space-y-4">
+                      <h3 className="text-xl font-semibold">{loc.name}</h3>
+                      <div className="flex items-center">
+                        <FontAwesomeIcon
+                          className="mr-1.5 text-primary"
+                          icon={faClock}
+                        />
+                        <p>Mo.-Fr.: 7.00-12.00 und 13.00-17.30 Uhr</p>
+                      </div>
+
+                      <div className="w-full flex justify-end lg:justify-start">
+                        <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
+                          Zum Standort
+                          <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
+                            <FontAwesomeIcon icon={faArrowRight} />
+                          </span>
                         </span>
-                      </span>
+                      </div>
                     </div>
-                  </Link>
-                )}
-              </div>
+                  </div>
+                </Link>
+              )}
             </div>
           ))}
           {isHome && (
