@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { faLocationDot, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { locationData } from "@/lib/content/locationData";
 import { LocationDataProps } from "@/app/types/locationDataProps";
@@ -72,14 +72,9 @@ export default function BranchCard() {
         >
           {locations.map((loc, index) => (
             <div key={index}>
-              {locations.length > 1 && (
+              {locations.length > 1 ? (
                 <Link href={`/${loc.slug}`} className="group">
-                  <div
-                    className={`border border-gray-300 bg-white p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2 ${
-                      locations.length === 1 &&
-                      "w-full lg:w-auto lg:min-w-lg xl:min-w-xl"
-                    }`}
-                  >
+                  <div className="border border-gray-300 bg-white p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2">
                     {level === "all" && (
                       <iframe
                         src={loc.map}
@@ -109,6 +104,27 @@ export default function BranchCard() {
                     </div>
                   </div>
                 </Link>
+              ) : (
+                <div className="border border-gray-300 bg-white p-6 lg:p-4 rounded-lg w-full lg:w-auto lg:min-w-lg xl:min-w-xl">
+                  {level === "all" && (
+                    <iframe
+                      src={loc.map}
+                      className="w-full h-64 border-0 mb-4"
+                      allowFullScreen
+                      loading="lazy"
+                    ></iframe>
+                  )}
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold">{loc.name}</h3>
+                    <div className="flex items-center">
+                      <FontAwesomeIcon
+                        className="mr-1.5 text-primary"
+                        icon={faClock}
+                      />
+                      <p>Mo.-Fr.: 7.00-12.00 und 13.00-17.30 Uhr</p>
+                    </div>
+                  </div>
+                </div>
               )}
             </div>
           ))}
