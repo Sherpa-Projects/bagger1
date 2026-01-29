@@ -1,13 +1,13 @@
 export const machinePageData = {
   seo: {
-    metaTitle: "Baumaschine mieten – Modelle & Preise | Bagger1",
+    metaTitle: "Baumaschine mieten – Modelle & Preise | BAGGER1",
     metaDescription: {
       google:
-        "Alle Infos zur Baumaschine: Modell, Tagespreis und Verfügbarkeit an deinem Standort. Jetzt direkt online mieten bei Bagger1.",
+        "Alle Infos zur Baumaschine: Modell, Tagespreis und Verfügbarkeit an deinem Standort. Jetzt direkt online mieten bei BAGGER1.",
       openGraph:
-        "Modell, Tagespreis und Verfügbarkeit deiner Baumaschine auf einen Blick – finde die passende Maschine an deinem Standort und miete sie direkt online bei Bagger1.",
+        "Modell, Tagespreis und Verfügbarkeit deiner Baumaschine auf einen Blick – finde die passende Maschine an deinem Standort und miete sie direkt online bei BAGGER1.",
       twitter:
-        "Modell, Preis & Verfügbarkeit checken und direkt online mieten – mit Bagger1.",
+        "Modell, Preis & Verfügbarkeit checken und direkt online mieten – mit BAGGER1.",
     },
   },
   timeTable: {

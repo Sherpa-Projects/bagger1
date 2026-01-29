@@ -2,18 +2,18 @@ import { BadgeEuro, Truck, Zap, Shapes } from "lucide-react";
 
 export const homePageData = {
   seo: {
-    metaTitle: "Ihre Nummer 1 für Bagger und Maschinen | Bagger1",
+    metaTitle: "Ihre Nummer 1 für Bagger und Maschinen | BAGGER1",
     metaDescription: {
       google:
-        "Verfügbare Bagger & Maschinen in deiner Nähe finden – flexibel mieten, transparent buchen und direkt online reservieren bei Bagger1.",
+        "Verfügbare Bagger & Maschinen in deiner Nähe finden – flexibel mieten, transparent buchen und direkt online reservieren bei BAGGER1.",
       openGraph:
-        "Finde jetzt verfügbare Bagger und Maschinen an deinem Standort. Mit flexiblen Zeiträumen, transparenten Preisen und direkter Online-Buchung bei Bagger1.",
+        "Finde jetzt verfügbare Bagger und Maschinen an deinem Standort. Mit flexiblen Zeiträumen, transparenten Preisen und direkter Online-Buchung bei BAGGER1.",
       twitter:
-        "Bagger & Maschinen in deiner Nähe – flexibel mieten & direkt online buchen bei Bagger1.",
+        "Bagger & Maschinen in deiner Nähe – flexibel mieten & direkt online buchen bei BAGGER1.",
     },
   },
   hero: {
-    title: "Bagger1",
+    title: "BAGGER1",
     subtitle: "Ihre Nummer 1 für Bagger und Maschinen",
     image: "/images/hero.jpg",
   },
@@ -28,7 +28,7 @@ export const homePageData = {
       </>
     ),
     paragraphs: [
-      "Ob für private Bauprojekte am Wochenende oder für professionelle Baustellen während der Woche – bei Bagger1 bekommen Sie modernste Baumaschinen schnell, zuverlässig und zum besten Preis-Leistungs-Verhältnis. Wir bieten nicht nur die Vermietung, sondern auch ein Rundum-Sorglos-Paket: Lieferung, Abholung, ausführliche Einweisung und praxisnahe Anleitungen – damit selbst Privatkunden sicher und effizient arbeiten können.",
+      "Ob für private Bauprojekte am Wochenende oder für professionelle Baustellen während der Woche – bei BAGGER1 bekommen Sie modernste Baumaschinen schnell, zuverlässig und zum besten Preis-Leistungs-Verhältnis. Wir bieten nicht nur die Vermietung, sondern auch ein Rundum-Sorglos-Paket: Lieferung, Abholung, ausführliche Einweisung und praxisnahe Anleitungen – damit selbst Privatkunden sicher und effizient arbeiten können.",
       "Für Firmenkunden sind wir ein verlässlicher Partner, der auch kurzfristig reagiert.",
       "Auf Wunsch beschaffen wir zusätzlich Spezialmaschinen, zugeschnitten auf die Bedürfnisse Ihrer Branche – ob Landwirtschaft, Kommunalbetrieb oder sogar im Bergbau.",
     ],
@@ -47,7 +47,7 @@ export const homePageData = {
     ],
   },
   career: {
-    title: "Bagger1 wächst",
+    title: "BAGGER1 wächst",
     text: "Als Teil eines jungen, dynamischen Franchise-Netzwerks sind wir ständig dabei, neue Standorte zu erschließen und noch näher bei unseren Kunden zu sein.",
     button: {
       cta: "Mehr erfahren",

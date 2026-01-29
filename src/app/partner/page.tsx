@@ -13,12 +13,12 @@ export const generateMetadata = (): Metadata => {
       title: partnerPageData.seo.metaTitle,
       description: partnerPageData.seo.metaDescription.openGraph,
       url: "https://bagger1.de",
-      siteName: "Baumaschinenverleih in deiner Gegend | Bagger1",
+      siteName: "Baumaschinenverleih in deiner Gegend | BAGGER1",
       images: {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Gelber Hintergrund mit schwarzem Text: ‚Bagger 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
+        alt: "Gelber Hintergrund mit schwarzem Text: BAGGER1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
       },
     },
     twitter: {

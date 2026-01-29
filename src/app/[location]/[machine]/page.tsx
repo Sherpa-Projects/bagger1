@@ -35,13 +35,13 @@ export async function generateMetadata({
         title: machinePageData.seo.metaTitle,
         description: machinePageData.seo.metaDescription.openGraph,
         url: "https://bagger1.de",
-        siteName: "Bagger1",
+        siteName: "BAGGER1",
         images: [
           {
             url: "/images/og-image.png",
             width: 1200,
             height: 630,
-            alt: "Gelber Hintergrund mit schwarzem Text: ‚Bagger 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
+            alt: "Gelber Hintergrund mit schwarzem Text: ‚BAGGER1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
           },
         ],
       },
@@ -58,7 +58,7 @@ export async function generateMetadata({
   const machineName = selectedMachine.name ?? humanizeSlug(machine);
   const model = selectedMachine.model ? ` ${selectedMachine.model}` : "";
 
-  const title = `Baumaschine mieten – ${machineName}${model} | Bagger1`;
+  const title = `Baumaschine mieten – ${machineName}${model} | BAGGER1`;
   const url = `https://bagger1.de/${machine}`;
 
   return {
@@ -68,7 +68,7 @@ export async function generateMetadata({
       title: machinePageData.seo.metaTitle,
       description: machinePageData.seo.metaDescription.openGraph,
       url,
-      siteName: "Bagger1",
+      siteName: "BAGGER1",
       images: [
         {
           url: "/images/og-image.png",
