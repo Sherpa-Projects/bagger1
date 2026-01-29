@@ -4,7 +4,7 @@ export const locationData: LocationDataProps[] = [
   {
     name: "Mannheim",
     slug: "mannheim",
-    adress: "Wittenberger Weg 2, 68309 Mannheim",
+    adress: "Schlesierstraße 5, 76694 Forst",
     contact: {
       telephone: "0800/2244371",
       email: "info@bagger1.de",

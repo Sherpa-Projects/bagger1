@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 export const privacyPageData = {
-  metaTitle: "Datenschutzerklärung | Bagger1",
+  metaTitle: "Datenschutzerklärung | BAGGER1",
   metaDescription: {
     google:
-      "Datenschutzerklärung von Bagger1 gemäß DSGVO – alle Infos zur Art, dem Umfang und dem Zweck der Verarbeitung deiner personenbezogenen Daten.",
+      "Datenschutzerklärung von BAGGER1 gemäß DSGVO – alle Infos zur Art, dem Umfang und dem Zweck der Verarbeitung deiner personenbezogenen Daten.",
     openGraph:
-      "Wie geht Bagger1 mit deinen Daten um? Unsere Datenschutzerklärung erklärt dir transparent und verständlich, welche personenbezogenen Daten wir wofür verarbeiten – gemäß DSGVO.",
+      "Wie geht BAGGER1 mit deinen Daten um? Unsere Datenschutzerklärung erklärt dir transparent und verständlich, welche personenbezogenen Daten wir wofür verarbeiten – gemäß DSGVO.",
     twitter:
-      "Bagger1 & Datenschutz: Erfahre, wie wir deine Daten gemäß DSGVO verarbeiten.“",
+      "BAGGER1 & Datenschutz: Erfahre, wie wir deine Daten gemäß DSGVO verarbeiten.“",
   },
   Body: () => (
     <>
@@ -186,7 +186,7 @@ export const privacyPageData = {
             Baumaschinenverleih Jens Wetzstein Wittenberger Weg 2 68309 Mannheim
           </p>
           <p>Telefon: +49 159 0652 5276</p>
-          <p>E-Mail: info@bagger1.de</p>
+          <p>E-Mail: info@BAGGER1.de</p>
           <p>
             Verantwortliche Stelle ist die natürliche oder juristische Person,
             die allein oder gemeinsam mit anderen über die Zwecke und Mittel der

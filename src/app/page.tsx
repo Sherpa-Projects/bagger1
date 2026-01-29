@@ -19,12 +19,12 @@ export const generateMetadata = (): Metadata => {
       title: homePageData.seo.metaTitle,
       description: homePageData.seo.metaDescription.openGraph,
       url: "https://bagger1.de",
-      siteName: "Baumaschinenverleih in deiner Gegend | Bagger1",
+      siteName: "Baumaschinenverleih in deiner Gegend | BAGGER1",
       images: {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Startseite | Bagger1",
+        alt: "Startseite | BAGGER1",
       },
     },
     twitter: {

@@ -6,7 +6,7 @@ import {
   Truck,
 } from "lucide-react";
 
-export const titleHtml = `So läuft die Buchung bei <span class="text-primary">Bagger1</span> ab`;
+export const titleHtml = `So läuft die Buchung bei <span class="text-primary">BAGGER1</span> ab`;
 
 type Step = {
   title: string;

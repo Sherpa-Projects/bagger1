@@ -97,7 +97,7 @@ export default function Navigation({ slug }: NavigationProps) {
                     className="mx-auto p-1"
                   />
                   <span className="font-oswald ml-2 text-lg">
-                    Bagger<span className="text-primary">1</span>
+                    BAGGER<span className="text-primary">1</span>
                     <br />
                   </span>
                 </div>
@@ -219,7 +219,7 @@ export default function Navigation({ slug }: NavigationProps) {
                   className="mx-auto p-1"
                 />
                 <span className="font-oswald ml-2 text-xl">
-                  Bagger<span className="text-primary">1</span>
+                  BAGGER<span className="text-primary">1</span>
                 </span>
               </div>
             </Link>

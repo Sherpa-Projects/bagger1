@@ -11,18 +11,18 @@ import {
 
 export const partnerPageData = {
   seo: {
-    metaTitle: "Flexibler Nebenjob mit fairer Bezahlung | Bagger1",
+    metaTitle: "Flexibler Nebenjob mit fairer Bezahlung | BAGGER1",
     metaDescription: {
       google:
-        "Jetzt als Fahrer (m/w/d) im Minijob bei Bagger1 starten – mit flexiblen Arbeitszeiten, fairer Bezahlung und direktem Draht zum Team.",
+        "Jetzt als Fahrer (m/w/d) im Minijob bei BAGGER1 starten – mit flexiblen Arbeitszeiten, fairer Bezahlung und direktem Draht zum Team.",
       openGraph:
-        "Minijob als Fahrer (m/w/d) bei Bagger1: Flexible Arbeitszeiten, faire Bezahlung, klare Prozesse und ein Team, das zusammenhält. Jetzt Teil von Bagger1 werden!",
+        "Minijob als Fahrer (m/w/d) bei BAGGER1: Flexible Arbeitszeiten, faire Bezahlung, klare Prozesse und ein Team, das zusammenhält. Jetzt Teil von BAGGER1 werden!",
       twitter:
-        "Minijob bei Bagger1: Starte als Fahrer (m/w/d) – fair bezahlt & flexibel!",
+        "Minijob bei BAGGER1: Starte als Fahrer (m/w/d) – fair bezahlt & flexibel!",
     },
   },
   hero: {
-    title: "Werde Teil von Bagger1",
+    title: "Werde Teil von BAGGER1",
     subtitle: "Fahrer & Auslieferung (m/w/d)",
     image: "/images/partner.jpg",
   },
@@ -39,7 +39,7 @@ export const partnerPageData = {
     ],
     image: {
       src: "/images/claim.png",
-      alt: "Dann bist du bei Bagger1 genau richtig! Wir suchen zuverlässige Partner, die unsere Bagger zu Kunden bringen, vor Ort eine kurze Einweisung geben und so für zufriedene Baustellen sorgen.",
+      alt: "Dann bist du bei BAGGER1 genau richtig! Wir suchen zuverlässige Partner, die unsere Bagger zu Kunden bringen, vor Ort eine kurze Einweisung geben und so für zufriedene Baustellen sorgen.",
     },
   },
   offer: {
@@ -87,7 +87,7 @@ export const partnerPageData = {
   contactCard: {
     title: "Standorte",
     description:
-      "Wir suchen Partner in allen Regionen, in denen noch kein Bagger1-Standort vorhanden ist.",
+      "Wir suchen Partner in allen Regionen, in denen noch kein BAGGER1-Standort vorhanden ist.",
     subtitle: "So bewirbst du dich",
     phone: "01523 1770260",
     email: "partner@bagger1.de",

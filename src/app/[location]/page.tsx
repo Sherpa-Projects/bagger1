@@ -7,6 +7,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { notFound } from "next/navigation";
 import { use } from "react";
 import Navigation from "@/components/Navigation";
+// import { LocationSeoContent } from "@/components/LocationSeoContent";
 import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
@@ -32,13 +33,13 @@ export async function generateMetadata({
         title: locationPageData.seo.metaTitle,
         description: locationPageData.seo.metaDescription.openGraph,
         url: "https://bagger1.de",
-        siteName: "Bagger1",
+        siteName: "BAGGER1",
         images: [
           {
             url: "/images/og-image.png",
             width: 1200,
             height: 630,
-            alt: "Gelber Hintergrund mit schwarzem Text: ‚Bagger 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
+            alt: "Gelber Hintergrund mit schwarzem Text: BAGGER1 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
           },
         ],
       },
@@ -67,7 +68,7 @@ export async function generateMetadata({
           url: "/images/og-image.png",
           width: 1200,
           height: 630,
-          alt: "Gelber Hintergrund mit schwarzem Text: ‚Bagger 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
+          alt: "Gelber Hintergrund mit schwarzem Text: BAGGER1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
         },
       ],
     },
@@ -186,6 +187,10 @@ export default function LocationPage({
             </div>
           </div>
         )}
+        {/* <LocationSeoContent
+          locationSlug={location}
+          cityName={currentLocation.name}
+        /> */}
         <BranchCard />
       </main>
 

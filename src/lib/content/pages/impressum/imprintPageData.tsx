@@ -1,12 +1,12 @@
 export const imprintPageData = {
-  metaTitle: "Impressum | Bagger1",
+  metaTitle: "Impressum | BAGGER1",
   metaDescription: {
     google:
-      "Impressum der Bagger1 Website gemäß § 5 TMG – mit allen Pflichtangaben, Kontaktdaten und rechtlichen Hinweisen.",
+      "Impressum der BAGGER1 Website gemäß § 5 TMG – mit allen Pflichtangaben, Kontaktdaten und rechtlichen Hinweisen.",
     openGraph:
-      "Impressum von Bagger1 mit allen gesetzlich vorgeschriebenen Angaben nach § 5 TMG: Ansprechpartner, Kontaktinformationen und rechtliche Hinweise auf einen Blick.",
+      "Impressum von BAGGER1 mit allen gesetzlich vorgeschriebenen Angaben nach § 5 TMG: Ansprechpartner, Kontaktinformationen und rechtliche Hinweise auf einen Blick.",
     twitter:
-      "Impressum von Bagger1 – alle Pflichtangaben nach § 5 TMG kompakt zusammengefasst.",
+      "Impressum von BAGGER1 – alle Pflichtangaben nach § 5 TMG kompakt zusammengefasst.",
   },
   Body: () => (
     <>
@@ -32,7 +32,7 @@ export const imprintPageData = {
           <h2 className="text-lg lg:text-xl font-bold mb-2">Kontakt</h2>
           <p>Telefon: +49 159 0652 5276</p>
           <p>
-            E-Mail: <a href="mailto:info@bagger1.de">info@bagger1.de</a>
+            E-Mail: <a href="mailto:info@BAGGER1.de">info@BAGGER1.de</a>
           </p>
         </section>
 

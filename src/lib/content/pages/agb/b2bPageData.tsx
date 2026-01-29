@@ -1,14 +1,14 @@
 import Link from "next/link";
 
 export const b2bPageData = {
-  metaTitle: "Allgemeine Geschäftsbedingungen (B2B) | Bagger1",
+  metaTitle: "Allgemeine Geschäftsbedingungen (B2B) | BAGGER1",
   metaDescription: {
     google:
       "Hier finden Sie unsere allgemeinen Geschäftsbedingungen für Geschäftskunden mit allen wichtigen Regelungen zu Nutzung, Leistungen und Pflichten.",
     openGraph:
-      "Allgemeine Geschäftsbedingungen (B2B) von Bagger1 – alle Regelungen zur Nutzung, unseren Leistungen und den Pflichten für Geschäftskunden kompakt und transparent zusammengefasst.",
+      "Allgemeine Geschäftsbedingungen (B2B) von BAGGER1 – alle Regelungen zur Nutzung, unseren Leistungen und den Pflichten für Geschäftskunden kompakt und transparent zusammengefasst.",
     twitter:
-      "AGB für Geschäftskunden bei Bagger1 – kompakt, transparent und klar verständlich.",
+      "AGB für Geschäftskunden bei BAGGER1 – kompakt, transparent und klar verständlich.",
   },
 
   Body: () => (
