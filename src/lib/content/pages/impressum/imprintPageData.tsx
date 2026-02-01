@@ -22,9 +22,9 @@ export const imprintPageData = {
           <address>
             <strong>Baumaschinenverleih Jens Wetzstein</strong>
             <br />
-            Wittenberger Weg 2
+            Schlesierstraße 5
             <br />
-            68309 Mannheim
+            76694 Forst
           </address>
         </section>
 
@@ -32,7 +32,7 @@ export const imprintPageData = {
           <h2 className="text-lg lg:text-xl font-bold mb-2">Kontakt</h2>
           <p>Telefon: +49 159 0652 5276</p>
           <p>
-            E-Mail: <a href="mailto:info@BAGGER1.de">info@BAGGER1.de</a>
+            E-Mail: <a href="mailto:info@BAGGER1.de">info@bagger1.de</a>
           </p>
         </section>
 
@@ -50,10 +50,12 @@ export const imprintPageData = {
         </section>
 
         <section>
-          <h2 className="text-lg lg:text-xl font-bold mb-2">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:</h2>
+          <h2 className="text-lg lg:text-xl font-bold mb-2">
+            Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:
+          </h2>
           <p>Jens Wetzstein</p>
-          <p>Wittenberger Weg 2</p>
-          <p>68309 Mannheim</p>
+          <p>Schlesierstraße 5</p>
+          <p>76694 Forst </p>
         </section>
 
         <section>
