@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { footerData } from "@/lib/content/footerData";
+import { constants } from "@/lib/content/constants";
 import { locationData } from "@/lib/content/locationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -29,7 +30,7 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
         <div className="container py-18 mx-auto max-w-8xl px-6 lg:px-8  md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-0 lg:gap-x-32 gap-y-12 lg:gap-y-0">
             <div className="space-y-3 text-center lg:text-left flex items-center lg:items-start flex-col">
-              <p className="text-lg text-primary">{footerData.companyName}</p>
+              <p className="text-lg text-primary">{constants.companyName}</p>
               {currentLocation && currentLocation.contact ? (
                 <>
                   {currentLocation.contact.telephone && (
@@ -59,15 +60,15 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
                 </>
               ) : (
                 <>
-                  {footerData.contact.telephone && (
+                  {constants.contact.telephone && (
                     <div className="flex items-center lg:text-left">
                       <FontAwesomeIcon className="mr-2" icon={faPhone} />
                       <p>
                         <Link
-                          href={`tel:${footerData.contact.telephone}`}
+                          href={`tel:${constants.contact.telephone}`}
                           className="hover:text-underline"
                         >
-                          {footerData.contact.telephone}
+                          {constants.contact.telephone}
                         </Link>
                       </p>
                     </div>
@@ -76,10 +77,10 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
                     <p>
                       <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
                       <Link
-                        href={`mailto:${footerData.contact.email}`}
+                        href={`mailto:${constants.contact.email}`}
                         className="hover:text-underline"
                       >
-                        {footerData.contact.email}
+                        {constants.contact.email}
                       </Link>
                     </p>
                   </div>
@@ -105,12 +106,12 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
 
             <div className="space-y-3 text-center lg:text-left">
               <p className="text-lg text-primary">
-                {footerData.openingHours.title}
+                {constants.openingHours.title}
               </p>
               <ul className="space-y-3">
-                <li>{footerData.openingHours.weekday}</li>
-                <li>{footerData.openingHours.saturday}</li>
-                <li>{footerData.openingHours.sunday}</li>
+                <li>{constants.openingHours.weekday}</li>
+                <li>{constants.openingHours.saturday}</li>
+                <li>{constants.openingHours.sunday}</li>
               </ul>
             </div>
 

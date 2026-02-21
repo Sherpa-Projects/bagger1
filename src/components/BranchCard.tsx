@@ -2,13 +2,10 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { faClock } from "@fortawesome/free-regular-svg-icons";
+import BranchContent from "./BranchContent";
 import { locationData } from "@/lib/content/locationData";
 import { LocationDataProps } from "@/app/types/locationDataProps";
-import Link from "next/link";
 import { ConsentLevel, readConsent } from "@/lib/consent";
 
 export default function BranchCard() {
@@ -43,7 +40,7 @@ export default function BranchCard() {
     const path = window.location.pathname;
     if (path.length > 1) {
       const filteredLocation = locationData.filter(
-        (location) => location.slug === path.slice(1)
+        (location) => location.slug === path.slice(1),
       );
       setLocations(filteredLocation);
     } else {
@@ -52,15 +49,11 @@ export default function BranchCard() {
   }, []);
 
   return (
-    <div className="py-10 lg:py-20 px-4">
+    <div className={`px-4 ${locations.length > 1 && "py-10 lg:py-20"}`}>
       <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-        {locations.length === 1 ? (
+        {locations.length > 1 && (
           <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
             Unser Standort in {locations[0].name}
-          </h2>
-        ) : (
-          <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
-            Unsere Standorte
           </h2>
         )}
         <div
@@ -70,64 +63,7 @@ export default function BranchCard() {
               : "flex justify-center"
           }`}
         >
-          {locations.map((loc, index) => (
-            <div key={index}>
-              {locations.length > 1 ? (
-                <Link href={`/${loc.slug}`} className="group">
-                  <div className="border border-gray-300 bg-white p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2">
-                    {level === "all" && (
-                      <iframe
-                        src={loc.map}
-                        className="w-full h-64 border-0 mb-4"
-                        allowFullScreen
-                        loading="lazy"
-                      ></iframe>
-                    )}
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-semibold">{loc.name}</h3>
-                      <div className="flex items-center">
-                        <FontAwesomeIcon
-                          className="mr-1.5 text-primary"
-                          icon={faClock}
-                        />
-                        <p>Mo.-Fr.: 7.00-12.00 und 13.00-17.30 Uhr</p>
-                      </div>
-
-                      <div className="w-full flex justify-end lg:justify-start">
-                        <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
-                          Zum Standort
-                          <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
-                            <FontAwesomeIcon icon={faArrowRight} />
-                          </span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ) : (
-                <div className="border border-gray-300 bg-white p-6 lg:p-4 rounded-lg w-full lg:w-auto lg:min-w-lg xl:min-w-xl">
-                  {level === "all" && (
-                    <iframe
-                      src={loc.map}
-                      className="w-full h-64 border-0 mb-4"
-                      allowFullScreen
-                      loading="lazy"
-                    ></iframe>
-                  )}
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-semibold">{loc.name}</h3>
-                    <div className="flex items-center">
-                      <FontAwesomeIcon
-                        className="mr-1.5 text-primary"
-                        icon={faClock}
-                      />
-                      <p>Mo.-Fr.: 7.00-12.00 und 13.00-17.30 Uhr</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
+          <BranchContent locations={locations} level={level} />
           {isHome && (
             <>
               {" "}

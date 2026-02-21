@@ -92,9 +92,9 @@ export default function Home() {
             <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
               {usp.title}
             </h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {items.map(({ label, Icon }, i) => (
-                <div
+                <li
                   key={i}
                   className="relative overflow-hidden rounded-2xl border border-gray-300 bg-white p-6"
                 >
@@ -108,9 +108,9 @@ export default function Home() {
                       </p>
                     </div>
                   </div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </div>
 

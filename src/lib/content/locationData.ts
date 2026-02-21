@@ -44,7 +44,7 @@ export const locationData: LocationDataProps[] = [
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83542.85740850326!2d8.516518458803844!3d49.130061060922436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797a15dd7998d39%3A0xc4a743128bd895c7!2sBruchsal!5e0!3m2!1sde!2sde!4v1757769980017!5m2!1sde!2sde",
   },
   {
-    name: "Stockstadt (bei Aschaffenburg)",
+    name: "Stockstadt",
     slug: "stockstadt",
     adress: "Spessartstr. 7, 63811 Stockstadt",
     contact: {

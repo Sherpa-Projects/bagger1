@@ -7,14 +7,13 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { notFound } from "next/navigation";
 import { use } from "react";
 import Navigation from "@/components/Navigation";
-// import { LocationSeoContent } from "@/components/LocationSeoContent";
+import { LocationSeoContent } from "@/components/LocationSeoContent";
 import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
 import { isValidLocation } from "@/lib/utils";
 import { getPricePerDayForLocation } from "@/lib/utils";
-import { Machine } from "../types/Machine";
-import BranchCard from "@/components/BranchCard";
+import { Machine } from "@/app/types/Machine";
 import { locationPageData } from "@/lib/content/pages/location/locationPageData";
 import { getCityName } from "@/lib/utils";
 
@@ -96,7 +95,7 @@ export default function LocationPage({
   if (!currentLocation) return notFound();
 
   const machines = machineData.filter(
-    (m) => (m.inventory[location]?.length ?? 0) > 0
+    (m) => (m.inventory[location]?.length ?? 0) > 0,
   );
 
   return (
@@ -124,7 +123,7 @@ export default function LocationPage({
                 {machines.map((machine, index) => {
                   const pricePerDay = getPricePerDayForLocation(
                     machine as Machine,
-                    location
+                    location,
                   );
                   return (
                     <li key={index}>
@@ -187,11 +186,10 @@ export default function LocationPage({
             </div>
           </div>
         )}
-        {/* <LocationSeoContent
+        <LocationSeoContent
           locationSlug={location}
           cityName={currentLocation.name}
-        /> */}
-        <BranchCard />
+        />
       </main>
 
       <Footer currentLocation={currentLocation} />
