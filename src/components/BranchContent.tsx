@@ -69,7 +69,6 @@ export default function BranchContent({
                 ></iframe>
               )}
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold">{loc.name}</h3>
                 <div className="flex items-center">
                   <ul className="space-y-1">
                     <li className="flex items-center">

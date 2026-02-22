@@ -49,7 +49,7 @@ export default function BranchCard() {
   }, []);
 
   return (
-    <div className={`px-4 ${locations.length > 1 && "py-10 lg:py-20"}`}>
+    <div className={`${locations.length > 1 && "px-4 py-10 lg:py-20"}`}>
       <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
         {locations.length > 1 && (
           <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
@@ -57,11 +57,7 @@ export default function BranchCard() {
           </h2>
         )}
         <div
-          className={`${
-            locations.length > 1
-              ? "grid lg:grid-cols-3 gap-6"
-              : "flex justify-center"
-          }`}
+          className={`${locations.length > 1 && "grid lg:grid-cols-3 gap-6"}`}
         >
           <BranchContent locations={locations} level={level} />
           {isHome && (

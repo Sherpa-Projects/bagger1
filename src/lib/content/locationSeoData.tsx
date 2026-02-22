@@ -10,7 +10,7 @@ type LocationSeoConfig = {
 };
 
 export const bookingInformation: string =
-  "Oben auf der Seite sehen Sie die aktuell verfügbaren Maschinen am Standort. Nach Auswahl prüfen Sie Ihren Zeitraum und können bequem online buchen – auch für längere Mietzeiten.";
+  "Oben sehen Sie die aktuell verfügbaren Maschinen am Standort. Nach der Auswahl prüfen Sie im Kalender Ihren Zeitraum und buchen bequem online – auch für längere Mietzeiten.";
 
 export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
   mannheim: {
@@ -24,13 +24,15 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
     ),
     intro: (cityName, data) => {
       const region = data.regionName ?? "der Region";
-      const [a, b, c] = (data.serviceAreas ?? []).slice(0, 3);
 
       return (
         <>
           Sie planen ein Bau- oder Gartenprojekt in {cityName} oder {region}?
-          Bei BAGGER1 mieten Sie die passenden Baumaschinen für Aushub und
-          Materialbewegung – auch für Einsätze in {a}, {b} und {c}.
+          Egal ob Firma oder Privatkunde: Bei BAGGER1 mieten Sie Baumaschinen
+          für Aushub und Materialbewegung einfach online. Mit einem großen
+          Sortiment – vom Minibagger über Rüttelplatte bis Dumper – finden Sie
+          schnell das richtige Gerät zur Kurz- oder Langzeitmiete in {cityName}{" "}
+          und Umgebung.
         </>
       );
     },
@@ -38,6 +40,7 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
       <>Wir sind in {cityName} und Umgebung für Sie tätig:</>
     ),
     serviceAreas: [
+      "Mannheim",
       "Ludwigshafen am Rhein",
       "Heidelberg",
       "Viernheim",
@@ -64,13 +67,15 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
     ),
     intro: (cityName, data) => {
       const region = data.regionName ?? "der Region";
-      const [a, b, c] = (data.serviceAreas ?? []).slice(0, 3);
 
       return (
         <>
           Sie planen ein Bau- oder Gartenprojekt in {cityName} oder {region}?
-          Bei BAGGER1 mieten Sie die passenden Baumaschinen für Aushub und
-          Materialbewegung – rund um {cityName}, {b} und {c}.
+          Egal ob Firma oder Privatkunde: Bei BAGGER1 mieten Sie Baumaschinen
+          für Aushub und Materialbewegung einfach online. Mit einem großen
+          Sortiment – vom Minibagger über Rüttelplatte bis Dumper – finden Sie
+          schnell das richtige Gerät zur Kurz- oder Langzeitmiete in {cityName}
+          und Umgebung.
         </>
       );
     },
@@ -78,6 +83,7 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
       <>Wir sind in {cityName} und Umgebung für Sie tätig:</>
     ),
     serviceAreas: [
+      "Hennef",
       "Siegburg",
       "Sankt Augustin",
       "Troisdorf",
@@ -104,13 +110,15 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
     ),
     intro: (cityName, data) => {
       const region = data.regionName ?? "der Region";
-      const [a, b, c] = (data.serviceAreas ?? []).slice(0, 3);
 
       return (
         <>
           Sie planen ein Bau- oder Gartenprojekt in {cityName} oder {region}?
-          Bei BAGGER1 mieten Sie die passenden Baumaschinen für Aushub und
-          Materialbewegung – z. B. für Projekte in {cityName}, {a} und {b}.
+          Egal ob Firma oder Privatkunde: Bei BAGGER1 mieten Sie Baumaschinen
+          für Aushub und Materialbewegung einfach online. Mit einem großen
+          Sortiment – vom Minibagger über Rüttelplatte bis Dumper – finden Sie
+          schnell das richtige Gerät zur Kurz- oder Langzeitmiete in {cityName}
+          und Umgebung.
         </>
       );
     },
@@ -118,6 +126,7 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
       <>Wir sind in {cityName} und Umgebung für Sie tätig:</>
     ),
     serviceAreas: [
+      "Bruchsal",
       "Karlsruhe",
       "Bretten",
       "Stutensee",
@@ -144,13 +153,15 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
     ),
     intro: (cityName, data) => {
       const region = data.regionName ?? "der Region";
-      const [a, b, c] = (data.serviceAreas ?? []).slice(0, 3);
 
       return (
         <>
           Sie planen ein Bau- oder Gartenprojekt in {cityName} oder {region}?
-          Bei BAGGER1 mieten Sie die passenden Baumaschinen für Aushub und
-          Materialbewegung – zum Beispiel in {cityName}, {a} und {b}.
+          Egal ob Firma oder Privatkunde: Bei BAGGER1 mieten Sie Baumaschinen
+          für Aushub und Materialbewegung einfach online. Mit einem großen
+          Sortiment – vom Minibagger über Rüttelplatte bis Dumper – finden Sie
+          schnell das richtige Gerät zur Kurz- oder Langzeitmiete in {cityName}
+          und Umgebung.
         </>
       );
     },
@@ -158,6 +169,7 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
       <>Wir sind in {cityName} und Umgebung für Sie tätig:</>
     ),
     serviceAreas: [
+      "Stockstadt",
       "Aschaffenburg",
       "Mainaschaff",
       "Kleinostheim",
