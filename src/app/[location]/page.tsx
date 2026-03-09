@@ -8,14 +8,19 @@ import { notFound } from "next/navigation";
 import { use } from "react";
 import Navigation from "@/components/Navigation";
 import { LocationSeoContent } from "@/components/LocationSeoContent";
+import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
-import { isValidLocation } from "@/lib/utils";
-import { getPricePerDayForLocation } from "@/lib/utils";
+import { faq } from "@/lib/content/faqData";
 import { Machine } from "@/app/types/Machine";
 import { locationPageData } from "@/lib/content/pages/location/locationPageData";
-import { getCityName } from "@/lib/utils";
+import {
+  getCityName,
+  getFaqContentForLocation,
+  isValidLocation,
+  getPricePerDayForLocation,
+} from "@/lib/utils";
 
 export async function generateMetadata({
   params,
@@ -86,7 +91,7 @@ export default function LocationPage({
 }: {
   params: Promise<{ location: string }>;
 }) {
-  const { hero, machineCard } = locationPageData;
+  const { hero, intro, machineCard } = locationPageData;
   const { location } = use(params);
 
   if (!isValidLocation(location)) return notFound();
@@ -94,9 +99,14 @@ export default function LocationPage({
   const currentLocation = locationData.find((l) => l.slug === location);
   if (!currentLocation) return notFound();
 
-  const machines = machineData.filter(
+  const items = machineData.filter(
     (m) => (m.inventory[location]?.length ?? 0) > 0,
   );
+
+  const baggers = items.filter((m) => m.category === "bagger");
+  const machines = items.filter((m) => m.category === "machine");
+
+  const faqContentForLocation = getFaqContentForLocation(faq.content, location);
 
   return (
     <>
@@ -113,20 +123,84 @@ export default function LocationPage({
             </h1>
           </div>
         </div>
-        {machines.length > 0 ? (
-          <div className="py-10 lg:py-20 px-4">
+        {baggers.length > 0 && (
+          <div className="pt-10 pb-10 lg:pt-20 px-4">
             <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
               <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
-                Unsere Maschinen
+                {intro.baggerTitle}
               </h2>
               <ul className="grid md:grid-cols-2 gap-6">
-                {machines.map((machine, index) => {
+                {baggers.map((bagger) => {
+                  const pricePerDay = getPricePerDayForLocation(
+                    bagger as Machine,
+                    location,
+                  );
+                  return (
+                    <li key={bagger.name}>
+                      <Link
+                        href={`/${location}/${bagger.slug}`}
+                        className="group border border-gray-300 bg-white rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-2 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
+                      >
+                        <div className="flex items-center justify-center">
+                          <Image
+                            className="rounded w-full mb-6 lg:mb-0"
+                            src={bagger.image.url}
+                            alt={bagger.image.alt}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                          />
+                        </div>
+
+                        <div className="flex flex-col justify-between h-full py-2">
+                          <div className="space-y-4">
+                            <div>
+                              <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold capitalize mb-2">
+                                {bagger.name}
+                              </p>
+                              {bagger.model && (
+                                <p className="lg:text-sm text-neutral-500">
+                                  {bagger.model}
+                                </p>
+                              )}
+                            </div>
+
+                            <p className="text-2xl lg:text-lg xl:text-xl capitalize">
+                              {pricePerDay}€ / Tag
+                            </p>
+                          </div>
+
+                          <div className="w-full flex justify-end lg:justify-start">
+                            <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
+                              {machineCard.cta}
+                              <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
+                                <FontAwesomeIcon icon={faArrowRight} />
+                              </span>
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        )}
+        {machines.length > 0 && (
+          <div className="pt-10 pb-10 lg:pt-20 px-4">
+            <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+              <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
+                {intro.machineTitle}
+              </h2>
+              <ul className="grid md:grid-cols-2 gap-6">
+                {machines.map((machine) => {
                   const pricePerDay = getPricePerDayForLocation(
                     machine as Machine,
                     location,
                   );
                   return (
-                    <li key={index}>
+                    <li key={machine.name}>
                       <Link
                         href={`/${location}/${machine.slug}`}
                         className="group border border-gray-300 bg-white rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-2 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
@@ -176,20 +250,18 @@ export default function LocationPage({
               </ul>
             </div>
           </div>
-        ) : (
-          <div className="py-10 lg:py-20 px-4">
-            <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-              <p className="text-lg text-center text-gray-400">
-                Hier werden bald Maschinen verfügbar sein. Schauen Sie in ein
-                paar Tagen nochmal vorbei!
-              </p>
-            </div>
-          </div>
         )}
         <LocationSeoContent
           locationSlug={location}
           cityName={currentLocation.name}
         />
+        {faqContentForLocation && (
+          <Faq
+            title={faq.title}
+            subtitle={faq.subtitle}
+            content={faqContentForLocation}
+          />
+        )}
       </main>
 
       <Footer currentLocation={currentLocation} />

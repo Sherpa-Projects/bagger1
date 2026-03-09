@@ -9,9 +9,6 @@ type LocationSeoConfig = {
   serviceAreas?: string[];
 };
 
-export const bookingInformation: string =
-  "Oben sehen Sie die aktuell verfügbaren Maschinen am Standort. Nach der Auswahl prüfen Sie im Kalender Ihren Zeitraum und buchen bequem online – auch für längere Mietzeiten.";
-
 export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
   mannheim: {
     regionName: "im Rhein-Neckar-Kreis",

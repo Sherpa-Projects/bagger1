@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { LocationDataProps } from "@/app/types/locationDataProps";
+import { LocationDataProps } from "@/app/types/Location";
 import { constants } from "@/lib/content/constants";
 import { Clock, ArrowRight } from "lucide-react";
 import { ConsentLevel } from "@/lib/consent";

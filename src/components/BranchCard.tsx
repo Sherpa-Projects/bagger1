@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import BranchContent from "./BranchContent";
 import { locationData } from "@/lib/content/locationData";
-import { LocationDataProps } from "@/app/types/locationDataProps";
+import { LocationDataProps } from "@/app/types/Location";
 import { ConsentLevel, readConsent } from "@/lib/consent";
 
 export default function BranchCard() {

@@ -1,4 +1,4 @@
-import { LocationDataProps } from "@/app/types/locationDataProps";
+import { LocationDataProps } from "@/app/types/Location";
 
 export const locationData: LocationDataProps[] = [
   {

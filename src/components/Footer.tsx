@@ -4,12 +4,12 @@ import { footerData } from "@/lib/content/footerData";
 import { constants } from "@/lib/content/constants";
 import { locationData } from "@/lib/content/locationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faPhone,
-  faEnvelope,
-  faLocationDot,
-} from "@fortawesome/free-solid-svg-icons";
-import { FooterPageProps } from "@/app/types/FooterPageProps";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { LocationDataProps } from "@/app/types/Location";
+
+export type FooterPageProps = {
+  currentLocation?: LocationDataProps;
+};
 
 const Footer = ({ currentLocation }: FooterPageProps) => {
   return (

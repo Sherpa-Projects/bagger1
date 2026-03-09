@@ -1,4 +1,13 @@
-import { Location } from "@/lib/utils";
+import { locationData } from "@/lib/content/locationData";
+
+export const validLocations = [
+  "mannheim",
+  "hennef",
+  "bruchsal",
+  "stockstadt",
+] as const;
+
+export type Location = (typeof validLocations)[number];
 
 export type LocationDataProps = {
   name: string;
@@ -14,7 +23,5 @@ export type LocationDataProps = {
   };
   map: string;
 };
-
-import { locationData } from "@/lib/content/locationData";
 
 export type LocationSlug = (typeof locationData)[number]["slug"];
