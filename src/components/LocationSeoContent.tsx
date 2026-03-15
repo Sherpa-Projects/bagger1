@@ -25,7 +25,7 @@ export function LocationSeoContent({
     <section className="py-10 lg:py-20 px-4">
       <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-32">
-          <div>
+          <div className="order-2 lg:order-1">
             <h2 className="font-bold text-3xl md:text-4xl pb-4 lg:pb-6 lg:leading-tight">
               {headline}
             </h2>
@@ -49,7 +49,7 @@ export function LocationSeoContent({
               </ul>
             </div>
           </div>
-          <div className="lg:flex lg:justify-center">
+          <div className="order-1 lg:order-2 lg:flex lg:justify-center">
             <BranchCard />
           </div>
         </div>
