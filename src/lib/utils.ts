@@ -2,14 +2,8 @@ import { machineData } from "./content/machineData";
 import { Machine } from "@/app/types/Machine";
 import { InventoryEntry } from "@/app/types/Machine";
 import { locationData } from "./content/locationData";
-
-export const validLocations = [
-  "mannheim",
-  "hennef",
-  "bruchsal",
-  "stockstadt",
-] as const;
-export type Location = (typeof validLocations)[number];
+import { validLocations, Location } from "@/app/types/Location";
+import { FaqContentProps } from "@/app/types/components/Faq";
 
 export function isValidLocation(loc: string): loc is Location {
   return (validLocations as readonly string[]).includes(loc);
@@ -22,7 +16,7 @@ export const validMachines: Record<Location, string[]> = validLocations.reduce(
       .map((m) => m.slug);
     return acc;
   },
-  {} as Record<Location, string[]>
+  {} as Record<Location, string[]>,
 );
 
 export function isValidMachine(location: Location, machine: string): boolean {
@@ -31,7 +25,7 @@ export function isValidMachine(location: Location, machine: string): boolean {
 
 export function getPricePerDayForLocation(
   machine: Machine,
-  location: Location
+  location: Location,
 ): number {
   const base = machine.price.perDay;
 
@@ -56,4 +50,11 @@ export function getCityName(slug: string): string {
     .filter(Boolean)
     .map(capitalize)
     .join(" ");
+}
+
+export function getFaqContentForLocation(
+  faqContent: FaqContentProps[],
+  location: Location,
+): FaqContentProps | undefined {
+  return faqContent.find((content) => content.location === location);
 }

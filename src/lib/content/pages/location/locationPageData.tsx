@@ -13,6 +13,10 @@ export const locationPageData = {
   hero: {
     title: "Bagger mieten in",
   },
+  intro: {
+    baggerTitle: "Unsere Bagger",
+    machineTitle: "Unsere Maschinen",
+  },
   machineCard: {
     cta: "Mehr Infos",
   },
