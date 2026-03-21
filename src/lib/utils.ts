@@ -58,3 +58,14 @@ export function getFaqContentForLocation(
 ): FaqContentProps | undefined {
   return faqContent.find((content) => content.location === location);
 }
+
+export function getLocationMachineRouteParams() {
+  return locationData.flatMap((loc) =>
+    machineData
+      .filter((machine) => (machine.inventory[loc.slug]?.length ?? 0) > 0)
+      .map((machine) => ({
+        location: loc.slug,
+        machine: machine.slug,
+      })),
+  );
+}

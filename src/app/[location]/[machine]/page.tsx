@@ -7,11 +7,15 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { machineData } from "@/lib/content/machineData";
 import { Location } from "@/app/types/Location";
-import { isValidLocation } from "@/lib/utils";
+import { isValidLocation, getLocationMachineRouteParams } from "@/lib/utils";
 import type { Machine } from "@/app/types/Machine";
 import BookingWidget from "@/components/BookingWidget";
 import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
 import BookingSteps from "@/components/BookingSteps";
+
+export function generateStaticParams() {
+  return getLocationMachineRouteParams();
+}
 
 function humanizeSlug(slug: string) {
   return slug
@@ -101,7 +105,7 @@ export default function MachinePage({
   const location = rawLocation as Location;
 
   const selectedMachine = machineData.find(
-    (m: Machine) => m.slug === machineSlug
+    (m: Machine) => m.slug === machineSlug,
   );
   if (!selectedMachine) return notFound();
 
@@ -155,7 +159,10 @@ export default function MachinePage({
                   </div>
 
                   <div className="lg:mt-12">
-                    <details open className="group rounded-xl border border-gray-200 bg-white">
+                    <details
+                      open
+                      className="group rounded-xl border border-gray-200 bg-white"
+                    >
                       <summary className="flex items-center justify-between cursor-pointer select-none px-4 py-3">
                         <span className="text-xl font-semibold">
                           {machinePageData.specifications.title}
@@ -342,19 +349,17 @@ export default function MachinePage({
                 <ul className="border border-gray-200 text-lg">
                   <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>{timeTable.rowOne}</span>
-                    <span className="font-bold">{effectivePrice.perDay} € netto/Tag</span>
+                    <span className="font-bold">
+                      {effectivePrice.perDay} € netto/Tag
+                    </span>
                   </li>
                   <li className="bg-white flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>{timeTable.rowTwo}</span>
-                    <span className="font-bold">
-                      20% Rabatt
-                    </span>
+                    <span className="font-bold">20% Rabatt</span>
                   </li>
                   <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>{timeTable.rowThree}</span>
-                    <span className="font-bold">
-                      50% Rabatt
-                    </span>
+                    <span className="font-bold">50% Rabatt</span>
                   </li>
                 </ul>
               </div>

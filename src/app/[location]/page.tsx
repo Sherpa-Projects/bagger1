@@ -22,6 +22,12 @@ import {
   getPricePerDayForLocation,
 } from "@/lib/utils";
 
+export function generateStaticParams() {
+  return locationData.map((loc) => ({
+    location: loc.slug,
+  }));
+}
+
 export async function generateMetadata({
   params,
 }: {
@@ -58,13 +64,14 @@ export async function generateMetadata({
   }
   const cityName = getCityName(location);
   const title = `Baumaschinen mieten in ${cityName} | Bagger1`;
+  const description = `Mieten Sie Baumaschinen und Bagger in ${cityName} zu fairen Tagespreisen. Verfügbare Maschinen direkt für ${cityName} entdecken.`;
 
   return {
     title,
-    description: locationPageData.seo.metaDescription.google,
+    description,
     openGraph: {
       title,
-      description: locationPageData.seo.metaDescription.openGraph,
+      description,
       url: `https://bagger1.de/${location}`,
       siteName: "Bagger1",
       images: [
@@ -79,20 +86,26 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title,
-      description: locationPageData.seo.metaDescription.twitter,
+      description,
       images: ["/images/og-image.png"],
     },
-    robots: "index, follow",
+    robots: {
+      index: true,
+      follow: true,
+    },
+    alternates: {
+      canonical: `https://bagger1.de/${location}`,
+    },
   };
 }
 
-export default function LocationPage({
+export default async function LocationPage({
   params,
 }: {
   params: Promise<{ location: string }>;
 }) {
   const { hero, intro, machineCard } = locationPageData;
-  const { location } = use(params);
+  const { location } = await params;
 
   if (!isValidLocation(location)) return notFound();
 
