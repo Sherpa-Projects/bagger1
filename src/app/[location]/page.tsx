@@ -5,22 +5,21 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { notFound } from "next/navigation";
-import { use } from "react";
 import Navigation from "@/components/Navigation";
 import { LocationSeoContent } from "@/components/LocationSeoContent";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
-import { faq } from "@/lib/content/faqData";
+import { faq } from "@/lib/content/components/faqData";
 import { Machine } from "@/app/types/Machine";
 import { locationPageData } from "@/lib/content/pages/location/locationPageData";
 import {
-  getCityName,
   getFaqContentForLocation,
   isValidLocation,
   getPricePerDayForLocation,
 } from "@/lib/utils";
+import { getLocationSeoTexts } from "@/lib/content/seo/locationSeo";
 
 export function generateStaticParams() {
   return locationData.map((loc) => ({
@@ -38,55 +37,43 @@ export async function generateMetadata({
   if (!isValidLocation(location)) {
     return {
       title: locationPageData.seo.metaTitle,
-      description: locationPageData.seo.metaDescription.google,
-      openGraph: {
-        title: locationPageData.seo.metaTitle,
-        description: locationPageData.seo.metaDescription.openGraph,
-        url: "https://bagger1.de",
-        siteName: "BAGGER1",
-        images: [
-          {
-            url: "/images/og-image.png",
-            width: 1200,
-            height: 630,
-            alt: "Gelber Hintergrund mit schwarzem Text: BAGGER1 1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
-          },
-        ],
+      description: locationPageData.seo.metaDescription,
+      robots: {
+        index: false,
+        follow: false,
       },
-      twitter: {
-        card: "summary_large_image",
-        title: locationPageData.seo.metaTitle,
-        description: locationPageData.seo.metaDescription.twitter,
-        images: ["/images/og-image.png"],
-      },
-      robots: "index, follow",
     };
   }
-  const cityName = getCityName(location);
-  const title = `Baumaschinen mieten in ${cityName} | Bagger1`;
-  const description = `Mieten Sie Baumaschinen und Bagger in ${cityName} zu fairen Tagespreisen. Verfügbare Maschinen direkt für ${cityName} entdecken.`;
+
+  const {
+    title,
+    googleDescription,
+    openGraphDescription,
+    twitterDescription,
+    alt,
+  } = getLocationSeoTexts(location);
 
   return {
     title,
-    description,
+    description: googleDescription,
     openGraph: {
       title,
-      description,
+      description: openGraphDescription,
       url: `https://bagger1.de/${location}`,
-      siteName: "Bagger1",
+      siteName: "BAGGER1",
       images: [
         {
           url: "/images/og-image.png",
           width: 1200,
           height: 630,
-          alt: "Gelber Hintergrund mit schwarzem Text: BAGGER1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
+          alt: alt,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description,
+      description: twitterDescription,
       images: ["/images/og-image.png"],
     },
     robots: {

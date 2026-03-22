@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navigationData } from "@/lib/content/navigationData";
+import { navigationData } from "@/lib/content/components/navigationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,

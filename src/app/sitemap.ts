@@ -1,6 +1,5 @@
 import { MetadataRoute } from "next";
 import { locationData } from "@/lib/content/locationData";
-import { machineData } from "@/lib/content/machineData";
 import { getLocationMachineRouteParams } from "@/lib/utils";
 
 export default function sitemap(): MetadataRoute.Sitemap {

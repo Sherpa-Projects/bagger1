@@ -69,3 +69,10 @@ export function getLocationMachineRouteParams() {
       })),
   );
 }
+
+export function humanizeSlug(slug: string) {
+  return slug
+    .split("-")
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w))
+    .join(" ");
+}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { footerData } from "@/lib/content/footerData";
+import { footerData } from "@/lib/content/components/footerData";
 import { constants } from "@/lib/content/constants";
 import { locationData } from "@/lib/content/locationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
