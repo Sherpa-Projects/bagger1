@@ -11,8 +11,8 @@ const OG_IMAGE_URL = "https://bagger1.de/images/og-image.png";
 export const metadata: Metadata = {
   metadataBase: new URL("https://bagger1.de"),
   title: {
-    default: "Ihre Nummer 1 für Bagger und Maschinen | Bagger1",
-    template: "%s | Bagger1",
+    default: "Ihre Nummer 1 für Bagger und Maschinen | BAGGER1",
+    template: "%s | BAGGER1",
   },
   openGraph: {
     siteName: "Bagger1",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: OG_IMAGE_URL,
         width: 1200,
         height: 630,
-        alt: "Bagger1",
+        alt: "BAGGER1",
       },
     ],
   },

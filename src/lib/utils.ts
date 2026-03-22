@@ -58,3 +58,21 @@ export function getFaqContentForLocation(
 ): FaqContentProps | undefined {
   return faqContent.find((content) => content.location === location);
 }
+
+export function getLocationMachineRouteParams() {
+  return locationData.flatMap((loc) =>
+    machineData
+      .filter((machine) => (machine.inventory[loc.slug]?.length ?? 0) > 0)
+      .map((machine) => ({
+        location: loc.slug,
+        machine: machine.slug,
+      })),
+  );
+}
+
+export function humanizeSlug(slug: string) {
+  return slug
+    .split("-")
+    .map((w) => (w ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w))
+    .join(" ");
+}

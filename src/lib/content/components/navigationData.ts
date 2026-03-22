@@ -1,6 +1,6 @@
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { locationData } from "./locationData";
+import { locationData } from "../locationData";
 
 type NavigationDataProps = {
   name: string;

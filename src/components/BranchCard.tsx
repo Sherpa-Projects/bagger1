@@ -53,7 +53,7 @@ export default function BranchCard() {
       <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
         {locations.length > 1 && (
           <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
-            Unser Standort in {locations[0].name}
+            Unsere Standorte
           </h2>
         )}
         <div

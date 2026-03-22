@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { steps, titleHtml } from "@/lib/content/bookingStepsData";
+import { steps, titleHtml } from "@/lib/content/components/bookingStepsData";
 
 export default function BookingSteps() {
   return (
