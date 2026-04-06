@@ -20,6 +20,8 @@ import {
   getPricePerDayForLocation,
 } from "@/lib/utils";
 import { getLocationSeoTexts } from "@/lib/content/seo/locationSeo";
+import { locationSeoBySlug } from "@/lib/content/locationSeoData";
+import BookingContext from "@/components/BookingContext";
 
 export function generateStaticParams() {
   return locationData.map((loc) => ({
@@ -107,6 +109,15 @@ export default async function LocationPage({
   const machines = items.filter((m) => m.category === "machine");
 
   const faqContentForLocation = getFaqContentForLocation(faq.content, location);
+
+  const cfg = locationSeoBySlug[location];
+  if (!cfg) return null;
+
+  const bookingContext = cfg.bookingContext?.(currentLocation.name, {
+    regionName: cfg.regionName,
+    serviceAreas: cfg.serviceAreas,
+  });
+  const localUseCases = cfg.localUseCases;
 
   return (
     <>
@@ -251,10 +262,36 @@ export default async function LocationPage({
             </div>
           </div>
         )}
+        <BookingContext data={bookingContext} />
         <LocationSeoContent
           locationSlug={location}
           cityName={currentLocation.name}
         />
+        <section className="pb-10 pt-5 lg:pb-20 lg:pt-10 px-4">
+          <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+            <h2 className="font-bold text-2xl md:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
+              Beliebte Einsatzbereiche unserer Maschinen in{" "}
+              {currentLocation.name}
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+              {localUseCases?.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div
+                    key={item.title}
+                    className="border border-gray-300 bg-white rounded-lg p-6"
+                  >
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-50 border border-orange-200 mb-3">
+                      <Icon className="text-primary" size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+                    <p className="text-gray-600">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
         {faqContentForLocation && (
           <Faq
             title={faq.title}

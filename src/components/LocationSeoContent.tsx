@@ -18,18 +18,24 @@ export function LocationSeoContent({
     regionName: cfg.regionName,
     serviceAreas: cfg.serviceAreas,
   });
+  const coverageText = cfg.coverageText?.(cityName, {
+    regionName: cfg.regionName,
+    serviceAreas: cfg.serviceAreas,
+  });
   const subHeadline = cfg.subHeadline?.(cityName);
   const serviceAreas = cfg.serviceAreas;
 
   return (
     <section className="py-10 lg:py-20 px-4">
       <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-32">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           <div className="order-2 lg:order-1">
-            <h2 className="font-bold text-3xl md:text-4xl pb-4 lg:pb-6 lg:leading-tight">
+            <h2 className="font-bold text-2xl md:text-3xl pb-4 lg:pb-6 lg:leading-tight">
               {headline}
             </h2>
-            {intro && <p className="text-lg">{intro}</p>}
+            {intro && <p>{intro}</p>}
+            <br />
+            {coverageText && <p>{coverageText}</p>}
             <div className="mt-8 lg:mt-12">
               <h3 className="text-xs mb-2">{subHeadline}</h3>
               <ul className="grid grid-cols-3 lg:flex lg:flex-wrap gap-1 text-sm max-w-full">

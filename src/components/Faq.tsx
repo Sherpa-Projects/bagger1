@@ -37,7 +37,7 @@ export default function Faq({ title, subtitle, content }: Props) {
                 key={i}
                 className={`group border p-6 rounded-md accordion-item max-w-4xl w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-md lg:cursor-pointer ${
                   i === openIndex
-                    ? "border-yellow-300 bg-yellow-50"
+                    ? "border-orange-300 bg-orange-50"
                     : "border-gray-300 bg-white"
                 }`}
                 itemScope
