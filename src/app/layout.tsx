@@ -6,7 +6,7 @@ config.autoAddCss = false;
 import Consent from "@/components/Consent";
 import ThirdPartyScripts from "@/components/ThirdPartyScripts";
 
-const OG_IMAGE_URL = "https://bagger1.de/images/og-image.png";
+const OG_IMAGE_URL = "https://bagger1.de/images/og_image.png";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://bagger1.de"),
@@ -15,7 +15,11 @@ export const metadata: Metadata = {
     template: "%s | BAGGER1",
   },
   openGraph: {
+    type: "website",
     siteName: "Bagger1",
+    title: "Ihre Nummer 1 für Bagger und Maschinen | BAGGER1",
+    description:
+      "Finde jetzt verfügbare Bagger und Maschinen an deinem Standort. Mit flexiblen Zeiträumen, transparenten Preisen und direkter Online-Buchung bei BAGGER1.",
     images: [
       {
         url: OG_IMAGE_URL,
@@ -26,6 +30,9 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
+    title: "Ihre Nummer 1 für Bagger und Maschinen | BAGGER1",
+    description:
+      "Miete Bagger und Maschinen direkt Online an deinem Standort mit flexiblen Zeiträumen und transparenten Preisen.",
     card: "summary_large_image",
     images: [OG_IMAGE_URL],
   },
