@@ -46,7 +46,7 @@ export const imprintPageData = {
           <p>
             Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:
           </p>
-          <p>DE340433839</p>
+          <p>DE30450/23677</p>
         </section>
 
         <section>

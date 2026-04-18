@@ -6,8 +6,8 @@ export const constants = {
   },
   openingHours: {
     title: "Geschäftszeiten",
-    weekday: "Mo.-Fr.: 7.00-12.00 und 13.00-17.30 Uhr",
-    saturday: "Sa.: 7.30-14.00 Uhr",
+    weekday: "Mo.-Fr.: 8:00 - 17:00 Uhr",
+    saturday: "Sa.: 8:00 - 13:00 Uhr",
     sunday: "So.: geschlossen",
   },
 };

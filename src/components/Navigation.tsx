@@ -115,17 +115,9 @@ export default function Navigation({ slug }: NavigationProps) {
                   </span>
                 </div>
               </button>
-              <div className="border-l border-gray-300 h-6" />
-              <Link
-                className="flex items-center text-gray-600 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
-                href={navigationPartnerData.url!}
-              >
-                <Handshake className="w-5 h-5 text-primary mr-2" />
-                {navigationPartnerData.name}
-              </Link>
             </div>
 
-            <div className="relative flex items-center space-x-6">
+            <div className="relative flex items-center space-x-5">
               <Link
                 className="transition-all duration-300 transform hover:scale-105"
                 href={navigationKleinanzeigenData.url!}
@@ -133,8 +125,8 @@ export default function Navigation({ slug }: NavigationProps) {
               >
                 <Image
                   src="/images/kleinanzeigen.png"
-                  height={50}
-                  width={120}
+                  height={45}
+                  width={110}
                   alt="Kleinanzeigen Logo"
                 />
               </Link>
@@ -143,14 +135,22 @@ export default function Navigation({ slug }: NavigationProps) {
                 href={navigationInstagramData.url!}
                 target="_blank"
               >
-                <Instagram className="w-6 h-6 text-pink-500 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded" />
+                <Instagram className="w-5 h-5 text-pink-500 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded" />
               </Link>
               <Link
                 className="transition-all duration-300 transform hover:scale-105"
                 href={navigationWhatsappData.url!}
                 target="_blank"
               >
-                <SiWhatsapp size={24} color="default" className="mr-2" />
+                <SiWhatsapp size={20} color="default" className="mr-2" />
+              </Link>
+              <div className="border-l border-gray-300 h-6" />
+              <Link
+                className="flex items-center text-gray-600 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
+                href={navigationPartnerData.url!}
+              >
+                <Handshake className="w-5 h-5 text-primary mr-2" />
+                {navigationPartnerData.name}
               </Link>
             </div>
           </div>

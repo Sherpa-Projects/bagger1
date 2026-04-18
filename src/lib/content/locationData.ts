@@ -2,20 +2,6 @@ import { LocationDataProps } from "@/app/types/Location";
 
 export const locationData: LocationDataProps[] = [
   {
-    name: "Mannheim",
-    slug: "mannheim",
-    adress: "Schlesierstraße 5, 76694 Forst",
-    contact: {
-      telephone: "0800/2244371",
-      email: "info@bagger1.de",
-    },
-    image: {
-      url: "/images/locations/mannheim.jpg",
-      alt: "Luftaufnahme von Mannheim",
-    },
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165835.00660487727!2d8.337267677908613!3d49.50014623135492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797cc24518e3f45%3A0xb1e4fe7aa406e687!2sMannheim!5e0!3m2!1sde!2sde!4v1757770126030!5m2!1sde!2sde",
-  },
-  {
     name: "Hennef",
     slug: "hennef",
     adress: "Kapellenhügel 3, 53773 Hennef",
@@ -56,5 +42,19 @@ export const locationData: LocationDataProps[] = [
       alt: "Bagger von oben",
     },
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41049.35551844248!2d9.01436648285571!3d49.98164605540758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd4746e932dae9%3A0xe99cee78806c1611!2s63811%20Stockstadt%20am%20Main!5e0!3m2!1sde!2sde!4v1761029825229!5m2!1sde!2sde",
+  },
+  {
+    name: "Mannheim",
+    slug: "mannheim",
+    adress: "Schlesierstraße 5, 76694 Forst",
+    contact: {
+      telephone: "0800/2244371",
+      email: "info@bagger1.de",
+    },
+    image: {
+      url: "/images/locations/mannheim.jpg",
+      alt: "Luftaufnahme von Mannheim",
+    },
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d165835.00660487727!2d8.337267677908613!3d49.50014623135492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4797cc24518e3f45%3A0xb1e4fe7aa406e687!2sMannheim!5e0!3m2!1sde!2sde!4v1757770126030!5m2!1sde!2sde",
   },
 ];
