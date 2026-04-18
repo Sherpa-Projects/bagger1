@@ -39,6 +39,10 @@ export type Machine = {
         minSwingRadius?: string; // Min. Schwenkradius
         bucketBreakoutForceISO?: string; // Löffellosbrechkraft ISO
         armTearOutForceISO?: string; // Stiel Reißkraft ISO
+        bucketCapacity?: string; // Schaufelinhalt
+        payloadS125?: string; // Nutzlast (S=1,25)
+        tippingLoadBucket?: string; // Kipplast (Schaufel)
+        tippingLoadPalletFork?: string; // Kipplast (Palettengabel)
       };
     };
   };

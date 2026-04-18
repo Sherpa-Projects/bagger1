@@ -56,6 +56,7 @@ export const machineData: Machine[] = [
     inventory: {
       mannheim: [{ articleId: "ZHLFH1" }],
       bruchsal: [{ articleId: "ZHLFH1" }],
+      hennef: [{ articleId: "PTSQZK" }],
     },
   },
   {
@@ -236,6 +237,38 @@ export const machineData: Machine[] = [
       hennef: [{ articleId: "U8UMST" }],
       bruchsal: [{ articleId: "3UYOOP" }],
       mannheim: [{ articleId: "3UYOOP" }],
+    },
+  },
+  {
+    name: "Radlader 2,5t",
+    slug: "radlader-kramer-5045",
+    model: "Radlader Kramer 5045",
+    category: "bagger",
+    image: {
+      url: "/images/machines/kramer-radlader.png",
+      alt: "Schwarzgelber Radlader.",
+    },
+    price: { perDay: 160 },
+    content: {
+      title: "",
+      description: "",
+      specifications: {
+        dimensions: {
+          width: "1,59 m",
+          weight: "ca. 2,7 t",
+        },
+        power: "18,5 kW (25 PS)",
+        workingRange: {
+          maxDepth: "ca. 2,73 m",
+          bucketCapacity: "0,45 m³",
+          payloadS125: "ca. 1.310 kg",
+          tippingLoadBucket: "2.270 kg",
+          tippingLoadPalletFork: "1.640 – 1.865 kg",
+        },
+      },
+    },
+    inventory: {
+      hennef: [{ articleId: "SVZ5P1" }],
     },
   },
 ] as const;
