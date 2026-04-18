@@ -70,6 +70,13 @@ export default function Faq({ title, subtitle, content }: Props) {
                     }`}
                   >
                     <div className="py-2">{item.answer}</div>
+                    {item.list && item.list.length > 0 && (
+                      <ul className="space-y-1 list-disc pl-5 mt-2">
+                        {item.list.map((i, index) => (
+                          <li key={index}>{i}</li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </div>
               </div>
