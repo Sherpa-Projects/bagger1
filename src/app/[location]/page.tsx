@@ -22,6 +22,7 @@ import {
 import { getLocationSeoTexts } from "@/lib/content/seo/locationSeo";
 import { locationSeoBySlug } from "@/lib/content/locationSeoData";
 import BookingContext from "@/components/BookingContext";
+import LocalUseCases from "@/components/LocalUseCases";
 
 export function generateStaticParams() {
   return locationData.map((loc) => ({
@@ -129,7 +130,7 @@ export default async function LocationPage({
         >
           <div className="absolute inset-0 bg-black/50 z-0" />
           <div className="relative z-10 text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-4">
-            <h1 className="text-5xl lg:text-7xl font-semibold leading-normal">
+            <h1 className="text-5xl lg:text-7xl font-semibold leading-normal tracking-wide">
               {hero.title} {currentLocation.name}
             </h1>
           </div>
@@ -267,31 +268,12 @@ export default async function LocationPage({
           locationSlug={location}
           cityName={currentLocation.name}
         />
-        <section className="pb-10 pt-5 lg:pb-20 lg:pt-10 px-4">
-          <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-            <h2 className="font-bold text-2xl md:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
-              Beliebte Einsatzbereiche unserer Maschinen in{" "}
-              {currentLocation.name}
-            </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-              {localUseCases?.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div
-                    key={item.title}
-                    className="border border-gray-300 bg-white rounded-lg p-6"
-                  >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-orange-50 border border-orange-200 mb-3">
-                      <Icon className="text-primary" size={24} />
-                    </div>
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-600">{item.description}</p>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        {localUseCases && (
+          <LocalUseCases
+            locationName={currentLocation.name}
+            useCases={localUseCases}
+          />
+        )}
         {faqContentForLocation && (
           <Faq
             title={faq.title}
@@ -300,7 +282,6 @@ export default async function LocationPage({
           />
         )}
       </main>
-
       <Footer currentLocation={currentLocation} />
     </>
   );
