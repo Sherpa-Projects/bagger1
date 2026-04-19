@@ -3,7 +3,15 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { navigationData } from "@/lib/content/components/navigationData";
+import {
+  navigationLocationData,
+  navigationPartnerData,
+  navigationKleinanzeigenData,
+  navigationInstagramData,
+  navigationWhatsappData,
+  banner,
+  brandName,
+} from "@/lib/content/components/navigationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -11,8 +19,8 @@ import {
   faArrowRight,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import { Handshake } from "lucide-react";
-import { Instagram } from "lucide-react";
+import { Handshake, Instagram } from "lucide-react";
+import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 import { motion, AnimatePresence } from "framer-motion";
 import { getCityName } from "@/lib/utils";
 
@@ -21,11 +29,6 @@ type NavigationProps = {
 };
 
 export default function Navigation({ slug }: NavigationProps) {
-  const instagramLink =
-    "https://www.instagram.com/bagger1.de?igsh=MWRuZ2J3cTd0bDJ5bg==";
-  const kleinanzeigenLink =
-    "https://www.kleinanzeigen.de/s-bestandsliste.html?userId=156249218";
-
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [isOverlayOpen, setIsOverlayOpen] = useState<boolean>(false);
   const [location, setLocation] = useState<string>("Standort wählen");
@@ -81,25 +84,21 @@ export default function Navigation({ slug }: NavigationProps) {
             width={30}
             height={30}
           />
-          Offizielles Mitglied im Bundesverband der Baumaschinen-, Baugeräte-
-          und Industriemaschinen-Firmen e.V.
+          {banner}
         </div>
-        <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-4 lg:py-1">
+        <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-4 lg:py-1 border-b border-transparent">
           <div className="hidden lg:flex justify-between items-center">
             <div className="flex items-center gap-6">
               <Link href="/">
                 <div className="flex items-center lg:transform lg:transition-transform lg:duration-300 ease-in-out lg:hover:scale-110 p-1">
                   <Image
                     src={`/images/logo.svg`}
-                    alt="Bagger1 Logo"
+                    alt="BAGGER1 Logo"
                     width={48}
                     height={48}
                     className="mx-auto p-1"
                   />
-                  <span className="font-oswald ml-2 text-lg">
-                    BAGGER<span className="text-primary">1</span>
-                    <br />
-                  </span>
+                  {brandName}
                 </div>
               </Link>
               <div className="border-l border-gray-300 h-6" />
@@ -116,35 +115,42 @@ export default function Navigation({ slug }: NavigationProps) {
                   </span>
                 </div>
               </button>
-              <div className="border-l border-gray-300 h-6" />
-              <Link
-                className="flex items-center text-gray-600 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
-                href="/partner"
-              >
-                <Handshake className="w-5 h-5 text-primary mr-2" />
-                Partner werden
-              </Link>
             </div>
 
-            <div className="relative flex items-center space-x-6">
+            <div className="relative flex items-center space-x-5">
               <Link
-                className="transition-all duration-300 transform hover:scale-105 grayscale opacity-70 hover:grayscale-0 hover:opacity-100"
-                href={kleinanzeigenLink}
+                className="transition-all duration-300 transform hover:scale-105"
+                href={navigationKleinanzeigenData.url!}
                 target="_blank"
               >
                 <Image
                   src="/images/kleinanzeigen.png"
-                  height={50}
-                  width={120}
+                  height={45}
+                  width={110}
                   alt="Kleinanzeigen Logo"
                 />
               </Link>
               <Link
                 className="transition-all duration-300 transform hover:scale-105"
-                href={instagramLink}
+                href={navigationInstagramData.url!}
                 target="_blank"
               >
-                <Instagram className="w-6 h-6 text-gray-600 hover:text-pink-500 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded" />
+                <Instagram className="w-5 h-5 text-pink-500 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded" />
+              </Link>
+              <Link
+                className="transition-all duration-300 transform hover:scale-105"
+                href={navigationWhatsappData.url!}
+                target="_blank"
+              >
+                <SiWhatsapp size={20} color="default" className="mr-2" />
+              </Link>
+              <div className="border-l border-gray-300 h-6" />
+              <Link
+                className="flex items-center text-gray-600 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
+                href={navigationPartnerData.url!}
+              >
+                <Handshake className="w-5 h-5 text-primary mr-2" />
+                {navigationPartnerData.name}
               </Link>
             </div>
           </div>
@@ -180,7 +186,7 @@ export default function Navigation({ slug }: NavigationProps) {
                   </h2>
 
                   <ul>
-                    {navigationData.map((item, index) => (
+                    {navigationLocationData.map((item, index) => (
                       <div key={index} className="space-y-4">
                         {item.subData?.map((subItem, subIndex) => (
                           <li key={subIndex} className="group">
@@ -213,14 +219,12 @@ export default function Navigation({ slug }: NavigationProps) {
               <div className="flex items-center">
                 <Image
                   src={`/images/logo.svg`}
-                  alt="Bagger1 Logo"
+                  alt="BAGGER1 Logo"
                   width={50}
                   height={50}
                   className="mx-auto p-1"
                 />
-                <span className="font-oswald ml-2 text-xl">
-                  BAGGER<span className="text-primary">1</span>
-                </span>
+                {brandName}
               </div>
             </Link>
 
@@ -245,18 +249,16 @@ export default function Navigation({ slug }: NavigationProps) {
                 Offizielles Mitglied im Bundesverband der Baumaschinen-,
                 Baugeräte- und Industriemaschinen-Firmen e.V.
               </div>
-              <div className="container mx-auto flex items-center justify-between px-6 lg:px-8 py-4">
+              <div className="container mx-auto flex items-center justify-between px-6 lg:px-8 py-4 border-b border-gray-300">
                 <div className="flex items-center">
                   <Image
                     src={`/images/logo.svg`}
-                    alt="Bagger1 Logo"
+                    alt="BAGGER1 Logo"
                     width={50}
                     height={50}
                     className="mx-auto p-1"
                   />
-                  <span className="font-oswald ml-2 text-xl">
-                    Bagger<span className="text-primary">1</span>
-                  </span>
+                  {brandName}
                 </div>
 
                 <button
@@ -269,7 +271,7 @@ export default function Navigation({ slug }: NavigationProps) {
 
               <div className="flex flex-col items-start px-8 py-6">
                 <div className="w-full space-y-8">
-                  {navigationData.map((item, index) => (
+                  {navigationLocationData.map((item, index) => (
                     <div
                       className="border-b border-gray-300 last:border-none pb-8"
                       key={index}
@@ -289,8 +291,8 @@ export default function Navigation({ slug }: NavigationProps) {
                         </Link>
                       ) : (
                         <>
-                          <div className="text-xl mb-8">Mieten in:</div>
-                          <div className="pl-4 space-y-6 text-3xl flex flex-col">
+                          <div className="text-xl mb-4">Mieten in:</div>
+                          <div className="pl-4 mb-16 space-y-6 text-3xl flex flex-col">
                             {item.subData?.map((subItem, subIndex) => (
                               <Link
                                 href={subItem.url}
@@ -303,12 +305,26 @@ export default function Navigation({ slug }: NavigationProps) {
                                 </span>
                               </Link>
                             ))}
+                          </div>
+                          <div className="text-3xl mb-10">
+                            <Link
+                              href={navigationPartnerData.url!}
+                              key={navigationPartnerData.name}
+                              className="text-gray-800 cursor-pointer"
+                            >
+                              <span>{navigationPartnerData.name}</span>
+                              <span className="ml-2 text-primary inline-block">
+                                <FontAwesomeIcon icon={faArrowRight} />
+                              </span>
+                            </Link>
+                          </div>
+                          <div>
                             <div className="border-t border-gray-400 my-4" />
                             <div className="space-y-6 pt-6">
                               <div>
                                 <Link
                                   className="transition-all duration-300 transform hover:scale-105"
-                                  href={kleinanzeigenLink}
+                                  href={navigationKleinanzeigenData.url!}
                                   target="_blank"
                                 >
                                   <Image
@@ -319,15 +335,32 @@ export default function Navigation({ slug }: NavigationProps) {
                                   />
                                 </Link>
                               </div>
-
                               <div>
                                 <Link
                                   className="transition-all duration-300 transform hover:scale-105 flex items-center"
-                                  href={instagramLink}
+                                  href={navigationInstagramData.url!}
                                   target="_blank"
                                 >
-                                  <Instagram className="w-8 h-8 text-pink-500 mr-2" />
-                                  <p className="text-md">Instagram</p>
+                                  <Instagram className="w-8 h-8 text-pink-500 mr-3" />
+                                  <p className="text-2xl">
+                                    {navigationInstagramData.name}
+                                  </p>
+                                </Link>
+                              </div>
+                              <div>
+                                <Link
+                                  className="transition-all duration-300 transform hover:scale-105 flex items-center"
+                                  href={navigationWhatsappData.url!}
+                                  target="_blank"
+                                >
+                                  <SiWhatsapp
+                                    size={32}
+                                    color="default"
+                                    className="mr-3"
+                                  />
+                                  <p className="text-2xl">
+                                    {navigationWhatsappData.name}
+                                  </p>
                                 </Link>
                               </div>
                             </div>

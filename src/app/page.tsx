@@ -19,7 +19,7 @@ export const generateMetadata = (): Metadata => {
       title: homePageData.seo.metaTitle,
       description: homePageData.seo.metaDescription.openGraph,
       url: "https://bagger1.de",
-      siteName: "Baumaschinenverleih in deiner Gegend | BAGGER1",
+      siteName: "Bagger- & Baumaschinenverleih in deiner Gegend | BAGGER1",
       images: {
         url: "/images/og-image.png",
         width: 1200,
@@ -54,10 +54,10 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-black/50 z-0" />
           <div className="relative text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-4">
-            <p className="text-5xl lg:text-7xl font-semibold leading-normal">
+            <p className="text-5xl lg:text-7xl font-semibold leading-normal tracking-wider">
               {hero.title}
             </p>
-            <h1 className="text-2xl lg:text-5xl">{hero.subtitle}</h1>
+            <h1 className="text-2xl lg:text-5xl tracking-wide">{hero.subtitle}</h1>
           </div>
         </div>
 
@@ -100,7 +100,7 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary">
-                      <Icon className="h-6 w-6" aria-hidden="true" />
+                      <Icon className="h-6 w-6 text-secondary" aria-hidden="true" />
                     </div>
                     <div className="min-w-0">
                       <p className="text-lg font-semibold leading-tight">

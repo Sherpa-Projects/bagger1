@@ -7,12 +7,7 @@ import {
   Hammer,
   CalendarClock,
 } from "lucide-react";
-
-type LocalUseCase = {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-};
+import { LocalUseCase } from "@/app/types/LocalUseCase";
 
 type LocationSeoConfig = {
   headline?: (cityName: string) => React.ReactNode;

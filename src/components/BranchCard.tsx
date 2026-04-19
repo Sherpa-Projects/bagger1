@@ -7,6 +7,7 @@ import BranchContent from "./BranchContent";
 import { locationData } from "@/lib/content/locationData";
 import { LocationDataProps } from "@/app/types/Location";
 import { ConsentLevel, readConsent } from "@/lib/consent";
+import { branchCardData } from "@/lib/content/components/branchCardData";
 
 export default function BranchCard() {
   const pathname = usePathname();
@@ -53,7 +54,7 @@ export default function BranchCard() {
       <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
         {locations.length > 1 && (
           <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
-            Unsere Standorte
+            {branchCardData.title}
           </h2>
         )}
         <div

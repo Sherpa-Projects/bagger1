@@ -276,6 +276,7 @@ export default function MachinePage({
                                       }
                                     </li>
                                   )}
+
                                   {selectedMachine.content.specifications
                                     .workingRange.maxReach && (
                                     <li>
@@ -286,6 +287,7 @@ export default function MachinePage({
                                       }
                                     </li>
                                   )}
+
                                   {selectedMachine.content.specifications
                                     .workingRange.minSwingRadius && (
                                     <li>
@@ -296,6 +298,7 @@ export default function MachinePage({
                                       }
                                     </li>
                                   )}
+
                                   {selectedMachine.content.specifications
                                     .workingRange.bucketBreakoutForceISO && (
                                     <li>
@@ -306,6 +309,7 @@ export default function MachinePage({
                                       }
                                     </li>
                                   )}
+
                                   {selectedMachine.content.specifications
                                     .workingRange.armTearOutForceISO && (
                                     <li>
@@ -313,6 +317,50 @@ export default function MachinePage({
                                       {
                                         selectedMachine.content.specifications
                                           .workingRange.armTearOutForceISO
+                                      }
+                                    </li>
+                                  )}
+
+                                  {selectedMachine.content.specifications
+                                    .workingRange.bucketCapacity && (
+                                    <li>
+                                      Schaufelinhalt:{" "}
+                                      {
+                                        selectedMachine.content.specifications
+                                          .workingRange.bucketCapacity
+                                      }
+                                    </li>
+                                  )}
+
+                                  {selectedMachine.content.specifications
+                                    .workingRange.payloadS125 && (
+                                    <li>
+                                      Nutzlast (S=1,25):{" "}
+                                      {
+                                        selectedMachine.content.specifications
+                                          .workingRange.payloadS125
+                                      }
+                                    </li>
+                                  )}
+
+                                  {selectedMachine.content.specifications
+                                    .workingRange.tippingLoadBucket && (
+                                    <li>
+                                      Kipplast (Schaufel):{" "}
+                                      {
+                                        selectedMachine.content.specifications
+                                          .workingRange.tippingLoadBucket
+                                      }
+                                    </li>
+                                  )}
+
+                                  {selectedMachine.content.specifications
+                                    .workingRange.tippingLoadPalletFork && (
+                                    <li>
+                                      Kipplast (Palettengabel):{" "}
+                                      {
+                                        selectedMachine.content.specifications
+                                          .workingRange.tippingLoadPalletFork
                                       }
                                     </li>
                                   )}
