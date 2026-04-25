@@ -380,23 +380,42 @@ export default function MachinePage({
               <div className="flex flex-col space-y-12 min-w-full">
                 <BookingWidget articleId={primaryArticle.articleId} />
 
-                <h2 className="text-2xl font-bold mb-6">Preise & Konditionen</h2>
-                <ul className="border border-gray-200 text-lg">
-                  <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                    <span>{timeTable.rowOne}</span>
-                    <span className="font-bold">
-                      {effectivePrice.perDay} € netto/Tag
-                    </span>
-                  </li>
-                  <li className="bg-white flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                    <span>{timeTable.rowTwo}</span>
-                    <span className="font-bold">20% Rabatt</span>
-                  </li>
-                  <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                    <span>{timeTable.rowThree}</span>
-                    <span className="font-bold">50% Rabatt</span>
-                  </li>
-                </ul>
+                <div>
+                  <h2 className="text-2xl font-bold mb-6">
+                    Preise & Konditionen
+                  </h2>
+                  <ul className="border border-gray-200 text-lg mb-2">
+                    <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
+                      <span>{timeTable.rowOne}</span>
+                      <span className="font-bold">
+                        {effectivePrice.perDay} € netto/Tag
+                      </span>
+                    </li>
+                    <li className="bg-white flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
+                      <span>{timeTable.rowTwo}</span>
+                      <span className="font-bold">20% Rabatt</span>
+                    </li>
+                    <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
+                      <span>{timeTable.rowThree}</span>
+                      <span className="font-bold">50% Rabatt</span>
+                    </li>
+                  </ul>
+                  <p className="text-xs mb-5 w-full flex justify-end">
+                    * 1 Miettag = 8 Betriebsstunden
+                  </p>
+                  <div className="rounded-xl border border-gray-200 bg-white p-4">
+                    <h3 className="mb-1">Zusätzlich:</h3>
+                    <div className="text-sm">
+                      <div className="space-y-1 mb-2">
+                        <p>+10 % Maschinenbruchversicherung</p>
+                        <p>+19 % MwSt.</p>
+                      </div>
+                      <p className="font-bold text-base">
+                        Keine versteckten Kosten.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
