@@ -380,7 +380,7 @@ export default function MachinePage({
               <div className="flex flex-col space-y-12 min-w-full">
                 <BookingWidget articleId={primaryArticle.articleId} />
 
-                <h2 className="text-2xl font-bold mb-6">Preise & Rabatte</h2>
+                <h2 className="text-2xl font-bold mb-6">Preise & Konditionen</h2>
                 <ul className="border border-gray-200 text-lg">
                   <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                     <span>{timeTable.rowOne}</span>
