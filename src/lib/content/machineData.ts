@@ -10,7 +10,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/hitachi-Zx26U-5.png",
       alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
     },
-    price: { perDay: 120 },
+    price: { perDay: 140, perWeek: 110, perMonth: 70 },
     content: {
       title: "",
       description: "",
@@ -38,7 +38,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/kubota-kx016-4.png",
       alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
     },
-    price: { perDay: 100 },
+    price: { perDay: 110, perWeek: 90, perMonth: 50 },
     content: {
       title: "",
       description: "",
@@ -54,7 +54,7 @@ export const machineData: Machine[] = [
       },
     },
     inventory: {
-      mannheim: [{ articleId: "ZHLFH1" }],
+      mannheim: [{ articleId: "TK9WPV" }],
       bruchsal: [{ articleId: "ZHLFH1" }],
       hennef: [{ articleId: "PTSQZK" }],
     },
@@ -68,7 +68,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/kubota-kx019-4.png",
       alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
     },
-    price: { perDay: 110 },
+    price: { perDay: 120, perWeek: 100, perMonth: 60 },
     content: {
       title: "",
       description: "",
@@ -95,7 +95,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/kubota-u10-5.png",
       alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
     },
-    price: { perDay: 90, perWeek: 72, perMonth: 45 },
+    price: { perDay: 100, perWeek: 80, perMonth: 45 },
     content: {
       title: "Neuer Kubota U10-5 mit Schnellwechsler",
       description: "ROPS BAR - Hydraulischer Unterwagen",
@@ -113,7 +113,6 @@ export const machineData: Machine[] = [
     inventory: {
       hennef: [{ articleId: "QHP8S7" }],
       bruchsal: [{ articleId: "H6QGO8" }],
-      mannheim: [{ articleId: "H6QGO8" }],
     },
   },
   {
@@ -145,7 +144,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/bomag-100.png",
       alt: "Schwarzgelbe Rüttelplatte.",
     },
-    price: { perDay: 30, perWeek: 24, perMonth: 15 },
+    price: { perDay: 40, perWeek: 30, perMonth: 20 },
     content: {
       title: "Bomag Rüttelplatte 100 kg",
       description:
@@ -158,6 +157,25 @@ export const machineData: Machine[] = [
     },
   },
   {
+    name: "Rüttelplatte 135 kg",
+    slug: "ammann-25-50",
+    model: "Ammann APR 25/50 135 kg",
+    category: "machine",
+    image: {
+      url: "/images/machines/ammann-25-50.png",
+      alt: "Schwarzgelbe Rüttelplatte.",
+    },
+    price: { perDay: 50, perWeek: 40, perMonth: 25 },
+    content: {
+      title: "Ammann Rüttelplatte 135 kg",
+      description:
+        "Ammann Rüttelplatte 135 kg zur zuverlässigen Verdichtung von Schotter, Sand und Pflasterflächen.",
+    },
+    inventory: {
+      hennef: [{ articleId: "Y5ABLY" }],
+    },
+  },
+  {
     name: "Rüttelplatte 150 kg",
     slug: "bomag-150",
     model: "Bomag 150 kg",
@@ -166,7 +184,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/bomag-150.png",
       alt: "Schwarzgelbe Rüttelplatte.",
     },
-    price: { perDay: 30, perWeek: 24, perMonth: 15 },
+    price: { perDay: 50, perWeek: 40, perMonth: 25 },
     content: {
       title: "Bomag Rüttelplatte 150 kg",
       description:
@@ -174,6 +192,26 @@ export const machineData: Machine[] = [
     },
     inventory: {
       hennef: [{ articleId: "L1P1YF" }],
+    },
+  },
+  {
+    name: "Rüttelplatte 200 kg",
+    slug: "ammann-30-50",
+    model: "Ammann APR 30/50 200 kg",
+    category: "machine",
+    image: {
+      url: "/images/machines/ammann-30-50.png",
+      alt: "Schwarzgelbe Rüttelplatte.",
+    },
+    price: { perDay: 60, perWeek: 45, perMonth: 30 },
+    content: {
+      title: "Ammann Rüttelplatte 200 kg",
+      description:
+        "Ammann Rüttelplatte 200 kg zur zuverlässigen Verdichtung von Schotter, Sand und Pflasterflächen.",
+    },
+    inventory: {
+      hennef: [{ articleId: "JVXZF6" }],
+      bruchsal: [{ articleId: "RUUP9N" }],
     },
   },
   {
@@ -185,7 +223,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/ammann-60-68.png",
       alt: "Schwarzgelber Stampfer.",
     },
-    price: { perDay: 25, perWeek: 20, perMonth: 12 },
+    price: { perDay: 40, perWeek: 30, perMonth: 20 },
     content: {
       title: "Ammann 60/68 Rüttelplatte",
       description:
@@ -248,7 +286,7 @@ export const machineData: Machine[] = [
       url: "/images/machines/kramer-radlader.png",
       alt: "Schwarzgelber Radlader.",
     },
-    price: { perDay: 160 },
+    price: { perDay: 150, perWeek: 120, perMonth: 80 },
     content: {
       title: "",
       description: "",

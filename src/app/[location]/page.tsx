@@ -18,6 +18,8 @@ import {
   getFaqContentForLocation,
   isValidLocation,
   getPricePerDayForLocation,
+  getPricePerWeekForLocation,
+  getPricePerMonthForLocation,
 } from "@/lib/utils";
 import { getLocationSeoTexts } from "@/lib/content/seo/locationSeo";
 import { locationSeoBySlug } from "@/lib/content/locationSeoData";
@@ -147,6 +149,14 @@ export default async function LocationPage({
                     bagger as Machine,
                     location,
                   );
+                  const pricePerWeek = getPricePerWeekForLocation(
+                    bagger as Machine,
+                    location,
+                  );
+                  const pricePerMonth = getPricePerMonthForLocation(
+                    bagger as Machine,
+                    location,
+                  );
                   return (
                     <li key={bagger.name}>
                       <Link
@@ -165,7 +175,7 @@ export default async function LocationPage({
                         </div>
 
                         <div className="flex flex-col justify-between h-full py-2">
-                          <div className="space-y-4">
+                          <div className="space-y-5">
                             <div>
                               <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold capitalize mb-2">
                                 {bagger.name}
@@ -177,9 +187,20 @@ export default async function LocationPage({
                               )}
                             </div>
 
-                            <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                              {pricePerDay}€ / Tag
-                            </p>
+                            <div className="space-y-2">
+                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
+                                {pricePerDay} €{" "}
+                                <span className="text-xs">/ Tag</span>
+                              </p>
+                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
+                                {pricePerWeek} €{" "}
+                                <span className="text-xs">/ Woche</span>
+                              </p>
+                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
+                                {pricePerMonth} €{" "}
+                                <span className="text-xs">/ Monat</span>
+                              </p>
+                            </div>
                           </div>
 
                           <div className="w-full flex justify-end lg:justify-start">
@@ -211,6 +232,14 @@ export default async function LocationPage({
                     machine as Machine,
                     location,
                   );
+                  const pricePerWeek = getPricePerWeekForLocation(
+                    machine as Machine,
+                    location,
+                  );
+                  const pricePerMonth = getPricePerMonthForLocation(
+                    machine as Machine,
+                    location,
+                  );
                   return (
                     <li key={machine.name}>
                       <Link
@@ -229,7 +258,7 @@ export default async function LocationPage({
                         </div>
 
                         <div className="flex flex-col justify-between h-full py-2">
-                          <div className="space-y-4">
+                          <div className="space-y-5">
                             <div>
                               <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold capitalize mb-2">
                                 {machine.name}
@@ -241,9 +270,20 @@ export default async function LocationPage({
                               )}
                             </div>
 
-                            <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                              {pricePerDay}€ / Tag
-                            </p>
+                            <div className="space-y-2">
+                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
+                                {pricePerDay} €{" "}
+                                <span className="text-xs">/ Tag</span>
+                              </p>
+                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
+                                {pricePerWeek} €{" "}
+                                <span className="text-xs">/ Woche</span>
+                              </p>
+                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
+                                {pricePerMonth} €{" "}
+                                <span className="text-xs">/ Monat</span>
+                              </p>
+                            </div>
                           </div>
 
                           <div className="w-full flex justify-end lg:justify-start">

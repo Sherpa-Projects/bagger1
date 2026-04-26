@@ -2,8 +2,8 @@ export type LocationSlug = "mannheim" | "hennef" | "bruchsal";
 
 export type Price = {
   perDay: number;
-  perWeek?: number;
-  perMonth?: number;
+  perWeek: number;
+  perMonth: number;
 };
 
 export type InventoryEntry = {

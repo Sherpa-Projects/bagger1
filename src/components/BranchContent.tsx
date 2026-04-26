@@ -20,14 +20,6 @@ export default function BranchContent({
           {locations.length > 1 ? (
             <Link href={`/${loc.slug}`} className="group">
               <div className="border border-gray-300 bg-white p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2">
-                {level === "all" && (
-                  <iframe
-                    src={loc.map}
-                    className="w-full h-64 border-0 mb-4"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
-                )}
                 <div className="space-y-4">
                   <h3 className="text-xl font-semibold">{loc.name}</h3>
                   <div className="flex items-center">
@@ -55,6 +47,15 @@ export default function BranchContent({
                       </span>
                     </span>
                   </div>
+
+                  {level === "all" && (
+                    <iframe
+                      src={loc.map}
+                      className="w-full h-32 border-0 mb-4"
+                      allowFullScreen
+                      loading="lazy"
+                    ></iframe>
+                  )}
                 </div>
               </div>
             </Link>

@@ -72,15 +72,7 @@ export default function BranchCard() {
                     "w-full lg:w-auto lg:min-w-lg xl:min-w-xl"
                   }`}
                 >
-                  {level === "all" && (
-                    <iframe
-                      src={loc.map}
-                      className="w-full h-64 border-0 mb-4"
-                      allowFullScreen
-                      loading="lazy"
-                    ></iframe>
-                  )}
-                  <h3 className="text-xl font-semibold mb-4">{loc.name}</h3>
+                  <h3 className="text-xl font-semibold mb-12">{loc.name}</h3>
                   {comingSoonLocations.length > 1 && (
                     <div className="w-full flex justify-center">
                       <span className="text-xl text-gray-300 mt-6 self-start group-hover:text-primary transition-all duration-300 transform">

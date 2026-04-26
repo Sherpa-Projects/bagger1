@@ -9,28 +9,37 @@ import type { LucideIcon } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { homePageData } from "@/lib/content/pages/home/homePageData";
+import { getHomeSeoTexts } from "@/lib/content/seo/homeSeo";
 
 export const generateMetadata = (): Metadata => {
+  const {
+    title,
+    googleDescription,
+    openGraphDescription,
+    twitterDescription,
+    alt,
+  } = getHomeSeoTexts();
+
   return {
-    title: homePageData.seo.metaTitle,
-    description: homePageData.seo.metaDescription.google,
+    title: title,
+    description: googleDescription,
     robots: "index, follow",
     openGraph: {
-      title: homePageData.seo.metaTitle,
-      description: homePageData.seo.metaDescription.openGraph,
+      title: title,
+      description: openGraphDescription,
       url: "https://bagger1.de",
-      siteName: "Bagger- & Baumaschinenverleih in deiner Gegend | BAGGER1",
+      siteName: "BAGGER1",
       images: {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Startseite | BAGGER1",
+        alt: alt,
       },
     },
     twitter: {
       card: "summary_large_image",
-      title: homePageData.seo.metaTitle,
-      description: homePageData.seo.metaDescription.twitter,
+      title: title,
+      description: twitterDescription,
       images: ["/images/og-image.png"],
     },
   };
@@ -57,7 +66,9 @@ export default function Home() {
             <p className="text-5xl lg:text-7xl font-semibold leading-normal tracking-wider">
               {hero.title}
             </p>
-            <h1 className="text-2xl lg:text-5xl tracking-wide">{hero.subtitle}</h1>
+            <h1 className="text-2xl lg:text-5xl tracking-wide">
+              {hero.subtitle}
+            </h1>
           </div>
         </div>
 
@@ -100,7 +111,10 @@ export default function Home() {
                 >
                   <div className="flex items-center gap-4">
                     <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary">
-                      <Icon className="h-6 w-6 text-secondary" aria-hidden="true" />
+                      <Icon
+                        className="h-6 w-6 text-secondary"
+                        aria-hidden="true"
+                      />
                     </div>
                     <div className="min-w-0">
                       <p className="text-lg font-semibold leading-tight">
