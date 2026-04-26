@@ -187,7 +187,7 @@ export default async function LocationPage({
                               )}
                             </div>
 
-                            <div className="space-y-1">
+                            <div className="space-y-2">
                               <p className="text-2xl lg:text-lg xl:text-xl capitalize">
                                 {pricePerDay} €{" "}
                                 <span className="text-xs">/ Tag</span>
@@ -270,7 +270,7 @@ export default async function LocationPage({
                               )}
                             </div>
 
-                            <div className="space-y-1">
+                            <div className="space-y-2">
                               <p className="text-2xl lg:text-lg xl:text-xl capitalize">
                                 {pricePerDay} €{" "}
                                 <span className="text-xs">/ Tag</span>
