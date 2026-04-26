@@ -37,6 +37,34 @@ export function getPricePerDayForLocation(
   return override ?? base;
 }
 
+export function getPricePerWeekForLocation(
+  machine: Machine,
+  location: Location,
+): number {
+  const base = machine.price.perWeek;
+
+  const entries = (machine.inventory?.[location] ?? []) as InventoryEntry[];
+
+  const override = entries.find((e) => e.priceOverride?.perWeek !== undefined)
+    ?.priceOverride?.perWeek;
+
+  return override ?? base;
+}
+
+export function getPricePerMonthForLocation(
+  machine: Machine,
+  location: Location,
+): number {
+  const base = machine.price.perMonth;
+
+  const entries = (machine.inventory?.[location] ?? []) as InventoryEntry[];
+
+  const override = entries.find((e) => e.priceOverride?.perMonth !== undefined)
+    ?.priceOverride?.perMonth;
+
+  return override ?? base;
+}
+
 const capitalize = (s: string) =>
   s ? s[0].toUpperCase() + s.slice(1).toLowerCase() : s;
 

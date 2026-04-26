@@ -393,11 +393,15 @@ export default function MachinePage({
                     </li>
                     <li className="bg-white flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                       <span>{timeTable.rowTwo}</span>
-                      <span className="font-bold">20% Rabatt</span>
+                      <span className="font-bold">
+                        {effectivePrice.perWeek} € netto/Tag
+                      </span>
                     </li>
                     <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
                       <span>{timeTable.rowThree}</span>
-                      <span className="font-bold">50% Rabatt</span>
+                      <span className="font-bold">
+                        {effectivePrice.perMonth} € netto/Tag
+                      </span>
                     </li>
                   </ul>
                   <p className="text-xs mb-5 w-full flex justify-end">
