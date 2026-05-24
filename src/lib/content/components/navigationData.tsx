@@ -1,4 +1,3 @@
-import type { ReactElement } from "react";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { locationData } from "../locationData";
