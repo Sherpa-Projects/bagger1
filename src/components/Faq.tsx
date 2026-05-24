@@ -12,6 +12,9 @@ type Props = {
 type FaqSection = "location" | "bucket" | "rentalCondition";
 
 export default function Faq({ title, content }: Props) {
+  const locationName =
+    content.location.charAt(0).toUpperCase() + content.location.slice(1);
+
   const [openItem, setOpenItem] = useState<{
     section: FaqSection;
     index: number;
@@ -21,12 +24,12 @@ export default function Faq({ title, content }: Props) {
     setOpenItem((prevItem) =>
       prevItem?.section === section && prevItem.index === index
         ? null
-        : { section, index }
+        : { section, index },
     );
   };
 
   return (
-    <section className="py-10 lg:py-20 px-4">
+    <section id="faq" className="py-10 lg:py-20 px-4">
       <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
         <div className="pb-4 lg:pb-6">
           <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl lg:leading-tight text-center mb-2">
@@ -40,7 +43,7 @@ export default function Faq({ title, content }: Props) {
         >
           <div className="mb-10 space-y-3">
             <h2 className="text-center text-gray-500">
-              Fragen & Antworten zum Standort {content.location}
+              Fragen & Antworten zum Standort {locationName}
             </h2>
             {content.locationItems.items.map((item, i) => (
               <div
@@ -162,7 +165,8 @@ export default function Faq({ title, content }: Props) {
               <div
                 key={i}
                 className={`group border p-6 rounded-md accordion-item max-w-4xl w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-md lg:cursor-pointer ${
-                  openItem?.section === "rentalCondition" && openItem.index === i
+                  openItem?.section === "rentalCondition" &&
+                  openItem.index === i
                     ? "border-orange-300 bg-orange-50"
                     : "border-gray-300 bg-white"
                 }`}
