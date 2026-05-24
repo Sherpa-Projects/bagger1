@@ -29,6 +29,10 @@ export const machinePageData = {
       minSwingRadius: "Min. Schwenkradius",
       bucketBreakoutForceISO: "Löffellosbrechkraft ISO",
       armTearOutForceISO: "Stiel Reißkraft ISO",
+      bucketCapacity: "Schaufelinhalt",
+      payloadS125: "Nutzlast (S=1,25)",
+      tippingLoadBucket: "Kipplast (Schaufel)",
+      tippingLoadPalletFork: "Kipplast (Palettengabel)",
     },
   },
 } as const;
