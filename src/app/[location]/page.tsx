@@ -177,7 +177,7 @@ export default async function LocationPage({
                         <div className="flex flex-col justify-between h-full py-2">
                           <div className="space-y-5">
                             <div>
-                              <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold capitalize mb-2">
+                              <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold mb-2">
                                 {bagger.name}
                               </p>
                               {bagger.model && (
@@ -260,7 +260,7 @@ export default async function LocationPage({
                         <div className="flex flex-col justify-between h-full py-2">
                           <div className="space-y-5">
                             <div>
-                              <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold capitalize mb-2">
+                              <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold mb-2">
                                 {machine.name}
                               </p>
                               {machine.model && (
@@ -317,7 +317,6 @@ export default async function LocationPage({
         {faqContentForLocation && (
           <Faq
             title={faq.title}
-            subtitle={faq.subtitle}
             content={faqContentForLocation}
           />
         )}
