@@ -30,12 +30,12 @@ export const navigationPartnerData: NavigationDataProps = {
 
 export const navigationKleinanzeigenData: NavigationDataProps = {
   name: "Kleinanzeigen",
-  url: "https://www.instagram.com/bagger1.de?igsh=MWRuZ2J3cTd0bDJ5bg==",
+  url: "https://www.kleinanzeigen.de/s-bestandsliste.html?userId=156249218",
 };
 
 export const navigationInstagramData: NavigationDataProps = {
   name: "Instagram",
-  url: "https://www.kleinanzeigen.de/s-bestandsliste.html?userId=156249218",
+  url: "https://www.instagram.com/bagger1.de?igsh=MWRuZ2J3cTd0bDJ5bg==",
 };
 
 export const navigationWhatsappData: NavigationDataProps = {
