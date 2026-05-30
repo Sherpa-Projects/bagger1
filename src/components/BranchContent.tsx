@@ -21,7 +21,7 @@ export default function BranchContent({
             <Link href={`/${loc.slug}`} className="group">
               <div className="border border-gray-300 bg-white p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2">
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold">{loc.name}</h3>
+                  <h3 className="text-center text-2xl font-semibold mb-8">{loc.name}</h3>
                   <div className="flex items-center">
                     <ul className="space-y-1">
                       <li className="flex items-center">
@@ -39,7 +39,7 @@ export default function BranchContent({
                     </ul>
                   </div>
 
-                  <div className="w-full flex justify-end lg:justify-start">
+                  <div className="w-full flex justify-center lg:justify-start">
                     <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
                       Zum Standort
                       <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
