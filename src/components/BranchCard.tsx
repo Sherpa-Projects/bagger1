@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import "@fortawesome/fontawesome-svg-core/styles.css";
 import BranchContent from "./BranchContent";
 import { locationData } from "@/lib/content/locationData";
 import { LocationDataProps } from "@/app/types/Location";
@@ -72,7 +71,7 @@ export default function BranchCard() {
                     "w-full lg:w-auto lg:min-w-lg xl:min-w-xl"
                   }`}
                 >
-                  <h3 className="text-xl font-semibold mb-12">{loc.name}</h3>
+                  <h3 className="text-center text-2xl font-semibold mb-16">{loc.name}</h3>
                   {comingSoonLocations.length > 1 && (
                     <div className="w-full flex justify-center">
                       <span className="text-xl text-gray-300 mt-6 self-start group-hover:text-primary transition-all duration-300 transform">

@@ -1,19 +1,22 @@
-import * as React from "react";
 import { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { use } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { machineData } from "@/lib/content/machineData";
 import { Location } from "@/app/types/Location";
-import { isValidLocation, getLocationMachineRouteParams } from "@/lib/utils";
+import {
+  getCityName,
+  getLocationMachineRouteParams,
+  humanizeSlug,
+  isValidLocation,
+} from "@/lib/utils";
 import type { Machine } from "@/app/types/Machine";
 import BookingWidget from "@/components/BookingWidget";
 import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
 import BookingSteps from "@/components/BookingSteps";
-import { humanizeSlug } from "@/lib/utils";
 import { getMachineSeoTexts } from "@/lib/content/seo/machineSeo";
+import MachineSpecifications from "@/components/MachineSpecifications";
 
 export function generateStaticParams() {
   return getLocationMachineRouteParams();
@@ -24,8 +27,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ machine: string; location: string }>;
 }): Promise<Metadata> {
-  const { machine: machineSlug } = await params;
-  const { location } = await params;
+  const { location, machine: machineSlug } = await params;
   const selectedMachine = machineData.find(
     (m: Machine) => m.slug === machineSlug,
   );
@@ -80,12 +82,12 @@ export async function generateMetadata({
   };
 }
 
-export default function MachinePage({
+export default async function MachinePage({
   params,
 }: {
   params: Promise<{ location: string; machine: string }>;
 }) {
-  const { location: rawLocation, machine: machineSlug } = use(params);
+  const { location: rawLocation, machine: machineSlug } = await params;
   const { timeTable } = machinePageData;
 
   if (!isValidLocation(rawLocation)) return notFound();
@@ -110,8 +112,10 @@ export default function MachinePage({
       primaryArticle.priceOverride?.perMonth ?? selectedMachine.price.perMonth,
   };
 
-  const currentLocation =
-    location.charAt(0).toUpperCase() + location.slice(1).toLowerCase();
+  const currentLocation = getCityName(location);
+  const content = selectedMachine.content;
+  const specifications = content?.specifications;
+  const hasIntroContent = Boolean(content?.title || content?.description);
 
   return (
     <>
@@ -134,244 +138,29 @@ export default function MachinePage({
                 />
               ) : null}
 
-              {selectedMachine.content && (
+              {content && (
                 <>
-                  <div>
-                    <h3 className="text-3xl font-bold mb-2">
-                      {selectedMachine.content.title}
-                    </h3>
-                    <p className="text-lg">
-                      {selectedMachine.content.description}
-                    </p>
-                  </div>
+                  {hasIntroContent && (
+                    <div>
+                      {content.title && (
+                        <h3 className="text-3xl font-bold mb-2">
+                          {content.title}
+                        </h3>
+                      )}
+                      {content.description && (
+                        <p className="text-lg">{content.description}</p>
+                      )}
+                    </div>
+                  )}
 
-                  <div className="lg:mt-12">
-                    <details
-                      open
-                      className="group rounded-xl border border-gray-200 bg-white"
-                    >
-                      <summary className="flex items-center justify-between cursor-pointer select-none px-4 py-3">
-                        <span className="text-xl font-semibold">
-                          {machinePageData.specifications.title}
-                        </span>
-                        <svg
-                          className="h-5 w-5 transition-transform duration-300 group-open:rotate-180"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
-                        </svg>
-                      </summary>
-
-                      <div className="px-4 pb-4 pt-2 space-y-4 text-gray-800">
-                        <div className="mb-4">
-                          Modell: {selectedMachine.model}
-                        </div>
-                        {selectedMachine.content.specifications && (
-                          <div className="space-y-4">
-                            {selectedMachine.content.specifications
-                              .dimensions && (
-                              <div>
-                                <h4 className="font-bold">Bemessung:</h4>
-                                <ul>
-                                  {selectedMachine.content.specifications
-                                    .dimensions.width && (
-                                    <li>
-                                      {
-                                        machinePageData.specifications
-                                          .dimensions.width
-                                      }
-                                      :{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .dimensions.width
-                                      }
-                                    </li>
-                                  )}
-                                  {selectedMachine.content.specifications
-                                    .dimensions.length && (
-                                    <li>
-                                      {
-                                        machinePageData.specifications
-                                          .dimensions.length
-                                      }
-                                      :{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .dimensions.length
-                                      }
-                                    </li>
-                                  )}
-                                  {selectedMachine.content.specifications
-                                    .dimensions.height && (
-                                    <li>
-                                      {
-                                        machinePageData.specifications
-                                          .dimensions.height
-                                      }
-                                      :{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .dimensions.height
-                                      }
-                                    </li>
-                                  )}
-                                  {selectedMachine.content.specifications
-                                    .dimensions.weight && (
-                                    <li>
-                                      {
-                                        machinePageData.specifications
-                                          .dimensions.weight
-                                      }
-                                      :{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .dimensions.weight
-                                      }
-                                    </li>
-                                  )}
-                                  {selectedMachine.content.specifications
-                                    .dimensions.volume && (
-                                    <li>
-                                      {
-                                        machinePageData.specifications
-                                          .dimensions.volume
-                                      }
-                                      :{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .dimensions.volume
-                                      }
-                                    </li>
-                                  )}
-                                </ul>
-                              </div>
-                            )}
-
-                            {selectedMachine.content.specifications.power && (
-                              <p>
-                                {machinePageData.specifications.power.title}:{" "}
-                                {selectedMachine.content.specifications.power}
-                              </p>
-                            )}
-                            {selectedMachine.content.specifications
-                              .workingRange && (
-                              <div>
-                                <h4 className="font-bold">
-                                  {
-                                    machinePageData.specifications.workingRange
-                                      .title
-                                  }
-                                  :
-                                </h4>
-                                <ul>
-                                  {selectedMachine.content.specifications
-                                    .workingRange.maxDepth && (
-                                    <li>
-                                      Max. Grabtiefe:{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .workingRange.maxDepth
-                                      }
-                                    </li>
-                                  )}
-
-                                  {selectedMachine.content.specifications
-                                    .workingRange.maxReach && (
-                                    <li>
-                                      Max. Reichweite:{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .workingRange.maxReach
-                                      }
-                                    </li>
-                                  )}
-
-                                  {selectedMachine.content.specifications
-                                    .workingRange.minSwingRadius && (
-                                    <li>
-                                      Min. Schwenkradius:{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .workingRange.minSwingRadius
-                                      }
-                                    </li>
-                                  )}
-
-                                  {selectedMachine.content.specifications
-                                    .workingRange.bucketBreakoutForceISO && (
-                                    <li>
-                                      Löffellosbrechkraft ISO:{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .workingRange.bucketBreakoutForceISO
-                                      }
-                                    </li>
-                                  )}
-
-                                  {selectedMachine.content.specifications
-                                    .workingRange.armTearOutForceISO && (
-                                    <li>
-                                      Stiel Reißkraft ISO:{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .workingRange.armTearOutForceISO
-                                      }
-                                    </li>
-                                  )}
-
-                                  {selectedMachine.content.specifications
-                                    .workingRange.bucketCapacity && (
-                                    <li>
-                                      Schaufelinhalt:{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .workingRange.bucketCapacity
-                                      }
-                                    </li>
-                                  )}
-
-                                  {selectedMachine.content.specifications
-                                    .workingRange.payloadS125 && (
-                                    <li>
-                                      Nutzlast (S=1,25):{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .workingRange.payloadS125
-                                      }
-                                    </li>
-                                  )}
-
-                                  {selectedMachine.content.specifications
-                                    .workingRange.tippingLoadBucket && (
-                                    <li>
-                                      Kipplast (Schaufel):{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .workingRange.tippingLoadBucket
-                                      }
-                                    </li>
-                                  )}
-
-                                  {selectedMachine.content.specifications
-                                    .workingRange.tippingLoadPalletFork && (
-                                    <li>
-                                      Kipplast (Palettengabel):{" "}
-                                      {
-                                        selectedMachine.content.specifications
-                                          .workingRange.tippingLoadPalletFork
-                                      }
-                                    </li>
-                                  )}
-                                </ul>
-                              </div>
-                            )}
-                          </div>
-                        )}
-                      </div>
-                    </details>
-                  </div>
+                  {specifications && (
+                    <div className={hasIntroContent ? "lg:mt-12" : ""}>
+                      <MachineSpecifications
+                        model={selectedMachine.model}
+                        specifications={specifications}
+                      />
+                    </div>
+                  )}
                 </>
               )}
             </div>

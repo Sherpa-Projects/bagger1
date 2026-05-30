@@ -2,7 +2,7 @@ import { Machine } from "@/app/types/Machine";
 
 export const machineData: Machine[] = [
   {
-    name: "2,7t Bagger",
+    name: "2,7 t Bagger",
     slug: "hitachi-zx26u-5",
     model: "Hitachi Zx26U-5",
     category: "bagger",
@@ -30,7 +30,7 @@ export const machineData: Machine[] = [
     },
   },
   {
-    name: "1,6t Bagger",
+    name: "1,6 t Bagger",
     slug: "kubota-kx016-4",
     model: "Kubota KX016-4",
     category: "bagger",
@@ -60,7 +60,7 @@ export const machineData: Machine[] = [
     },
   },
   {
-    name: "1,8t Bagger",
+    name: "1,8 t Bagger",
     slug: "kubota-kx019-4",
     model: "Kubota KX019-4",
     category: "bagger",
@@ -87,7 +87,7 @@ export const machineData: Machine[] = [
     },
   },
   {
-    name: "1,1t Bagger",
+    name: "1,1 t Bagger",
     slug: "kubota-u10-5",
     model: "Kubota U10-5",
     category: "bagger",
@@ -278,7 +278,7 @@ export const machineData: Machine[] = [
     },
   },
   {
-    name: "Radlader 2,5t",
+    name: "Radlader 2,5 t",
     slug: "radlader-kramer-5045",
     model: "Radlader Kramer 5045",
     category: "bagger",

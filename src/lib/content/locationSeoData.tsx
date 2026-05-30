@@ -1,4 +1,3 @@
-import { LucideIcon } from "lucide-react";
 import {
   Shovel,
   Trees,
@@ -32,7 +31,7 @@ type LocationSeoConfig = {
 export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
   mannheim: {
     regionName: "im Rhein-Neckar-Kreis",
-    headline: (cityName) => (
+    headline: () => (
       <>
         Verfügbarkeit für Mannheim und die Rhein-Neckar-Region direkt online
         prüfen.
@@ -141,7 +140,7 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
 
   hennef: {
     regionName: "im Rhein-Sieg-Kreis",
-    headline: (cityName) => (
+    headline: () => (
       <>
         Passende Maschinen für Einsätze in Hennef und im Rhein-Sieg-Kreis online
         auswählen.
@@ -248,7 +247,7 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
 
   bruchsal: {
     regionName: "im Landkreis Karlsruhe",
-    headline: (cityName) => (
+    headline: () => (
       <>Regionales Mietangebot für Bruchsal und den Raum Karlsruhe.</>
     ),
     intro: (cityName, data) => {
@@ -352,7 +351,7 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
 
   stockstadt: {
     regionName: "im Landkreis Aschaffenburg",
-    headline: (cityName) => (
+    headline: () => (
       <>
         Bagger und Baumaschinen für Stockstadt und den Raum Aschaffenburg
         gezielt auswählen.

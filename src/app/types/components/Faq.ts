@@ -1,12 +1,19 @@
 export type FaqProps = {
   title: string;
-  subtitle: string;
   content: FaqContentProps[];
 };
 
 export type FaqContentProps = {
   location: string;
-  items: FaqItemProps[];
+  locationItems: {
+    items: FaqItemProps[];
+  };
+  bucketItems: {
+    items: FaqItemProps[];
+  };
+  rentalConditionItems: {
+    items: FaqItemProps[];
+  };
 };
 
 export type FaqItemProps = {
