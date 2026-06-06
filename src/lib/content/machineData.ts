@@ -97,8 +97,8 @@ export const machineData: Machine[] = [
     },
     price: { perDay: 100, perWeek: 80, perMonth: 45 },
     content: {
-      title: "Neuer Kubota U10-5 mit Schnellwechsler",
-      description: "ROPS BAR - Hydraulischer Unterwagen",
+      title: "",
+      description: "",
       specifications: {
         dimensions: {
           width: "750–990 mm",
@@ -225,9 +225,9 @@ export const machineData: Machine[] = [
     },
     price: { perDay: 40, perWeek: 30, perMonth: 20 },
     content: {
-      title: "Ammann 60/68 Rüttelplatte",
+      title: "Ammann Stampfer 60/68",
       description:
-        "Ammann 60/68 Rüttelplatte für kraftvolle Bodenverdichtung im Erd- und Pflasterbau.",
+        "Leistungsstarker Vibrationsstampfer für die effiziente Verdichtung von Erde, Sand und Schotter in Gräben, Fundamenten und schwer zugänglichen Bereichen.",
     },
     inventory: {
       hennef: [{ articleId: "I9KAW8" }],
@@ -238,18 +238,18 @@ export const machineData: Machine[] = [
   },
   {
     name: "Dumper",
-    slug: "muck-truck-maxi-2",
-    model: "Muck Truck MAXI II",
+    slug: "muck-truck-max-2",
+    model: "Muck Truck MAX II",
     category: "machine",
     image: {
-      url: "/images/machines/muck-truck-maxi-2.png",
+      url: "/images/machines/muck-truck-max-2.png",
       alt: "Silberner Dumper mit MAX II Schriftzug.",
     },
     price: { perDay: 50, perWeek: 40, perMonth: 25 },
     content: {
-      title: "Muck Truck MAXI II Dumper",
+      title: "Muck Truck MAX II Dumper",
       description:
-        "Muck Truck MAXI II Dumper mit einer Tragfähigkeit von bis zu 365 kg – robuster und wendiger Baustellen-Transporter für Materialbewegung.",
+        "Muck Truck MAX II Dumper mit einer Tragfähigkeit von bis zu 365 kg – robuster und wendiger Baustellen-Transporter für Materialbewegung.",
     },
     inventory: {
       hennef: [{ articleId: "CRFM16" }],
@@ -270,6 +270,8 @@ export const machineData: Machine[] = [
     price: { perDay: 10, perWeek: 8, perMonth: 5 },
     content: {
       title: "Trotec Bautrockner",
+      description:
+        "Leistungsstarker Bautrockner zur schnellen und zuverlässigen Entfeuchtung von Neubauten, Sanierungen und Wasserschäden.",
     },
     inventory: {
       hennef: [{ articleId: "U8UMST" }],
