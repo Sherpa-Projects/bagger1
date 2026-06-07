@@ -28,16 +28,6 @@ export const b2bPageData = {
             oder selbstständigen beruflichen Tätigkeit handelt.
           </p>
           <p>
-            Die vorliegenden Allgemeinen Mietvertragsbedingungen des Vermieters
-            gelten für alle Angebote und Mietverträge zur Vermietung von
-            Baumaschinen, Baugeräten und Industriemaschinen ausschließlich
-            gegenüber Verbrauchern im Sinne des § 13 BGB. Verbraucher ist jede
-            natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die
-            überwiegend weder ihrer gewerblichen noch ihrer selbständigen
-            beruflichen Tätigkeit zugerechnet werden können.
-            Mietvertragsbedingungen des Mieters wird ausdrücklich widersprochen.
-          </p>
-          <p>
             Mietverträge werden nur mit volljährigen Personen mit Wohnsitz in
             der Bundesrepublik Deutschland abgeschlossen. Zur Prüfung der
             Identität des Mieters verlangt der Vermieter die Vorlage eines
