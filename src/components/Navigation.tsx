@@ -17,21 +17,24 @@ import {
   faBars,
   faTimes,
   faArrowRight,
-  faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { Handshake, Instagram } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
-import { motion, AnimatePresence } from "framer-motion";
-import { getCityName } from "@/lib/utils";
 
 type NavigationProps = {
   slug?: string;
 };
 
+function getLocationSlugFromUrl(url: string) {
+  return url.replace(/^\/+|\/+$/g, "");
+}
+
 export default function Navigation({ slug }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const [isOverlayOpen, setIsOverlayOpen] = useState<boolean>(false);
-  const [location, setLocation] = useState<string>("Standort wählen");
+  const currentLocationSlug = slug?.replace(/^\/+|\/+$/g, "");
+
+  const isLocationActive = (url: string) =>
+    currentLocationSlug === getLocationSlugFromUrl(url);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -40,38 +43,6 @@ export default function Navigation({ slug }: NavigationProps) {
       document.body.style.overflow = "auto";
     }
   }, [isMenuOpen]);
-
-  useEffect(() => {
-    if (isOverlayOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        setIsOverlayOpen(false);
-      }
-    };
-
-    if (isOverlayOpen) {
-      window.addEventListener("keydown", handleKeyDown);
-    }
-
-    return () => {
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isOverlayOpen]);
-
-  useEffect(() => {
-    if (!slug) {
-      setLocation("Standort auswählen");
-      return;
-    }
-
-    setLocation(getCityName(slug));
-  }, [slug]);
 
   return (
     <>
@@ -102,19 +73,31 @@ export default function Navigation({ slug }: NavigationProps) {
                 </div>
               </Link>
               <div className="border-l border-gray-300 h-6" />
-              <button
-                onClick={() => setIsOverlayOpen(true)}
-                className="py-2 px-4 rounded-full border border-primary bg-orange-50 shadow-sm cursor-pointer group"
-              >
-                <div className="flex items-center">
-                  <span className="mr-1 text-primary inline-block will-change-transform group-hover:animate-hop">
-                    <FontAwesomeIcon icon={faLocationDot} />
-                  </span>
-                  <span className="text-gray-600 group-hover:text-primary duration-300">
-                    {location}
-                  </span>
-                </div>
-              </button>
+              <div className="flex items-center gap-2" aria-label="Standorte">
+                {navigationLocationData.map((item) => (
+                  <div key={item.name} className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5">
+                      {item.subData?.map((subItem) => {
+                        const isActive = isLocationActive(subItem.url);
+                        return (
+                          <Link
+                            key={subItem.url}
+                            href={subItem.url}
+                            aria-current={isActive ? "location" : undefined}
+                            className={`px-3 py-2 font-medium transition-all duration-300 ${
+                              isActive
+                                ? "text-primary"
+                                : "text-gray-600 hover:text-primary"
+                            }`}
+                          >
+                            {subItem.name}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
 
             <div className="relative flex items-center space-x-5">
@@ -154,65 +137,6 @@ export default function Navigation({ slug }: NavigationProps) {
               </Link>
             </div>
           </div>
-
-          <AnimatePresence>
-            {isOverlayOpen && (
-              <motion.div
-                key="overlay"
-                onClick={() => setIsOverlayOpen(false)}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="fixed inset-0 bg-black/70 backdrop-blur-sm flex justify-center items-center z-50"
-              >
-                <motion.div
-                  key="modal"
-                  onClick={(e) => e.stopPropagation()}
-                  initial={{ scale: 0.95, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.95, opacity: 0 }}
-                  transition={{ duration: 0.2, ease: "easeOut" }}
-                  className="bg-white rounded-lg shadow-lg p-10 w-100 max-w-[90%] relative"
-                >
-                  <button
-                    onClick={() => setIsOverlayOpen(false)}
-                    className="absolute top-3 right-3 text-gray-400 hover:text-primary cursor-pointer border border-gray-300 h-9 w-9 rounded-full"
-                  >
-                    <FontAwesomeIcon icon={faTimes} />
-                  </button>
-
-                  <h2 className="text-lg font-semibold mb-6 text-gray-800 text-center">
-                    Standort auswählen
-                  </h2>
-
-                  <ul>
-                    {navigationLocationData.map((item, index) => (
-                      <div key={index} className="space-y-4">
-                        {item.subData?.map((subItem, subIndex) => (
-                          <li key={subIndex} className="group">
-                            <Link
-                              onClick={() => {
-                                setIsOverlayOpen(false);
-                              }}
-                              href={subItem.url}
-                              className="text-gray-800 hover:text-primary transition-all duration-300 transform cursor-pointer"
-                            >
-                              <div className="flex items-center text-lg">
-                                <span>{subItem.name}</span>
-                                <span className="ml-2 text-primary inline-block transition-transform duration-300 group-hover:translate-x-1">
-                                  <FontAwesomeIcon icon={faArrowRight} />
-                                </span>
-                              </div>
-                            </Link>
-                          </li>
-                        ))}
-                      </div>
-                    ))}
-                  </ul>
-                </motion.div>
-              </motion.div>
-            )}
-          </AnimatePresence>
 
           <div className="flex lg:hidden justify-between items-center">
             <Link href="/">
@@ -293,18 +217,30 @@ export default function Navigation({ slug }: NavigationProps) {
                         <>
                           <div className="text-xl mb-4">Mieten in:</div>
                           <div className="pl-4 mb-16 space-y-6 text-3xl flex flex-col">
-                            {item.subData?.map((subItem, subIndex) => (
-                              <Link
-                                href={subItem.url}
-                                key={subIndex}
-                                className="text-gray-800 cursor-pointer"
-                              >
-                                <span>{subItem.name}</span>
-                                <span className="ml-2 text-primary inline-block">
-                                  <FontAwesomeIcon icon={faArrowRight} />
-                                </span>
-                              </Link>
-                            ))}
+                            {item.subData?.map((subItem) => {
+                              const isActive = isLocationActive(subItem.url);
+
+                              return (
+                                <Link
+                                  href={subItem.url}
+                                  key={subItem.url}
+                                  onClick={() => setIsMenuOpen(false)}
+                                  aria-current={
+                                    isActive ? "location" : undefined
+                                  }
+                                  className={`w-fit rounded-md px-3 py-1 transition-colors duration-300 ${
+                                    isActive
+                                      ? "bg-orange-50 text-primary font-semibold"
+                                      : "text-gray-800 hover:text-primary"
+                                  }`}
+                                >
+                                  <span>{subItem.name}</span>
+                                  <span className="ml-2 text-primary inline-block">
+                                    <FontAwesomeIcon icon={faArrowRight} />
+                                  </span>
+                                </Link>
+                              );
+                            })}
                           </div>
                           <div className="text-3xl mb-10">
                             <Link

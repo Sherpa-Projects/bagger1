@@ -1,9 +1,5 @@
 import * as React from "react";
-import Link from "next/link";
 import { Metadata } from "next";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { notFound } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import { LocationSeoContent } from "@/components/LocationSeoContent";
@@ -12,19 +8,13 @@ import Footer from "@/components/Footer";
 import { locationData } from "@/lib/content/locationData";
 import { machineData } from "@/lib/content/machineData";
 import { faq } from "@/lib/content/components/faqData";
-import { Machine } from "@/app/types/Machine";
 import { locationPageData } from "@/lib/content/pages/location/locationPageData";
-import {
-  getFaqContentForLocation,
-  isValidLocation,
-  getPricePerDayForLocation,
-  getPricePerWeekForLocation,
-  getPricePerMonthForLocation,
-} from "@/lib/utils";
+import { getFaqContentForLocation, isValidLocation } from "@/lib/utils";
 import { getLocationSeoTexts } from "@/lib/content/seo/locationSeo";
 import { locationSeoBySlug } from "@/lib/content/locationSeoData";
 import BookingContext from "@/components/BookingContext";
 import LocalUseCases from "@/components/LocalUseCases";
+import MachineCard from "@/components/MachineCard";
 
 export function generateStaticParams() {
   return locationData.map((loc) => ({
@@ -138,170 +128,20 @@ export default async function LocationPage({
           </div>
         </div>
         {baggers.length > 0 && (
-          <div className="pt-10 pb-10 lg:pt-20 px-4">
-            <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-              <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
-                {intro.baggerTitle}
-              </h2>
-              <ul className="grid md:grid-cols-2 gap-6">
-                {baggers.map((bagger) => {
-                  const pricePerDay = getPricePerDayForLocation(
-                    bagger as Machine,
-                    location,
-                  );
-                  const pricePerWeek = getPricePerWeekForLocation(
-                    bagger as Machine,
-                    location,
-                  );
-                  const pricePerMonth = getPricePerMonthForLocation(
-                    bagger as Machine,
-                    location,
-                  );
-                  return (
-                    <li key={bagger.name}>
-                      <Link
-                        href={`/${location}/${bagger.slug}`}
-                        className="group border border-gray-300 bg-white rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-2 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
-                      >
-                        <div className="flex items-center justify-center">
-                          <Image
-                            className="rounded w-full mb-6 lg:mb-0"
-                            src={bagger.image.url}
-                            alt={bagger.image.alt}
-                            width={0}
-                            height={0}
-                            sizes="100vw"
-                          />
-                        </div>
-
-                        <div className="flex flex-col justify-between h-full py-2">
-                          <div className="space-y-5">
-                            <div>
-                              <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold mb-2">
-                                {bagger.name}
-                              </p>
-                              {bagger.model && (
-                                <p className="lg:text-sm text-neutral-500">
-                                  {bagger.model}
-                                </p>
-                              )}
-                            </div>
-
-                            <div className="space-y-2">
-                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                                {pricePerDay} €{" "}
-                                <span className="text-xs">/ Tag</span>
-                              </p>
-                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                                {pricePerWeek} €{" "}
-                                <span className="text-xs">/ Woche</span>
-                              </p>
-                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                                {pricePerMonth} €{" "}
-                                <span className="text-xs">/ Monat</span>
-                              </p>
-                            </div>
-                          </div>
-
-                          <div className="w-full flex justify-end lg:justify-start">
-                            <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
-                              {machineCard.cta}
-                              <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
-                                <FontAwesomeIcon icon={faArrowRight} />
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
+          <MachineCard
+            title={intro.baggerTitle}
+            machines={baggers}
+            location={location}
+            machineCard={machineCard}
+          />
         )}
         {machines.length > 0 && (
-          <div className="pt-10 pb-10 lg:pt-20 px-4">
-            <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
-              <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
-                {intro.machineTitle}
-              </h2>
-              <ul className="grid md:grid-cols-2 gap-6">
-                {machines.map((machine) => {
-                  const pricePerDay = getPricePerDayForLocation(
-                    machine as Machine,
-                    location,
-                  );
-                  const pricePerWeek = getPricePerWeekForLocation(
-                    machine as Machine,
-                    location,
-                  );
-                  const pricePerMonth = getPricePerMonthForLocation(
-                    machine as Machine,
-                    location,
-                  );
-                  return (
-                    <li key={machine.name}>
-                      <Link
-                        href={`/${location}/${machine.slug}`}
-                        className="group border border-gray-300 bg-white rounded-lg lg:hover:shadow-md p-6 lg:p-4 grid lg:grid-cols-2 lg:gap-8 transition-all duration-300 transform lg:hover:scale-103 decoration-2 cursor-pointer"
-                      >
-                        <div className="flex items-center justify-center">
-                          <Image
-                            className="rounded w-full mb-6 lg:mb-0"
-                            src={machine.image.url}
-                            alt={machine.image.alt}
-                            width={0}
-                            height={0}
-                            sizes="100vw"
-                          />
-                        </div>
-
-                        <div className="flex flex-col justify-between h-full py-2">
-                          <div className="space-y-5">
-                            <div>
-                              <p className="text-3xl lg:text-2xl xl:text-3xl font-semibold mb-2">
-                                {machine.name}
-                              </p>
-                              {machine.model && (
-                                <p className="lg:text-sm text-neutral-500">
-                                  {machine.model}
-                                </p>
-                              )}
-                            </div>
-
-                            <div className="space-y-2">
-                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                                {pricePerDay} €{" "}
-                                <span className="text-xs">/ Tag</span>
-                              </p>
-                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                                {pricePerWeek} €{" "}
-                                <span className="text-xs">/ Woche</span>
-                              </p>
-                              <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                                {pricePerMonth} €{" "}
-                                <span className="text-xs">/ Monat</span>
-                              </p>
-                            </div>
-                          </div>
-
-                          <div className="w-full flex justify-end lg:justify-start">
-                            <span className="group text-xl mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
-                              {machineCard.cta}
-                              <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
-                                <FontAwesomeIcon icon={faArrowRight} />
-                              </span>
-                            </span>
-                          </div>
-                        </div>
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
+          <MachineCard
+            title={intro.machineTitle}
+            machines={machines}
+            location={location}
+            machineCard={machineCard}
+          />
         )}
         <BookingContext data={bookingContext} />
         <LocationSeoContent
@@ -315,10 +155,7 @@ export default async function LocationPage({
           />
         )}
         {faqContentForLocation && (
-          <Faq
-            title={faq.title}
-            content={faqContentForLocation}
-          />
+          <Faq title={faq.title} content={faqContentForLocation} />
         )}
       </main>
       <Footer currentLocation={currentLocation} />
