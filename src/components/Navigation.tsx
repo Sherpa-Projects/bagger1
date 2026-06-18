@@ -74,6 +74,7 @@ export default function Navigation({ slug }: NavigationProps) {
               </Link>
               <div className="border-l border-gray-300 h-6" />
               <div className="flex items-center gap-2" aria-label="Standorte">
+              <p className="text-lg pr-2">Mieten in:</p>
                 {navigationLocationData.map((item) => (
                   <div key={item.name} className="flex items-center gap-2">
                     <div className="flex items-center gap-1.5">
@@ -84,10 +85,10 @@ export default function Navigation({ slug }: NavigationProps) {
                             key={subItem.url}
                             href={subItem.url}
                             aria-current={isActive ? "location" : undefined}
-                            className={`px-3 py-2 font-medium transition-all duration-300 ${
+                            className={`px-2.5 py-2 font-medium text-lg transition-all duration-300 ${
                               isActive
-                                ? "text-primary"
-                                : "text-gray-600 hover:text-primary"
+                                ? "text-primary bg-amber-50 border-primary border rounded-lg"
+                                : "text-gray-600 hover:text-primary transition duration-300"
                             }`}
                           >
                             {subItem.name}
@@ -129,7 +130,7 @@ export default function Navigation({ slug }: NavigationProps) {
               </Link>
               <div className="border-l border-gray-300 h-6" />
               <Link
-                className="flex items-center text-gray-600 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer"
+                className="flex items-center text-gray-600 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer text-lg"
                 href={navigationPartnerData.url!}
               >
                 <Handshake className="w-5 h-5 text-primary mr-2" />
