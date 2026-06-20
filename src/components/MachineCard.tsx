@@ -2,16 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
+import PriceTable from "./PriceTable";
 import { Machine } from "@/app/types/Machine";
 import { Location } from "@/app/types/Location";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import {
-  getPricePerDayForLocation,
-  getPricePerWeekForLocation,
-  getPricePerMonthForLocation,
-} from "@/lib/utils";
 
 type MachineCardProps = {
   title: string;
@@ -36,18 +32,6 @@ export default function MachineCard({
         </h2>
         <ul className="grid md:grid-cols-2 gap-6">
           {machines.map((machine) => {
-            const pricePerDay = getPricePerDayForLocation(
-              machine,
-              location,
-            );
-            const pricePerWeek = getPricePerWeekForLocation(
-              machine,
-              location,
-            );
-            const pricePerMonth = getPricePerMonthForLocation(
-              machine,
-              location,
-            );
             return (
               <li key={machine.name}>
                 <Link
@@ -77,20 +61,7 @@ export default function MachineCard({
                           </p>
                         )}
                       </div>
-
-                      <div className="space-y-2">
-                        <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                          {pricePerDay} € <span className="text-xs">/ Tag</span>
-                        </p>
-                        <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                          {pricePerWeek} €{" "}
-                          <span className="text-xs">/ Woche</span>
-                        </p>
-                        <p className="text-2xl lg:text-lg xl:text-xl capitalize">
-                          {pricePerMonth} €{" "}
-                          <span className="text-xs">/ Monat</span>
-                        </p>
-                      </div>
+                      <PriceTable machine={machine} size="sm" />
                     </div>
 
                     <div className="w-full flex justify-end lg:justify-start">
