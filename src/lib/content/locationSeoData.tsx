@@ -272,9 +272,8 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
           Diese Seite bildet den Miet- und Buchungskontext für Einsätze in{" "}
           {cityName} und {region} ab. Anfragen, die über diese Standortseite
           gestellt werden, beziehen sich auf den regionalen Bestand für den Raum{" "}
-          {cityName}. Dadurch ist klar erkennbar, dass es sich nicht um eine
-          allgemeine Übersichtsseite, sondern um das passende Angebot für diese
-          Region handelt.
+          {cityName}. Es handelt sich ausschließlich um das passende Angebot für
+          diese Region.
         </>
       );
     },

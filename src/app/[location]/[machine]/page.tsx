@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PriceTable from "@/components/PriceTable";
 import { machineData } from "@/lib/content/machineData";
 import { Location } from "@/app/types/Location";
 import {
@@ -102,16 +103,6 @@ export default async function MachinePage({
   if (inventoryAtLocation.length === 0) return notFound();
 
   const primaryArticle = inventoryAtLocation[0];
-
-  const effectivePrice = {
-    perDay:
-      primaryArticle.priceOverride?.perDay ?? selectedMachine.price.perDay,
-    perWeek:
-      primaryArticle.priceOverride?.perWeek ?? selectedMachine.price.perWeek,
-    perMonth:
-      primaryArticle.priceOverride?.perMonth ?? selectedMachine.price.perMonth,
-  };
-
   const currentLocation = getCityName(location);
   const content = selectedMachine.content;
   const specifications = content?.specifications;
@@ -173,35 +164,13 @@ export default async function MachinePage({
                   <h2 className="text-2xl font-bold mb-6">
                     Preise & Konditionen
                   </h2>
-                  <ul className="border border-gray-200 text-lg mb-2">
-                    <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                      <span>{timeTable.rowOne}</span>
-                      <span className="font-bold">
-                        {effectivePrice.perDay} € netto/Tag
-                      </span>
-                    </li>
-                    <li className="bg-white flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                      <span>{timeTable.rowTwo}</span>
-                      <span className="font-bold">
-                        {effectivePrice.perWeek} € netto/Tag
-                      </span>
-                    </li>
-                    <li className="bg-orange-50 flex justify-between items-center p-4 border-b border-gray-200 last:border-b-0">
-                      <span>{timeTable.rowThree}</span>
-                      <span className="font-bold">
-                        {effectivePrice.perMonth} € netto/Tag
-                      </span>
-                    </li>
-                  </ul>
-                  <p className="text-xs mb-5 w-full flex justify-end">
-                    * 1 Miettag = 8 Betriebsstunden
-                  </p>
+                  <PriceTable machine={selectedMachine} size="lg" />
                   <div className="rounded-xl border border-gray-200 bg-white p-4">
                     <h3 className="mb-1">Zusätzlich:</h3>
                     <div className="text-sm">
                       <div className="space-y-1 mb-2">
-                        <p>+10 % Maschinenbruchversicherung</p>
-                        <p>+19 % MwSt.</p>
+                        <p>{timeTable.insuranceInformation}</p>
+                        <p>{timeTable.taxInformation}</p>
                       </div>
                       <p className="font-bold text-base">
                         Keine versteckten Kosten.

@@ -8,6 +8,10 @@ export const machinePageData = {
     rowOne: "1 Tag",
     rowTwo: "ab 5 Tage",
     rowThree: "ab 20 Tage",
+    priceInformation: "Netto / Tag",
+    rentInformation: "* 1 Miettag = 8 Betriebsstunden",
+    insuranceInformation: "+10 % Maschinenbruchversicherung",
+    taxInformation: "+19 % MwSt.",
   },
   specifications: {
     title: "Datenblatt",
