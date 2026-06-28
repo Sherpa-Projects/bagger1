@@ -9,7 +9,8 @@ export type PriceTableProps = {
 export default function PriceTable({ machine, size = "lg" }: PriceTableProps) {
   const { timeTable } = machinePageData;
   const isSmall = size === "sm";
-  const listTextSize = isSmall ? "text-base" : "text-lg";
+  const priceLabelSize = isSmall ? "text-sm" : "text-base";
+  const listTextSize = isSmall ? "text-lg" : "text-xl";
   const itemPadding = isSmall ? "p-3" : "p-4";
   const infoTextSize = isSmall ? "text-[0.65rem]" : "text-xs";
 
@@ -38,10 +39,12 @@ export default function PriceTable({ machine, size = "lg" }: PriceTableProps) {
               index === 1 ? "bg-white" : "bg-orange-50"
             }`}
           >
-            <span>{price.label}</span>
+            <span className={priceLabelSize}>{price.label}</span>
             <div>
               <span className="font-bold">{price.value} € </span>
-              <span className={infoTextSize}>{timeTable.priceInformation}</span>
+              <span className={`${infoTextSize} text-gray-500`}>
+                {timeTable.priceInformation}
+              </span>
             </div>
           </li>
         ))}
