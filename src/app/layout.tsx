@@ -1,19 +1,115 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import Script from "next/script";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import Consent from "@/components/Consent";
 import ThirdPartyScripts from "@/components/ThirdPartyScripts";
+import {
+  navigationInstagramData,
+  navigationKleinanzeigenData,
+} from "@/lib/content/components/navigationData";
+import { constants } from "@/lib/content/constants";
 
+const BASE_URL = "https://bagger1.de";
 const OG_IMAGE_URL = "https://bagger1.de/images/og_image.png";
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": `${BASE_URL}/#organization`,
+  name: "BAGGER1",
+  url: BASE_URL,
+  logo: `${BASE_URL}/images/logo.png`,
+  image: OG_IMAGE_URL,
+};
+
+const localBusinessJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": `${BASE_URL}/#localbusiness`,
+
+  name: "BAGGER1",
+  legalName: "BAGGER1", // Falls später eine GmbH etc. vorhanden ist, hier den offiziellen Firmennamen eintragen.
+
+  url: BASE_URL,
+  image: OG_IMAGE_URL,
+  logo: `${BASE_URL}/images/logo.png`,
+
+  description:
+    "BAGGER1 vermietet Bagger und Baumaschinen mit transparenten Preisen, flexiblen Mietzeiträumen und direkter Online-Buchung.",
+
+  email: constants.contact.email,
+  telephone: constants.contact.telephone,
+
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: constants.contact.email,
+    email: constants.contact.email,
+    telephone: constants.contact.telephone,
+    availableLanguage: ["de"],
+  },
+
+  areaServed: [
+    {
+      "@type": "Country",
+      name: "Deutschland",
+    },
+  ],
+
+  priceRange: "€€",
+
+  sameAs: [navigationInstagramData.url, navigationKleinanzeigenData.url],
+
+  makesOffer: {
+    "@type": "OfferCatalog",
+    name: "Bagger und Baumaschinen mieten",
+    itemListElement: [
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Bagger mieten",
+          provider: {
+            "@id": `${BASE_URL}/#localbusiness`,
+          },
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Baumaschinen mieten",
+          provider: {
+            "@id": `${BASE_URL}/#localbusiness`,
+          },
+        },
+      },
+    ],
+  },
+
+  knowsAbout: [
+    "Minibagger",
+    "Bagger",
+    "Baumaschinen",
+    "Maschinenvermietung",
+    "Rüttelplatten",
+    "Stampfer",
+    "Dumper",
+    "Radlader",
+    "Bautrockner",
+  ],
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bagger1.de"),
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "Ihre Nummer 1 für Bagger und Maschinen | BAGGER1",
     template: "%s | BAGGER1",
   },
+  description:
+    "Finde jetzt verfügbare Bagger und Maschinen an deinem Standort. Mit flexiblen Zeiträumen, transparenten Preisen und direkter Online-Buchung bei BAGGER1.",
   openGraph: {
     type: "website",
     siteName: "Bagger1",
@@ -55,6 +151,22 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body>
+        <Script
+          id="organization-jsonld"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <Script
+          id="localbusiness-jsonld"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
+        />
         {children}
         <ThirdPartyScripts />
         <Consent />
