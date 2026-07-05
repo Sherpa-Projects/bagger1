@@ -10,7 +10,6 @@ import {
   navigationInstagramData,
   navigationWhatsappData,
   banner,
-  brandName,
 } from "@/lib/content/components/navigationData";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -63,13 +62,12 @@ export default function Navigation({ slug }: NavigationProps) {
               <Link href="/">
                 <div className="flex items-center lg:transform lg:transition-transform lg:duration-300 ease-in-out lg:hover:scale-110 p-1">
                   <Image
-                    src={`/images/logo.svg`}
+                    src={`/images/logo_orange.svg`}
                     alt="BAGGER1 Logo"
-                    width={48}
+                    width={140}
                     height={48}
-                    className="mx-auto p-1"
+                    className="mx-auto"
                   />
-                  {brandName}
                 </div>
               </Link>
               <div className="border-l border-gray-300 h-6" />
@@ -143,13 +141,12 @@ export default function Navigation({ slug }: NavigationProps) {
             <Link href="/">
               <div className="flex items-center">
                 <Image
-                  src={`/images/logo.svg`}
+                  src={`/images/logo_orange.svg`}
                   alt="BAGGER1 Logo"
-                  width={50}
+                  width={140}
                   height={50}
                   className="mx-auto p-1"
                 />
-                {brandName}
               </div>
             </Link>
 
@@ -177,13 +174,12 @@ export default function Navigation({ slug }: NavigationProps) {
               <div className="container mx-auto flex items-center justify-between px-6 lg:px-8 py-4 border-b border-gray-300">
                 <div className="flex items-center">
                   <Image
-                    src={`/images/logo.svg`}
+                    src={`/images/logo_orange.svg`}
                     alt="BAGGER1 Logo"
-                    width={50}
+                    width={140}
                     height={50}
                     className="mx-auto p-1"
                   />
-                  {brandName}
                 </div>
 
                 <button
