@@ -1,3 +1,4 @@
+import { RatingProps } from "@/components/Rating";
 import { locationData } from "@/lib/content/locationData";
 
 export const validLocations = [
@@ -22,6 +23,7 @@ export type LocationDataProps = {
     alt: string;
   };
   map: string;
+  rating?: RatingProps;
 };
 
 export type LocationSlug = (typeof locationData)[number]["slug"];
