@@ -3,8 +3,8 @@ import Image from "next/image";
 import { footerData } from "@/lib/content/components/footerData";
 import { constants } from "@/lib/content/constants";
 import { locationData } from "@/lib/content/locationData";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { Phone, Mail } from "lucide-react";
+import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 import { LocationDataProps } from "@/app/types/Location";
 
 export type FooterPageProps = {
@@ -31,61 +31,41 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-0 lg:gap-x-32 gap-y-12 lg:gap-y-0">
             <div className="space-y-3 text-center lg:text-left flex items-center lg:items-start flex-col">
               <p className="text-lg text-primary">{constants.companyName}</p>
-              {currentLocation && currentLocation.contact ? (
-                <>
-                  {currentLocation.contact.telephone && (
-                    <div className="flex items-center lg:text-left">
-                      <FontAwesomeIcon className="mr-2" icon={faPhone} />
-                      <p>
-                        <Link
-                          href={`tel:${currentLocation.contact.telephone}`}
-                          className="hover:text-underline"
-                        >
-                          {currentLocation.contact.telephone}
-                        </Link>
-                      </p>
-                    </div>
-                  )}
-                  <div className="flex items-center lg:text-left">
-                    <p>
-                      <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
-                      <Link
-                        href={`mailto:${currentLocation.contact.email}`}
-                        className="hover:text-underline"
-                      >
-                        {currentLocation.contact.email}
-                      </Link>
-                    </p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  {constants.contact.telephone && (
-                    <div className="flex items-center lg:text-left">
-                      <FontAwesomeIcon className="mr-2" icon={faPhone} />
-                      <p>
-                        <Link
-                          href={`tel:${constants.contact.telephone}`}
-                          className="hover:text-underline"
-                        >
-                          {constants.contact.telephone}
-                        </Link>
-                      </p>
-                    </div>
-                  )}
-                  <div className="flex items-center lg:text-left">
-                    <p>
-                      <FontAwesomeIcon className="mr-2" icon={faEnvelope} />
-                      <Link
-                        href={`mailto:${constants.contact.email}`}
-                        className="hover:text-underline"
-                      >
-                        {constants.contact.email}
-                      </Link>
-                    </p>
-                  </div>
-                </>
+              {constants.contact.telephone && (
+                <div className="flex items-center lg:text-left hover:underline">
+                  <Phone size={20} className="mr-2" />
+                  <p>
+                    <Link
+                      href={`tel:${constants.contact.telephone}`}
+                      className="hover:text-underline"
+                    >
+                      {constants.contact.telephone}
+                    </Link>
+                  </p>
+                </div>
               )}
+              <div className="flex items-center lg:text-left hover:underline">
+                <SiWhatsapp size={20} color="default" className="mr-2" />
+                <p>
+                  <Link
+                    href={`https://wa.me/${constants.contact.whatsapp.replace(/\D/g, "")}`}
+                    className="hover:text-underline"
+                  >
+                    {constants.contact.whatsapp}
+                  </Link>
+                </p>
+              </div>
+              <div className="flex items-center lg:text-left hover:underline">
+                <Mail size={20} className="mr-2" />
+                <p>
+                  <Link
+                    href={`mailto:${constants.contact.email}`}
+                    className="hover:text-underline"
+                  >
+                    {constants.contact.email}
+                  </Link>
+                </p>
+              </div>
             </div>
 
             <div className="space-y-3 text-center lg:text-left">

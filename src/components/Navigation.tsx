@@ -11,14 +11,9 @@ import {
   navigationWhatsappData,
   banner,
 } from "@/lib/content/components/navigationData";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faTimes,
-  faArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { Handshake, Instagram } from "lucide-react";
+import { Handshake, Instagram, Menu, X, ArrowRight } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
+import { constants } from "@/lib/content/constants";
 
 type NavigationProps = {
   slug?: string;
@@ -31,6 +26,7 @@ function getLocationSlugFromUrl(url: string) {
 export default function Navigation({ slug }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const currentLocationSlug = slug?.replace(/^\/+|\/+$/g, "");
+  const whtasappNumber = constants.contact.whatsapp.replace(/\D/g, "");
 
   const isLocationActive = (url: string) =>
     currentLocationSlug === getLocationSlugFromUrl(url);
@@ -45,7 +41,7 @@ export default function Navigation({ slug }: NavigationProps) {
 
   return (
     <>
-      <nav className="bg-white fixed w-full top-0 z-50 border-b border-gray-300">
+      <nav className="fixed w-full top-0 z-50 duration-300 bg-white/85 text-gray-700 shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/80">
         <div className="hidden px-4 text-center text-sm w-full md:flex items-center justify-center bg-gradient-to-r bg-primary animate-gradient-x py-2 lg:py-1">
           <Image
             className="mr-2"
@@ -72,7 +68,9 @@ export default function Navigation({ slug }: NavigationProps) {
               </Link>
               <div className="border-l border-gray-300 h-6" />
               <div className="flex items-center gap-2" aria-label="Standorte">
-              <p className="text-lg pr-2 text-gray-500 font-light">Mieten in:</p>
+                <p className="text-lg pr-2 text-gray-500 font-light">
+                  Mieten in:
+                </p>
                 {navigationLocationData.map((item) => (
                   <div key={item.name} className="flex items-center gap-2">
                     <div className="flex items-center gap-1.5">
@@ -121,7 +119,7 @@ export default function Navigation({ slug }: NavigationProps) {
               </Link>
               <Link
                 className="transition-all duration-300 transform hover:scale-105"
-                href={navigationWhatsappData.url!}
+                href={`https://wa.me/${whtasappNumber}`}
                 target="_blank"
               >
                 <SiWhatsapp size={20} color="default" className="mr-2" />
@@ -154,7 +152,7 @@ export default function Navigation({ slug }: NavigationProps) {
               onClick={() => setIsMenuOpen(true)}
               className="text-black text-2xl focus:outline-none"
             >
-              <FontAwesomeIcon icon={faBars} />
+              <Menu className="w-6 h-6" />
             </button>
           </div>
 
@@ -186,7 +184,7 @@ export default function Navigation({ slug }: NavigationProps) {
                   onClick={() => setIsMenuOpen(false)}
                   className="text-black text-2xl focus:outline-none"
                 >
-                  <FontAwesomeIcon icon={faTimes} />
+                  <X className="w-6 h-6" />
                 </button>
               </div>
 
@@ -202,12 +200,6 @@ export default function Navigation({ slug }: NavigationProps) {
                           href={item.url}
                           className="text-gray-800 cursor-pointer text-3xl flex items-center"
                         >
-                          {item.icon && (
-                            <FontAwesomeIcon
-                              className="mr-2 text-primary inline-block"
-                              icon={item.icon}
-                            />
-                          )}
                           <span>{item.name}</span>
                         </Link>
                       ) : (
@@ -225,7 +217,7 @@ export default function Navigation({ slug }: NavigationProps) {
                                   aria-current={
                                     isActive ? "location" : undefined
                                   }
-                                  className={`w-fit rounded-md px-3 py-1 transition-colors duration-300 ${
+                                  className={`flex items-center w-fit rounded-md px-3 py-1 transition-colors duration-300 ${
                                     isActive
                                       ? "bg-orange-50 text-primary font-semibold"
                                       : "text-gray-800 hover:text-primary"
@@ -233,7 +225,7 @@ export default function Navigation({ slug }: NavigationProps) {
                                 >
                                   <span>{subItem.name}</span>
                                   <span className="ml-2 text-primary inline-block">
-                                    <FontAwesomeIcon icon={faArrowRight} />
+                                    <ArrowRight className="w-8 h-8" />
                                   </span>
                                 </Link>
                               );
@@ -247,7 +239,7 @@ export default function Navigation({ slug }: NavigationProps) {
                             >
                               <span>{navigationPartnerData.name}</span>
                               <span className="ml-2 text-primary inline-block">
-                                <FontAwesomeIcon icon={faArrowRight} />
+                                <ArrowRight className="w-4 h-4" />
                               </span>
                             </Link>
                           </div>

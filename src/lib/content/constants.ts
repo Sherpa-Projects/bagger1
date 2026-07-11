@@ -1,7 +1,8 @@
 export const constants = {
   companyName: "Baumaschinenverleih Jens Wetzstein",
   contact: {
-    telephone: "0800/2244371",
+    telephone: "0800 22 44 37 1",
+    whatsapp: "0160 22 44 37 1",
     email: "info@bagger1.de",
   },
   openingHours: {
