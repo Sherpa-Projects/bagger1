@@ -1,5 +1,6 @@
 import type { Machine } from "@/app/types/Machine";
 import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
+import { Card } from "@/components/ui/card";
 
 type MachineSpecificationData = NonNullable<
   NonNullable<Machine["content"]>["specifications"]
@@ -103,56 +104,61 @@ export default function MachineSpecifications({
   specifications,
 }: MachineSpecificationsProps) {
   return (
-    <details open className="group rounded-xl border border-gray-200 bg-white">
-      <summary className="flex items-center justify-between cursor-pointer select-none px-4 py-3">
-        <span className="text-xl font-semibold">
-          {machinePageData.specifications.title}
-        </span>
-        <svg
-          className="h-5 w-5 transition-transform duration-300 group-open:rotate-180"
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          aria-hidden="true"
-        >
-          <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
-        </svg>
-      </summary>
+    <Card>
+      <details
+        open
+        className="group"
+      >
+        <summary className="flex items-center justify-between cursor-pointer select-none px-4 py-3">
+          <span className="text-xl font-semibold">
+            {machinePageData.specifications.title}
+          </span>
+          <svg
+            className="h-5 w-5 transition-transform duration-300 group-open:rotate-180"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 10.94l3.71-3.71a.75.75 0 1 1 1.06 1.06l-4.24 4.24a.75.75 0 0 1-1.06 0L5.21 8.29a.75.75 0 0 1 .02-1.08z" />
+          </svg>
+        </summary>
 
-      <div className="px-4 pb-4 pt-2 space-y-4 text-gray-800">
-        <div className="mb-4">Modell: {model}</div>
-        <div className="space-y-4">
-          {specifications.dimensions && (
-            <div>
-              <h4 className="font-bold">
-                {machinePageData.specifications.dimensions.title}:
-              </h4>
-              <SpecificationList
-                fields={dimensionFields}
-                values={specifications.dimensions}
-              />
-            </div>
-          )}
+        <div className="px-4 pb-4 pt-2 space-y-4 text-gray-800">
+          <div className="mb-4">Modell: {model}</div>
+          <div className="space-y-4">
+            {specifications.dimensions && (
+              <div>
+                <h4 className="font-bold">
+                  {machinePageData.specifications.dimensions.title}:
+                </h4>
+                <SpecificationList
+                  fields={dimensionFields}
+                  values={specifications.dimensions}
+                />
+              </div>
+            )}
 
-          {specifications.power && (
-            <p>
-              {machinePageData.specifications.power.title}:{" "}
-              {specifications.power}
-            </p>
-          )}
+            {specifications.power && (
+              <p>
+                {machinePageData.specifications.power.title}:{" "}
+                {specifications.power}
+              </p>
+            )}
 
-          {specifications.workingRange && (
-            <div>
-              <h4 className="font-bold">
-                {machinePageData.specifications.workingRange.title}:
-              </h4>
-              <SpecificationList
-                fields={workingRangeFields}
-                values={specifications.workingRange}
-              />
-            </div>
-          )}
+            {specifications.workingRange && (
+              <div>
+                <h4 className="font-bold">
+                  {machinePageData.specifications.workingRange.title}:
+                </h4>
+                <SpecificationList
+                  fields={workingRangeFields}
+                  values={specifications.workingRange}
+                />
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </details>
+      </details>
+    </Card>
   );
 }

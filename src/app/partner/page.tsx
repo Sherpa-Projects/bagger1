@@ -3,6 +3,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Phone, Mail } from "lucide-react";
 import { partnerPageData } from "@/lib/content/pages/partner/partnerPageData";
+import Hero from "@/components/Hero";
+import { Card } from "@/components/ui/card";
+import IconBadge from "@/components/IconBadge";
 
 export const generateMetadata = (): Metadata => {
   return {
@@ -45,20 +48,7 @@ export default function PartnerPage() {
     <>
       <Navigation />
       <main>
-        <div
-          className="mt-17 md:mt-24 relative h-48 lg:h-72 flex justify-center items-center bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${hero.image})`,
-          }}
-        >
-          <div className="absolute inset-0 bg-black/50 z-0" />
-          <div className="relative text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-4">
-            <p className="text-5xl lg:text-7xl font-semibold leading-normal">
-              {hero.title}
-            </p>
-            <h1 className="text-2xl lg:text-5xl">{hero.subtitle}</h1>
-          </div>
-        </div>
+        <Hero image={hero.image} title={hero.title} subtitle={hero.subtitle} />
         <div className="py-10 lg:py-20 px-4">
           <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl grid lg:grid-cols-6 lg:gap-20">
             <div className="lg:col-span-4">
@@ -75,10 +65,7 @@ export default function PartnerPage() {
                 <ul className="space-y-2">
                   {offerItems.map(({ Icon, text }, offerIndex) => (
                     <li key={offerIndex} className="flex items-center">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary mr-2">
-                        <Icon className="h-5 w-5" aria-hidden="true" />
-                      </div>
-                      <p className="text-lg">{text}</p>
+                      <IconBadge Icon={Icon} text={text} />
                     </li>
                   ))}
                 </ul>
@@ -88,10 +75,7 @@ export default function PartnerPage() {
                 <ul className="space-y-2">
                   {requirementItems.map(({ Icon, text }, reqIndex) => (
                     <li key={reqIndex} className="flex items-center">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary mr-2">
-                        <Icon className="h-5 w-5" aria-hidden="true" />
-                      </div>
-                      <p className="text-lg">{text}</p>
+                      <IconBadge Icon={Icon} text={text} />
                     </li>
                   ))}
                 </ul>
@@ -99,37 +83,31 @@ export default function PartnerPage() {
             </div>
 
             <div className="lg:col-span-2">
-              <div className="border border-gray-300 p-6 rounded-xl shadow-md">
+              <Card className="p-8">
                 <h3 className="font-bold text-xl mb-2">{contactCard.title}</h3>
-                <div className="space-y-4 text-lg pb-8">
+                <div className="space-y-4 text-lg">
                   <p className="text-base mb-6">{contactCard.description}</p>
                   <p className="font-bold">{contactCard.subtitle}</p>
                   <ul className="space-y-2">
-                    <li className="flex items-center">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary mr-2">
-                        <Phone className="h-5 w-5" aria-hidden="true" />
-                      </div>
+                    <li>
                       <a
                         href={`tel:${contactCard.phone}`}
-                        className="hover:underline"
+                        className="hover:underline flex items-center"
                       >
-                        {contactCard.phone}
+                        <IconBadge Icon={Phone} text={contactCard.phone} />
                       </a>
                     </li>
-                    <li className="flex items-center">
-                      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary mr-2">
-                        <Mail className="h-5 w-5" aria-hidden="true" />
-                      </div>
+                    <li>
                       <a
                         href={`mailto:${contactCard.email}`}
-                        className="hover:underline"
+                        className="hover:underline flex items-center"
                       >
-                        {contactCard.email}
+                        <IconBadge Icon={Mail} text={contactCard.email} />
                       </a>
                     </li>
                   </ul>
                 </div>
-              </div>
+              </Card>
             </div>
           </div>
         </div>

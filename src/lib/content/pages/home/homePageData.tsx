@@ -39,8 +39,8 @@ export const homePageData = {
     title: "BAGGER1 wächst",
     text: "Als Teil eines jungen, dynamischen Franchise-Netzwerks sind wir ständig dabei, neue Standorte zu erschließen und noch näher bei unseren Kunden zu sein.",
     button: {
-      cta: "Mehr erfahren",
-      href: "/partner",
+      label: "Mehr erfahren",
+      link: "/partner",
     },
     image: "/images/team.jpg",
   },

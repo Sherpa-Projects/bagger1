@@ -4,6 +4,7 @@ import { constants } from "@/lib/content/constants";
 import { Clock, ArrowRight } from "lucide-react";
 import { ConsentLevel } from "@/lib/consent";
 import Rating from "@/components/Rating";
+import { Card } from "@/components/ui/card";
 
 type BranchContentProps = {
   locations: LocationDataProps[];
@@ -19,7 +20,7 @@ export default function BranchContent({
       {locations.map((loc) => (
         <div key={loc.name}>
           {locations.length > 1 ? (
-            <div className="border border-gray-300 bg-white p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2">
+            <Card className="group p-6 lg:p-4">
               <div className="space-y-4">
                 <h3 className="text-center text-2xl font-semibold mb-3">
                   {loc.name}
@@ -75,9 +76,9 @@ export default function BranchContent({
                   ></iframe>
                 )}
               </div>
-            </div>
+            </Card>
           ) : (
-            <div className="border border-gray-300 bg-white p-6 lg:p-4 rounded-lg w-full lg:w-auto lg:min-w-lg xl:min-w-xl">
+            <Card className="p-6 lg:p-4 w-full lg:w-auto lg:min-w-lg xl:min-w-xl">
               {level === "all" && (
                 <iframe
                   src={loc.map}
@@ -113,7 +114,7 @@ export default function BranchContent({
                   </ul>
                 </div>
               </div>
-            </div>
+            </Card>
           )}
         </div>
       ))}

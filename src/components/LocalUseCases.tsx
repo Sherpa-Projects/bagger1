@@ -1,5 +1,6 @@
 import { LocalUseCase } from "@/app/types/LocalUseCase";
 import { localUsesCasesData } from "@/lib/content/components/localUseCasesData";
+import { Card } from "@/components/ui/card";
 
 type LocalUseCasesProps = {
   locationName: string;
@@ -20,16 +21,16 @@ export default function LocalUseCases({
           {useCases?.map((item) => {
             const Icon = item.icon;
             return (
-              <div
+              <Card
                 key={item.title}
-                className="border border-gray-300 bg-white rounded-lg p-6"
+                className="p-6"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary mb-3">
                   <Icon className="text-secondary" size={24} />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{item.title}</h3>
                 <p className="text-gray-600">{item.description}</p>
-              </div>
+              </Card>
             );
           })}
         </div>

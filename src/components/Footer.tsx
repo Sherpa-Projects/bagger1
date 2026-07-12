@@ -5,13 +5,8 @@ import { constants } from "@/lib/content/constants";
 import { locationData } from "@/lib/content/locationData";
 import { Phone, Mail } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
-import { LocationDataProps } from "@/app/types/Location";
 
-export type FooterPageProps = {
-  currentLocation?: LocationDataProps;
-};
-
-const Footer = ({ currentLocation }: FooterPageProps) => {
+const Footer = () => {
   return (
     <>
       <div className="bg-white border-t border-gray-300 py-2">
@@ -30,7 +25,7 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
         <div className="container py-18 mx-auto max-w-8xl px-6 lg:px-8  md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-0 lg:gap-x-32 gap-y-12 lg:gap-y-0">
             <div className="space-y-3 text-center lg:text-left flex items-center lg:items-start flex-col">
-              <p className="text-lg text-primary">{constants.companyName}</p>
+              <h4 className="text-lg text-primary">{constants.companyName}</h4>
               {constants.contact.telephone && (
                 <div className="flex items-center lg:text-left hover:underline">
                   <Phone size={20} className="mr-2" />
@@ -69,7 +64,7 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
             </div>
 
             <div className="space-y-3 text-center lg:text-left">
-              <p className="text-lg text-primary">Standorte</p>
+              <h4 className="text-lg text-primary">Standorte</h4>
               <ul className="space-y-3">
                 {locationData.map((location, index) => (
                   <li key={index}>
@@ -85,9 +80,9 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
             </div>
 
             <div className="space-y-3 text-center lg:text-left">
-              <p className="text-lg text-primary">
+              <h4 className="text-lg text-primary">
                 {constants.openingHours.title}
-              </p>
+              </h4>
               <ul className="space-y-3">
                 <li>{constants.openingHours.weekday}</li>
                 <li>{constants.openingHours.saturday}</li>
@@ -95,7 +90,10 @@ const Footer = ({ currentLocation }: FooterPageProps) => {
               </ul>
             </div>
 
-            <div className="text-center lg:text-left">
+            <div className="space-y-3 text-center lg:text-left">
+              <h4 className="text-lg text-primary">
+                Rechtliches
+              </h4>
               <ul className="space-y-3">
                 {footerData.legalInformation.map((information, index) => (
                   <li key={index}>

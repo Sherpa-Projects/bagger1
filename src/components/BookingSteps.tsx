@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { steps, titleHtml } from "@/lib/content/components/bookingStepsData";
+import { Card } from "@/components/ui/card";
 
 export default function BookingSteps() {
   return (
@@ -14,9 +15,9 @@ export default function BookingSteps() {
 
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
           {steps.map(({ title, description, image }, i) => (
-            <div
+            <Card
               key={i}
-              className="group relative flex h-full flex-col rounded-2xl border border-gray-200 bg-white p-6 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-md"
+              className="group relative h-full p-6"
             >
               <span
                 aria-hidden
@@ -44,7 +45,7 @@ export default function BookingSteps() {
                   sizes="(min-width:1024px) 280px, 100vw"
                 />
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

@@ -60,7 +60,7 @@ export default function Rating({
         </span>
       </span>
 
-      <span className="text-sm font-medium text-[#5f6368] transition-colors group-hover:text-[#1a73e8]">
+      <span className="text-sm font-medium text-[#5f6368] transition-colors hover:text-[#1a73e8] hover:underline" aria-label={`Anzahl der Bewertungen: ${reviewLabel}`}>
         ({reviewLabel})
       </span>
     </Link>
