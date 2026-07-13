@@ -18,6 +18,7 @@ import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
 import BookingSteps from "@/components/BookingSteps";
 import { getMachineSeoTexts } from "@/lib/content/seo/machineSeo";
 import MachineSpecifications from "@/components/MachineSpecifications";
+import PriceAddition from "@/components/PriceAddition";
 
 export function generateStaticParams() {
   return getLocationMachineRouteParams();
@@ -165,18 +166,7 @@ export default async function MachinePage({
                     Preise & Konditionen
                   </h2>
                   <PriceTable machine={selectedMachine} size="lg" />
-                  <div className="rounded-xl border border-gray-200 bg-white p-4">
-                    <h3 className="mb-1">Zusätzlich:</h3>
-                    <div className="text-sm">
-                      <div className="space-y-1 mb-2">
-                        <p>{timeTable.insuranceInformation}</p>
-                        <p>{timeTable.taxInformation}</p>
-                      </div>
-                      <p className="font-bold text-base">
-                        Keine versteckten Kosten.
-                      </p>
-                    </div>
-                  </div>
+                  <PriceAddition info={timeTable} />
                 </div>
               </div>
             </div>

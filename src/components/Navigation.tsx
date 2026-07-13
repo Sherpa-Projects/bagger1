@@ -11,14 +11,10 @@ import {
   navigationWhatsappData,
   banner,
 } from "@/lib/content/components/navigationData";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBars,
-  faTimes,
-  faArrowRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { Handshake, Instagram } from "lucide-react";
+import { Handshake, Instagram, Menu, X, ArrowRight } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
+import { constants } from "@/lib/content/constants";
+import Banner from "@/components/Banner";
 
 type NavigationProps = {
   slug?: string;
@@ -31,6 +27,7 @@ function getLocationSlugFromUrl(url: string) {
 export default function Navigation({ slug }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const currentLocationSlug = slug?.replace(/^\/+|\/+$/g, "");
+  const whtasappNumber = constants.contact.whatsapp.replace(/\D/g, "");
 
   const isLocationActive = (url: string) =>
     currentLocationSlug === getLocationSlugFromUrl(url);
@@ -45,22 +42,13 @@ export default function Navigation({ slug }: NavigationProps) {
 
   return (
     <>
-      <nav className="bg-white fixed w-full top-0 z-50 border-b border-gray-300">
-        <div className="hidden px-4 text-center text-sm w-full md:flex items-center justify-center bg-gradient-to-r bg-primary animate-gradient-x py-2 lg:py-1">
-          <Image
-            className="mr-2"
-            src={`/images/bbi_logo.png`}
-            alt="BBI Logo"
-            width={30}
-            height={30}
-          />
-          {banner}
-        </div>
-        <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-4 lg:py-1 border-b border-transparent">
+      <nav className="fixed w-full top-0 z-50 duration-300 bg-white/85 text-gray-700 shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/80">
+        <Banner banner={banner} />
+        <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-4 lg:py-1.5 border-b border-transparent">
           <div className="hidden lg:flex justify-between items-center">
             <div className="flex items-center gap-6">
               <Link href="/">
-                <div className="flex items-center lg:transform lg:transition-transform lg:duration-300 ease-in-out lg:hover:scale-110 p-1">
+                <div className="flex items-center lg:transform lg:transition-transform lg:duration-300 ease-in-out lg:hover:scale-105 p-1">
                   <Image
                     src={`/images/logo_orange.svg`}
                     alt="BAGGER1 Logo"
@@ -72,7 +60,9 @@ export default function Navigation({ slug }: NavigationProps) {
               </Link>
               <div className="border-l border-gray-300 h-6" />
               <div className="flex items-center gap-2" aria-label="Standorte">
-              <p className="text-lg pr-2 text-gray-500 font-light">Mieten in:</p>
+                <p className="hidden xl:flex text-lg pr-2 text-gray-500 font-light">
+                  Mieten in:
+                </p>
                 {navigationLocationData.map((item) => (
                   <div key={item.name} className="flex items-center gap-2">
                     <div className="flex items-center gap-1.5">
@@ -83,7 +73,7 @@ export default function Navigation({ slug }: NavigationProps) {
                             key={subItem.url}
                             href={subItem.url}
                             aria-current={isActive ? "location" : undefined}
-                            className={`px-2.5 py-2 text-lg transition-all duration-300 font-bold ${
+                            className={`px-2 py-1.5 text-lg transition-all duration-300 font-bold ${
                               isActive
                                 ? "text-primary bg-amber-50 border-primary border rounded-lg"
                                 : "hover:text-primary transition duration-300"
@@ -121,14 +111,14 @@ export default function Navigation({ slug }: NavigationProps) {
               </Link>
               <Link
                 className="transition-all duration-300 transform hover:scale-105"
-                href={navigationWhatsappData.url!}
+                href={`https://wa.me/${whtasappNumber}`}
                 target="_blank"
               >
                 <SiWhatsapp size={20} color="default" className="mr-2" />
               </Link>
               <div className="border-l border-gray-300 h-6" />
               <Link
-                className="flex items-center text-gray-600 hover:text-primary transition-all duration-300 transform hover:scale-105 decoration-2 cursor-pointer text-lg"
+                className="flex items-center text-gray-600 hover:text-primary transition-all duration-300 transform decoration-2 cursor-pointer text-lg"
                 href={navigationPartnerData.url!}
               >
                 <Handshake className="w-5 h-5 text-primary mr-2" />
@@ -154,7 +144,7 @@ export default function Navigation({ slug }: NavigationProps) {
               onClick={() => setIsMenuOpen(true)}
               className="text-black text-2xl focus:outline-none"
             >
-              <FontAwesomeIcon icon={faBars} />
+              <Menu className="w-6 h-6" />
             </button>
           </div>
 
@@ -186,7 +176,7 @@ export default function Navigation({ slug }: NavigationProps) {
                   onClick={() => setIsMenuOpen(false)}
                   className="text-black text-2xl focus:outline-none"
                 >
-                  <FontAwesomeIcon icon={faTimes} />
+                  <X className="w-6 h-6" />
                 </button>
               </div>
 
@@ -202,12 +192,6 @@ export default function Navigation({ slug }: NavigationProps) {
                           href={item.url}
                           className="text-gray-800 cursor-pointer text-3xl flex items-center"
                         >
-                          {item.icon && (
-                            <FontAwesomeIcon
-                              className="mr-2 text-primary inline-block"
-                              icon={item.icon}
-                            />
-                          )}
                           <span>{item.name}</span>
                         </Link>
                       ) : (
@@ -225,7 +209,7 @@ export default function Navigation({ slug }: NavigationProps) {
                                   aria-current={
                                     isActive ? "location" : undefined
                                   }
-                                  className={`w-fit rounded-md px-3 py-1 transition-colors duration-300 ${
+                                  className={`flex items-center w-fit rounded-md px-3 py-1 transition-colors duration-300 ${
                                     isActive
                                       ? "bg-orange-50 text-primary font-semibold"
                                       : "text-gray-800 hover:text-primary"
@@ -233,7 +217,7 @@ export default function Navigation({ slug }: NavigationProps) {
                                 >
                                   <span>{subItem.name}</span>
                                   <span className="ml-2 text-primary inline-block">
-                                    <FontAwesomeIcon icon={faArrowRight} />
+                                    <ArrowRight className="w-8 h-8" />
                                   </span>
                                 </Link>
                               );
@@ -247,7 +231,7 @@ export default function Navigation({ slug }: NavigationProps) {
                             >
                               <span>{navigationPartnerData.name}</span>
                               <span className="ml-2 text-primary inline-block">
-                                <FontAwesomeIcon icon={faArrowRight} />
+                                <ArrowRight className="w-4 h-4" />
                               </span>
                             </Link>
                           </div>

@@ -7,6 +7,7 @@ import { locationData } from "@/lib/content/locationData";
 import { LocationDataProps } from "@/app/types/Location";
 import { ConsentLevel, readConsent } from "@/lib/consent";
 import { branchCardData } from "@/lib/content/components/branchCardData";
+import { Card } from "@/components/ui/card";
 
 export default function BranchCard() {
   const pathname = usePathname();
@@ -64,22 +65,24 @@ export default function BranchCard() {
             <>
               {" "}
               {comingSoonLocations.map((loc, index) => (
-                <div
+                <Card
                   key={index}
-                  className={`group border border-gray-300 bg-white p-6 lg:p-4 rounded-lg lg:hover:shadow-md transition-all duration-300 transform lg:hover:scale-103 decoration-2 ${
+                  className={`group p-6 lg:p-4 ${
                     locations.length === 1 &&
                     "w-full lg:w-auto lg:min-w-lg xl:min-w-xl"
                   }`}
                 >
-                  <h3 className="text-center text-2xl font-semibold mb-16">{loc.name}</h3>
+                  <h3 className="text-center text-2xl font-semibold mb-16">
+                    {loc.name}
+                  </h3>
                   {comingSoonLocations.length > 1 && (
                     <div className="w-full flex justify-center">
-                      <span className="text-xl text-gray-300 mt-6 self-start group-hover:text-primary transition-all duration-300 transform">
+                      <span className="text-xl text-gray-300 mt-6 self-start transition-colors duration-300 group-hover:text-primary">
                         Coming Soon
                       </span>
                     </div>
                   )}
-                </div>
+                </Card>
               ))}
             </>
           )}

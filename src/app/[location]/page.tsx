@@ -15,6 +15,8 @@ import { locationSeoBySlug } from "@/lib/content/locationSeoData";
 import BookingContext from "@/components/BookingContext";
 import LocalUseCases from "@/components/LocalUseCases";
 import MachineCard from "@/components/MachineCard";
+import Hero from "@/components/Hero";
+import { getLocationServiceJsonLd } from "@/lib/content/seo/locationSeo";
 
 export function generateStaticParams() {
   return locationData.map((loc) => ({
@@ -58,7 +60,7 @@ export async function generateMetadata({
       siteName: "BAGGER1",
       images: [
         {
-          url: "/images/og-image.png",
+          url: "/images/og_image.png",
           width: 1200,
           height: 630,
           alt: alt,
@@ -69,7 +71,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description: twitterDescription,
-      images: ["/images/og-image.png"],
+      images: ["/images/og_image.png"],
     },
     robots: {
       index: true,
@@ -94,6 +96,8 @@ export default async function LocationPage({
   const currentLocation = locationData.find((l) => l.slug === location);
   if (!currentLocation) return notFound();
 
+  const locationServiceJsonLd = getLocationServiceJsonLd(currentLocation);
+
   const items = machineData.filter(
     (m) => (m.inventory[location]?.length ?? 0) > 0,
   );
@@ -114,19 +118,22 @@ export default async function LocationPage({
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(locationServiceJsonLd).replace(
+            /</g,
+            "\\u003c",
+          ),
+        }}
+      />
+
       <main>
         <Navigation slug={location} />
-        <div
-          className="mt-17 md:mt-24 relative h-48 lg:h-72 flex justify-center items-center bg-cover bg-center"
-          style={{ backgroundImage: `url(${currentLocation.image.url})` }}
-        >
-          <div className="absolute inset-0 bg-black/50 z-0" />
-          <div className="relative z-10 text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-4">
-            <h1 className="text-5xl lg:text-7xl font-semibold leading-normal tracking-wide">
-              {hero.title} {currentLocation.name}
-            </h1>
-          </div>
-        </div>
+        <Hero
+          image={currentLocation.image.url}
+          title={`${hero.title} ${currentLocation.name}`}
+        />
         {baggers.length > 0 && (
           <MachineCard
             title={intro.baggerTitle}
@@ -158,7 +165,7 @@ export default async function LocationPage({
           <Faq title={faq.title} content={faqContentForLocation} />
         )}
       </main>
-      <Footer currentLocation={currentLocation} />
+      <Footer />
     </>
   );
 }

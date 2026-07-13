@@ -1,3 +1,4 @@
+import { RatingProps } from "@/components/Rating";
 import { locationData } from "@/lib/content/locationData";
 
 export const validLocations = [
@@ -7,12 +8,18 @@ export const validLocations = [
   "stockstadt",
 ] as const;
 
+export type DeliveryAreaProps = {
+  city: string;
+  postalCode: string;
+  distanceKm: number;
+};
+
 export type Location = (typeof validLocations)[number];
 
 export type LocationDataProps = {
   name: string;
   slug: Location;
-  adress: string;
+  address: string;
   contact: {
     telephone?: string;
     email: string;
@@ -22,6 +29,12 @@ export type LocationDataProps = {
     alt: string;
   };
   map: string;
+  rating?: RatingProps;
+  seo: {
+    title: string;
+    description: string;
+  };
+  deliveryAreas: DeliveryAreaProps[];
 };
 
 export type LocationSlug = (typeof locationData)[number]["slug"];
