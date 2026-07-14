@@ -33,11 +33,17 @@ export default function Navigation({ slug }: NavigationProps) {
     currentLocationSlug === getLocationSlugFromUrl(url);
 
   useEffect(() => {
+    const originalOverflow = document.body.style.overflow;
+
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = originalOverflow;
     }
+
+    return () => {
+      document.body.style.overflow = originalOverflow;
+    };
   }, [isMenuOpen]);
 
   return (
@@ -147,151 +153,149 @@ export default function Navigation({ slug }: NavigationProps) {
               <Menu className="w-6 h-6" />
             </button>
           </div>
+        </div>
+      </nav>
 
-          {isMenuOpen && (
-            <div className="fixed top-0 left-0 w-full h-full bg-white z-20 overflow-scroll">
-              <div className="px-4 text-center text-sm w-full md:flex items-center justify-center animate-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-primary bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2 lg:py-1 hidden">
-                <Image
-                  className="mr-2"
-                  src={`/images/bbi_logo.png`}
-                  alt="BBI Logo"
-                  width={30}
-                  height={30}
-                />
-                Offizielles Mitglied im Bundesverband der Baumaschinen-,
-                Baugeräte- und Industriemaschinen-Firmen e.V.
-              </div>
-              <div className="container mx-auto flex items-center justify-between px-6 lg:px-8 py-4 border-b border-gray-300">
-                <div className="flex items-center">
-                  <Image
-                    src={`/images/logo_orange.svg`}
-                    alt="BAGGER1 Logo"
-                    width={140}
-                    height={50}
-                    className="mx-auto p-1"
-                  />
-                </div>
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-[60] bg-white overflow-y-auto lg:hidden">
+          <div className="px-4 text-center text-sm w-full md:flex items-center justify-center animate-gradient bg-gradient-to-r from-orange-400 via-orange-500 to-primary bg-[length:200%_200%] bg-[position:0%_50%] transition-all duration-1000 ease-in-out py-2 lg:py-1 hidden">
+            <Image
+              className="mr-2"
+              src={`/images/bbi_logo.png`}
+              alt="BBI Logo"
+              width={30}
+              height={30}
+            />
+            Offizielles Mitglied im Bundesverband der Baumaschinen-, Baugeräte-
+            und Industriemaschinen-Firmen e.V.
+          </div>
+          <div className="container mx-auto flex items-center justify-between px-6 lg:px-8 py-4 border-b border-gray-300">
+            <div className="flex items-center">
+              <Image
+                src={`/images/logo_orange.svg`}
+                alt="BAGGER1 Logo"
+                width={140}
+                height={50}
+                className="mx-auto p-1"
+              />
+            </div>
 
-                <button
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-black text-2xl focus:outline-none"
+            <button
+              onClick={() => setIsMenuOpen(false)}
+              className="text-black text-2xl focus:outline-none"
+            >
+              <X className="w-6 h-6" />
+            </button>
+          </div>
+
+          <div className="flex flex-col items-start px-8 py-6">
+            <div className="w-full space-y-8">
+              {navigationLocationData.map((item, index) => (
+                <div
+                  className="border-b border-gray-300 last:border-none pb-8"
+                  key={index}
                 >
-                  <X className="w-6 h-6" />
-                </button>
-              </div>
-
-              <div className="flex flex-col items-start px-8 py-6">
-                <div className="w-full space-y-8">
-                  {navigationLocationData.map((item, index) => (
-                    <div
-                      className="border-b border-gray-300 last:border-none pb-8"
-                      key={index}
+                  {!item.subData && item.url ? (
+                    <Link
+                      href={item.url}
+                      className="text-gray-800 cursor-pointer text-3xl flex items-center"
                     >
-                      {!item.subData && item.url ? (
-                        <Link
-                          href={item.url}
-                          className="text-gray-800 cursor-pointer text-3xl flex items-center"
-                        >
-                          <span>{item.name}</span>
-                        </Link>
-                      ) : (
-                        <>
-                          <div className="text-xl mb-4">Mieten in:</div>
-                          <div className="pl-4 mb-16 space-y-6 text-3xl flex flex-col">
-                            {item.subData?.map((subItem) => {
-                              const isActive = isLocationActive(subItem.url);
+                      <span>{item.name}</span>
+                    </Link>
+                  ) : (
+                    <>
+                      <div className="text-xl mb-4">Mieten in:</div>
+                      <div className="pl-4 mb-16 space-y-6 text-3xl flex flex-col">
+                        {item.subData?.map((subItem) => {
+                          const isActive = isLocationActive(subItem.url);
 
-                              return (
-                                <Link
-                                  href={subItem.url}
-                                  key={subItem.url}
-                                  onClick={() => setIsMenuOpen(false)}
-                                  aria-current={
-                                    isActive ? "location" : undefined
-                                  }
-                                  className={`flex items-center w-fit rounded-md px-3 py-1 transition-colors duration-300 ${
-                                    isActive
-                                      ? "bg-orange-50 text-primary font-semibold"
-                                      : "text-gray-800 hover:text-primary"
-                                  }`}
-                                >
-                                  <span>{subItem.name}</span>
-                                  <span className="ml-2 text-primary inline-block">
-                                    <ArrowRight className="w-8 h-8" />
-                                  </span>
-                                </Link>
-                              );
-                            })}
-                          </div>
-                          <div className="text-3xl mb-10">
+                          return (
                             <Link
-                              href={navigationPartnerData.url!}
-                              key={navigationPartnerData.name}
-                              className="text-gray-800 cursor-pointer"
+                              href={subItem.url}
+                              key={subItem.url}
+                              onClick={() => setIsMenuOpen(false)}
+                              aria-current={isActive ? "location" : undefined}
+                              className={`flex items-center w-fit rounded-md px-3 py-1 transition-colors duration-300 ${
+                                isActive
+                                  ? "bg-orange-50 text-primary font-semibold"
+                                  : "text-gray-800 hover:text-primary"
+                              }`}
                             >
-                              <span>{navigationPartnerData.name}</span>
+                              <span>{subItem.name}</span>
                               <span className="ml-2 text-primary inline-block">
-                                <ArrowRight className="w-4 h-4" />
+                                <ArrowRight className="w-8 h-8" />
                               </span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                      <div className="text-3xl mb-10">
+                        <Link
+                          href={navigationPartnerData.url!}
+                          key={navigationPartnerData.name}
+                          className="text-gray-800 cursor-pointer"
+                        >
+                          <span>{navigationPartnerData.name}</span>
+                          <span className="ml-2 text-primary inline-block">
+                            <ArrowRight className="w-4 h-4" />
+                          </span>
+                        </Link>
+                      </div>
+                      <div>
+                        <div className="border-t border-gray-400 my-4" />
+                        <div className="space-y-6 pt-6">
+                          <div>
+                            <Link
+                              className="transition-all duration-300 transform hover:scale-105"
+                              href={navigationKleinanzeigenData.url!}
+                              target="_blank"
+                            >
+                              <Image
+                                src="/images/kleinanzeigen.png"
+                                height={50}
+                                width={200}
+                                alt="Kleinanzeigen Logo"
+                              />
                             </Link>
                           </div>
                           <div>
-                            <div className="border-t border-gray-400 my-4" />
-                            <div className="space-y-6 pt-6">
-                              <div>
-                                <Link
-                                  className="transition-all duration-300 transform hover:scale-105"
-                                  href={navigationKleinanzeigenData.url!}
-                                  target="_blank"
-                                >
-                                  <Image
-                                    src="/images/kleinanzeigen.png"
-                                    height={50}
-                                    width={200}
-                                    alt="Kleinanzeigen Logo"
-                                  />
-                                </Link>
-                              </div>
-                              <div>
-                                <Link
-                                  className="transition-all duration-300 transform hover:scale-105 flex items-center"
-                                  href={navigationInstagramData.url!}
-                                  target="_blank"
-                                >
-                                  <Instagram className="w-8 h-8 text-pink-500 mr-3" />
-                                  <p className="text-2xl">
-                                    {navigationInstagramData.name}
-                                  </p>
-                                </Link>
-                              </div>
-                              <div>
-                                <Link
-                                  className="transition-all duration-300 transform hover:scale-105 flex items-center"
-                                  href={navigationWhatsappData.url!}
-                                  target="_blank"
-                                >
-                                  <SiWhatsapp
-                                    size={32}
-                                    color="default"
-                                    className="mr-3"
-                                  />
-                                  <p className="text-2xl">
-                                    {navigationWhatsappData.name}
-                                  </p>
-                                </Link>
-                              </div>
-                            </div>
+                            <Link
+                              className="transition-all duration-300 transform hover:scale-105 flex items-center"
+                              href={navigationInstagramData.url!}
+                              target="_blank"
+                            >
+                              <Instagram className="w-8 h-8 text-pink-500 mr-3" />
+                              <p className="text-2xl">
+                                {navigationInstagramData.name}
+                              </p>
+                            </Link>
                           </div>
-                        </>
-                      )}
-                    </div>
-                  ))}
+                          <div>
+                            <Link
+                              className="transition-all duration-300 transform hover:scale-105 flex items-center"
+                              href={navigationWhatsappData.url!}
+                              target="_blank"
+                            >
+                              <SiWhatsapp
+                                size={32}
+                                color="default"
+                                className="mr-3"
+                              />
+                              <p className="text-2xl">
+                                {navigationWhatsappData.name}
+                              </p>
+                            </Link>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )}
                 </div>
-              </div>
+              ))}
             </div>
-          )}
+          </div>
         </div>
-      </nav>
+      )}
     </>
   );
 }
