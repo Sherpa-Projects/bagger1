@@ -1,8 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { CircleChevronDown } from "lucide-react";
-import { FaqContentProps } from "@/app/types/components/Faq";
+
+import { FaqContentProps, FaqItemProps } from "@/app/types/components/Faq";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 type Props = {
   title: string;
@@ -10,23 +16,37 @@ type Props = {
 };
 
 type FaqSection = "location" | "bucket" | "rentalCondition";
+type FaqValue = `${FaqSection}-${number}`;
+
+type FaqSectionConfig = {
+  section: FaqSection;
+  title: string;
+  items: FaqItemProps[];
+};
 
 export default function Faq({ title, content }: Props) {
+  const [openItems, setOpenItems] = useState<FaqValue[]>([]);
+
   const locationName =
     content.location.charAt(0).toUpperCase() + content.location.slice(1);
 
-  const [openItem, setOpenItem] = useState<{
-    section: FaqSection;
-    index: number;
-  } | null>(null);
-
-  const toggleIndex = (section: FaqSection, index: number) => {
-    setOpenItem((prevItem) =>
-      prevItem?.section === section && prevItem.index === index
-        ? null
-        : { section, index },
-    );
-  };
+  const faqSections: FaqSectionConfig[] = [
+    {
+      section: "location",
+      title: `Fragen & Antworten zum Standort ${locationName}`,
+      items: content.locationItems.items,
+    },
+    {
+      section: "bucket",
+      title: "Fragen & Antworten zu Baggerlöffel",
+      items: content.bucketItems.items,
+    },
+    {
+      section: "rentalCondition",
+      title: "Fragen & Antworten zu Mietbedingungen",
+      items: content.rentalConditionItems.items,
+    },
+  ];
 
   return (
     <section id="faq" className="py-10 lg:py-20 px-4">
@@ -36,188 +56,65 @@ export default function Faq({ title, content }: Props) {
             {title}
           </h2>
         </div>
-        <div
-          className="flex justify-center flex-col items-center max-w-3xl mx-auto"
-          itemScope
-          itemType="https://schema.org/FAQPage"
-        >
-          <div className="mb-10 space-y-3">
-            <h2 className="text-center text-gray-500">
-              Fragen & Antworten zum Standort {locationName}
-            </h2>
-            {content.locationItems.items.map((item, i) => (
-              <div
-                key={i}
-                className={`group border p-6 rounded-md accordion-item max-w-4xl w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-md lg:cursor-pointer ${
-                  openItem?.section === "location" && openItem.index === i
-                    ? "border-orange-300 bg-orange-50"
-                    : "border-gray-300 bg-white"
-                }`}
-                itemScope
-                itemProp="mainEntity"
-                itemType="https://schema.org/Question"
-                onClick={() => toggleIndex("location", i)}
-              >
-                <div className="flex justify-between items-center">
-                  <h3
-                    className="font-bold accordion-title lg:text-lg"
-                    itemProp="name"
+        {faqSections.map(({ section, title, items }) => (
+          <div className="mb-10 space-y-3" key={section}>
+            <h2 className="text-center text-gray-500">{title}</h2>
+            <Accordion
+              value={openItems}
+              onValueChange={(value) => setOpenItems(value as FaqValue[])}
+              id={`faq-${section}`}
+              className="space-y-3 flex justify-center flex-col items-center max-w-3xl mx-auto"
+              itemScope
+              itemType="https://schema.org/FAQPage"
+            >
+              {items.map((item, i) => {
+                const value = `${section}-${i}` as FaqValue;
+
+                return (
+                  <AccordionItem
+                    value={value}
+                    key={value}
+                    className="group border border-gray-200 bg-white/30 hover:bg-white/40 p-6 rounded-2xl accordion-item max-w-4xl w-full shadow-md hover:shadow-lg transform-gpu duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:-translate-y-1 transition-all data-open:-translate-y-0.5 data-open:border-orange-200 data-open:bg-orange-50/50 data-open:shadow-lg data-open:shadow-orange-100/70 lg:cursor-pointer"
+                    itemScope
+                    itemProp="mainEntity"
+                    itemType="https://schema.org/Question"
                   >
-                    {item.question}
-                  </h3>
-                  <CircleChevronDown
-                    className={`srink-0 transform transition-all duration-500 ease-in-out group:hover:text-gray-600 text-gray-400 group-hover:text-gray-500 ${
-                      openItem?.section === "location" &&
-                      openItem.index === i &&
-                      "rotate-180"
-                    }`}
-                  />
-                </div>
-                <div
-                  itemScope
-                  itemProp="acceptedAnswer"
-                  itemType="https://schema.org/Answer"
-                >
-                  <div
-                    itemProp="text"
-                    className={`text-gray-600 overflow-hidden transition-[max-height] duration-500 ease-in-out mt-2 ${
-                      openItem?.section === "location" && openItem.index === i
-                        ? "max-h-96"
-                        : "max-h-0"
-                    }`}
-                  >
-                    <div className="py-2">{item.answer}</div>
-                    {item.list && item.list.length > 0 && (
-                      <ul className="space-y-1 list-disc pl-5 mt-2">
-                        {item.list.map((i, index) => (
-                          <li key={index}>{i}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
+                    <AccordionTrigger className="text-black/40 transition-colors duration-300 hover:text-black/50 hover:no-underline aria-expanded:text-primary">
+                      <div className="flex justify-between items-center">
+                        <h3
+                          className="font-semibold accordion-title text-black/70 transition-colors duration-300 group-data-open:text-primary"
+                          itemProp="name"
+                        >
+                          {item.question}
+                        </h3>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="transform-gpu pt-1 text-gray-600 transition-[opacity,transform,filter] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none">
+                      <div
+                        itemScope
+                        itemProp="acceptedAnswer"
+                        itemType="https://schema.org/Answer"
+                      >
+                        <div itemProp="text" className="mt-2 text-gray-600">
+                          <div className="py-2">{item.answer}</div>
+                          {item.list && (
+                            <>
+                              {item.list.map((listItem, index) => (
+                                <div className="font-bold" key={index}>
+                                  {listItem}
+                                </div>
+                              ))}
+                            </>
+                          )}
+                        </div>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                );
+              })}
+            </Accordion>
           </div>
-          <div className="mb-10 space-y-3">
-            <h2 className="text-center text-gray-500">
-              Fragen & Antworten zu Baggerlöffel
-            </h2>
-            {content.bucketItems.items.map((item, i) => (
-              <div
-                key={i}
-                className={`group border p-6 rounded-md accordion-item max-w-4xl w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-md lg:cursor-pointer ${
-                  openItem?.section === "bucket" && openItem.index === i
-                    ? "border-orange-300 bg-orange-50"
-                    : "border-gray-300 bg-white"
-                }`}
-                itemScope
-                itemProp="mainEntity"
-                itemType="https://schema.org/Question"
-                onClick={() => toggleIndex("bucket", i)}
-              >
-                <div className="flex justify-between items-center">
-                  <h3
-                    className="font-bold accordion-title lg:text-lg"
-                    itemProp="name"
-                  >
-                    {item.question}
-                  </h3>
-                  <CircleChevronDown
-                    className={`srink-0 transform transition-all duration-500 ease-in-out group:hover:text-gray-600 text-gray-400 group-hover:text-gray-500 ${
-                      openItem?.section === "bucket" &&
-                      openItem.index === i &&
-                      "rotate-180"
-                    }`}
-                  />
-                </div>
-                <div
-                  itemScope
-                  itemProp="acceptedAnswer"
-                  itemType="https://schema.org/Answer"
-                >
-                  <div
-                    itemProp="text"
-                    className={`text-gray-600 overflow-hidden transition-[max-height] duration-500 ease-in-out mt-2 ${
-                      openItem?.section === "bucket" && openItem.index === i
-                        ? "max-h-96"
-                        : "max-h-0"
-                    }`}
-                  >
-                    <div className="py-2">{item.answer}</div>
-                    {item.list && item.list.length > 0 && (
-                      <ul className="space-y-1 list-disc pl-5 mt-2">
-                        {item.list.map((i, index) => (
-                          <li key={index}>{i}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mb-10 space-y-3">
-            <h2 className="text-center text-gray-500">
-              Fragen & Antworten zu Mietbedingungen
-            </h2>
-            {content.rentalConditionItems.items.map((item, i) => (
-              <div
-                key={i}
-                className={`group border p-6 rounded-md accordion-item max-w-4xl w-full transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1 hover:shadow-md lg:cursor-pointer ${
-                  openItem?.section === "rentalCondition" &&
-                  openItem.index === i
-                    ? "border-orange-300 bg-orange-50"
-                    : "border-gray-300 bg-white"
-                }`}
-                itemScope
-                itemProp="mainEntity"
-                itemType="https://schema.org/Question"
-                onClick={() => toggleIndex("rentalCondition", i)}
-              >
-                <div className="flex justify-between items-center">
-                  <h3
-                    className="font-bold accordion-title lg:text-lg"
-                    itemProp="name"
-                  >
-                    {item.question}
-                  </h3>
-                  <CircleChevronDown
-                    className={`srink-0 transform transition-all duration-500 ease-in-out group:hover:text-gray-600 text-gray-400 group-hover:text-gray-500 ${
-                      openItem?.section === "rentalCondition" &&
-                      openItem.index === i &&
-                      "rotate-180"
-                    }`}
-                  />
-                </div>
-                <div
-                  itemScope
-                  itemProp="acceptedAnswer"
-                  itemType="https://schema.org/Answer"
-                >
-                  <div
-                    itemProp="text"
-                    className={`text-gray-600 overflow-hidden transition-[max-height] duration-500 ease-in-out mt-2 ${
-                      openItem?.section === "rentalCondition" &&
-                      openItem.index === i
-                        ? "max-h-96"
-                        : "max-h-0"
-                    }`}
-                  >
-                    <div className="py-2">{item.answer}</div>
-                    {item.list && item.list.length > 0 && (
-                      <ul className="space-y-1 list-disc pl-5 mt-2">
-                        {item.list.map((i, index) => (
-                          <li key={index}>{i}</li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
