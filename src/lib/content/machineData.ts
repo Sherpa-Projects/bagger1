@@ -44,7 +44,7 @@ export const machineData: Machine[] = [
       description: "",
       specifications: {
         dimensions: {
-          width: "1,50 m",
+          width: "1 m",
           weight: "1,6 t",
         },
         power: "9,6 kW (13 PS)",
