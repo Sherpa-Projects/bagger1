@@ -15,7 +15,8 @@ import {
   navigationInstagramData,
   navigationKleinanzeigenData,
 } from "@/lib/content/components/navigationData";
-import { constants } from "@/lib/content/constants";
+import { company } from "@/lib/content/company";
+import Testimonials from "@/components/Testimonials";
 
 const BASE_URL = "https://bagger1.de";
 const OG_IMAGE_URL = "https://bagger1.de/images/og_image.png";
@@ -35,14 +36,14 @@ const localBusinessJsonLd = {
   description:
     "BAGGER1 vermietet Bagger und Baumaschinen mit transparenten Preisen, flexiblen Mietzeiträumen und direkter Online-Buchung.",
 
-  email: constants.contact.email,
-  telephone: constants.contact.telephone,
+  email: company.contact.email,
+  telephone: company.contact.telephone,
 
   contactPoint: {
     "@type": "ContactPoint",
-    contactType: constants.contact.email,
-    email: constants.contact.email,
-    telephone: constants.contact.telephone,
+    contactType: company.contact.email,
+    email: company.contact.email,
+    telephone: company.contact.telephone,
     availableLanguage: ["de"],
   },
 
@@ -155,6 +156,7 @@ export default function Home() {
           paragraphs={intro.paragraphs}
           image={intro.image}
         />
+        <Testimonials />
         <IconRow title={usp.title} items={items} />
         <BranchCard />
         <BookingSteps />

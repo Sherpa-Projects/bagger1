@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { LocationDataProps } from "@/app/types/Location";
-import { constants } from "@/lib/content/constants";
+import { company } from "@/lib/content/company";
 import { Clock, ArrowRight } from "lucide-react";
 import { ConsentLevel } from "@/lib/consent";
 import Rating from "@/components/Rating";
@@ -31,7 +31,7 @@ export default function BranchContent({
                     <Rating
                       stars={loc.rating.stars}
                       reviews={loc.rating.reviews}
-                      googleReviewLink={loc.rating.googleReviewLink}
+                      location={loc.slug}
                     />
                   </div>
                 ) : (
@@ -42,15 +42,15 @@ export default function BranchContent({
                   <ul className="space-y-1">
                     <li className="flex items-center">
                       <Clock size={18} className="mr-1.5 text-primary" />
-                      <p>{constants.openingHours.weekday}</p>
+                      <p>{company.openingHours.weekday}</p>
                     </li>
                     <li className="flex items-center">
                       <Clock size={18} className="mr-1.5 text-primary" />
-                      <p>{constants.openingHours.saturday}</p>
+                      <p>{company.openingHours.saturday}</p>
                     </li>
                     <li className="flex items-center">
                       <Clock size={18} className="mr-1.5 text-primary" />
-                      <p>{constants.openingHours.sunday}</p>
+                      <p>{company.openingHours.sunday}</p>
                     </li>
                   </ul>
                 </div>
@@ -93,7 +93,7 @@ export default function BranchContent({
                     <Rating
                       stars={loc.rating.stars}
                       reviews={loc.rating.reviews}
-                      googleReviewLink={loc.rating.googleReviewLink}
+                      location={loc.slug}
                     />
                   </div>
                 )}
@@ -101,15 +101,15 @@ export default function BranchContent({
                   <ul className="space-y-1">
                     <li className="flex items-center">
                       <Clock size={18} className="mr-1.5 text-primary" />
-                      <p>{constants.openingHours.weekday}</p>
+                      <p>{company.openingHours.weekday}</p>
                     </li>
                     <li className="flex items-center">
                       <Clock size={18} className="mr-1.5 text-primary" />
-                      <p>{constants.openingHours.saturday}</p>
+                      <p>{company.openingHours.saturday}</p>
                     </li>
                     <li className="flex items-center">
                       <Clock size={18} className="mr-1.5 text-primary" />
-                      <p>{constants.openingHours.sunday}</p>
+                      <p>{company.openingHours.sunday}</p>
                     </li>
                   </ul>
                 </div>
