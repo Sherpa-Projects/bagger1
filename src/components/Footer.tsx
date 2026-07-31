@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { footerData } from "@/lib/content/components/footerData";
-import { constants } from "@/lib/content/constants";
+import { company } from "@/lib/content/company";
 import { locationData } from "@/lib/content/locationData";
 import { Phone, Mail } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
@@ -25,16 +25,16 @@ const Footer = () => {
         <div className="container py-18 mx-auto max-w-8xl px-6 lg:px-8  md:max-w-4xl lg:max-w-5xl xl:max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-x-0 lg:gap-x-32 gap-y-12 lg:gap-y-0">
             <div className="space-y-3 text-center lg:text-left flex items-center lg:items-start flex-col">
-              <h4 className="text-lg text-primary">{constants.companyName}</h4>
-              {constants.contact.telephone && (
+              <h4 className="text-lg text-primary">{company.companyName}</h4>
+              {company.contact.telephone && (
                 <div className="flex items-center lg:text-left hover:underline">
                   <Phone size={20} className="mr-2" />
                   <p>
                     <Link
-                      href={`tel:${constants.contact.telephone}`}
+                      href={`tel:${company.contact.telephone}`}
                       className="hover:text-underline"
                     >
-                      {constants.contact.telephone}
+                      {company.contact.telephone}
                     </Link>
                   </p>
                 </div>
@@ -43,10 +43,10 @@ const Footer = () => {
                 <SiWhatsapp size={20} color="default" className="mr-2" />
                 <p>
                   <Link
-                    href={`https://wa.me/${constants.contact.whatsapp.replace(/\D/g, "")}`}
+                    href={`https://wa.me/${company.contact.whatsapp.replace(/\D/g, "")}`}
                     className="hover:text-underline"
                   >
-                    {constants.contact.whatsapp}
+                    {company.contact.whatsapp}
                   </Link>
                 </p>
               </div>
@@ -54,10 +54,10 @@ const Footer = () => {
                 <Mail size={20} className="mr-2" />
                 <p>
                   <Link
-                    href={`mailto:${constants.contact.email}`}
+                    href={`mailto:${company.contact.email}`}
                     className="hover:text-underline"
                   >
-                    {constants.contact.email}
+                    {company.contact.email}
                   </Link>
                 </p>
               </div>
@@ -81,12 +81,12 @@ const Footer = () => {
 
             <div className="space-y-3 text-center lg:text-left">
               <h4 className="text-lg text-primary">
-                {constants.openingHours.title}
+                {company.openingHours.title}
               </h4>
               <ul className="space-y-3">
-                <li>{constants.openingHours.weekday}</li>
-                <li>{constants.openingHours.saturday}</li>
-                <li>{constants.openingHours.sunday}</li>
+                <li>{company.openingHours.weekday}</li>
+                <li>{company.openingHours.saturday}</li>
+                <li>{company.openingHours.sunday}</li>
               </ul>
             </div>
 

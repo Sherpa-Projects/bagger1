@@ -13,7 +13,7 @@ import {
 } from "@/lib/content/components/navigationData";
 import { Handshake, Instagram, Menu, X, ArrowRight } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
-import { constants } from "@/lib/content/constants";
+import { company } from "@/lib/content/company";
 import Banner from "@/components/Banner";
 
 type NavigationProps = {
@@ -27,7 +27,7 @@ function getLocationSlugFromUrl(url: string) {
 export default function Navigation({ slug }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const currentLocationSlug = slug?.replace(/^\/+|\/+$/g, "");
-  const whtasappNumber = constants.contact.whatsapp.replace(/\D/g, "");
+  const whtasappNumber = company.contact.whatsapp.replace(/\D/g, "");
 
   const isLocationActive = (url: string) =>
     currentLocationSlug === getLocationSlugFromUrl(url);

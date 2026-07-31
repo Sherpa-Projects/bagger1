@@ -1,4 +1,4 @@
-export const constants = {
+export const company = {
   companyName: "Baumaschinenverleih Jens Wetzstein",
   contact: {
     telephone: "0800 22 44 37 1",

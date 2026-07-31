@@ -1,26 +1,33 @@
 import Link from "next/link";
 import { Star } from "lucide-react";
 import Image from "next/image";
+import { LINKS } from "@/constants/links";
+import type { Location } from "@/app/types/Location";
 
 export type RatingProps = {
   stars: number;
-  reviews: number;
-  googleReviewLink?: string;
+  location: Location;
+  reviews?: number;
 };
 
 const clampStars = (value: number) => Math.min(5, Math.max(0, value));
 
-export default function Rating({
-  stars,
-  reviews,
-  googleReviewLink,
-}: RatingProps) {
+const reviewLinks = {
+  bruchsal: LINKS.bruchsalTestimonials,
+  hennef: LINKS.hennefTestimonials,
+} satisfies Record<"bruchsal" | "hennef", string>;
+
+function getReviewLink(location: Location) {
+  return reviewLinks[location as keyof typeof reviewLinks];
+}
+
+export default function Rating({ stars, reviews, location }: RatingProps) {
   const normalizedStars = clampStars(stars);
-  const reviewLabel = `${reviews.toLocaleString("de-DE")} Bewertung${reviews === 1 ? "" : "en"}`;
+  const reviewLabel = `${reviews?.toLocaleString("de-DE")} Bewertung${reviews === 1 ? "" : "en"}`;
 
   return (
     <Link
-      href={googleReviewLink || "#"}
+      href={getReviewLink(location)}
       target="_blank"
       rel="noreferrer noopener"
       className="group inline-flex w-fit items-center gap-2 rounded-full px-3 py-2 border border-gray-300 transition-all duration-300 bg-gray-50 hover:border-primary"
@@ -59,10 +66,14 @@ export default function Rating({
           {normalizedStars.toFixed(1).replace(".", ",")}
         </span>
       </span>
-
-      <span className="text-sm font-medium text-[#5f6368] transition-colors hover:text-[#1a73e8] hover:underline" aria-label={`Anzahl der Bewertungen: ${reviewLabel}`}>
-        ({reviewLabel})
-      </span>
+      {reviews && (
+        <span
+          className="text-sm font-medium text-[#5f6368] transition-colors hover:text-[#1a73e8] hover:underline"
+          aria-label={`Anzahl der Bewertungen: ${reviewLabel}`}
+        >
+          ({reviewLabel})
+        </span>
+      )}
     </Link>
   );
 }
