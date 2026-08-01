@@ -111,7 +111,6 @@ export const privacyPageData = {
         </section>
 
         <h2 className="text-3xl mt-20">2. Hosting</h2>
-        <p>Wir hosten die Inhalte unserer Website bei folgendem Anbieter:</p>
         <section className="space-y-6">
           <h3 className="text-lg lg:text-xl font-bold mb-2">
             Externes Hosting
@@ -119,32 +118,33 @@ export const privacyPageData = {
           <p>
             Diese Website wird extern gehostet. Die personenbezogenen Daten, die
             auf dieser Website erfasst werden, werden auf den Servern des
-            Hosters / der Hoster gespeichert. Hierbei kann es sich v. a. um
-            IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten,
-            Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige
-            Daten, die über eine Website generiert werden, handeln.
+            Hosting-Dienstleisters gespeichert. Hierbei kann es sich
+            insbesondere um IP-Adressen, Kontaktanfragen, Meta- und
+            Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen,
+            Websitezugriffe und sonstige Daten handeln, die über eine Website
+            generiert werden.
           </p>
           <p>
             Das externe Hosting erfolgt zum Zwecke der Vertragserfüllung
             gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1
             lit. b DSGVO) und im Interesse einer sicheren, schnellen und
-            effizienten Bereitstellung unseres Online-Angebots durch einen
-            professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO). Sofern eine
-            entsprechende Einwilligung abgefragt wurde, erfolgt die Verarbeitung
-            ausschließlich auf Grundlage von Art. 6 Abs. 1 lit. a DSGVO und § 25
-            Abs. 1 TDDDG, soweit die Einwilligung die Speicherung von Cookies
-            oder den Zugriff auf Informationen im Endgerät des Nutzers (z. B.
-            Device-Fingerprinting) im Sinne des TDDDG umfasst. Die Einwilligung
+            effizienten Bereitstellung unseres Online-Angebots (Art. 6 Abs. 1
+            lit. f DSGVO). Sofern eine entsprechende Einwilligung abgefragt
+            wurde, erfolgt die Verarbeitung ausschließlich auf Grundlage von
+            Art. 6 Abs. 1 lit. a DSGVO und § 25 Abs. 1 TDDDG. Die Einwilligung
             ist jederzeit widerrufbar.
           </p>
           <p>
-            Unser(e) Hoster wird bzw. werden Ihre Daten nur insoweit
-            verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten
-            erforderlich ist und unsere Weisungen in Bezug auf diese Daten
-            befolgen.
+            Personenbezogene Daten werden vom Hosting-Dienstleister nur
+            verarbeitet, soweit dies zur Bereitstellung der Hosting-Leistungen
+            erforderlich ist.
           </p>
-          <p>Wir setzen folgende(n) Hoster ein:</p>
-          <p>Vercel Inc, 340 S Lemon Ave #4133, Walnut, CA 91789, U.S.A</p>
+          <p>
+            Wir nutzen Vercel als Hosting-Dienstleister. Die serverseitige
+            Verarbeitung der Website ist auf die Region Frankfurt am Main
+            (Deutschland) konfiguriert. Anbieter des Hosting-Dienstes ist die
+            Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA.
+          </p>
         </section>
 
         <h2 className="text-3xl mt-20">
