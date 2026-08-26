@@ -156,9 +156,9 @@ export default function Home() {
           paragraphs={intro.paragraphs}
           image={intro.image}
         />
-        <Testimonials />
         <IconRow title={usp.title} items={items} />
         <BranchCard />
+        <Testimonials />
         <BookingSteps />
         <PromoBanner
           image={career.image}
