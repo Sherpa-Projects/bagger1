@@ -15,7 +15,7 @@ export const b2bPageData = {
     <>
       <main className="px-4 md:px-8 pt-40 pb-20 max-w-4xl mx-auto space-y-10 prose prose-sm sm:prose lg:prose-lg xl:prose-xl prose-neutral">
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl lg:leading-tight text-center mb-4 lg:mb-12">
-          Allgemeine Geschäftsbedingungen für Geschäftskunden (B2B)
+          AGB’s für Anmietung durch gewerbliche Kunden
         </h1>
 
         <section className="space-y-3">
@@ -28,71 +28,96 @@ export const b2bPageData = {
             oder selbstständigen beruflichen Tätigkeit handelt.
           </p>
           <p>
-            Mietverträge werden nur mit volljährigen Personen mit Wohnsitz in
-            der Bundesrepublik Deutschland abgeschlossen. Zur Prüfung der
-            Identität des Mieters verlangt der Vermieter die Vorlage eines
-            gültigen Ausweisdokuments.
+            Bei natürlichen Personen setzt der Vertragsschluss Volljährigkeit
+            voraus. Der Vermieter ist berechtigt, geeignete Nachweise über die
+            Identität, die Unternehmereigenschaft sowie die
+            Vertretungsberechtigung der für den Mieter handelnden Personen zu
+            verlangen.
           </p>
           <p>
-            Im Einzelfall getroffene, individuelle Vereinbarungen mit dem Mieter
+            Im Einzelfall getroffene individuelle Vereinbarungen mit dem Mieter
             (einschließlich Nebenabreden, Ergänzungen und Änderungen) haben in
             jedem Fall Vorrang vor den Regelungen in diesen
             Mietvertragsbedingungen.
           </p>
           <p>
-            Rechtserhebliche Erklärungen und Anzeigen, die nach Vertragsschluss
-            vom Mieter gegenüber dem Vermieter abzugeben sind, bedürfen zu ihrer
-            Wirksamkeit der Textform. Falls nichts Abweichendes angegeben, sind
-            alle Mietvertragsangebote des Vermieters freibleibend. Die vom
-            Besteller/ Mieter unterzeichnete Bestellung ist ein bindendes
-            Angebot. Dieses Angebot kann durch den Vermieter innerhalb von zwei
-            Wochen durch Zusendung einer Auftragsbestätigung angenommen werden.
+            Rechtserhebliche Erklärungen und Anzeigen des Mieters nach
+            Vertragsschluss bedürfen der Textform, soweit in diesen
+            Mietbedingungen oder gesetzlich nichts Abweichendes bestimmt ist.
+            Unverzüglich erforderliche Schadens-, Unfall- oder Gefahrenmeldungen
+            können zunächst mündlich erfolgen und sind anschließend unverzüglich
+            in Textform zu bestätigen.
           </p>
           <p>
-            Den Einkaufs- und Mietvertragsbedingungen des Mieters wird
-            ausdrücklich widersprochen. Abweichende Bedingungen gelten nur, wenn
-            sie schriftlich vereinbart wurden.
+            Soweit nicht ausdrücklich anders angegeben, sind Angebote des
+            Vermieters freibleibend. Eine Bestellung des Mieters stellt ein
+            verbindliches Angebot zum Abschluss eines Mietvertrages dar. Der
+            Vermieter kann dieses Angebot innerhalb von fünf Arbeitstagen
+            (Montag bis Freitag, ausgenommen gesetzliche Feiertage am Sitz des
+            Vermieters), spätestens jedoch bis zum vereinbarten Mietbeginn,
+            durch Auftragsbestätigung in Textform, Bereitstellung oder Übergabe
+            des Mietgegenstandes annehmen.
+          </p>
+          <p>
+            Den Einkaufs-, Geschäfts- und Mietbedingungen des Mieters wird
+            ausdrücklich widersprochen. Abweichende oder entgegenstehende
+            Allgemeine Geschäftsbedingungen des Mieters gelten nur, wenn der
+            Vermieter ihrer Geltung ausdrücklich in Textform zugestimmt hat.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">2. Stellung des Mieters</h2>
+          <h2 className="text-3xl mt-20 text-primary">
+            2. Pflichten des Mieters
+          </h2>
           <p>
             Der Mieter ist verpflichtet, den Mietgegenstand sorgfältig zu
             behandeln und vor Überbeanspruchung in jeder Weise zu schützen.
           </p>
           <p>
-            Der Vermieter verpflichtet sich, dem Mieter den Mietgegenstand für
-            die vereinbarte Mietzeit in Miete zu überlassen. Der Mieter
-            verpflichtet sich, den Mietgegenstand nur bestimmungsgemäß
-            einzusetzen, insbesondere die Unfallverhütungs- und
-            Arbeitsschutzbestimmungen sowie Straßenverkehrsvorschriften,
-            insbesondere auch bezüglich Ladung und Transport des
-            Mietgegenstandes, sorgfältig zu beachten, die Miete
-            vereinbarungsgemäß zu zahlen, den Mietgegenstand ordnungsgemäß zu
-            behandeln und bei Ablauf der Mietzeit gesäubert und vollgetankt
-            zurückzugeben.{" "}
+            Der Mieter verpflichtet sich, den Mietgegenstand ausschließlich
+            bestimmungsgemäß und entsprechend der Betriebsanleitung einzusetzen.
+            Er hat sämtliche für den Einsatz geltenden gesetzlichen
+            Vorschriften, Unfallverhütungs- und Arbeitsschutzbestimmungen sowie
+            Straßenverkehrsvorschriften, insbesondere hinsichtlich Ladung und
+            Transport, einzuhalten. Der Mieter hat den Mietgegenstand
+            ordnungsgemäß zu behandeln, die vereinbarte Miete zu entrichten und
+            ihn bei Beendigung der Mietzeit gereinigt und, soweit vereinbart,
+            vollgetankt zurückzugeben.
           </p>
           <p>
-            Der Mieter ist verpflichtet, dem Vermieter unverzüglich auf Anfrage
-            den jeweiligen Stand- bzw. Einsatzort des Mietgegenstandes
-            mitzuteilen sowie jeden beabsichtigten Wechsel des Stand- bzw.
-            Einsatzortes.
+            Der Mieter ist verpflichtet, dem Vermieter auf Verlangen
+            unverzüglich den jeweiligen Stand- und Einsatzort des
+            Mietgegenstandes mitzuteilen. Jeder Wechsel des vereinbarten
+            Einsatzortes bedarf der vorherigen Zustimmung des Vermieters in
+            Textform, soweit nicht im Mietvertrag etwas Abweichendes vereinbart
+            ist.
           </p>
           <p>
-            Der Mietgegenstand darf nur durch geschulte, eingewiesene und
-            geeignete Personen verwendet werden. Erforderliche Bedienerlaubnisse
-            sind vom Mieter sicherzustellen.
+            Der Mietgegenstand darf ausschließlich durch Personen bedient
+            werden, die für die jeweilige Maschine körperlich und geistig
+            geeignet, ausreichend qualifiziert und eingewiesen sind. Der Mieter
+            hat sicherzustellen, dass erforderliche Fahrerlaubnisse,
+            Befähigungsnachweise, Unterweisungen und Beauftragungen vorliegen.
           </p>
           <p>
-            Die Benutzung durch unqualifiziertes Personal gilt als
-            Obliegenheitsverletzung und führt zum Verlust von
-            Haftungsbegrenzungen und/oder Versicherungsschutz.
+            Verstößt der Mieter schuldhaft gegen die vorstehenden Anforderungen
+            an die Bedienung des Mietgegenstandes, haftet er nach den
+            gesetzlichen Vorschriften für die hierdurch verursachten Schäden.
+            Die Auswirkungen einer solchen Pflichtverletzung auf eine zugunsten
+            des Mieters vereinbarte Haftungsbegrenzung richten sich
+            ausschließlich nach Punkt 12 dieser Mietbedingungen. Eine etwaige
+            Versicherungsdeckung richtet sich ausschließlich nach den
+            Bedingungen des jeweils bestehenden Versicherungsvertrages.
           </p>
           <p>
-            Die Benutzung durch unqualifiziertes Personal gilt als
-            Obliegenheitsverletzung und führt zum Verlust etwaiger
-            Haftungsbeschränkungen oder Versicherungsschutzes.
+            Die Nutzung des Mietgegenstandes durch Mitarbeiter, gesetzliche
+            Vertreter und sonstige Erfüllungsgehilfen des Mieters im Rahmen des
+            vereinbarten Einsatzzwecks ist zulässig, sofern diese die
+            vorstehenden Anforderungen erfüllen. Eine Weitervermietung oder
+            sonstige Gebrauchsüberlassung an andere Unternehmen oder sonstige
+            außerhalb der betrieblichen Organisation des Mieters stehende Dritte
+            bedarf der vorherigen Zustimmung des Vermieters in Textform.
           </p>
         </section>
 
@@ -101,222 +126,275 @@ export const b2bPageData = {
             3. Überlassung des Mietgegenstandes, Verzug des Vermieters
           </h2>
           <p>
-            Der Mietgegenstand wird in betriebsfähigem Zustand übergeben. Der
-            Mieter hat diesen unverzüglich nach Übergabe zu prüfen und Mängel
-            unverzüglich anzuzeigen.
+            Der Vermieter überlässt den Mietgegenstand in betriebsfähigem und
+            vertragsgemäßem Zustand sowie mit den für den bestimmungsgemäßen
+            Betrieb erforderlichen Unterlagen. Soweit nichts Abweichendes
+            vereinbart ist, erfolgt die Übergabe vollgetankt.
           </p>
           <p>
-            Der Vermieter hat den Mietgegenstand in einwandfreiem,
-            betriebsfähigem und voll getanktem Zustand mit den erforderlichen
-            Unterlagen an den Mieter zu überlassen.
+            Der Mieter hat den Mietgegenstand unverzüglich nach Übergabe auf
+            erkennbare Mängel zu prüfen und solche Mängel unverzüglich dem
+            Vermieter anzuzeigen.
           </p>
           <p>
-            Kommt der Vermieter bei Beginn der Mietzeit mit der Überlassung in
-            Verzug, so kann der Mieter eine Entschädigung verlangen, falls ihm
-            aufgrund des Verzuges nachweislich ein Schaden entstanden ist. Bei
-            leichter Fahrlässigkeit ist die vom Vermieter zu leistende
-            Entschädigung für jeden Arbeitstag begrenzt auf höchstens den Betrag
-            des täglichen Bruttomietpreises. Nach Setzung einer angemessenen
-            Frist kann der Mieter den Vertrag kündigen, wenn der Vermieter sich
-            zu diesem Zeitpunkt weiterhin in Verzug befindet.
+            Kommt der Vermieter mit der Überlassung des Mietgegenstandes in
+            Verzug, kann der Mieter nach erfolglosem Ablauf einer angemessenen
+            Nachfrist vom Vertrag zurücktreten, soweit eine Fristsetzung nicht
+            gesetzlich entbehrlich ist.
           </p>
           <p>
-            Der Vermieter ist im Falle des Verzugs auch berechtigt, zur
-            Schadensbeseitigung dem Mieter einen funktionell gleichwertigen
-            Mietgegenstand zur Verfügung zu stellen, falls dem Mieter dies
-            zumutbar ist.
+            Schadensersatzansprüche wegen einer verspäteten Überlassung richten
+            sich nach den Haftungsregelungen dieser Mietbedingungen.
           </p>
           <p>
-            Kann der Vermieter ein Mietgerät nicht rechtzeitig bereitstellen,
-            ist der Mieter nach Setzen einer Frist zum Rücktritt berechtigt.
-            Schadensersatzansprüche bestehen nur bei Vorsatz oder grober
-            Fahrlässigkeit.
+            Der Vermieter ist berechtigt, dem Mieter im Falle einer verzögerten
+            Bereitstellung einen funktionell gleichwertigen Ersatzmietgegenstand
+            zur Verfügung zu stellen, soweit dies dem Mieter unter
+            Berücksichtigung des vereinbarten Einsatzzwecks zumutbar ist.
           </p>
           <p>
-            Haftung für Liefer- oder Bereitstellungsverzögerungen ist
-            ausgeschlossen, soweit diese auf höhere Gewalt, Streik,
-            Materialknappheit oder Lieferprobleme zurückzuführen sind.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">
-            4. Mietzeit, Berechnung und Kündigung
-          </h2>
-          <p>
-            Die Mietzeit beginnt mit dem Tag der vereinbarten Bereitstellung und
-            endet mit dem vereinbarten Rückgabetermin. Eine ordentliche
-            Kündigung des Mietvertrages während der vereinbarten Mietzeit ist
-            ausgeschlossen.
-          </p>
-          <p>
-            § 545 BGB (stillschweigende Verlängerung) findet keine Anwendung.
-          </p>
-          <p>
-            Ein Mietvertrag auf bestimmte Zeit ist von beiden Seiten nicht
-            ordentlich kündbar. Der Mieter bleibt auch bei vorzeitiger Rückgabe
-            zur Zahlung der vereinbarten Miete verpflichtet.
-          </p>
-          <p>
-            Der Vermieter ist berechtigt, die Mietzeit bei nicht fristgerechter
-            Rückgabe zu verlängern und die Nutzung bis zur tatsächlichen
-            Rückgabe zu berechnen.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">5. Rückgabe des Mietgegenstandes</h2>
-          <p>
-            Der Mieter hat den Mietgegenstand vollständig, in ordnungsgemäßem,
-            betriebsfähigem und gereinigtem Zustand zurückzugeben. Fehlteile
-            werden berechnet.
-          </p>
-          <p>
-            Der Vermieter ist berechtigt, bei Rückgabe ein Übergabeprotokoll zu
-            erstellen. Offensichtliche Schäden werden dort festgehalten.
-          </p>
-          <p>
-            Wird die Rückgabe schuldhaft verspätet vorgenommen, schuldet der
-            Mieter Schadensersatz.
-          </p>
-          <p>
-            Der Mieter hat den Mietgegenstand vollständig, betriebsfähig,
-            gereinigt und einschließlich Zubehör zurückzugeben. Fehlteile werden
-            gesondert berechnet.
-          </p>
-          <p>
-            Bei verspäteter Rückgabe verlängert sich die Mietzeit bis zur
-            tatsächlichen Rückgabe. Eine stillschweigende Vertragsverlängerung
-            nach § 545 BGB wird ausgeschlossen.
-          </p>
-          <p>
-            Der Vermieter ist berechtigt, nach Beendigung des Mietverhältnisses
-            die Baustelle oder das Betriebsgelände des Mieters zu betreten und
-            die Geräte abzuholen.
-          </p>
-          <p>
-            Der Mieter ist verpflichtet, sämtliche Zubehörteile,
-            Betriebsanleitungen und Verpackungseinheiten vollständig
-            zurückzugeben. Fehlendes Zubehör wird gesondert in Rechnung
-            gestellt.
+            Für Verzögerungen aufgrund höherer Gewalt oder sonstiger bei
+            Vertragsschluss nicht vorhersehbarer und vom Vermieter nicht zu
+            vertretender Ereignisse, insbesondere behördlicher Maßnahmen,
+            rechtmäßiger Arbeitskampfmaßnahmen oder außergewöhnlicher und nicht
+            vom Vermieter zu vertretender Lieferkettenstörungen, haftet der
+            Vermieter nicht. Der Vermieter wird den Mieter über eine solche
+            Verzögerung und deren voraussichtliche Dauer unverzüglich
+            informieren.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-3xl mt-20 text-primary">
-            6. Mängelanzeige und Haftung des Vermieters
+            4. Mietzeit und Beendigung
           </h2>
           <p>
-            Der Mieter hat erkennbare Mängel unverzüglich nach Übergabe,
-            versteckte Mängel unverzüglich nach Entdeckung anzuzeigen.
-            Unterlässt er dies, sind Gewährleistungsrechte ausgeschlossen. Der
-            Vermieter haftet nur bei Vorsatz und grober Fahrlässigkeit.
+            Die Mietzeit beginnt zum vereinbarten Bereitstellungszeitpunkt,
+            sofern der Mietgegenstand vom Vermieter vertragsgemäß bereitgestellt
+            wird, und endet mit dem vereinbarten Rückgabetermin. Eine vom Mieter
+            zu vertretende verspätete Abholung oder Übernahme verschiebt den
+            Beginn der Mietzeit nicht.
           </p>
           <p>
-            Der Mieter ist berechtigt, den Mietgegenstand rechtzeitig vor
-            Mietbeginn zu besichtigen und etwaige Mängel zu rügen. Die Kosten
-            einer Untersuchung trägt der Mieter.
+            Ein auf bestimmte Zeit geschlossener Mietvertrag ist während der
+            vereinbarten Mietzeit nicht ordentlich kündbar. Das Recht beider
+            Vertragsparteien zur außerordentlichen Kündigung aus wichtigem Grund
+            bleibt unberührt.
           </p>
           <p>
-            Bei Überlassung erkennbare Mängel, welche den vorgesehenen Einsatz
-            nicht unerheblich beeinträchtigen, können nicht mehr gerügt werden,
-            wenn sie nicht unverzüglich nach Untersuchung in Textform gegenüber
-            dem Vermieter angezeigt worden sind. Sonstige bereits bei
-            Überlassung vorhandene Mängel sind unverzüglich nach Entdeckung in
-            Textform anzuzeigen.
+            Die vorzeitige Rückgabe des Mietgegenstandes durch den Mieter allein
+            führt nicht zu einer vorzeitigen Beendigung des Mietvertrages und
+            lässt die Verpflichtung zur Zahlung der vereinbarten Miete
+            grundsätzlich unberührt. Gesetzlich anzurechnende ersparte
+            Aufwendungen oder Vorteile aus einer anderweitigen Verwertung des
+            Mietgegenstandes bleiben unberührt.
           </p>
           <p>
-            Der Vermieter hat rechtzeitig gerügte Mängel, die bei Überlassung
-            vorhanden waren, auf eigene Kosten zu beseitigen. Nach Wahl des
-            Vermieters kann er die Beseitigung auch durch den Mieter vornehmen
-            lassen; dann trägt er die erforderlichen Kosten. Der Vermieter ist
-            auch berechtigt, dem Mieter einen funktionell gleichwertigen
-            Mietgegenstand zur Verfügung zu stellen, falls dem Mieter dies
-            zumutbar ist. Die Zahlungspflicht des Mieters verschiebt sich bei
-            wesentlichen Beeinträchtigungen des Mietgegenstandes um die Zeit, in
-            der die Tauglichkeit zum vertragsgemäßen Gebrauch aufgehoben ist.
-            Für die Zeit, während der die Tauglichkeit gemindert ist, hat der
-            Mieter nur eine angemessen herabgesetzte Miete zu entrichten. Eine
-            unerhebliche Minderung der Tauglichkeit bleibt außer Betracht.
+            § 545 BGB (stillschweigende Verlängerung des Mietverhältnisses)
+            findet keine Anwendung.
           </p>
           <p>
-            Lässt der Vermieter eine ihm gegenüber gesetzte angemessene
-            Nachfrist für die Beseitigung eines bei der Überlassung vorhandenen
-            Mangels durch sein Verschulden fruchtlos verstreichen, so hat der
-            Mieter ein Kündigungsrecht. Das Kündigungsrecht des Mieters besteht
-            auch in sonstigen Fällen des Fehlschlagens der Beseitigung eines bei
-            der Überlassung vorhandenen Mangels durch den Vermieter.
-          </p>
-          <p>
-            Schadensersatzansprüche wegen verspäteter Bereitstellung sind
-            ausgeschlossen, sofern dem Vermieter nicht grobe Fahrlässigkeit oder
-            Vorsatz nachgewiesen wird. Ersatz für Produktionsausfälle,
-            Bauverzögerungen oder entgangenen Gewinn ist ausgeschlossen.
-          </p>
-          <p>
-            Die Haftung des Vermieters ist auf den Zeitwert des Mietgegenstandes
-            beschränkt. Weitergehende Schadensersatzansprüche sind
-            ausgeschlossen.
+            Wird der Mietgegenstand nach Beendigung der Mietzeit nicht
+            rechtzeitig zurückgegeben, ist der Vermieter berechtigt, für die
+            Dauer der Vorenthaltung eine Nutzungsentschädigung in Höhe der
+            vereinbarten Miete oder, soweit höher, der für vergleichbare
+            Mietgegenstände üblichen Miete zu verlangen. Die Geltendmachung
+            eines weitergehenden Schadens bleibt vorbehalten. Eine Verlängerung
+            des Mietverhältnisses ist damit nicht verbunden.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">7. Obhut & Pflichten des Mieters</h2>
+          <h2 className="text-3xl mt-20 text-primary">
+            5. Rückgabe des Mietgegenstandes
+          </h2>
           <p>
-            Der Mieter hat den Mietgegenstand vor Überbeanspruchung und
-            Witterungseinflüssen zu schützen, ihn ordnungsgemäß zu sichern und
-            Betriebsstoffe sachgerecht zu verwenden. Reparaturen dürfen nur
-            durch den Vermieter oder dessen Beauftragte vorgenommen werden.
-          </p>
-          <div>
-            <p>Der Mieter ist verpflichtet,</p>
-            <ul className="list-disc list-inside py-2 space-y-1">
-              <li>
-                den Mietgegenstand vor Überbeanspruchung in jeder Weise zu
-                schützen;
-              </li>
-              <li>
-                die sach- und fachgerechte Wartung und Pflege des
-                Mietgegenstandes auf seine Kosten durchzuführen;
-              </li>
-              <li>
-                notwendige Inspektions- und Instandsetzungsarbeiten rechtzeitig
-                anzukündigen und unverzüglich durch den Vermieter ausführen zu
-                lassen. Die Kosten trägt der Vermieter, wenn der Mieter und
-                seine Hilfspersonen nachweislich jede gebotene Sorgfalt beachtet
-                haben.
-              </li>
-              <li>
-                alle für die Benutzung maßgeblichen Vorschriften und technischen
-                Regeln zu beachten und insbesondere vor Inbetriebnahme die
-                jeweilige Betriebsanleitung zu lesen und sich mit dem
-                ordnungsgemäßen Umgang vertraut zu machen.
-              </li>
-            </ul>
-          </div>
-          <p>
-            Der Vermieter ist berechtigt, den Mietgegenstand jederzeit zu
-            besichtigen und, nach vorheriger Abstimmung mit dem Mieter, selbst
-            zu untersuchen oder durch einen Beauftragten untersuchen zu lassen.
-            Der Mieter ist verpflichtet, dem Vermieter bzw. dessen Beauftragten
-            die Untersuchung in jeder Weise zu erleichtern. Die Kosten der
-            Untersuchung trägt der Vermieter.
+            Der Mieter hat den Mietgegenstand nach Beendigung der Mietzeit
+            vollständig, gereinigt und in dem Zustand zurückzugeben, der sich
+            bei vertragsgemäßem Gebrauch unter Berücksichtigung der gewöhnlichen
+            Abnutzung ergibt. Soweit der Mietgegenstand vollgetankt übergeben
+            wurde, ist er vollgetankt zurückzugeben.
           </p>
           <p>
-            Geräte dürfen nur am vereinbarten Einsatzort genutzt werden. Ein
-            Einsatz im Ausland oder auf nicht vereinbarten Baustellen ist nur
-            mit schriftlicher Zustimmung des Vermieters zulässig.
+            Mitüberlassene Zubehörteile, Schlüssel, Unterlagen, Transport- oder
+            Verpackungseinrichtungen und sonstige Bestandteile sind vollständig
+            zurückzugeben. Fehlende oder beschädigte Teile werden dem Mieter in
+            Höhe der erforderlichen Wiederbeschaffungs- bzw. Reparaturkosten in
+            Rechnung gestellt, soweit der Mieter deren Fehlen oder Beschädigung
+            zu vertreten hat.
           </p>
           <p>
-            Der Mieter ist verpflichtet, täglich vor Inbetriebnahme eine
-            Funktions- und Sichtprüfung durchzuführen. Unterlassene Prüfungen
-            führen zur vollen Haftung des Mieters. Der Standort des
-            Mietgegenstandes ist dem Vermieter jederzeit mitzuteilen.
-            Standortwechsel sind unverzüglich anzuzeigen.
+            Der Vermieter ist berechtigt, den Zustand des Mietgegenstandes bei
+            Rückgabe in einem Rückgabeprotokoll sowie durch Foto- oder
+            Videoaufnahmen zu dokumentieren. Erkennbare Schäden, Fehlteile und
+            sonstige Abweichungen vom vertragsgemäßen Zustand können darin
+            festgehalten werden. Die Geltendmachung von bei der Rückgabe nicht
+            erkennbaren Schäden bleibt unberührt.
           </p>
           <p>
-            Bei Selbstabholung ist der Mieter allein verantwortlich für die
-            Ladungssicherung gemäß § 22 StVO.
+            Nach Beendigung des Mietverhältnisses hat der Mieter die
+            unverzügliche Rückgabe bzw. Abholung des Mietgegenstandes zu
+            ermöglichen. Befindet sich der Mietgegenstand auf einem Grundstück
+            oder Betriebsgelände, über das der Mieter verfügen kann, hat er dem
+            Vermieter oder dessen Beauftragten nach vorheriger Abstimmung den
+            zur Abholung erforderlichen Zugang zu ermöglichen. Befindet sich der
+            Mietgegenstand auf einem Grundstück eines Dritten, hat der Mieter
+            auf eigene Verantwortung die zur Abholung erforderliche Zustimmung
+            und Zugangsmöglichkeit sicherzustellen.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-3xl mt-20 text-primary">
+            6. Mängelanzeige und Mängelrechte
+          </h2>
+          <p>
+            Der Mieter hat erkennbare Mängel unverzüglich nach Übergabe sowie
+            später auftretende oder zunächst nicht erkennbare Mängel
+            unverzüglich nach deren Feststellung dem Vermieter anzuzeigen.
+          </p>
+          <p>
+            Unterlässt der Mieter schuldhaft eine erforderliche Mängelanzeige,
+            haftet er für die hierdurch entstehenden Schäden. Soweit der
+            Vermieter infolge der unterlassenen oder verspäteten Anzeige keine
+            oder nicht rechtzeitig Abhilfe schaffen konnte, sind die
+            gesetzlichen Rechte des Mieters wegen des Mangels entsprechend
+            eingeschränkt.
+          </p>
+          <p>
+            Dem Mieter bei Vertragsschluss oder Übergabe bekannte Mängel richten
+            sich hinsichtlich ihrer Rechtsfolgen nach den gesetzlichen
+            Bestimmungen. Nimmt der Mieter den Mietgegenstand in Kenntnis eines
+            Mangels an, soll der Mangel bei Übergabe dokumentiert und ein
+            etwaiger Vorbehalt von Mängelrechten festgehalten werden.
+          </p>
+          <p>
+            Mängel, die der Mieter nicht zu vertreten hat und die den
+            vertragsgemäßen Gebrauch beeinträchtigen, wird der Vermieter
+            innerhalb angemessener Frist beseitigen. Der Vermieter ist
+            berechtigt, anstelle einer Reparatur einen für den vereinbarten
+            Einsatzzweck funktionell gleichwertigen Mietgegenstand zur Verfügung
+            zu stellen, soweit dies dem Mieter zumutbar ist.
+          </p>
+          <p>
+            Für die Dauer einer erheblichen Beeinträchtigung des vertragsgemäßen
+            Gebrauchs richten sich die Rechte des Mieters auf Herabsetzung oder
+            Wegfall der Mietzahlung nach den gesetzlichen Bestimmungen. Eine
+            unerhebliche Beeinträchtigung bleibt außer Betracht.
+          </p>
+          <p>
+            Wird ein erheblicher Mangel trotz angemessener Frist zur Abhilfe
+            nicht beseitigt und ist dem Mieter die Fortsetzung des
+            Mietverhältnisses nicht zumutbar, richten sich seine
+            Kündigungsrechte nach den gesetzlichen Bestimmungen. Eine
+            Fristsetzung ist nicht erforderlich, soweit sie gesetzlich
+            entbehrlich ist.
+          </p>
+          <p>
+            Schadensersatzansprüche des Mieters wegen eines Mangels richten sich
+            nach den Haftungsregelungen dieser Mietbedingungen.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-3xl mt-20 text-primary">
+            7. Obhut und Pflichten des Mieters
+          </h2>
+          <p>
+            Der Mieter hat den Mietgegenstand vor Überbeanspruchung,
+            unsachgemäßer Verwendung, Beschädigung und vermeidbaren schädlichen
+            Witterungseinflüssen zu schützen und ihn ordnungsgemäß zu sichern.
+            Es dürfen ausschließlich für den jeweiligen Mietgegenstand geeignete
+            Betriebs-, Kraft- und Schmierstoffe verwendet werden.
+          </p>
+          <p>
+            Der Mieter hat die nach Betriebsanleitung während des laufenden
+            Einsatzes erforderlichen Bedienungs-, Kontroll- und Pflegehandlungen
+            ordnungsgemäß durchzuführen. Hierzu gehören insbesondere
+            vorgeschriebene Sicht- und Funktionskontrollen sowie die Kontrolle
+            und erforderlichenfalls das Nachfüllen der vom Mieter verbrauchten
+            Betriebsstoffe.
+          </p>
+          <p>
+            Vor jeder Inbetriebnahme hat der Mieter bzw. die von ihm eingesetzte
+            Bedienperson eine angemessene Sicht- und Funktionskontrolle des
+            Mietgegenstandes durchzuführen. Bei erkennbaren
+            sicherheitsrelevanten Mängeln, ungewöhnlichen Betriebszuständen oder
+            dem Austritt von Kraftstoff, Motor-, Hydraulik- oder sonstigen
+            Betriebsstoffen ist der Betrieb unverzüglich einzustellen, der
+            Mietgegenstand gegen weitere Nutzung zu sichern und der Vermieter
+            unverzüglich zu informieren. Erforderliche und zumutbare
+            Sofortmaßnahmen zur Vermeidung einer Schadensausweitung sind zu
+            treffen.
+          </p>
+          <p>
+            Reparaturen, technische Veränderungen, Umbauten oder sonstige
+            Eingriffe in den Mietgegenstand dürfen nur durch den Vermieter oder
+            durch von ihm autorisierte Personen vorgenommen werden. Der Mieter
+            darf ohne vorherige Zustimmung des Vermieters lediglich solche
+            Sofortmaßnahmen durchführen, die zur Abwehr einer unmittelbar
+            drohenden Gefahr oder zur Verhinderung einer weiteren
+            Schadensausweitung erforderlich sind. Der Vermieter ist hierüber
+            unverzüglich zu informieren.
+          </p>
+          <p>
+            Regelmäßige Wartungs-, Inspektions- und Instandsetzungsarbeiten am
+            Mietgegenstand werden grundsätzlich durch den Vermieter oder dessen
+            Beauftragte durchgeführt. Die hierdurch entstehenden Kosten trägt
+            der Vermieter, soweit die Arbeiten nicht aufgrund eines vom Mieter
+            zu vertretenden Schadens, einer Fehlbedienung, Überbeanspruchung
+            oder Verletzung seiner vertraglichen Pflichten erforderlich werden.
+          </p>
+          <p>
+            Erforderliche Wartungs-, Inspektions- oder Instandsetzungsarbeiten
+            sowie auftretende Störungen oder ungewöhnliche Betriebszustände sind
+            dem Vermieter unverzüglich anzuzeigen. Der Mieter hat dem Vermieter
+            die Durchführung der erforderlichen Arbeiten zu ermöglichen.
+          </p>
+          <p>
+            Der Mieter hat sämtliche für die Benutzung maßgeblichen gesetzlichen
+            Vorschriften, Unfallverhütungsvorschriften, technischen Regeln und
+            Herstellervorgaben einzuhalten. Vor der erstmaligen Inbetriebnahme
+            hat sich die Bedienperson mit der Betriebsanleitung und dem
+            ordnungsgemäßen und sicheren Umgang mit dem Mietgegenstand vertraut
+            zu machen.
+          </p>
+          <p>
+            Der Vermieter ist berechtigt, den Mietgegenstand nach vorheriger
+            Abstimmung während der üblichen Betriebs- bzw. Einsatzzeiten selbst
+            zu besichtigen und zu untersuchen oder durch einen Beauftragten
+            besichtigen und untersuchen zu lassen. Der Mieter hat den
+            erforderlichen Zugang zum Mietgegenstand zu ermöglichen und die
+            Untersuchung in zumutbarer Weise zu unterstützen. Bei Gefahr im
+            Verzug oder bei konkreten Anhaltspunkten für eine erhebliche
+            Beschädigung oder sicherheitsrelevante Störung ist eine vorherige
+            Abstimmung nicht erforderlich. Die Kosten einer regulären
+            Untersuchung trägt der Vermieter. Beruht die erforderliche
+            Untersuchung auf einer vom Mieter zu vertretenden Pflichtverletzung,
+            kann der Vermieter die hierdurch verursachten erforderlichen Kosten
+            nach den gesetzlichen Vorschriften geltend machen.
+          </p>
+          <p>
+            Der Mietgegenstand darf ausschließlich am vereinbarten Einsatzort
+            eingesetzt werden. Jeder Wechsel des Einsatzortes bedarf der
+            vorherigen Zustimmung des Vermieters in Textform. Ein Einsatz
+            außerhalb der Bundesrepublik Deutschland bedarf ebenfalls der
+            vorherigen ausdrücklichen Zustimmung des Vermieters in Textform. Der
+            Mieter hat dem Vermieter auf Verlangen unverzüglich den aktuellen
+            Standort des Mietgegenstandes mitzuteilen.
+          </p>
+          <p>
+            Bei Selbstabholung hat der Mieter sicherzustellen, dass das
+            eingesetzte Transportfahrzeug einschließlich etwaiger Anhänger
+            hinsichtlich Tragfähigkeit, Abmessungen und zulässiger Gesamtmasse
+            für den Transport des Mietgegenstandes geeignet und zulässig ist.
+            Der Mieter ist für eine ordnungsgemäße Ladungssicherung gemäß § 22
+            StVO und den anerkannten Regeln der Technik verantwortlich, soweit
+            die Verladung und Ladungssicherung seinem Verantwortungsbereich
+            unterliegen. Zwingende gesetzliche Verantwortlichkeiten anderer
+            Beteiligter bleiben unberührt. Der Mieter haftet für Schäden, die
+            durch eine von ihm zu vertretende ungeeignete Transportweise oder
+            unzureichende Ladungssicherung verursacht werden.
           </p>
         </section>
 
@@ -326,397 +404,545 @@ export const b2bPageData = {
           </h2>
           <p>
             Die Abrechnung erfolgt nach der vereinbarten Abrechnungseinheit
-            (Tag, Woche, Monat).
+            (Tag, Woche oder Monat).
           </p>
           <p>
-            Der Mietpreis ist im Voraus zu zahlen, außer es wurden schriftlich
-            abweichende Regelungen getroffen. Transport, Betriebsstoffe,
-            Reinigungskosten und Nebenkosten sind gesondert zu zahlen.
+            Der Tagesmietpreis umfasst eine Nutzung von bis zu 8 Betriebsstunden
+            je Miettag. Eine Wochenmiete umfasst bis zu fünf Nutzungstage und
+            insgesamt bis zu 40 Betriebsstunden. Darüber hinausgehende
+            Betriebsstunden sowie eine vereinbarte Nutzung an zusätzlichen Tagen
+            werden nach den im Mietvertrag oder in der bei Vertragsschluss
+            einbezogenen Preisliste ausgewiesenen Sätzen zusätzlich berechnet.
+            Der Mieter hat eine Überschreitung der vereinbarten Betriebsstunden
+            unverzüglich in Textform anzuzeigen.
           </p>
           <p>
-            Der Berechnung der Miete liegt eine Arbeitszeit bis zu 8 Stunden
-            täglich zugrunde (kalendertägliche Tagesmiete). Die Abrechnung
-            erfolgt auf der Basis der Fünf-Tage-Woche (Montag bis
-            Freitagnachmittag). Wochenendarbeiten, zusätzliche Arbeitsstunden
-            und erschwerte Einsätze sind dem Vermieter in Textform anzuzeigen;
-            sie werden zusätzlich berechnet.
+            Der vereinbarte Mietpreis umfasst ausschließlich die Überlassung des
+            Mietgegenstandes, soweit nicht ausdrücklich etwas Abweichendes
+            vereinbart ist. Kosten für An- und Abtransport, Auf- und Abladen,
+            vom Mieter verbrauchte Kraft- und Betriebsstoffe, Betankung sowie
+            sonstige ausdrücklich vereinbarte Nebenleistungen werden gesondert
+            berechnet. Reinigungskosten werden dem Mieter berechnet, soweit der
+            Mietgegenstand nicht im vertraglich geschuldeten gereinigten Zustand
+            zurückgegeben wird.
           </p>
           <p>
-            Der vereinbarte Mietpreis versteht sich nur für das Gerät. Der
-            Mieter hat sämtliche Nebenkosten (insbesondere die Kosten für Auf-
-            und Abladen, Transport, Betriebsstoffe, Reinigung, etc.) jeweils
-            gesondert zu zahlen. Alle gegenüber dem Mieter als Verbraucher
-            angegebenen Preise verstehen sich einschließlich der jeweils
-            geltenden Umsatzsteuer. Der Vermieter ist berechtigt, vom Mieter
-            jederzeit eine angemessene Vorauszahlung des Mietpreises zu
-            verlangen. Der Vermieter ist berechtigt, vom Mieter jederzeit eine
-            angemessene unverzinsliche Kaution als Sicherheit zu verlangen.
+            Sämtliche Preisangaben verstehen sich, soweit nicht ausdrücklich
+            anders angegeben, als Nettopreise zuzüglich der jeweils geltenden
+            gesetzlichen Umsatzsteuer.
           </p>
           <p>
-            Alle Preisangaben sind Nettopreise zzgl. der gesetzlichen
-            Umsatzsteuer.
-          </p>
-          <p>
-            Verbrauchs- und Verschleißteile (z. B. Gummiketten, Schläuche,
-            Filter) sind vom Mieter während der Mietzeit auf eigene Kosten zu
-            ersetzen.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">9. Kaution, Sicherheiten, Verzug</h2>
-          <p>
-            Der Vermieter kann bei Vertragsschluss eine Kaution verlangen. Diese
-            dient der Sicherung sämtlicher Ansprüche. Gerät der Mieter in
-            Verzug, schuldet er Verzugszinsen in gesetzlicher Höhe.
-          </p>
-          <p>
-            Die Kaution wird nicht verzinst. Sie wird erst nach vollständiger
-            Rückgabe und Begleichung sämtlicher Forderungen zurückgezahlt.
-          </p>
-          <p>
-            Gerät der Mieter mehr als 14 Tage in Verzug, ist der Vermieter zur
-            fristlosen Kündigung berechtigt und kann den Mietgegenstand sofort
-            zurückfordern.
-          </p>
-          <p>
-            Bei Zahlungsverzug oder nicht eingelösten Lastschriften ist der
-            Vermieter berechtigt, die Geräte ohne gerichtliche Entscheidung
-            wieder an sich zu nehmen. Der Mieter hat den Zutritt zu ermöglichen.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">10. Schäden am Mietgegenstand</h2>
-          <p>Der Mieter hat Schäden und Unfälle unverzüglich anzuzeigen.</p>
-          <p>
-            Bei Diebstahl oder Beschädigung durch Dritte ist sofort die Polizei
-            einzuschalten.
-          </p>
-          <p>
-            Der Mieter haftet für alle Schäden, soweit er sie zu vertreten hat.
-          </p>
-          <p>
-            Der Mieter ist verpflichtet, die beabsichtigte Rücklieferung des
-            Mietgegenstandes dem Vermieter rechtzeitig vorher anzuzeigen
-            (Freimeldung). Die Obhutspflicht des Mieters bleibt bis zur
-            tatsächlichen Rückgabe des Mietgegenstandes bestehen.
-          </p>
-          <p>
-            Die Mietzeit endet an dem Tag, an dem der Mietgegenstand mit allen
-            zu seiner Inbetriebnahme erforderlichen Teilen in ordnungs- und
-            vertragsmäßigem Zustand auf dem Lagerplatz des Vermieters oder einem
-            vereinbarten anderen Bestimmungsort eintrifft, frühestens jedoch mit
-            Ablauf der vereinbarten Mietzeit.
-          </p>
-          <p>
-            Der Mieter hat den Mietgegenstand in betriebsfähigem, vollgetanktem
-            und gereinigtem Zustand zurückzuliefern oder zur Abholung
-            bereitzuhalten.
-          </p>
-          <p>
-            Die Rücklieferung hat während der normalen Geschäftszeit des
-            Vermieters so rechtzeitig zu erfolgen, dass der Vermieter in der
-            Lage ist, den Mietgegenstand noch an diesem Tag zu prüfen.
-          </p>
-          <p>
-            Schäden durch Umkippen, falsche Bedienung, Überlastung, unsachgemäße
-            Wartung oder Nutzung unter Alkohol-/Drogeneinfluss sind von jeder
-            Haftungsbeschränkung ausgenommen.
-          </p>
-          <p>
-            Bei Obliegenheitsverletzungen – insbesondere Bedienung durch
-            Unbefugte, Manipulation von Sicherheitseinrichtungen oder
-            Missachtung der Betriebsanleitung – entfällt der Versicherungsschutz
-            vollständig.
-          </p>
-          <p>
-            Sollte es dem Mieter schuldhaft oder aus technisch zwingenden
-            Gründen unmöglich sein, die ihm obliegende Verpflichtung zur
-            Rückgabe des Mietgegenstandes einzuhalten, so ist er zum
-            Schadenersatz verpflichtet.
-          </p>
-          <p>
-            Wird der Mietgegenstand in einem Zustand zurückgeliefert, der
-            ergibt, dass der Mieter seiner vorgesehenen Unterhaltspflicht nicht
-            nachgekommen ist, so besteht eine Zahlungspflicht des Mieters in
-            Höhe des monatlichen Mietpreises als Entschädigung bis zur
-            Beendigung der vertragswidrig unterlassenen
-            Instandsetzungsarbeiten.{" "}
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">11. Weitere Pflichten des Mieters</h2>
-          <p>
-            Sollte ein Dritter durch Beschlagnahme, Pfändung oder dergleichen,
-            Rechte an dem Mietgegenstand geltend machen, so ist der Mieter
-            verpflichtet, dem Vermieter unverzüglich in Textform und vorab
-            mündlich Anzeige zu erstatten und den Dritten hiervon unverzüglich
-            durch nachweisbare Mitteilung in Textform zu benachrichtigen.
-          </p>
-          <p>
-            Der Mieter hat insbesondere geeignete Maßnahmen zur Sicherung gegen
-            Diebstahl, Beschädigung und unbefugter Inbetriebnahme des
-            Mietgegenstandes zu treffen. Sollte die Diebstahlsicherung
-            nachweislich nicht eingehalten worden sein, entsteht eine
-            Selbstbeteiligung von 10% des Gerätewerts.
-          </p>
-          <p>
-            Der Mieter hat den Vermieter bei allen Unfällen zu unterrichten,
-            eine möglichst lückenlose Schadensaufnahme zur bestmöglichen
-            Beweissicherung vorzunehmen und dessen Weisungen abzuwarten. Bei
-            Verkehrsunfällen und beim Verdacht von Straftaten (z. B. Diebstahl,
-            Sachbeschädigung) ist die Polizei hinzuzuziehen.
+            Die während der Mietzeit durch den bestimmungsgemäßen Betrieb
+            verbrauchten Kraft- und Betriebsstoffe trägt der Mieter. Die Kosten
+            des gewöhnlichen, vertragsgemäßen Verschleißes des Mietgegenstandes
+            trägt der Vermieter. Übermäßiger oder außergewöhnlicher Verschleiß
+            sowie Beschädigungen von Verschleißteilen, die auf eine vom Mieter
+            zu vertretende unsachgemäße Nutzung, Fehlbedienung,
+            Überbeanspruchung oder sonstige Pflichtverletzung zurückzuführen
+            sind, werden dem Mieter in Rechnung gestellt.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-3xl mt-20 text-primary">
-            12. Versicherung & Haftungsbegrenzung
+            9. Kaution, Sicherheiten und Zahlungsverzug
           </h2>
           <p>
-            Der Vermieter bietet gegen gesondertes Entgelt eine
-            Maschinenbruchversicherung (MBV) an. Reifen- und Glasbruchschäden
-            sind ausgeschlossen. Die Versicherungsleistung besteht nur bei
-            Einhaltung der Sicherungspflichten.
+            Der Vermieter ist berechtigt, bei Vertragsschluss eine angemessene
+            Kaution zu verlangen. Die Höhe der Kaution wird im Mietvertrag oder
+            in der Auftragsbestätigung festgelegt. Die Kaution dient der
+            Sicherung sämtlicher Ansprüche des Vermieters gegen den Mieter aus
+            und im Zusammenhang mit dem jeweiligen Mietverhältnis. Der Vermieter
+            kann die Übergabe des Mietgegenstandes von der vollständigen
+            Leistung der vereinbarten Kaution abhängig machen.
           </p>
-          <div>
-            <p>
-              Vermieter, insbesondere ein Ersatz von Schäden, die nicht am
-              Mietgegenstand selbst entstanden sind, können vom Mieter nur
-              geltend gemacht werden bei:
-            </p>
-            <ul className="list-disc list-inside py-2 space-y-1">
-              <li>einer vorsätzlichen Pflichtverletzung des Vermieters;</li>
-              <li>
-                einer grob fahrlässigen Pflichtverletzung des Vermieters oder
-                bei einer vorsätzlichen oder grob fahrlässigen Pflichtverletzung
-                eines gesetzlichen Vertreters oder Erfüllungsgehilfen des
-                Vermieters;{" "}
-              </li>
-              <li>
-                der schuldhaften Verletzung wesentlicher Vertragspflichten
-                soweit die Erreichung des Vertragszwecks gefährdet wird,
-                hinsichtlich des vertragstypischen, voraussehbaren Schadens;
-              </li>
-              <li>
-                Schäden aus der Verletzung des Lebens, des Körpers oder der
-                Gesundheit, die auf einer fahrlässigen Pflichtverletzung des
-                Vermieters oder einer vorsätzlichen oder fahrlässigen
-                Pflichtverletzung eines gesetzlichen Vertreters oder
-                Erfüllungsgehilfen des Vermieters beruhen;
-              </li>
-              <li>
-                falls der Vermieter nach Produkthaftungsgesetz für
-                Personenschäden oder Sachschäden an privat genutzten
-                Gegenständen haftet.
-              </li>
-            </ul>
-            <p>
-              Im Übrigen ist die Schadensersatzhaftung ausgeschlossen. Wenn
-              durch das Verschulden des Vermieters der Mietgegenstand vom Mieter
-              infolge unterlassener oder fehlerhafter Ausführung von vor oder
-              nach Vertragsabschluss liegenden Vorschlägen und Beratungen sowie
-              anderen vertraglichen Nebenverpflichtungen – insbesondere
-              Anleitung für Bedienung und Wartung des Mietgegenstandes – nicht
-              vertragsgemäß verwendet werden kann, so gelten unter Ausschluss
-              weiterer Ansprüche des Mieters aus anderen, entsprechenden
-              Regelungen
-            </p>
-            <p>
-              Im Schadenfall bestimmt der Vermieter den Gutachter; die Kosten
-              trägt der Mieter.
-            </p>
-            <p>
-              Befindet sich der Mietgegenstand im Obhutsbereich des Mieters,
-              trägt dieser die volle Beweislast, dass ihn kein Verschulden
-              trifft.
-            </p>
-            <p>
-              Besteht eine eigene Versicherung des Mieters, geht diese der
-              Vermieterversicherung vor.
-            </p>
-            <p>
-              Besteht eine anderweitige Versicherung des Mieters, geht diese
-              vor.
-            </p>
-            <p>
-              Die Selbstbeteiligung richtet sich nach unserer Gerätekategorie
-              (Bagger- und Radlader) und beläuft sich auf eine Summe von
-              1.000,00 Euro im Schadensfall.
-            </p>
-          </div>
+          <p>
+            Die Kaution wird nicht verzinst. Nach Rückgabe des Mietgegenstandes
+            und Abrechnung des Mietverhältnisses wird die Kaution zurückgezahlt,
+            soweit sie nicht zur Sicherung bestehender Ansprüche des Vermieters
+            benötigt wird. Der Vermieter ist berechtigt, fällige Ansprüche gegen
+            den Rückzahlungsanspruch des Mieters aufzurechnen. Soweit die Höhe
+            eines möglichen Anspruchs, insbesondere wegen eines noch zu
+            prüfenden Schadens, bei Rückgabe noch nicht abschließend
+            festgestellt werden kann, darf ein angemessener Teil der Kaution bis
+            zur Klärung zurückbehalten werden.
+          </p>
+          <p>
+            Gerät der Mieter mit einer Entgeltforderung in Zahlungsverzug,
+            schuldet er Verzugszinsen und die gesetzliche Verzugspauschale in
+            der jeweils gesetzlichen Höhe. Die Geltendmachung eines
+            weitergehenden Verzugsschadens bleibt unberührt.
+          </p>
+          <p>
+            Weitergehende Rechte des Vermieters, insbesondere das Recht zur
+            außerordentlichen fristlosen Kündigung nach Punkt 14 dieser
+            Mietbedingungen, bleiben unberührt.
+          </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">13. Vertragskündigung</h2>
+          <h2 className="text-3xl mt-20 text-primary">
+            10. Schäden am Mietgegenstand
+          </h2>
           <p>
-            Nach Ablauf einer Mindestmietzeit kann das Mietverhältnis mit einer
-            Frist gekündigt werden, die sich nach der Abrechnungseinheit
-            richtet.{" "}
+            Der Mieter hat jeden Schaden, Unfall, Verlust oder sonstigen
+            außergewöhnlichen Vorfall im Zusammenhang mit dem Mietgegenstand dem
+            Vermieter unverzüglich anzuzeigen. Die Meldung kann bei besonderer
+            Dringlichkeit zunächst mündlich erfolgen und ist anschließend
+            unverzüglich in Textform zu bestätigen. Der Mieter hat den Schaden
+            nach Möglichkeit durch aussagekräftige Fotos zu dokumentieren und
+            dem Vermieter alle zur Aufklärung des Schadenhergangs erforderlichen
+            Informationen mitzuteilen.
+          </p>
+          <p>
+            Bei Diebstahl, Unterschlagung, Raub, Einbruch, Vandalismus oder
+            sonstigem Verdacht einer Straftat ist unverzüglich die Polizei zu
+            verständigen und Anzeige zu erstatten. Bei einer Beschädigung durch
+            einen bekannten Dritten hat der Mieter dessen Personalien, Anschrift
+            und – soweit vorhanden – Versicherungsdaten festzuhalten.
+          </p>
+          <p>
+            Der Mieter haftet nach den gesetzlichen Vorschriften für Schäden,
+            Verlust oder Zerstörung des Mietgegenstandes, soweit er diese zu
+            vertreten hat. Das Verschulden seiner gesetzlichen Vertreter,
+            Mitarbeiter und sonstigen Personen, deren er sich zur Erfüllung
+            seiner Verpflichtungen aus dem Mietverhältnis bedient, wird ihm nach
+            den gesetzlichen Vorschriften zugerechnet. Schäden aufgrund
+            gewöhnlicher Abnutzung durch vertragsgemäßen Gebrauch hat der Mieter
+            nicht zu vertreten.
+          </p>
+          <p>
+            Die Auswirkungen einer vorsätzlichen oder grob fahrlässigen
+            Schadenverursachung sowie einer erheblichen Verletzung der
+            vereinbarten Nutzungs-, Bedienungs-, Obhuts- oder
+            Sicherungspflichten auf eine zugunsten des Mieters vereinbarte
+            Haftungsbegrenzung richten sich ausschließlich nach Punkt 12 dieser
+            Mietbedingungen. Eine etwaige Versicherungsdeckung richtet sich
+            ausschließlich nach den Bedingungen des jeweils bestehenden
+            Versicherungsvertrages. Die vertragliche Haftung des Mieters wird
+            hiervon nicht berührt, soweit in diesen Mietbedingungen nicht
+            ausdrücklich eine Haftungsbegrenzung vereinbart ist.
+          </p>
+          <p>
+            Der Mieter darf ohne vorherige Zustimmung des Vermieters keine
+            Reparaturen in Auftrag geben oder durchführen lassen, soweit nicht
+            eine sofortige Maßnahme zur Gefahrenabwehr oder Verhinderung einer
+            weiteren Schadensausweitung erforderlich ist. Der Mieter hat den
+            Weisungen des Vermieters zur Schadenfeststellung und
+            Schadenabwicklung Folge zu leisten, soweit diese für ihn zumutbar
+            sind.
+          </p>
+          <p>
+            Soweit der Mieter für einen Schaden am Mietgegenstand einzustehen
+            hat, umfasst seine Ersatzpflicht nach den gesetzlichen Vorschriften
+            insbesondere die erforderlichen und angemessenen Kosten der
+            Schadenfeststellung, Bergung, Abschleppung bzw. des Transports,
+            Reparatur sowie eine durch den Schaden verursachte Wertminderung.
+            Ein nachweislich durch die schadensbedingte Nichtverfügbarkeit des
+            Mietgegenstandes entstandener Mietausfall oder sonstiger
+            Nutzungsausfallschaden kann im gesetzlich zulässigen Umfang
+            ebenfalls geltend gemacht werden. Ersparte Aufwendungen und
+            anderweitig erzielte Einnahmen sind anzurechnen, soweit dies
+            gesetzlich erforderlich ist.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-3xl mt-20 text-primary">
+            11. Weitere Sicherungs- und Mitwirkungspflichten des Mieters
+          </h2>
+          <p>
+            Wird der Mietgegenstand von einer Pfändung, Beschlagnahme,
+            Arrestanordnung oder einer sonstigen Maßnahme eines Dritten
+            betroffen oder macht ein Dritter Rechte an dem Mietgegenstand
+            geltend, hat der Mieter den Vermieter unverzüglich zunächst mündlich
+            und anschließend in Textform zu informieren. Vorhandene Unterlagen
+            über die Maßnahme sind dem Vermieter unverzüglich zu übermitteln.
+            Der Mieter hat den Dritten nachweisbar darauf hinzuweisen, dass der
+            Mietgegenstand im Eigentum des Vermieters steht.
+          </p>
+          <p>
+            Der Mieter hat den Mietgegenstand entsprechend Art, Wert und
+            Einsatzort angemessen gegen Diebstahl, unbefugte Benutzung und
+            Beschädigung zu sichern. Insbesondere sind bei unbeaufsichtigtem
+            Abstellen vorhandene Schließ-, Wegfahr- und sonstige
+            Diebstahlsicherungen zu verwenden, Schlüssel und sonstige
+            Zugangsmittel vom Mietgegenstand zu entfernen und sicher
+            aufzubewahren.
+          </p>
+          <p>
+            Verletzt der Mieter diese Sicherungspflichten schuldhaft und wird
+            hierdurch ein Diebstahl, eine Entwendung oder eine Beschädigung
+            verursacht oder wesentlich begünstigt, haftet er nach den
+            gesetzlichen Vorschriften. Die Auswirkungen einer solchen
+            Pflichtverletzung auf eine zugunsten des Mieters vereinbarte
+            Haftungsbegrenzung richten sich nach Punkt 12 dieser
+            Mietbedingungen.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-3xl mt-20 text-primary">
+            12. Mietbruchschutz und Haftungsbegrenzung
+          </h2>
+          <p>
+            Der Vermieter gewährt dem Mieter für den Mietgegenstand einen
+            vertraglichen Mietbruchschutz in Form einer Haftungsbegrenzung für
+            Beschädigung, Zerstörung oder Verlust des Mietgegenstandes, soweit
+            der Mieter hierfür nach diesen Mietbedingungen oder den gesetzlichen
+            Vorschriften einzustehen hat. Dies umfasst auch einen Verlust
+            infolge Diebstahls, soweit der Mieter diesen zu vertreten hat.
+          </p>
+          <p>
+            Für den Mietbruchschutz wird ein gesondertes Entgelt in Höhe von 10
+            % des jeweiligen Nettomietpreises berechnet. Das Entgelt wird im
+            Mietvertrag oder in der Auftragsbestätigung gesondert ausgewiesen
+            und in der Rechnung gesondert abgerechnet.
+          </p>
+          <p>
+            Der Mietbruchschutz stellt keine Versicherung des Mieters dar und
+            begründet keinen unmittelbaren Anspruch des Mieters gegen einen
+            Versicherer. Eine etwaige Versicherung des Vermieters betrifft
+            ausschließlich das Rechtsverhältnis zwischen Vermieter und
+            Versicherer.
+          </p>
+          <p>
+            Bei bestehendem Mietbruchschutz beträgt der vom Mieter zu tragende
+            Selbstbehalt 1.000,00 EUR je Schadensfall, höchstens jedoch die Höhe
+            des aus dem jeweiligen Schadensfall entstandenen ersatzfähigen
+            Schadens.
+          </p>
+          <p>
+            Als Schadensfall gilt jedes einzelne zeitlich und ursächlich
+            zusammenhängende Schadenereignis. Mehrere voneinander unabhängige
+            Schadenereignisse gelten als mehrere Schadensfälle, auch wenn sie
+            während derselben Mietzeit eintreten oder erst gemeinsam bei
+            Rückgabe des Mietgegenstandes festgestellt werden. Für jeden
+            Schadensfall fällt der Selbstbehalt von 1.000,00 EUR gesondert an.
+            Mehrere Beschädigungen, die auf demselben einheitlichen
+            Schadenereignis beruhen, gelten dagegen als ein Schadensfall. Die
+            gesetzlichen Regelungen über die Darlegungs- und Beweislast bleiben
+            unberührt.
+          </p>
+          <p>
+            Reifen- und Glasschäden sind vom Mietbruchschutz nicht umfasst,
+            soweit im Mietvertrag nicht ausdrücklich etwas Abweichendes
+            vereinbart ist. Für solche Schäden haftet der Mieter nach den
+            allgemeinen Regelungen, soweit er den Schaden zu vertreten hat.
+          </p>
+          <p>
+            Die Haftungsbegrenzung entfällt bei vorsätzlicher
+            Schadenverursachung. Bei grob fahrlässiger Schadenverursachung oder
+            grob fahrlässiger Verletzung einer für den Schaden ursächlichen
+            Nutzungs-, Bedienungs-, Obhuts- oder Sicherungspflicht ist der
+            Vermieter berechtigt, den Mieter entsprechend dem Grad seines
+            Verschuldens über den vereinbarten Selbstbehalt hinaus in Anspruch
+            zu nehmen; bei besonders schwerwiegender grober Fahrlässigkeit kann
+            der Mietbruchschutz vollständig entfallen. Dies gilt insbesondere
+            bei Bedienung unter Alkohol- oder Drogeneinfluss, vorsätzlicher
+            Manipulation von Sicherheitseinrichtungen, erheblicher Überlastung,
+            Nutzung durch offensichtlich ungeeignete oder nicht berechtigte
+            Personen sowie bei grob fahrlässiger Verletzung vereinbarter
+            Diebstahl- oder Sicherungspflichten, soweit die jeweilige
+            Pflichtverletzung für den Eintritt oder die Vergrößerung des
+            Schadens ursächlich war. Verletzt der Mieter nach Eintritt eines
+            Schadens vorsätzlich oder grob fahrlässig seine Anzeige-,
+            Aufklärungs-, Mitwirkungs- oder Schadenminderungspflichten, kann die
+            Haftungsbegrenzung nur insoweit und in einem der Schwere des
+            Verschuldens entsprechenden Verhältnis eingeschränkt werden, als die
+            Pflichtverletzung für die Feststellung des Schadens, dessen Umfang
+            oder eine Vergrößerung des Schadens ursächlich ist.
+          </p>
+          <p>
+            Der Vermieter ist berechtigt, zur Feststellung von Ursache und
+            Umfang eines Schadens einen unabhängigen Sachverständigen oder eine
+            Fachwerkstatt hinzuzuziehen. Die hierfür erforderlichen und
+            angemessenen Kosten trägt der Mieter, soweit er für den betreffenden
+            Schaden einzustehen hat und die Begutachtung zur Feststellung des
+            Schadens erforderlich war. Der Mieter hat dem Vermieter auf
+            Verlangen mitzuteilen, ob für einen Schaden anderweitiger
+            Versicherungsschutz besteht oder bestehen kann. Versicherungs- oder
+            sonstige Ersatzleistungen, die der Vermieter für denselben Schaden
+            erhält, werden auf den ersatzfähigen Schaden angerechnet.
+          </p>
+          <p>
+            Haftung des Vermieters
+            <br />
+            Der Vermieter haftet unbeschränkt für Schäden, die auf einer
+            vorsätzlichen oder grob fahrlässigen Pflichtverletzung des
+            Vermieters, seiner gesetzlichen Vertreter oder Erfüllungsgehilfen
+            beruhen.
+          </p>
+          <p>
+            Der Vermieter haftet ferner unbeschränkt für Schäden aus der
+            Verletzung des Lebens, des Körpers oder der Gesundheit sowie in
+            Fällen zwingender gesetzlicher Haftung, insbesondere nach dem
+            Produkthaftungsgesetz.
+          </p>
+          <p>
+            Bei leicht fahrlässiger Verletzung wesentlicher Vertragspflichten
+            haftet der Vermieter nur auf den vertragstypischen, bei
+            Vertragsschluss vorhersehbaren Schaden. Wesentliche
+            Vertragspflichten sind solche Pflichten, deren Erfüllung die
+            ordnungsgemäße Durchführung des Mietvertrages überhaupt erst
+            ermöglicht und auf deren Einhaltung der Vertragspartner regelmäßig
+            vertrauen darf.
+          </p>
+          <p>
+            Soweit nach dem vorstehenden Absatz eine Haftung des Vermieters
+            besteht, sind Produktionsausfälle, Bauverzögerungen, entgangener
+            Gewinn und sonstige mittelbare Folgeschäden nur ersatzfähig, soweit
+            solche Schäden bei Vertragsschluss als typische und vorhersehbare
+            Folge der Pflichtverletzung erkennbar waren.
+          </p>
+          <p>
+            Im Übrigen ist die Haftung des Vermieters für leicht fahrlässig
+            verursachte Schäden ausgeschlossen.
+          </p>
+          <p>
+            Die vorstehenden Haftungsbeschränkungen gelten nicht, soweit der
+            Vermieter einen Mangel arglistig verschwiegen oder ausdrücklich eine
+            Garantie übernommen hat.
+          </p>
+          <p>
+            Die gesetzlichen Regelungen über die Darlegungs- und Beweislast
+            bleiben unberührt.
+          </p>
+        </section>
+
+        <section className="space-y-3">
+          <h2 className="text-3xl mt-20 text-primary">
+            13. Ordentliche Kündigung bei Mietverhältnissen mit Mindestmietzeit
+          </h2>
+          <p>
+            Ist ausdrücklich eine Mindestmietzeit mit anschließender Fortsetzung
+            des Mietverhältnisses auf unbestimmte Zeit vereinbart, kann das
+            Mietverhältnis erstmals zum Ablauf der Mindestmietzeit und danach
+            unter Einhaltung der nachfolgenden Kündigungsfristen ordentlich
+            gekündigt werden. Für Mietverträge mit einer fest vereinbarten
+            Mietzeit ohne anschließende unbefristete Fortsetzung gilt
+            ausschließlich Punkt 4 dieser Mietbedingungen.
           </p>
           <div>
+            <p>Die Kündigungsfrist beträgt:</p>
             <ul className="list-disc list-inside py-2 space-y-1">
               <li>
-                1 - 4 Tage: Anmietung entspricht die Frist einem Tag für die
-                Kündigung.
+                bei einer Mindestmietzeit von 1 bis 4 Tagen: 1 Kalendertag,
               </li>
               <li>
-                5 - 30 Tage: Anmietung entspricht die Frist fünf Tage für die
-                Kündigung.
+                bei einer Mindestmietzeit von 5 bis 30 Tagen: 5 Kalendertage,
               </li>
               <li>
-                30 - 90 Tage: Anmietung entspricht die Frist zehn Tage für die
-                Kündigung.
+                bei einer Mindestmietzeit von 31 bis 90 Tagen: 10 Kalendertage,
               </li>
               <li>
-                ab 91 Tage: Anmietung entspricht die Frist 1 Kalendermonat
-                kündbar zum Monatsende.
+                bei einer Mindestmietzeit von ab 91 Tagen: 1 Kalendermonat zum
+                Monatsende.
               </li>
             </ul>
             <p>
-              Abweichende Regelungen sind schriftlich festzuhalten. Eine
-              Rückgabe nach Ablauf der Mietzeit gilt nicht als stillschweigende
-              Vertragsverlängerung.
+              Die Kündigung bedarf der Textform. Für die Einhaltung der
+              Kündigungsfrist ist der Zugang der Kündigung beim jeweiligen
+              Vertragspartner maßgeblich.
             </p>
+            <p>Abweichende Vereinbarungen bedürfen der Textform.</p>
           </div>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-3xl mt-20 text-primary">
-            14. Fristlose Kündigung durch den Vermieter
+            14. Außerordentliche fristlose Kündigung durch den Vermieter
           </h2>
+          <p>
+            Der Vermieter ist berechtigt, das Mietverhältnis aus wichtigem Grund
+            außerordentlich fristlos zu kündigen. Ein wichtiger Grund liegt vor,
+            wenn dem Vermieter unter Berücksichtigung aller Umstände des
+            Einzelfalls und unter Abwägung der beiderseitigen Interessen die
+            Fortsetzung des Mietverhältnisses bis zu dessen vereinbarter
+            Beendigung oder bis zum Ablauf einer Kündigungsfrist nicht zugemutet
+            werden kann.
+          </p>
           <div>
-            <p>Der Vermieter kann den Vertrag fristlos kündigen, wenn</p>
-            <ol className="list-decimal list-inside">
-              <li>der Mieter trotz Mahnung mit Zahlungen in Verzug ist,</li>
+            <p>Ein wichtiger Grund kann insbesondere vorliegen, wenn</p>
+            <ol className="list-[roman] list-inside">
               <li>
-                der Mieter trotz Abmahnung gegen wesentliche Vertragspflichten
-                verstößt,
+                der Mieter mit der Zahlung der Miete oder sonstiger wesentlicher
+                fälliger Forderungen in erheblichem Umfang in Verzug gerät;
               </li>
               <li>
-                der Mieter den Mietgegenstand unbefugt an Dritte überlässt.
+                der Mieter den Mietgegenstand durch erhebliche Verletzung seiner
+                Obhuts-, Bedienungs-, Wartungs- oder Sicherungspflichten
+                gefährdet;
+              </li>
+              <li>
+                der Mieter den Mietgegenstand ohne erforderliche Zustimmung des
+                Vermieters einem Dritten zur Nutzung überlässt;
+              </li>
+              <li>
+                der Mieter den Mietgegenstand ohne erforderliche Zustimmung an
+                einem anderen als dem vereinbarten Einsatzort oder außerhalb der
+                Bundesrepublik Deutschland einsetzt;
+              </li>
+              <li>
+                der Mieter Sicherheitseinrichtungen manipuliert oder außer
+                Funktion setzt oder den Mietgegenstand in sonstiger Weise
+                erheblich vertragswidrig verwendet;
+              </li>
+              <li>
+                der Mieter einen erheblichen Schaden, Unfall, Verlust oder
+                Diebstahl des Mietgegenstandes entgegen seinen vertraglichen
+                Pflichten nicht unverzüglich anzeigt;
+              </li>
+              <li>
+                der Mieter trotz Fälligkeit eine geschuldete Zahlung ernsthaft
+                und endgültig verweigert.
               </li>
             </ol>
           </div>
           <p>
-            Bereits ein Zahlungsverzug von mehr als 5 Tagen nach Mahnung
-            berechtigt den Vermieter zur fristlosen Kündigung. Bei groben
-            Vertragsverstößen, unbefugter Ortsveränderung oder nicht angezeigten
-            Schäden kann das Mietverhältnis fristlos beendet werden. Der
-            Vermieter ist berechtigt, den Mietgegenstand sofort abzuholen.
+            Soweit der wichtige Grund in einer Verletzung vertraglicher
+            Pflichten besteht, ist die außerordentliche fristlose Kündigung
+            grundsätzlich erst nach erfolglosem Ablauf einer angemessenen Frist
+            zur Abhilfe oder nach erfolgloser Abmahnung zulässig. Einer
+            Fristsetzung oder Abmahnung bedarf es nicht, soweit sie
+            offensichtlich keinen Erfolg verspricht oder besondere Umstände
+            unter Abwägung der beiderseitigen Interessen die sofortige Kündigung
+            rechtfertigen. Die gesetzlichen Kündigungsrechte wegen
+            Zahlungsverzugs bleiben unberührt.
           </p>
           <p>
-            Bei Nichteinlösung von Lastschriften oder Zahlungsverweigerung ist
-            der Vermieter berechtigt, den Vertrag sofort zu beenden und die
-            Geräte ohne gerichtliche Entscheidung wieder an sich zu nehmen.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">
-            15. Anwendbares Recht & Gerichtsstand
-          </h2>
-          <p>
-            Es gilt ausschließlich das Recht der Bundesrepublik Deutschland.
-          </p>
-          <p>
-            „Für diesen Vertrag gilt ausschließlich deutsches Recht.
-            Gerichtsstand ist Bruchsal.“
-          </p>
-          <p>
-            „Erfüllungsort und Gerichtsstand ist Amtsgericht Bruchsal /
-            Landgericht Karlsruhe.“
+            Nach wirksamer Beendigung des Mietverhältnisses ist der Mieter
+            verpflichtet, den Mietgegenstand unverzüglich herauszugeben und
+            dessen Abholung zu ermöglichen. Er hat dem Vermieter oder dessen
+            Beauftragten den zur Abholung erforderlichen Zugang zu ermöglichen,
+            soweit er über den jeweiligen Einsatzort verfügen kann. Befindet
+            sich der Mietgegenstand auf einem Grundstück oder Betriebsgelände
+            eines Dritten, hat der Mieter die erforderliche Zustimmung und
+            Zugangsmöglichkeit für die Abholung sicherzustellen. Gesetzliche
+            Rechte des Vermieters bleiben unberührt.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-3xl mt-20 text-primary">
-            16. Vorrang individueller Vereinbarungen
+            15. Anwendbares Recht und Gerichtsstand
           </h2>
           <p>
-            Individuelle Vertragsabreden haben Vorrang vor diesen
-            Mietbedingungen.
+            Für sämtliche Rechtsbeziehungen zwischen dem Vermieter und dem
+            Mieter aus und im Zusammenhang mit dem Mietverhältnis gilt das Recht
+            der Bundesrepublik Deutschland.
           </p>
           <p>
-            Den Allgemeinen Geschäftsbedingungen des Mieters wird ausdrücklich
-            widersprochen. Sie gelten auch dann nicht, wenn ihnen nicht nochmals
-            ausdrücklich widersprochen wird.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">17. Abweichende Änderungen</h2>
-          <p>
-            Änderungen und Ergänzungen bedürfen der Textform. Rechtserhebliche
-            Erklärungen, insbesondere Kündigungen und Mängelanzeigen, müssen
-            mindestens in Textform erfolgen (E-Mail oder Brief).
+            Soweit die gesetzlichen Voraussetzungen für eine
+            Gerichtsstandsvereinbarung, insbesondere nach § 38 ZPO, vorliegen,
+            ist ausschließlicher Gerichtsstand für sämtliche Streitigkeiten aus
+            und im Zusammenhang mit dem Mietverhältnis der Sitz des Vermieters.
+            Gesetzlich zwingende ausschließliche Gerichtsstände bleiben
+            unberührt.
           </p>
         </section>
 
         <section className="space-y-3">
           <h2 className="text-3xl mt-20 text-primary">
-            18. Eigentumsschutz und Drittzugriffe
+            16. Datenschutz und Telemetrie
           </h2>
           <p>
-            Bei Pfändung oder sonstigen Zugriffen Dritter hat der Mieter den
-            Vermieter unverzüglich zu informieren, den Dritten auf das Eigentum
-            des Vermieters hinzuweisen und sämtliche Kosten der
-            Rechtsverteidigung zu tragen.
+            Ein Teil der Mietgegenstände ist mit GPS-Ortungs- und/oder
+            Telemetriesystemen ausgestattet. Soweit der jeweilige Mietgegenstand
+            technisch entsprechend ausgestattet ist, können insbesondere
+            Standortdaten, Betriebs- und Einsatzzeiten, Betriebsstunden,
+            Fehlercodes, Ladezustände, Ladezyklen und sonstige technische
+            Zustandsdaten erhoben und verarbeitet werden.
+          </p>
+          <p>
+            Der Vermieter verwendet diese Daten, soweit dies im Einzelfall
+            erforderlich und datenschutzrechtlich zulässig ist, insbesondere zur
+            Sicherung und zum Schutz des Mietgegenstandes, zur
+            Diebstahlprävention und -aufklärung, zur Ortung und Rückholung des
+            Mietgegenstandes, zur Disposition, zur Abrechnung, zur
+            Wartungsplanung und Fehlerdiagnose sowie zur Geltendmachung oder
+            Abwehr von Ansprüchen.
+          </p>
+          <p>
+            Soweit hierbei personenbezogene Daten verarbeitet werden, erfolgt
+            die Verarbeitung ausschließlich nach Maßgabe der geltenden
+            datenschutzrechtlichen Vorschriften. Verantwortlicher für die vom
+            Vermieter zu eigenen Zwecken durchgeführte Verarbeitung
+            personenbezogener Daten ist der Vermieter. Die datenschutzrechtliche
+            Verantwortlichkeit des Mieters für von ihm zu eigenen Zwecken
+            vorgenommene Verarbeitungen bleibt hiervon unberührt.
+          </p>
+          <p>
+            Der Mieter ist verpflichtet, Personen, denen er den Mietgegenstand
+            zur Nutzung überlässt, vor Beginn der Nutzung darauf hinzuweisen,
+            dass der Mietgegenstand mit einem GPS-Ortungs- oder Telemetriesystem
+            ausgestattet sein kann. Die datenschutzrechtlichen
+            Informationspflichten des jeweils Verantwortlichen bleiben
+            unberührt.
+          </p>
+          <p>
+            Weitere Informationen über Art, Umfang, Zwecke, Rechtsgrundlagen und
+            Dauer der Verarbeitung personenbezogener Daten sowie über die Rechte
+            betroffener Personen ergeben sich aus den Datenschutzinformationen
+            des Vermieters.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">19. Datenschutz & Telemetrie</h2>
+          <h2 className="text-3xl mt-20 text-primary">
+            17. Salvatorische Klausel
+          </h2>
           <p>
-            Ein Teil der Mietgeräte ist mit GPS-Ortung ausgestattet. Die
-            Auswertung dient ausschließlich der Sicherheit, Disposition und
-            Abrechnung. Der Mieter erklärt sich hiermit einverstanden.
-          </p>
-          <p>
-            Über Telemetrie können Standort, Einsatzzeiten, Fehlercodes und
-            Ladezyklen abgerufen werden. Bei personenbezogenen Daten gilt der
-            Mieter als Verantwortlicher i.S.d. DSGVO.
-          </p>
-        </section>
-
-        <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">20. Salvatorische Klausel</h2>
-          <p>
-            Sollte eine Bestimmung dieses Vertrages unwirksam sein, wird die
-            Wirksamkeit der übrigen Bestimmungen hiervon nicht berührt. Die
-            Parteien verpflichten sich, eine Regelung zu treffen, die dem
-            wirtschaftlichen Zweck am nächsten kommt.
+            Sollte eine Bestimmung dieser Mietbedingungen ganz oder teilweise
+            unwirksam oder nicht Vertragsbestandteil geworden sein oder werden,
+            bleibt die Wirksamkeit der übrigen Bestimmungen hiervon unberührt.
+            An die Stelle der unwirksamen oder nicht einbezogenen Bestimmung
+            treten die gesetzlichen Vorschriften.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">21. Abtretungsverbot</h2>
+          <h2 className="text-3xl mt-20 text-primary">
+            18. Abtretung von Ansprüchen
+          </h2>
           <p>
-            Eine Abtretung von Rechten oder Ansprüchen aus diesem Vertrag durch
-            den Mieter bedarf der Zustimmung des Vermieters in Textform.
+            Die Abtretung von nicht auf Geld gerichteten Ansprüchen oder
+            sonstigen übertragbaren Rechten des Mieters aus dem Mietverhältnis
+            bedarf der vorherigen Zustimmung des Vermieters in Textform. Die
+            Zustimmung darf nicht unbillig verweigert werden.
+          </p>
+          <p>
+            Die Abtretung von Geldforderungen des Mieters bleibt zulässig.
+            Zwingende gesetzliche Regelungen, insbesondere § 354a HGB, bleiben
+            unberührt.
           </p>
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-3xl mt-20 text-primary">22. Werbung auf Mietgeräten</h2>
+          <h2 className="text-3xl mt-20 text-primary">
+            19. Werbung und Kennzeichnungen auf Mietgeräten
+          </h2>
           <p>
-            Der Vermieter ist berechtigt, Werbung an den Mietgeräten
-            anzubringen. Der Mieter hat dies zu dulden, solange der Gebrauch
-            nicht beeinträchtigt wird.
+            Der Vermieter ist berechtigt, am Mietgegenstand Werbung,
+            Firmenkennzeichnungen und sonstige Beschriftungen anzubringen,
+            soweit hierdurch der vertragsgemäße Gebrauch des Mietgegenstandes
+            nicht beeinträchtigt wird. Der Mieter darf solche Kennzeichnungen
+            ohne vorherige Zustimmung des Vermieters weder entfernen, verändern,
+            beschädigen noch dauerhaft verdecken.
           </p>
         </section>
 
         <div>
           <Link
             className="text-primary hover:underline"
-            href="/pdf/AGB_Geschäftskunden.pdf"
+            href="/pdf/AGB_Geschaeftskunden.pdf"
             target="_blank"
           >
             AGB für Geschäftskunden als PDF
           </Link>
         </div>
+
+        <div className="text-sm text-gray-500">Stand August 2026</div>
       </main>
     </>
   ),
