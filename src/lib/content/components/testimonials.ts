@@ -33,7 +33,8 @@ export const testimonials: Testimonial[] = [
   },
   {
     stars: 5,
-    content: "Habe einen 1,1 Tonnen Bagger gemietet einen super Preis erhalten einen sehr guten Bagger schneller netter Kontakt immer gerne wieder miete ich bei euch",
+    content:
+      "Habe einen 1,1 Tonnen Bagger gemietet einen super Preis erhalten einen sehr guten Bagger schneller netter Kontakt immer gerne wieder miete ich bei euch",
     location: "bruchsal",
   },
   {
@@ -44,7 +45,13 @@ export const testimonials: Testimonial[] = [
   {
     stars: 5,
     content:
-      "Habe einen 1,1 Tonnen Bagger gemietet, einen super Preis erhalten, einen sehr guten Bagger bekommen,\nschneller netter Kontakt — immer gerne wieder miete ich bei euch.",
+      "Sehr unkomplizierte Vermietung!Angenehme Bezahlung (PayPal), freundlicher Service. Schnelle hilfe bei Problemen!\nGerne wieder.",
+    location: "hennef",
+  },
+  {
+    stars: 5,
+    content:
+      "Ich habe für eine Woche einen 1,6t-Bagger bei Bagger1 gemietet. Die gesamte Abwicklung war sehr persönlich, unkompliziert und zuverlässig. Alles hat reibungslos funktioniert und die Kommunikation war angenehm und direkt. Klare Empfehlung – gerne wieder!",
     location: "bruchsal",
   },
 ];

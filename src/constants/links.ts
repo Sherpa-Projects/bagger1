@@ -6,5 +6,5 @@ export const LINKS = {
   aschaffenburgTestimonials: "",
   hennefReview: "https://g.page/r/CSwAu1yQRdBrEAE/review",
   bruchsalReview: "https://g.page/r/CVb66J4ylWsIEAE/review",
-  stockstadtReview: "https://www.bagger1.de/",
+  stockstadtReview: "https://bagger1.de",
 };
