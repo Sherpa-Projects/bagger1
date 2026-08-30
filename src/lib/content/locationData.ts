@@ -17,7 +17,7 @@ export const locationData: LocationDataProps[] = [
     rating: {
       stars: 5,
       location: "hennef",
-      reviews: 5,
+      reviews: 7,
     },
     seo: {
       title: "Bagger und Baumaschinen mieten in Hennef",
@@ -578,7 +578,7 @@ export const locationData: LocationDataProps[] = [
     rating: {
       stars: 5,
       location: "bruchsal",
-      reviews: 3,
+      reviews: 4,
     },
     seo: {
       title: "Bagger und Baumaschinen mieten in Bruchsal",
