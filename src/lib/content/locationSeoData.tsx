@@ -7,6 +7,7 @@ import {
   CalendarClock,
 } from "lucide-react";
 import { LocalUseCase } from "@/app/types/LocalUseCase";
+import type { Location } from "@/app/types/Location";
 
 type LocationSeoConfig = {
   headline?: (cityName: string) => React.ReactNode;
@@ -28,7 +29,7 @@ type LocationSeoConfig = {
   serviceAreas?: string[];
 };
 
-export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
+export const locationSeoBySlug: Record<Location, LocationSeoConfig> = {
   mannheim: {
     regionName: "im Rhein-Neckar-Kreis",
     headline: () => (
@@ -348,13 +349,10 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
     ],
   },
 
-  stockstadt: {
-    regionName: "im Landkreis Aschaffenburg",
+  aschaffenburg: {
+    regionName: "Umgebung",
     headline: () => (
-      <>
-        Bagger und Baumaschinen für Stockstadt und den Raum Aschaffenburg
-        gezielt auswählen.
-      </>
+      <>Bagger und Baumaschinen für den Raum Aschaffenburg gezielt auswählen.</>
     ),
     intro: (cityName, data) => {
       const region = data.regionName ?? "der Region";
@@ -365,7 +363,7 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
           Einsätze in {region}. Wenn Sie für Erdarbeiten, Aushub, Transport oder
           Verdichtung eine passende Baumaschine benötigen, können Sie hier
           direkt das Angebot für den Raum {cityName} prüfen. So gelangen Sie
-          ohne Umweg zu den Maschinen, die für Projekte in Stockstadt und dem
+          ohne Umweg zu den Maschinen, die für Projekte in Aschaffenburg und dem
           umliegenden Einsatzgebiet vorgesehen sind.
         </>
       );
@@ -378,7 +376,7 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
           Buchungen über diese Seite beziehen sich auf den regionalen
           Verfügbarkeits- und Bestandskontext für {cityName} und {region}. Damit
           dient die Seite als eigenständiger Einstieg für Kunden aus dem Raum
-          Stockstadt. Auch wenn einzelne Maschinentypen BAGGER1-weit an mehreren
+          Aschaffenburg. Auch wenn einzelne Maschinentypen BAGGER1-weit an mehreren
           Standorten vertreten sein können, ist diese URL auf Anfragen aus
           dieser Region ausgerichtet.
         </>
@@ -401,7 +399,7 @@ export const locationSeoBySlug: Record<string, LocationSeoConfig> = {
       {
         title: "Aushub- und Erdarbeiten",
         description:
-          "Geeignet für Erdarbeiten auf privaten und gewerblichen Flächen im Raum Stockstadt und dem Landkreis Aschaffenburg.",
+          "Geeignet für Erdarbeiten auf privaten und gewerblichen Flächen im Raum Aschaffenburg.",
         icon: Shovel,
       },
       {

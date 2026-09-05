@@ -108,7 +108,7 @@ export default async function LocationPage({
   const faqContentForLocation = getFaqContentForLocation(faq.content, location);
 
   const cfg = locationSeoBySlug[location];
-  if (!cfg) return null;
+  if (!cfg) return notFound();
 
   const bookingContext = cfg.bookingContext?.(currentLocation.name, {
     regionName: cfg.regionName,

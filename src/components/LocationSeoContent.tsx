@@ -1,17 +1,16 @@
 import { MapPin } from "lucide-react";
 import BranchCard from "./BranchCard";
 import { locationSeoBySlug } from "@/lib/content/locationSeoData";
+import type { Location } from "@/app/types/Location";
 
 export function LocationSeoContent({
   locationSlug,
   cityName,
 }: {
-  locationSlug: string;
+  locationSlug: Location;
   cityName: string;
 }) {
   const cfg = locationSeoBySlug[locationSlug];
-
-  if (!cfg) return null;
 
   const headline = cfg.headline?.(cityName);
   const intro = cfg.intro?.(cityName, {

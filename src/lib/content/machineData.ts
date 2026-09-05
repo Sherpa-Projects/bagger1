@@ -83,7 +83,7 @@ export const machineData: Machine[] = [
       },
     },
     inventory: {
-      stockstadt: [{ articleId: "ACEQK6" }],
+      aschaffenburg: [{ articleId: "ACEQK6" }],
     },
   },
   {
@@ -153,7 +153,7 @@ export const machineData: Machine[] = [
     inventory: {
       bruchsal: [{ articleId: "AEED4F" }],
       mannheim: [{ articleId: "AEED4F" }],
-      stockstadt: [{ articleId: "4X636F" }],
+      aschaffenburg: [{ articleId: "4X636F" }],
     },
   },
   {
@@ -233,7 +233,7 @@ export const machineData: Machine[] = [
       hennef: [{ articleId: "I9KAW8" }],
       bruchsal: [{ articleId: "P5DPKR" }],
       mannheim: [{ articleId: "P5DPKR" }],
-      stockstadt: [{ articleId: "YYTU19" }],
+      aschaffenburg: [{ articleId: "YYTU19" }],
     },
   },
   {
@@ -255,7 +255,7 @@ export const machineData: Machine[] = [
       hennef: [{ articleId: "CRFM16" }],
       bruchsal: [{ articleId: "F4P7SJ" }],
       mannheim: [{ articleId: "F4P7SJ" }],
-      stockstadt: [{ articleId: "IW2G8Y" }],
+      aschaffenburg: [{ articleId: "IW2G8Y" }],
     },
   },
   {

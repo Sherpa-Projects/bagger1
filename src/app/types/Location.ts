@@ -5,7 +5,7 @@ export const validLocations = [
   "mannheim",
   "hennef",
   "bruchsal",
-  "stockstadt",
+  "aschaffenburg",
 ] as const;
 
 export type DeliveryAreaProps = {
