@@ -1,4 +1,5 @@
 export const LINKS = {
+  baseUrl: "https://www.bagger1.de/",
   bruchsalTestimonials:
     "https://www.google.com/search?sca_esv=783de1c040cdc5df&cs=1&sxsrf=APpeQnsVK2Fy9tL2-xIYvUYB96WuxF2d3g:1783793280251&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_7rva_lbcA6_7JliMWXjElRAWzVsJw9V3wpQ-3ZHni-8GJuevK393ZiCv4Er2rYgFTfKnUWDM836xjn3ez7-K18161gugMBfd4JhdfP6IuqBuGJmBw%3D%3D&q=BAGGER1+%7C+Bruchsal+Rezensionen&sa=X&ved=2ahUKEwiDt8nmm8uVAxUJ_7sIHbePKTsQ0bkNegQIKxAH&biw=1470&bih=754&dpr=2",
   hennefTestimonials:
