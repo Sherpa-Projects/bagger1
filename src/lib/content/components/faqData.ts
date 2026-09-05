@@ -112,34 +112,34 @@ const mannheimFaq: FaqItemProps[] = [
   },
 ];
 
-const stockstadtFaq: FaqItemProps[] = [
+const aschaffenburgFaq: FaqItemProps[] = [
   {
-    question: "Welche Baumaschinen kann ich bei BAGGER1 in Stockstadt mieten?",
+    question: "Welche Baumaschinen kann ich bei BAGGER1 in Aschaffenburg mieten?",
     answer:
-      "Bei BAGGER1 in Stockstadt können Sie je nach aktuellem Sortiment am Standort z. B. Minibagger, Rüttelplatten und Dumper mieten. Wählen Sie die passende Maschine online aus, prüfen Sie den gewünschten Zeitraum im Kalender und buchen Sie direkt – für Kurzzeit- oder Langzeitmiete.",
+      "Bei BAGGER1 in Aschaffenburg können Sie je nach aktuellem Sortiment am Standort z. B. Minibagger, Rüttelplatten und Dumper mieten. Wählen Sie die passende Maschine online aus, prüfen Sie den gewünschten Zeitraum im Kalender und buchen Sie direkt – für Kurzzeit- oder Langzeitmiete.",
   },
   {
-    question: "Wie läuft die Online-Buchung bei BAGGER1 in Stockstadt ab?",
+    question: "Wie läuft die Online-Buchung bei BAGGER1 in Aschaffenburg ab?",
     answer:
-      "Auf der Standortseite Stockstadt sehen Sie die verfügbaren Mietgeräte. Nach Auswahl der Maschine prüfen Sie im Kalender die Verfügbarkeit, wählen Start- und Enddatum und schließen die Buchung online ab. So sichern Sie sich schnell das passende Gerät für Ihr Projekt.",
-  },
-  {
-    question:
-      "Vermietet BAGGER1 in Stockstadt auch an Privatkunden und Hobby-Handwerker?",
-    answer:
-      "Ja, bei BAGGER1 in Stockstadt können sowohl Privatkunden als auch Gewerbekunden mieten. Ob Garten- und Landschaftsbau, Einfahrt, Zaunfundament oder kleinere Baustelle: Sie buchen die benötigte Maschine einfach online und planen Ihren Einsatz zuverlässig.",
+      "Auf der Standortseite Aschaffenburg sehen Sie die verfügbaren Mietgeräte. Nach Auswahl der Maschine prüfen Sie im Kalender die Verfügbarkeit, wählen Start- und Enddatum und schließen die Buchung online ab. So sichern Sie sich schnell das passende Gerät für Ihr Projekt.",
   },
   {
     question:
-      "Welche Mietdauer ist in Stockstadt möglich – Tagesmiete, Wochenmiete oder Langzeitmiete?",
+      "Vermietet BAGGER1 in Aschaffenburg auch an Privatkunden und Hobby-Handwerker?",
     answer:
-      "In Stockstadt sind je nach Maschine flexible Mietzeiträume möglich – von kurzer Miete für einzelne Arbeitstage bis zur Langzeitmiete für längere Vorhaben. Die Verfügbarkeit sehen Sie direkt nach Auswahl der Maschine im Kalender.",
+      "Ja, bei BAGGER1 in Aschaffenburg können sowohl Privatkunden als auch Gewerbekunden mieten. Ob Garten- und Landschaftsbau, Einfahrt, Zaunfundament oder kleinere Baustelle: Sie buchen die benötigte Maschine einfach online und planen Ihren Einsatz zuverlässig.",
   },
   {
     question:
-      "Für welche Arbeiten eignet sich ein Minibagger in Stockstadt besonders?",
+      "Welche Mietdauer ist in Aschaffenburg möglich – Tagesmiete, Wochenmiete oder Langzeitmiete?",
     answer:
-      "Ein Minibagger eignet sich ideal für Aushubarbeiten wie Gräben, Fundamente, Leitungen oder Gartenumbauten. Gerade bei engen Platzverhältnissen ist er eine praktische Lösung – und bei BAGGER1 in Stockstadt schnell online verfügbar, sofern im Kalender frei.",
+      "In Aschaffenburg sind je nach Maschine flexible Mietzeiträume möglich – von kurzer Miete für einzelne Arbeitstage bis zur Langzeitmiete für längere Vorhaben. Die Verfügbarkeit sehen Sie direkt nach Auswahl der Maschine im Kalender.",
+  },
+  {
+    question:
+      "Für welche Arbeiten eignet sich ein Minibagger in Aschaffenburg besonders?",
+    answer:
+      "Ein Minibagger eignet sich ideal für Aushubarbeiten wie Gräben, Fundamente, Leitungen oder Gartenumbauten. Gerade bei engen Platzverhältnissen ist er eine praktische Lösung – und bei BAGGER1 in Aschaffenburg schnell online verfügbar, sofern im Kalender frei.",
   },
 ];
 
@@ -218,9 +218,9 @@ export const faq: FaqProps = {
       },
     },
     {
-      location: "stockstadt",
+      location: "aschaffenburg",
       locationItems: {
-        items: [...stockstadtFaq],
+        items: [...aschaffenburgFaq],
       },
       bucketItems: { items: [...bucketFaq] },
       rentalConditionItems: {

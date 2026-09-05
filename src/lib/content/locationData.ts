@@ -1219,8 +1219,8 @@ export const locationData: LocationDataProps[] = [
     ],
   },
   {
-    name: "Stockstadt",
-    slug: "stockstadt",
+    name: "Aschaffenburg",
+    slug: "aschaffenburg",
     address: "Spessartstr. 7, 63811 Stockstadt",
     contact: {
       telephone: "0800/2244371",
@@ -1232,9 +1232,9 @@ export const locationData: LocationDataProps[] = [
     },
     map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41049.35551844248!2d9.01436648285571!3d49.98164605540758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bd4746e932dae9%3A0xe99cee78806c1611!2s63811%20Stockstadt%20am%20Main!5e0!3m2!1sde!2sde!4v1761029825229!5m2!1sde!2sde",
     seo: {
-      title: "Bagger und Baumaschinen mieten in Stockstadt (Aschaffenburg)",
+      title: "Bagger und Baumaschinen mieten in Aschaffenburg",
       description:
-        "Bagger und Baumaschinen in Stockstadt (Aschaffenburg) und Umgebung mieten. BAGGER1 liefert die gebuchte Maschine direkt zum Einsatzort.",
+        "Bagger und Baumaschinen in Aschaffenburg und Umgebung mieten. BAGGER1 liefert die gebuchte Maschine direkt zum Einsatzort.",
     },
     deliveryAreas: [
       {
