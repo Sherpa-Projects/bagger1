@@ -102,6 +102,84 @@ body {
   animation: hop 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+@layer components {
+  .ambient {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    background-image:
+      radial-gradient(
+        circle 17rem at 6% -10rem,
+        rgb(255 164 33 / 0.1),
+        rgb(255 164 33 / 0.035) 42%,
+        transparent 72%
+      ),
+      radial-gradient(
+        circle 14rem at calc(100% + 8rem) 18%,
+        rgb(26 29 42 / 0.05),
+        rgb(26 29 42 / 0.018) 44%,
+        transparent 74%
+      ),
+      radial-gradient(
+        circle 12rem at 18% 55%,
+        rgb(39 129 187 / 0.05),
+        rgb(39 129 187 / 0.018) 43%,
+        transparent 73%
+      ),
+      radial-gradient(
+        circle 16rem at 88% calc(100% + 8rem),
+        rgb(255 164 33 / 0.1),
+        rgb(255 164 33 / 0.035) 42%,
+        transparent 72%
+      ),
+      radial-gradient(
+        circle 15rem at 50% 88%,
+        rgb(26 29 42 / 0.05),
+        rgb(26 29 42 / 0.016) 45%,
+        transparent 75%
+      );
+    contain: paint;
+  }
+
+  @media (min-width: 1024px) {
+    .ambient {
+      background-image:
+        radial-gradient(
+          circle 17rem at 6% -10rem,
+          rgb(255 164 33 / 0.15),
+          rgb(255 164 33 / 0.052) 42%,
+          transparent 72%
+        ),
+        radial-gradient(
+          circle 14rem at calc(100% + 8rem) 18%,
+          rgb(26 29 42 / 0.1),
+          rgb(26 29 42 / 0.036) 44%,
+          transparent 74%
+        ),
+        radial-gradient(
+          circle 12rem at 18% 55%,
+          rgb(39 129 187 / 0.1),
+          rgb(39 129 187 / 0.036) 43%,
+          transparent 73%
+        ),
+        radial-gradient(
+          circle 16rem at 88% calc(100% + 8rem),
+          rgb(255 164 33 / 0.15),
+          rgb(255 164 33 / 0.052) 42%,
+          transparent 72%
+        ),
+        radial-gradient(
+          circle 15rem at 50% 88%,
+          rgb(26 29 42 / 0.05),
+          rgb(26 29 42 / 0.016) 45%,
+          transparent 75%
+        );
+    }
+  }
+}
+
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
