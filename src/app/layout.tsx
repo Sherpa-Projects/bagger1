@@ -5,7 +5,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import Consent from "@/components/Consent";
 import ThirdPartyScripts from "@/components/ThirdPartyScripts";
-// import Ambient from "@/components/Ambient";
+import Ambient from "@/components/Ambient";
 
 const BASE_URL = "https://bagger1.de";
 const OG_IMAGE_URL = "https://bagger1.de/images/og_image.png";
@@ -77,7 +77,7 @@ export default function RootLayout({
             __html: JSON.stringify(organizationJsonLd),
           }}
         />
-        {/* <Ambient /> */}
+        <Ambient />
         {children}
         <ThirdPartyScripts />
         <Consent />
