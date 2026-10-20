@@ -99,13 +99,14 @@ export const privacyPageData = {
               Analyse-Tools und Tools von Drittanbietern
             </h4>
             <p>
-              Beim Besuch dieser Website wird Ihr Surf-Verhalten nicht
-              analysiert. Wir verwenden keinerlei externe Tracking- oder
-              Analyseprogramme.
+              Beim Besuch dieser Website werden Seitenaufrufe mit Vercel Web
+              Analytics in anonymisierter, statistischer Form ausgewertet. Dabei
+              werden keine Cookies gesetzt und keine IP-Adressen gespeichert;
+              ein Rückschluss auf einzelne Besucher ist nicht möglich.
             </p>
             <p>
-              Detaillierte Informationen zu diesen Analyseprogrammen finden Sie
-              in der folgenden Datenschutzerklärung.
+              Detaillierte Informationen zu diesem Analysedienst finden Sie in
+              der folgenden Datenschutzerklärung.
             </p>
           </div>
         </section>
@@ -475,6 +476,48 @@ export const privacyPageData = {
               Mietverträgen (einschließlich der GPS-Überwachung vermieteter
               Geräte) finden Sie in den gesonderten Datenschutzhinweisen im
               Rahmen des Mietvertrags.
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            <h3 className="text-lg lg:text-xl font-bold mb-2">
+              Vercel Web Analytics
+            </h3>
+            <p>
+              Wir nutzen Vercel Web Analytics, um die Nutzung unserer Website
+              statistisch auszuwerten (z. B. aufgerufene Seiten, Referrer,
+              Land, Gerätetyp und Browser). Anbieter ist die Vercel Inc., 340 S
+              Lemon Ave #4133, Walnut, CA 91789, USA, die auch unser
+              Hosting-Dienstleister ist.
+            </p>
+            <p>
+              Vercel Web Analytics setzt keine Cookies und speichert keine
+              Informationen auf Ihrem Endgerät. IP-Adressen werden nicht
+              gespeichert. Zur Unterscheidung von Besuchern wird ein Hashwert aus
+              der Anfrage gebildet, der täglich verworfen wird. Eine
+              Identifizierung einzelner Personen ist dadurch nicht möglich.
+            </p>
+            <p>
+              Wenn Sie unsere Website über einen QR-Code (z. B. auf einem Flyer)
+              aufrufen, wird die Adresse um Kampagnenparameter (z. B.
+              „utm_source=qr“) ergänzt. So können wir auswerten, wie häufig
+              unsere Werbemittel genutzt werden, ohne Sie persönlich zu
+              erfassen.
+            </p>
+            <p>
+              Die Verarbeitung erfolgt auf Grundlage unseres berechtigten
+              Interesses an der Analyse und Optimierung unseres Online-Angebots
+              und unserer Werbemaßnahmen (Art. 6 Abs. 1 lit. f DSGVO). Weitere
+              Informationen finden Sie unter{" "}
+              <a
+                href="https://vercel.com/docs/analytics/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:underline"
+              >
+                Vercel Web Analytics – Datenschutz
+              </a>
+              .
             </p>
           </div>
 

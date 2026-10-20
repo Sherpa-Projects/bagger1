@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import Consent from "@/components/Consent";
@@ -82,6 +83,7 @@ export default function RootLayout({
         <ThirdPartyScripts />
         <Consent />
         <rtr-checkout></rtr-checkout>
+        <Analytics />
       </body>
     </html>
   );
