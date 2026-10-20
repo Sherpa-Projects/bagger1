@@ -12,5 +12,11 @@ export async function GET(
     return NextResponse.redirect(new URL("/", request.url), 307);
   }
 
-  return NextResponse.redirect(destination, 307);
+  // UTM-Parameter, damit Scans pro QR-Code in Vercel Analytics auswertbar sind
+  const url = new URL(destination);
+  url.searchParams.set("utm_source", "qr");
+  url.searchParams.set("utm_medium", "print");
+  url.searchParams.set("utm_campaign", id);
+
+  return NextResponse.redirect(url, 307);
 }
