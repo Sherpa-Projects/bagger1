@@ -1,4 +1,15 @@
-import { BadgeEuro, Truck, Zap, Shapes } from "lucide-react";
+import {
+  BadgeEuro,
+  BookOpen,
+  Building2,
+  GraduationCap,
+  Home,
+  PackageCheck,
+  Pickaxe,
+  Shapes,
+  Truck,
+  Zap,
+} from "lucide-react";
 
 export const homePageData = {
   hero: {
@@ -7,6 +18,7 @@ export const homePageData = {
     image: "/images/hero.jpg",
   },
   intro: {
+    eyebrow: "Warum BAGGER1",
     title: (
       <>
         Faire Preise.
@@ -16,15 +28,49 @@ export const homePageData = {
         <span className="text-primary">Rundum-Service von Profis.</span>
       </>
     ),
-    paragraphs: [
-      "Ob für private Bauprojekte am Wochenende oder für professionelle Baustellen während der Woche – bei BAGGER1 bekommen Sie modernste Baumaschinen schnell, zuverlässig und zum besten Preis-Leistungs-Verhältnis. Wir bieten nicht nur die Vermietung, sondern auch ein Rundum-Sorglos-Paket: Lieferung, Abholung, ausführliche Einweisung und praxisnahe Anleitungen – damit selbst Privatkunden sicher und effizient arbeiten können.",
-      "Für Firmenkunden sind wir ein verlässlicher Partner, der auch kurzfristig reagiert.",
-      "Auf Wunsch beschaffen wir zusätzlich Spezialmaschinen, zugeschnitten auf die Bedürfnisse Ihrer Branche – ob Landwirtschaft, Kommunalbetrieb oder sogar im Bergbau.",
-    ],
-    image: {
-      src: "/images/claim.png",
-      alt: "Freundlicher Bauarbeiter in orangefarbener Weste und Helm steht auf einer Baustelle vor einem Bagger, lächelt und zeigt Daumen hoch neben einem Arbeitstisch mit Werkzeugen und Bauplan.",
+    lead: "Ob für private Bauprojekte am Wochenende oder für professionelle Baustellen während der Woche – bei BAGGER1 bekommen Sie modernste Baumaschinen schnell, zuverlässig und zum besten Preis-Leistungs-Verhältnis.",
+    services: {
+      title: "Nicht nur Vermietung, sondern ein Rundum-Sorglos-Paket",
+      items: [
+        {
+          title: "Lieferung",
+          text: "Wir bringen die Maschine direkt zu Ihrer Baustelle.",
+          Icon: Truck,
+        },
+        {
+          title: "Einweisung",
+          text: "Ausführlich erklärt, bevor Sie loslegen.",
+          Icon: GraduationCap,
+        },
+        {
+          title: "Anleitungen",
+          text: "Praxisnah und verständlich für einen sicheren Einsatz.",
+          Icon: BookOpen,
+        },
+        {
+          title: "Abholung",
+          text: "Nach Ende der Miete holen wir die Maschine wieder ab.",
+          Icon: PackageCheck,
+        },
+      ],
     },
+    audiences: [
+      {
+        title: "Für Privatkunden",
+        text: "Für private Bauprojekte am Wochenende: Dank Einweisung und Anleitungen arbeiten auch Privatkunden sicher und effizient.",
+        Icon: Home,
+      },
+      {
+        title: "Für Firmenkunden",
+        text: "Ein verlässlicher Partner, der auch kurzfristig reagiert.",
+        Icon: Building2,
+      },
+      {
+        title: "Spezialmaschinen",
+        text: "Auf Wunsch beschaffen wir Spezialmaschinen für Ihre Branche – ob Landwirtschaft, Kommunalbetrieb oder sogar im Bergbau.",
+        Icon: Pickaxe,
+      },
+    ],
   },
   usp: {
     title: "Unser Versprechen an Sie",

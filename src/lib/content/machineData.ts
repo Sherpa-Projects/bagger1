@@ -1,4 +1,4 @@
-import { Machine } from "@/app/types/Machine";
+import { Machine } from "@/types/Machine";
 
 export const machineData: Machine[] = [
   {
@@ -11,6 +11,7 @@ export const machineData: Machine[] = [
       alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
     },
     price: { perDay: 140, perWeek: 110, perMonth: 70 },
+    minRentalDays: 5,
     content: {
       title: "",
       description: "",
@@ -26,7 +27,6 @@ export const machineData: Machine[] = [
     },
     inventory: {
       hennef: [{ articleId: "OCVQU4" }],
-      // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
     },
   },
   {
@@ -56,7 +56,7 @@ export const machineData: Machine[] = [
     inventory: {
       mannheim: [{ articleId: "TK9WPV" }],
       bruchsal: [{ articleId: "ZHLFH1" }],
-      hennef: [{ articleId: "PTSQZK" }],
+      aschaffenburg: [{ articleId: "PTSQZK" }],
     },
   },
   {
@@ -83,7 +83,7 @@ export const machineData: Machine[] = [
       },
     },
     inventory: {
-      aschaffenburg: [{ articleId: "ACEQK6" }],
+      hennef: [{ articleId: "ACEQK6" }],
     },
   },
   {
@@ -113,6 +113,8 @@ export const machineData: Machine[] = [
     inventory: {
       hennef: [{ articleId: "QHP8S7" }],
       bruchsal: [{ articleId: "H6QGO8" }],
+      mannheim: [{ articleId: "G3HY7T" }],
+      aschaffenburg: [{ articleId: "XL7RZE" }],
     },
   },
   {
@@ -249,7 +251,7 @@ export const machineData: Machine[] = [
     content: {
       title: "Muck Truck MAX II Dumper",
       description:
-        "Muck Truck MAX II Dumper mit einer Tragfähigkeit von bis zu 365 kg – robuster und wendiger Baustellen-Transporter für Materialbewegung.",
+        "Muck Truck MAX II Dumper mit einer Tragfähigkeit von bis zu 550 kg – robuster und wendiger Baustellen-Transporter für Materialbewegung.",
     },
     inventory: {
       hennef: [{ articleId: "CRFM16" }],
@@ -289,6 +291,7 @@ export const machineData: Machine[] = [
       alt: "Schwarzgelber Radlader.",
     },
     price: { perDay: 150, perWeek: 120, perMonth: 80 },
+    minRentalDays: 5,
     content: {
       title: "",
       description: "",

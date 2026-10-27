@@ -1,5 +1,4 @@
 import { RatingProps } from "@/components/Rating";
-import { locationData } from "@/lib/content/locationData";
 
 export const validLocations = [
   "mannheim",
@@ -36,5 +35,3 @@ export type LocationDataProps = {
   };
   deliveryAreas: DeliveryAreaProps[];
 };
-
-export type LocationSlug = (typeof locationData)[number]["slug"];

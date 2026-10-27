@@ -1,30 +1,20 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { ConsentLevel, readConsent } from "@/lib/consent";
+import { useConsentLevel } from "@/hooks/useConsentLevel";
 
 type BookingWidgetProps = {
   articleId: string;
 };
 
 export default function BookingWidget({ articleId }: BookingWidgetProps) {
-  const [level, setLevel] = useState<ConsentLevel>("unset");
+  const level = useConsentLevel();
 
-  useEffect(() => {
-    setLevel(readConsent());
-    // Reagiere live, wenn sich Consent in einem anderen Tab ändert
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === "consentLevel") setLevel(readConsent());
-    };
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
-  }, []);
+  // Ohne Consent nichts rendern, damit umgebende Karten leer bleiben können
+  if (level !== "all" && level !== "essential") return null;
 
   return (
     <div>
-      {(level === "all" || level === "essential") && (
-        <rtr-article-booking article-id={articleId} view="calendar" />
-      )}
+      <rtr-article-booking article-id={articleId} view="calendar" />
     </div>
   );
 }

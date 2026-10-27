@@ -1,116 +1,82 @@
 import { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { Phone, Mail } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
 import { partnerPageData } from "@/lib/content/pages/partner/partnerPageData";
 import Hero from "@/components/Hero";
-import { Card } from "@/components/ui/card";
-import IconBadge from "@/components/IconBadge";
+import PartnerList from "@/components/PartnerList";
+import PartnerContactCard from "@/components/PartnerContactCard";
+import Section from "@/components/shared/Section";
+import Eyebrow from "@/components/shared/Eyebrow";
+import Headline from "@/components/shared/Headline";
+import { pageMetadata } from "@/lib/metadata";
+import { mailHref, phoneHref } from "@/lib/contact";
 
 export const generateMetadata = (): Metadata => {
-  return {
-    title: partnerPageData.seo.metaTitle,
-    description: partnerPageData.seo.metaDescription.google,
-    robots: "index, follow",
-    openGraph: {
-      title: partnerPageData.seo.metaTitle,
-      description: partnerPageData.seo.metaDescription.openGraph,
-      url: "https://bagger1.de",
-      siteName: "Baumaschinenverleih in deiner Gegend | BAGGER1",
-      images: {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Gelber Hintergrund mit schwarzem Text: BAGGER1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
-      },
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: partnerPageData.seo.metaTitle,
-      description: partnerPageData.seo.metaDescription.twitter,
-      images: ["/images/og-image.png"],
-    },
-  };
+  const { metaTitle, metaDescription } = partnerPageData.seo;
+
+  return pageMetadata({
+    title: metaTitle,
+    description: metaDescription.google,
+    openGraphDescription: metaDescription.openGraph,
+    twitterDescription: metaDescription.twitter,
+    path: "/partner",
+    imageAlt:
+      "Gelber Hintergrund mit schwarzem Text: BAGGER1‘ in großer Schrift und darunter ‚Ihre Nummer 1 für Bagger und Baumaschinen‘ in kleinerer Schrift.",
+  });
 };
 
 export default function PartnerPage() {
   const { hero, intro, offer, requirement, contactCard } = partnerPageData;
 
-  type careerItem = {
-    Icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-    text: string;
-  };
-
-  const offerItems: ReadonlyArray<careerItem> = offer.list;
-  const requirementItems: ReadonlyArray<careerItem> = requirement.list;
-
   return (
     <>
       <Navigation />
       <main>
-        <Hero image={hero.image} title={hero.title} subtitle={hero.subtitle} />
-        <div className="py-10 lg:py-20 px-4">
-          <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl grid lg:grid-cols-6 lg:gap-20">
-            <div className="lg:col-span-4">
-              <h2 className="font-bold text-3xl md:text-4xl pb-4 lg:pb-6 lg:leading-tight">
-                {intro.title}
-              </h2>
-              <div className="space-y-4 text-lg pb-8">
-                {intro.paragraphs.map((p, index) => (
-                  <p key={index}>{p}</p>
-                ))}
-              </div>
-              <div className="pb-8">
-                <h3 className="font-bold text-xl mb-3">{offer.title}</h3>
-                <ul className="space-y-2">
-                  {offerItems.map(({ Icon, text }, offerIndex) => (
-                    <li key={offerIndex} className="flex items-center">
-                      <IconBadge Icon={Icon} text={text} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="pb-8">
-                <h3 className="font-bold text-xl mb-3">{requirement.title}</h3>
-                <ul className="space-y-2">
-                  {requirementItems.map(({ Icon, text }, reqIndex) => (
-                    <li key={reqIndex} className="flex items-center">
-                      <IconBadge Icon={Icon} text={text} />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+        <Hero image={hero.image} title={hero.title} subtitle={hero.subtitle}>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={mailHref(contactCard.email)}
+              className="group inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 font-semibold text-secondary shadow-sm transition-all duration-300 hover:bg-primary/90 hover:shadow-md"
+            >
+              Jetzt bewerben
+              <ArrowRight
+                className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </a>
+            <a
+              href={phoneHref(contactCard.phone)}
+              className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-primary/60 hover:bg-white/10"
+            >
+              <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
+              {contactCard.phone}
+            </a>
+          </div>
+        </Hero>
 
-            <div className="lg:col-span-2">
-              <Card className="p-8">
-                <h3 className="font-bold text-xl mb-2">{contactCard.title}</h3>
-                <div className="space-y-4 text-lg">
-                  <p className="text-base mb-6">{contactCard.description}</p>
-                  <p className="font-bold">{contactCard.subtitle}</p>
-                  <ul className="space-y-2">
-                    <li>
-                      <a
-                        href={`tel:${contactCard.phone}`}
-                        className="hover:underline flex items-center"
-                      >
-                        <IconBadge Icon={Phone} text={contactCard.phone} />
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href={`mailto:${contactCard.email}`}
-                        className="hover:underline flex items-center"
-                      >
-                        <IconBadge Icon={Mail} text={contactCard.email} />
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </Card>
+        <Section
+          className="pt-10 lg:pt-20 px-4"
+          containerClassName="grid gap-8 lg:grid-cols-12 lg:gap-12 lg:items-center"
+        >
+          <div className="lg:col-span-7">
+            <Eyebrow className="mb-4">Partner werden</Eyebrow>
+            <Headline size="lg">{intro.title}</Headline>
+            <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-gray-600">
+              {intro.paragraphs.map((p, index) => (
+                <p key={index}>{p}</p>
+              ))}
             </div>
           </div>
-        </div>
+          <div className="lg:col-span-5">
+            <PartnerContactCard {...contactCard} />
+          </div>
+        </Section>
+
+        <Section containerClassName="grid gap-6 md:grid-cols-2">
+          <PartnerList title={offer.title} items={offer.list} />
+          <PartnerList title={requirement.title} items={requirement.list} />
+        </Section>
       </main>
       <Footer />
     </>

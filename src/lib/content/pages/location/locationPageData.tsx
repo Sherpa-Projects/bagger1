@@ -14,4 +14,9 @@ export const locationPageData = {
   machineCard: {
     cta: "Mehr Infos",
   },
+  crossLocationDelivery: {
+    text: "Großmaschinen ab 2,5 t liefern wir ab 5 Miettagen auch von anderen BAGGER1-Standorten, zum Festpreis von 399 € netto.",
+    linkLabel: "Mehr erfahren",
+    excludedLocations: ["hennef"],
+  },
 } as const;

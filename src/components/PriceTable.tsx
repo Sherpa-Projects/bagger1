@@ -1,5 +1,6 @@
-import { Machine } from "@/app/types/Machine";
+import { Machine } from "@/types/Machine";
 import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
+import { getMinRentalDays } from "@/lib/machines";
 import { Calendar1 } from "lucide-react";
 
 export type PriceTableProps = {
@@ -20,24 +21,30 @@ export default function PriceTable({ machine, size = "lg" }: PriceTableProps) {
       maximumFractionDigits: 0,
     }).format(value);
 
+  const minRentalDays = getMinRentalDays(machine);
+
+  // Staffeln unterhalb der Mindestmietdauer werden ausgeblendet
   const effectivePrice = [
     {
+      days: 1,
       label: timeTable.rowOne,
       value: machine.price.perDay,
       note: "Flexibel",
     },
     {
+      days: 5,
       label: timeTable.rowTwo,
       value: machine.price.perWeek,
       note: "Beliebt",
       featured: true,
     },
     {
+      days: 20,
       label: timeTable.rowThree,
       value: machine.price.perMonth,
       note: "Projektpreis",
     },
-  ];
+  ].filter((price) => price.days >= minRentalDays);
 
   return (
     <div className="w-full">
@@ -51,7 +58,9 @@ export default function PriceTable({ machine, size = "lg" }: PriceTableProps) {
           >
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <span className={`${labelTextSize} font-semibold text-secondary`}>
+                <span
+                  className={`${labelTextSize} font-semibold text-secondary`}
+                >
                   {price.label}
                 </span>
                 <span
@@ -70,7 +79,9 @@ export default function PriceTable({ machine, size = "lg" }: PriceTableProps) {
             </div>
 
             <div className="shrink-0 text-right">
-              <span className={`${priceTextSize} font-extrabold text-secondary`}>
+              <span
+                className={`${priceTextSize} font-extrabold text-secondary`}
+              >
                 {formatPrice(price.value)} €
               </span>
             </div>

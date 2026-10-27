@@ -1,5 +1,3 @@
-export type LocationSlug = "mannheim" | "hennef" | "bruchsal";
-
 export type Price = {
   perDay: number;
   perWeek: number;
@@ -21,6 +19,7 @@ export type Machine = {
   category: string;
   image: { url: string; alt: string };
   price: Price;
+  minRentalDays?: number; // Mindestmietdauer in Tagen, Standard: 1
   content?: {
     title?: string;
     description?: string;

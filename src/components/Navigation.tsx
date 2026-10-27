@@ -14,23 +14,28 @@ import {
 import { Handshake, Instagram, Menu, X, ArrowRight } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 import { company } from "@/lib/content/company";
+import { whatsappHref } from "@/lib/contact";
 import Banner from "@/components/Banner";
 
 type NavigationProps = {
   slug?: string;
 };
 
-function getLocationSlugFromUrl(url: string) {
-  return url.replace(/^\/+|\/+$/g, "");
+// "/hennef/" -> "hennef"
+function trimSlashes(path: string) {
+  return path.replace(/^\/+|\/+$/g, "");
 }
+
+// Runde Icon-Buttons (Instagram, WhatsApp) in der Desktop-Navigation
+const socialIconClass =
+  "flex h-9 w-9 xl:h-10 xl:w-10 items-center justify-center rounded-full border border-white/15 bg-white/5 transition-all duration-300 hover:border-primary/60 hover:bg-white/10";
 
 export default function Navigation({ slug }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const currentLocationSlug = slug?.replace(/^\/+|\/+$/g, "");
-  const whtasappNumber = company.contact.whatsapp.replace(/\D/g, "");
+  const currentLocationSlug = slug && trimSlashes(slug);
 
   const isLocationActive = (url: string) =>
-    currentLocationSlug === getLocationSlugFromUrl(url);
+    currentLocationSlug === trimSlashes(url);
 
   useEffect(() => {
     const originalOverflow = document.body.style.overflow;
@@ -48,9 +53,9 @@ export default function Navigation({ slug }: NavigationProps) {
 
   return (
     <>
-      <nav className="fixed w-full top-0 z-50 duration-300 bg-white/85 text-gray-700 shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/80">
+      <nav className="fixed w-full top-0 z-50 duration-300 bg-white/85 text-gray-700 shadow-[0_8px_30px_rgba(15,23,42,0.08)] backdrop-blur-xl supports-[backdrop-filter]:bg-white/80 lg:bg-secondary/95 lg:text-gray-200 lg:supports-[backdrop-filter]:bg-secondary/90 lg:shadow-[0_8px_30px_rgba(0,0,0,0.25)]">
         <Banner banner={banner} />
-        <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-4 lg:py-1.5 border-b border-transparent">
+        <div className="container max-w-8xl mx-auto px-6 lg:px-8 py-4 lg:py-1.5 border-b border-transparent lg:border-white/10">
           <div className="hidden lg:flex justify-between items-center">
             <div className="flex items-center gap-6">
               <Link href="/">
@@ -64,14 +69,14 @@ export default function Navigation({ slug }: NavigationProps) {
                   />
                 </div>
               </Link>
-              <div className="border-l border-gray-300 h-6" />
-              <div className="flex items-center gap-2" aria-label="Standorte">
-                <p className="hidden xl:flex text-lg pr-2 text-gray-500 font-light">
+              <div className="border-l border-white/15 h-6" />
+              <div className="flex items-center gap-3" aria-label="Standorte">
+                <p className="hidden xl:flex text-lg text-gray-400 font-light">
                   Mieten in:
                 </p>
                 {navigationLocationData.map((item) => (
                   <div key={item.name} className="flex items-center gap-2">
-                    <div className="flex items-center gap-1.5">
+                    <div className="flex items-center gap-1 rounded-xl border border-white/10 bg-white/5 p-1">
                       {item.subData?.map((subItem) => {
                         const isActive = isLocationActive(subItem.url);
                         return (
@@ -79,10 +84,10 @@ export default function Navigation({ slug }: NavigationProps) {
                             key={subItem.url}
                             href={subItem.url}
                             aria-current={isActive ? "location" : undefined}
-                            className={`px-2 py-1.5 text-lg transition-all duration-300 font-bold ${
+                            className={`rounded-lg px-2 xl:px-3 py-1 text-lg font-bold transition-all duration-300 ${
                               isActive
-                                ? "text-primary bg-amber-50 border-primary border rounded-lg"
-                                : "hover:text-primary transition duration-300"
+                                ? "bg-primary text-secondary shadow-sm"
+                                : "text-gray-200 hover:bg-white/10 hover:text-primary"
                             }`}
                           >
                             {subItem.name}
@@ -95,7 +100,7 @@ export default function Navigation({ slug }: NavigationProps) {
               </div>
             </div>
 
-            <div className="relative flex items-center space-x-5">
+            <div className="relative flex items-center gap-3">
               <Link
                 className="transition-all duration-300 transform hover:scale-105"
                 href={navigationKleinanzeigenData.url!}
@@ -109,25 +114,27 @@ export default function Navigation({ slug }: NavigationProps) {
                 />
               </Link>
               <Link
-                className="transition-all duration-300 transform hover:scale-105"
+                className={socialIconClass}
                 href={navigationInstagramData.url!}
                 target="_blank"
+                aria-label={navigationInstagramData.name}
               >
-                <Instagram className="w-5 h-5 text-pink-500 transition-colors focus:outline-none focus:ring-2 focus:ring-pink-400 rounded" />
+                <Instagram className="w-5 h-5 text-pink-500" />
               </Link>
               <Link
-                className="transition-all duration-300 transform hover:scale-105"
-                href={`https://wa.me/${whtasappNumber}`}
+                className={socialIconClass}
+                href={whatsappHref(company.contact.whatsapp)}
                 target="_blank"
+                aria-label={navigationWhatsappData.name}
               >
-                <SiWhatsapp size={20} color="default" className="mr-2" />
+                <SiWhatsapp size={20} color="default" />
               </Link>
-              <div className="border-l border-gray-300 h-6" />
+              <div className="border-l border-white/15 h-6 mx-1" />
               <Link
-                className="flex items-center text-gray-600 hover:text-primary transition-all duration-300 transform decoration-2 cursor-pointer text-lg"
+                className="group flex items-center gap-2 whitespace-nowrap rounded-xl border border-white/15 bg-white/5 px-3 xl:px-4 py-1.5 text-lg text-white transition-all duration-300 hover:border-primary/60 hover:bg-white/10"
                 href={navigationPartnerData.url!}
               >
-                <Handshake className="w-5 h-5 text-primary mr-2" />
+                <Handshake className="w-5 h-5 text-primary" />
                 {navigationPartnerData.name}
               </Link>
             </div>

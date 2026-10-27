@@ -1,4 +1,4 @@
-import { getCityName } from "@/lib/utils";
+import { getCityName } from "@/lib/locations";
 
 export function getMachineSeoTexts(
   location: string,
@@ -12,15 +12,15 @@ export function getMachineSeoTexts(
   const googleDescription = `${machineName}${model} in ${cityName} mieten: Alle Infos zu Modell, Tagespreis und Verfügbarkeit. Jetzt direkt online bei BAGGER1 anfragen.`;
   const openGraphDescription = `${machineName}${model} in ${cityName}: Modell, Tagespreis und Verfügbarkeit auf einen Blick. Passende Baumaschine finden und direkt online bei BAGGER1 mieten.`;
   const twitterDescription = `${machineName}${model} in ${cityName} mieten – Preis, Verfügbarkeit und Online-Anfrage bei BAGGER1.`;
-  const url = `https://bagger1.de/${machineSlug}`;
-  const alt = `BAGGER1 – ${machineName} mieten in ${cityName}`
+  const path = `/${location}/${machineSlug}`;
+  const alt = `BAGGER1 – ${machineName} mieten in ${cityName}`;
 
   return {
     title,
     googleDescription,
     openGraphDescription,
     twitterDescription,
-    url,
+    path,
     alt,
   };
 }

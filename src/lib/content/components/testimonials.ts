@@ -1,4 +1,4 @@
-import { Location } from "@/app/types/Location";
+import { Location } from "@/types/Location";
 
 type Testimonial = {
   stars: number;
@@ -29,6 +29,12 @@ export const testimonials: Testimonial[] = [
     stars: 5,
     content:
       "Top Einsatz: Lieferung super pünktlich und akkurat!\nSchade, dass man nicht öfter baggern muss...;-)",
+    location: "hennef",
+  },
+  {
+    stars: 5,
+    content:
+      "Super Maschinen und super nette Leute. Sehr unkompliziert und flexibel.👍🏻",
     location: "hennef",
   },
   {

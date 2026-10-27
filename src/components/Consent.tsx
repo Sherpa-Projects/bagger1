@@ -1,35 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ConsentLevel, readConsent, writeConsent } from "@/lib/consent";
+import { ConsentLevel, writeConsent } from "@/lib/consent";
+import { useConsentLevel } from "@/hooks/useConsentLevel";
 
 export default function CookieBanner() {
-  const [consent, setConsent] = useState<ConsentLevel>("unset");
-  const [isLoading, setIsLoading] = useState(true);
+  // null = noch nicht gelesen, dann ebenfalls nichts anzeigen
+  const consent = useConsentLevel();
 
-  useEffect(() => {
-    setConsent(readConsent());
-    setIsLoading(false);
-    // Reagiere live, wenn sich Consent in einem anderen Tab ändert
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === "consentLevel") setConsent(readConsent());
-    };
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
-  }, []);
+  if (consent !== "unset") return null;
 
-  if (isLoading || consent !== "unset") return null;
-
-  const allowEssential = () => {
-    writeConsent("essential");
-    setConsent("essential");
-    location.reload();
-  };
-
-  const allowAll = () => {
-    writeConsent("all");
-    setConsent("all");
+  // writeConsent informiert per Storage-Event auch diesen Tab, das Banner schließt sich
+  const allow = (level: ConsentLevel) => {
+    writeConsent(level);
     location.reload();
   };
 
@@ -54,8 +37,8 @@ export default function CookieBanner() {
               className="text-primary underline"
             >
               Datenschutzerklärung von Rentware
-            </Link>
-            {" "}und der{" "}
+            </Link>{" "}
+            und der{" "}
             <Link
               href="https://stripe.com/privacy"
               target="_blank"
@@ -92,13 +75,13 @@ export default function CookieBanner() {
 
         <div className="mt-4 flex space-x-2">
           <button
-            onClick={allowEssential}
+            onClick={() => allow("essential")}
             className="text-white bg-gray-600 border border-gray-400 px-4 py-2 rounded font-semibold hover:bg-gray-700 transition cursor-pointer"
           >
             Nur Essentielle
           </button>
           <button
-            onClick={allowAll}
+            onClick={() => allow("all")}
             className="text-white bg-green-600 px-4 py-2 rounded font-semibold hover:bg-green-700 transition cursor-pointer"
           >
             Alle akzeptieren

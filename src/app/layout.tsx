@@ -1,23 +1,21 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 import Consent from "@/components/Consent";
 import ThirdPartyScripts from "@/components/ThirdPartyScripts";
 import Ambient from "@/components/Ambient";
-
-const BASE_URL = "https://bagger1.de";
-const OG_IMAGE_URL = "https://bagger1.de/images/og_image.png";
+import JsonLd from "@/components/shared/JsonLd";
+import { BASE_URL, LOGO_URL, OG_IMAGE_URL, SITE_NAME } from "@/lib/site";
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": `${BASE_URL}/#organization`,
-  name: "BAGGER1",
+  name: SITE_NAME,
   url: BASE_URL,
-  logo: `${BASE_URL}/images/logo_orange.svg`,
+  logo: LOGO_URL,
   image: OG_IMAGE_URL,
 };
 
@@ -31,7 +29,8 @@ export const metadata: Metadata = {
     "Finde jetzt verfügbare Bagger und Maschinen an deinem Standort. Mit flexiblen Zeiträumen, transparenten Preisen und direkter Online-Buchung bei BAGGER1.",
   openGraph: {
     type: "website",
-    siteName: "Bagger1",
+    locale: "de_DE",
+    siteName: SITE_NAME,
     title: "Ihre Nummer 1 für Bagger und Maschinen | BAGGER1",
     description:
       "Finde jetzt verfügbare Bagger und Maschinen an deinem Standort. Mit flexiblen Zeiträumen, transparenten Preisen und direkter Online-Buchung bei BAGGER1.",
@@ -70,14 +69,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="antialiased">
       <body>
-        <Script
-          id="organization-jsonld"
-          type="application/ld+json"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationJsonLd),
-          }}
-        />
+        <JsonLd data={organizationJsonLd} />
         <Ambient />
         {children}
         <ThirdPartyScripts />

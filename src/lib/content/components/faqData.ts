@@ -1,10 +1,10 @@
-import { FaqItemProps, FaqProps } from "@/app/types/components/Faq";
+import { FaqItemProps, FaqProps } from "@/types/Faq";
 
 const rentalConditionsFaq: FaqItemProps[] = [
   {
-    question: "Wie hoch sind die Kosten für die Anlieferung?",
+    question: "Wie hoch sind die Kosten für Anlieferung und Abholung?",
     answer:
-      "Die Anlieferungskosten hängen von Maschine und Einsatzort ab. Den genauen Preis erhalten Sie transparent vor der Buchung.",
+      "Bis 10 km Entfernung beträgt die Transportpauschale für Anlieferung und Abholung zusammen 95 € netto. Für jeden weiteren Kilometer berechnen wir zusätzlich 5 € netto. Maßgeblich ist die einfache Strecke vom jeweiligen BAGGER1-Standort zur Lieferadresse. Teilen Sie uns Ihre Lieferadresse mit – wir nennen Ihnen die genauen Transportkosten vor der Buchung.",
   },
   {
     question: "Gibt es eine Maschinenbruchversicherung?",
@@ -30,6 +30,11 @@ const rentalConditionsFaq: FaqItemProps[] = [
     question: "Muss ich eine Kaution hinterlegen?",
     answer:
       "Je nach Maschine kann eine Kaution erforderlich sein. Die genaue Höhe nennen wir Ihnen vor der Buchung.",
+  },
+  {
+    question: "Kann ich bei BAGGER1 einen Radlader mit Schneeschild mieten?",
+    answer:
+      "Ja, für unseren Radlader können Sie ein Schneeschild als zusätzlichen Aufsatz buchen. Damit lassen sich beispielsweise Einfahrten, Hofflächen und Parkplätze von Schnee räumen. Bitte geben Sie den gewünschten Aufsatz bei Ihrer Anfrage an, damit wir die Verfügbarkeit prüfen können.",
   },
 ];
 
@@ -86,6 +91,13 @@ const bucketFaq: FaqItemProps[] = [
   },
 ];
 
+const crossLocationDeliveryFaq: FaqItemProps = {
+  question:
+    "Können Großmaschinen ab 2,5 t auch von einem anderen BAGGER1-Standort geliefert werden?",
+  answer:
+    "Ja, wir bieten die standortübergreifende Lieferung von Großmaschinen ab 2,5 t ab 5 Miettagen zum Festpreis von 399 € netto an. So können Sie auch Maschinen anfragen, die an Ihrem nächstgelegenen Standort nicht vorhanden sind. Verfügbarkeit und Liefertermin stimmen wir vor der Buchung mit Ihnen ab.",
+};
+
 const mannheimFaq: FaqItemProps[] = [
   {
     question:
@@ -114,7 +126,8 @@ const mannheimFaq: FaqItemProps[] = [
 
 const aschaffenburgFaq: FaqItemProps[] = [
   {
-    question: "Welche Baumaschinen kann ich bei BAGGER1 in Aschaffenburg mieten?",
+    question:
+      "Welche Baumaschinen kann ich bei BAGGER1 in Aschaffenburg mieten?",
     answer:
       "Bei BAGGER1 in Aschaffenburg können Sie je nach aktuellem Sortiment am Standort z. B. Minibagger, Rüttelplatten und Dumper mieten. Wählen Sie die passende Maschine online aus, prüfen Sie den gewünschten Zeitraum im Kalender und buchen Sie direkt – für Kurzzeit- oder Langzeitmiete.",
   },
@@ -210,7 +223,7 @@ export const faq: FaqProps = {
     {
       location: "mannheim",
       locationItems: {
-        items: [...mannheimFaq],
+        items: [...mannheimFaq, crossLocationDeliveryFaq],
       },
       bucketItems: { items: [...bucketFaq] },
       rentalConditionItems: {
@@ -220,7 +233,7 @@ export const faq: FaqProps = {
     {
       location: "aschaffenburg",
       locationItems: {
-        items: [...aschaffenburgFaq],
+        items: [...aschaffenburgFaq, crossLocationDeliveryFaq],
       },
       bucketItems: { items: [...bucketFaq] },
       rentalConditionItems: {
@@ -230,7 +243,7 @@ export const faq: FaqProps = {
     {
       location: "bruchsal",
       locationItems: {
-        items: [...bruchsalFaq],
+        items: [...bruchsalFaq, crossLocationDeliveryFaq],
       },
       bucketItems: { items: [...bucketFaq] },
       rentalConditionItems: {

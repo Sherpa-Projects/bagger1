@@ -1,4 +1,4 @@
-import { LocationDataProps } from "@/app/types/Location";
+import { LocationDataProps } from "@/types/Location";
 
 export const locationData: LocationDataProps[] = [
   {
@@ -17,7 +17,7 @@ export const locationData: LocationDataProps[] = [
     rating: {
       stars: 5,
       location: "hennef",
-      reviews: 7,
+      reviews: 8,
     },
     seo: {
       title: "Bagger und Baumaschinen mieten in Hennef",

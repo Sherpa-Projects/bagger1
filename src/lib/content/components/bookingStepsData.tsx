@@ -6,7 +6,11 @@ import {
   Truck,
 } from "lucide-react";
 
-export const titleHtml = `So läuft die Buchung bei <span class="text-primary">BAGGER1</span> ab`;
+export const title = (
+  <>
+    So läuft die Buchung bei <span className="text-primary">BAGGER1</span> ab
+  </>
+);
 
 type Step = {
   title: string;
@@ -26,7 +30,7 @@ export const steps: Step[] = [
   {
     title: "Zeitraum wählen",
     description:
-      "Legen Sie Ihre Mietzeitraum fest und prüfen Sie direkt online die Verfügbarkeit.",
+      "Legen Sie Ihren Mietzeitraum fest und prüfen Sie direkt online die Verfügbarkeit.",
     Icon: CalendarCheck,
     image: "/images/illustrations/calendar.svg",
   },

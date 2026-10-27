@@ -1,21 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Script from "next/script";
-import { ConsentLevel, readConsent } from "@/lib/consent";
+import { useConsentLevel } from "@/hooks/useConsentLevel";
 
 export default function ThirdPartyScripts() {
-  const [level, setLevel] = useState<ConsentLevel>("unset");
-
-  useEffect(() => {
-    setLevel(readConsent());
-    // Reagiere live, wenn sich Consent in einem anderen Tab ändert
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === "consentLevel") setLevel(readConsent());
-    };
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
-  }, []);
+  const level = useConsentLevel();
 
   return (
     <>

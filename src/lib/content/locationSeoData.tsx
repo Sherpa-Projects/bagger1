@@ -6,8 +6,8 @@ import {
   Hammer,
   CalendarClock,
 } from "lucide-react";
-import { LocalUseCase } from "@/app/types/LocalUseCase";
-import type { Location } from "@/app/types/Location";
+import { LocalUseCase } from "@/types/LocalUseCase";
+import type { Location } from "@/types/Location";
 
 type LocationSeoConfig = {
   headline?: (cityName: string) => React.ReactNode;
@@ -346,6 +346,8 @@ export const locationSeoBySlug: Record<Location, LocationSeoConfig> = {
       "Forst (Baden)",
       "Hambrücken",
       "Gondelsheim",
+      "Bad Schönborn",
+      "Kronau",
     ],
   },
 
@@ -376,9 +378,9 @@ export const locationSeoBySlug: Record<Location, LocationSeoConfig> = {
           Buchungen über diese Seite beziehen sich auf den regionalen
           Verfügbarkeits- und Bestandskontext für {cityName} und {region}. Damit
           dient die Seite als eigenständiger Einstieg für Kunden aus dem Raum
-          Aschaffenburg. Auch wenn einzelne Maschinentypen BAGGER1-weit an mehreren
-          Standorten vertreten sein können, ist diese URL auf Anfragen aus
-          dieser Region ausgerichtet.
+          Aschaffenburg. Auch wenn einzelne Maschinentypen BAGGER1-weit an
+          mehreren Standorten vertreten sein können, ist diese URL auf Anfragen
+          aus dieser Region ausgerichtet.
         </>
       );
     },

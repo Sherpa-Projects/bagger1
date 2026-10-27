@@ -41,9 +41,3 @@ export const navigationWhatsappData: NavigationDataProps = {
 
 export const banner: string =
   "Offizielles Mitglied im Bundesverband der Baumaschinen-, Baugeräte- und Industriemaschinen-Firmen e.V.";
-
-export const brandName: React.ReactElement = (
-  <span className="font-oswald ml-2 text-xl font-bold tracking-wide">
-    BAGGER1
-  </span>
-);

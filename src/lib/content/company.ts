@@ -12,3 +12,10 @@ export const company = {
     sunday: "So.: geschlossen",
   },
 };
+
+// Geschäftszeiten als Zeilen für Listen (Standortkarten, Footer)
+export const openingHoursLines = [
+  company.openingHours.weekday,
+  company.openingHours.saturday,
+  company.openingHours.sunday,
+];

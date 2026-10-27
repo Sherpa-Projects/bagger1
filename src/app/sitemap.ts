@@ -1,9 +1,10 @@
 import { MetadataRoute } from "next";
 import { locationData } from "@/lib/content/locationData";
-import { getLocationMachineRouteParams } from "@/lib/utils";
+import { getLocationMachineRouteParams } from "@/lib/machines";
+import { BASE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://bagger1.de";
+  const baseUrl = BASE_URL;
 
   const locationPages = locationData.map((loc) => ({
     url: `${baseUrl}/${loc.slug}`,

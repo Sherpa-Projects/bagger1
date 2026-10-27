@@ -2,15 +2,16 @@ import Link from "next/link";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import { LINKS } from "@/constants/links";
-import type { Location } from "@/app/types/Location";
+import type { Location } from "@/types/Location";
+import { cn } from "@/lib/cn";
+import { clampStars, formatReviewCount, formatStars } from "@/lib/rating";
 
 export type RatingProps = {
   stars: number;
   location: Location;
   reviews?: number;
+  dark?: boolean;
 };
-
-const clampStars = (value: number) => Math.min(5, Math.max(0, value));
 
 const reviewLinks = {
   bruchsal: LINKS.bruchsalTestimonials,
@@ -21,19 +22,27 @@ function getReviewLink(location: Location) {
   return reviewLinks[location as keyof typeof reviewLinks];
 }
 
-export default function Rating({ stars, reviews, location }: RatingProps) {
+export default function Rating({
+  stars,
+  reviews,
+  location,
+  dark = false,
+}: RatingProps) {
   const normalizedStars = clampStars(stars);
-  const reviewLabel = `${reviews?.toLocaleString("de-DE")} Bewertung${reviews === 1 ? "" : "en"}`;
+  const reviewLabel = reviews ? formatReviewCount(reviews) : undefined;
 
   return (
     <Link
       href={getReviewLink(location)}
       target="_blank"
       rel="noreferrer noopener"
-      className="group inline-flex w-fit items-center gap-2 rounded-full px-3 py-2 border border-gray-300 transition-all duration-300 bg-gray-50 hover:border-primary"
-      aria-label={`Google Bewertung: ${normalizedStars.toFixed(1).replace(".", ",")} von 5 Sternen, ${reviewLabel}`}
+      className={cn(
+        "group inline-flex w-fit items-center gap-2.5 rounded-xl border px-3 py-1.5 transition-all duration-300 hover:border-primary hover:shadow-sm",
+        dark ? "border-white/10 bg-white/5" : "border-gray-200 bg-white",
+      )}
+      aria-label={`Google Bewertung: ${formatStars(normalizedStars)} von 5 Sternen${reviewLabel ? `, ${reviewLabel}` : ""}`}
     >
-      <span className="flex items-center gap-1.5">
+      <span className="flex h-6 w-6 items-center justify-center rounded-md bg-white">
         <Image
           src="/images/google.webp"
           alt="Google Logo"
@@ -56,22 +65,34 @@ export default function Rating({ stars, reviews, location }: RatingProps) {
                 key={index}
                 size={13}
                 className={
-                  isActive ? "fill-[#fbbc04] text-[#fbbc04]" : "text-[#dadce0]"
+                  isActive
+                    ? "fill-primary text-primary"
+                    : dark
+                      ? "text-white/30"
+                      : "text-gray-300"
                 }
               />
             );
           })}
         </span>
-        <span className="text-sm font-semibold text-[#202124]">
-          {normalizedStars.toFixed(1).replace(".", ",")}
+        <span
+          className={cn(
+            "text-sm font-semibold",
+            dark ? "text-white" : "text-secondary",
+          )}
+        >
+          {formatStars(normalizedStars)}
         </span>
       </span>
       {reviews && (
         <span
-          className="text-sm font-medium text-[#5f6368] transition-colors hover:text-[#1a73e8] hover:underline"
+          className={cn(
+            "text-sm transition-colors group-hover:text-primary",
+            dark ? "text-gray-400" : "text-gray-500",
+          )}
           aria-label={`Anzahl der Bewertungen: ${reviewLabel}`}
         >
-          ({reviewLabel})
+          {reviewLabel}
         </span>
       )}
     </Link>

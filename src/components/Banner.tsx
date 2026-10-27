@@ -6,14 +6,15 @@ type BannerProps = {
 
 export default function Banner({ banner }: BannerProps) {
   return (
-    <div className="hidden px-4 text-center text-sm w-full md:flex items-center justify-center bg-gradient-to-r bg-primary animate-gradient-x py-2 lg:py-1 text-black">
-      <Image
-        className="mr-2"
-        src={`/images/bbi_logo.png`}
-        alt="BBI Logo"
-        width={30}
-        height={30}
-      />
+    <div className="hidden md:flex w-full items-center justify-center gap-3 bg-primary px-4 py-1.5 text-center text-sm font-medium text-secondary">
+      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white">
+        <Image
+          src="/images/bbi_logo.png"
+          alt="BBI Logo"
+          width={18}
+          height={18}
+        />
+      </span>
       {banner}
     </div>
   );

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Quote } from "lucide-react";
+import { ChevronDown, MapPin, Quote } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -11,11 +11,14 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import type { Location } from "@/app/types/Location";
-import { locationData } from "@/lib/content/locationData";
+import type { Location } from "@/types/Location";
+import { getCityName } from "@/lib/locations";
 import Rating from "@/components/Rating";
-import IconBadge from "@/components/IconBadge";
 import { testimonials } from "@/lib/content/components/testimonials";
+import Section from "@/components/shared/Section";
+import Eyebrow from "@/components/shared/Eyebrow";
+import Headline from "@/components/shared/Headline";
+import BlueprintGrid from "@/components/shared/BlueprintGrid";
 
 function shuffleArray<T>(items: T[]) {
   const result = [...items];
@@ -34,54 +37,86 @@ function ExpandableText({
   maxLength?: number;
 }) {
   const [isExpanded, setIsExpanded] = React.useState(false);
+  const scrollRef = React.useRef<HTMLDivElement>(null);
   const needsToggle = text.length > maxLength;
-  const previewText = isExpanded
-    ? text
-    : `${text.slice(0, maxLength).trimEnd()}`;
+  const previewText =
+    isExpanded || !needsToggle
+      ? text
+      : `${text.slice(0, maxLength).trimEnd()} …`;
+
+  const toggle = () => {
+    setIsExpanded((prev) => !prev);
+    scrollRef.current?.scrollTo({ top: 0 });
+  };
 
   return (
-    <div className="mt-7">
-      <p className="font-medium leading-relaxed text-secondary whitespace-pre-line">
-        {previewText}
-      </p>
+    <div className="mt-6">
+      {/* Feste Höhe: lange Texte scrollen innerhalb der Karte, statt alle Karten zu strecken */}
+      <div
+        ref={scrollRef}
+        className={`h-36 pr-2 overscroll-contain [scrollbar-width:thin] [scrollbar-color:var(--color-primary)_transparent] ${
+          isExpanded
+            ? "overflow-y-auto pb-6 [mask-image:linear-gradient(to_bottom,black_80%,transparent)]"
+            : "overflow-hidden"
+        }`}
+      >
+        <p className="text-base leading-relaxed text-gray-700 whitespace-pre-line">
+          {previewText}
+        </p>
+      </div>
       {needsToggle && (
         <button
           type="button"
-          onClick={() => setIsExpanded((prev) => !prev)}
-          className="mt-2 text-sm font-semibold text-primary underline underline-offset-2"
+          onClick={toggle}
+          aria-expanded={isExpanded}
+          className="mt-2 inline-flex items-center gap-1 text-sm font-semibold text-primary transition-colors hover:text-secondary"
         >
           {isExpanded ? "weniger" : "mehr"}
+          <ChevronDown
+            size={16}
+            className={`transition-transform duration-300 ${isExpanded ? "rotate-180" : ""}`}
+            aria-hidden="true"
+          />
         </button>
       )}
     </div>
   );
 }
 
-export default function Testimonials() {
+type TestimonialsProps = {
+  // Auf Standortseiten nur die Bewertungen dieses Standorts zeigen
+  location?: Location;
+};
+
+export default function Testimonials({ location }: TestimonialsProps = {}) {
   const plugin = React.useRef(
     Autoplay({ delay: 3000, stopOnInteraction: true }),
   );
-  const [shuffledTestimonials, setShuffledTestimonials] = React.useState(
-    testimonials,
+  const visibleTestimonials = React.useMemo(
+    () =>
+      location
+        ? testimonials.filter((item) => item.location === location)
+        : testimonials,
+    [location],
   );
+  const [shuffledTestimonials, setShuffledTestimonials] =
+    React.useState(visibleTestimonials);
 
   React.useEffect(() => {
-    setShuffledTestimonials(shuffleArray(testimonials));
-  }, []);
+    setShuffledTestimonials(shuffleArray(visibleTestimonials));
+  }, [visibleTestimonials]);
 
-  const getLocationName = (location: Location) =>
-    locationData.find((item) => item.slug === location)?.name ?? location;
+  if (visibleTestimonials.length === 0) return null;
 
   return (
-    <section className="container max-w-7xl px-6 py-8 lg:pb-28 mx-auto">
+    <Section>
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="mt-3 font-bold text-3xl md:text-4xl lg:text-3xl lg:leading-tight">
-          Stimmen unserer Kunden
-        </h2>
+        <Eyebrow className="mx-auto mb-4">Google-Bewertungen</Eyebrow>
+        <Headline>Stimmen unserer Kunden</Headline>
       </div>
       <Carousel
         opts={{ align: "start", loop: true }}
-        className="mt-10 mx-auto w-full px-4 sm:px-10"
+        className="mt-8 lg:mt-10 mx-auto w-full px-4 sm:px-12"
         plugins={[plugin.current]}
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
@@ -93,38 +128,46 @@ export default function Testimonials() {
               className="basis-full pl-4 md:basis-1/2 xl:basis-1/3"
             >
               <div className="h-full">
-                <Card className="h-full">
-                  <CardContent className="flex h-full flex-col justify-between gap-8 p-6 sm:p-7">
+                <Card className="group relative h-full pb-0 bg-gradient-to-br from-white via-white to-orange-50/60 hover:bg-white hover:border-primary/60">
+                  {/* Bauplan-Raster und großes Zitatzeichen als Hintergrund */}
+                  <BlueprintGrid />
+                  <Quote
+                    className="pointer-events-none absolute -right-4 -top-3 h-32 w-32 rotate-180 fill-primary/15 transition-colors duration-500 group-hover:fill-primary/25"
+                    strokeWidth={0}
+                    aria-hidden="true"
+                  />
+
+                  <CardContent className="relative flex h-full flex-col justify-between gap-8 p-6 sm:p-7">
                     <div>
-                      <div className="flex items-start justify-between gap-4">
-                        <Rating
-                          stars={testimonial.stars}
-                          location={testimonial.location}
-                        />
-                        <Quote
-                          aria-hidden="true"
-                          className="h-12 w-12 shrink-0 text-primary/25"
-                        />
-                      </div>
+                      <Rating
+                        stars={testimonial.stars}
+                        location={testimonial.location}
+                      />
                       <ExpandableText text={testimonial.content} />
                     </div>
 
-                    <div className="flex justify-end text-xs items-center border-t border-gray-200 pt-5">
-                      <IconBadge
-                        Icon={MapPin}
-                        text={`Standort ${getLocationName(testimonial.location)}`}
-                        size="sm"
+                    <div className="flex items-center gap-2 border-t border-gray-100 pt-4 text-sm text-gray-500">
+                      <MapPin
+                        size={16}
+                        className="shrink-0 text-primary"
+                        aria-hidden="true"
                       />
+                      Standort {getCityName(testimonial.location)}
                     </div>
                   </CardContent>
+                  {/* Absperrband als dezenter Abschluss, wie im Hero */}
+                  <div
+                    className="h-1.5 w-full shrink-0 bg-[repeating-linear-gradient(-45deg,var(--color-primary)_0_10px,transparent_10px_20px)] opacity-70 transition-opacity duration-500 group-hover:opacity-100"
+                    aria-hidden="true"
+                  />
                 </Card>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="left-0 z-10 text-black/50 border-black/50 bg-white/30 hover:bg-white/40 hover:text-primary hover:border-primary transition-all duration-500" />
-        <CarouselNext className="right-0 z-10 text-black/50 border-black/60 bg-white/50 hover:bg-white/40 hover:text-primary hover:border-primary transition-all duration-300" />
+        <CarouselPrevious className="left-0 z-10 h-10 w-10 border-gray-200 bg-white text-gray-600 shadow-sm transition-all duration-300 hover:border-primary hover:bg-white hover:text-primary" />
+        <CarouselNext className="right-0 z-10 h-10 w-10 border-gray-200 bg-white text-gray-600 shadow-sm transition-all duration-300 hover:border-primary hover:bg-white hover:text-primary" />
       </Carousel>
-    </section>
+    </Section>
   );
 }
