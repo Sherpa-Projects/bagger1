@@ -1,11 +1,9 @@
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import BlueprintGrid from "@/components/shared/BlueprintGrid";
 import Glow from "@/components/shared/Glow";
-import Eyebrow from "@/components/shared/Eyebrow";
 import { mailHref, phoneHref } from "@/lib/contact";
 
 type PartnerContactCardProps = {
-  title: string;
   description: string;
   subtitle: string;
   phone: string;
@@ -14,7 +12,6 @@ type PartnerContactCardProps = {
 
 // Dunkle Kontaktkarte als Akzent auf der Partnerseite
 export default function PartnerContactCard({
-  title,
   description,
   subtitle,
   phone,
@@ -33,9 +30,6 @@ export default function PartnerContactCard({
       />
       <Glow className="-top-24 -right-24 h-64 w-64 bg-primary/25" />
       <div className="relative">
-        <Eyebrow variant="label" icon={MapPin} className="mb-3">
-          {title}
-        </Eyebrow>
         <p className="text-gray-300 leading-relaxed">{description}</p>
         <div className="mt-6 border-t border-white/10 pt-6">
           <p className="mb-4 font-bold text-xl">{subtitle}</p>

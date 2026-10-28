@@ -6,7 +6,7 @@ import { Machine } from "@/types/Machine";
 import { Location } from "@/types/Location";
 import { Card } from "@/components/ui/card";
 import Section from "@/components/shared/Section";
-import SectionHeader from "@/components/shared/SectionHeader";
+import Headline from "@/components/shared/Headline";
 import BlueprintGrid from "@/components/shared/BlueprintGrid";
 
 type MachineCardProps = {
@@ -26,10 +26,7 @@ export default function MachineCard({
 }: MachineCardProps) {
   return (
     <Section className="pt-10 pb-10 lg:pt-20 px-4">
-      <SectionHeader
-        eyebrow={`${machines.length} ${machines.length === 1 ? "Modell" : "Modelle"} verfügbar`}
-        title={title}
-      />
+      <Headline className="mb-6 text-center lg:mb-8">{title}</Headline>
       <ul className="grid md:grid-cols-2 gap-6">
         {machines.map((machine) => (
           <li key={machine.name}>
@@ -63,7 +60,11 @@ export default function MachineCard({
                         </p>
                       )}
                     </div>
-                    <PriceTable machine={machine} size="sm" />
+                    <PriceTable
+                      machine={machine}
+                      location={location}
+                      size="sm"
+                    />
                   </div>
 
                   <span className="inline-flex w-full items-center justify-between gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2.5 text-base font-semibold text-secondary transition-all duration-300 group-hover:border-primary group-hover:shadow-sm">

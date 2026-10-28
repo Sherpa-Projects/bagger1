@@ -4,7 +4,6 @@ import { locationSeoBySlug } from "@/lib/content/locationSeoData";
 import { getLocationBySlug } from "@/lib/locations";
 import type { DeliveryAreaProps, Location } from "@/types/Location";
 import Section from "@/components/shared/Section";
-import Eyebrow from "@/components/shared/Eyebrow";
 import Headline from "@/components/shared/Headline";
 
 function findDistanceKm(place: string, deliveryAreas: DeliveryAreaProps[]) {
@@ -77,9 +76,6 @@ export function LocationSeoContent({
       <div className="rounded-3xl bg-secondary text-white px-6 py-10 md:px-10 lg:p-14">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <div>
-            <Eyebrow variant="label" className="mb-4">
-              Standort {cityName}
-            </Eyebrow>
             <Headline className="mb-6">{headline}</Headline>
             {intro && (
               <p className="text-base lg:text-lg leading-relaxed text-gray-300">

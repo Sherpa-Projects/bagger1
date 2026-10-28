@@ -10,8 +10,19 @@ export function isAvailableAt(machine: Machine, location: string) {
   return (machine.inventory[location]?.length ?? 0) > 0;
 }
 
+export function getDeliveryFlatRate(machine: Machine, location: string) {
+  return machine.deliveryFlatRateByLocation?.[location];
+}
+
+// Maschinen mit Pauschallieferung (aus anderem Standort) kommen ans Ende
 export function getMachinesForLocation(location: string) {
-  return machineData.filter((m) => isAvailableAt(m, location));
+  const available = machineData.filter((m) => isAvailableAt(m, location));
+  const hasFlatRate = (m: Machine) =>
+    getDeliveryFlatRate(m, location) !== undefined;
+  return [
+    ...available.filter((m) => !hasFlatRate(m)),
+    ...available.filter(hasFlatRate),
+  ];
 }
 
 // Alle Kombinationen aus Standort und dort verfügbarer Maschine (Routen, Sitemap)
@@ -24,6 +35,8 @@ export function getLocationMachineRouteParams() {
   );
 }
 
-export function getMinRentalDays(machine: Machine) {
-  return machine.minRentalDays ?? 1;
+export function getMinRentalDays(machine: Machine, location: string) {
+  return (
+    machine.minRentalDaysByLocation?.[location] ?? machine.minRentalDays ?? 1
+  );
 }

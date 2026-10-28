@@ -16,7 +16,6 @@ import { getCityName } from "@/lib/locations";
 import Rating from "@/components/Rating";
 import { testimonials } from "@/lib/content/components/testimonials";
 import Section from "@/components/shared/Section";
-import Eyebrow from "@/components/shared/Eyebrow";
 import Headline from "@/components/shared/Headline";
 import BlueprintGrid from "@/components/shared/BlueprintGrid";
 
@@ -110,10 +109,9 @@ export default function Testimonials({ location }: TestimonialsProps = {}) {
 
   return (
     <Section>
-      <div className="mx-auto max-w-2xl text-center">
-        <Eyebrow className="mx-auto mb-4">Google-Bewertungen</Eyebrow>
-        <Headline>Stimmen unserer Kunden</Headline>
-      </div>
+      <Headline className="mx-auto max-w-2xl text-center">
+        Stimmen unserer Kunden
+      </Headline>
       <Carousel
         opts={{ align: "start", loop: true }}
         className="mt-8 lg:mt-10 mx-auto w-full px-4 sm:px-12"

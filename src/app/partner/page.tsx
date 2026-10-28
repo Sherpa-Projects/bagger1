@@ -7,7 +7,6 @@ import Hero from "@/components/Hero";
 import PartnerList from "@/components/PartnerList";
 import PartnerContactCard from "@/components/PartnerContactCard";
 import Section from "@/components/shared/Section";
-import Eyebrow from "@/components/shared/Eyebrow";
 import Headline from "@/components/shared/Headline";
 import { pageMetadata } from "@/lib/metadata";
 import { mailHref, phoneHref } from "@/lib/contact";
@@ -60,7 +59,6 @@ export default function PartnerPage() {
           containerClassName="grid gap-8 lg:grid-cols-12 lg:gap-12 lg:items-center"
         >
           <div className="lg:col-span-7">
-            <Eyebrow className="mb-4">Partner werden</Eyebrow>
             <Headline size="lg">{intro.title}</Headline>
             <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-gray-600">
               {intro.paragraphs.map((p, index) => (

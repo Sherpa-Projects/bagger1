@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, MapPin } from "lucide-react";
+import { ArrowLeft, Truck } from "lucide-react";
 import { notFound } from "next/navigation";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -10,15 +10,17 @@ import BookingWidget from "@/components/BookingWidget";
 import BookingSteps from "@/components/BookingSteps";
 import MachineSpecifications from "@/components/MachineSpecifications";
 import PriceAddition from "@/components/PriceAddition";
+import WinterServiceTeaser from "@/components/WinterServiceTeaser";
 import Container from "@/components/shared/Container";
-import Eyebrow from "@/components/shared/Eyebrow";
 import Headline from "@/components/shared/Headline";
 import SurfaceCard from "@/components/shared/SurfaceCard";
 import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
+import { winterServicePageData } from "@/lib/content/pages/winterdienst/winterServicePageData";
 import { getMachineSeoTexts } from "@/lib/content/seo/machineSeo";
 import { getCityName, humanizeSlug, isValidLocation } from "@/lib/locations";
 import {
   getLocationMachineRouteParams,
+  getDeliveryFlatRate,
   getMachineBySlug,
 } from "@/lib/machines";
 import { SITE_NAME } from "@/lib/site";
@@ -89,6 +91,10 @@ export default async function MachinePage({ params }: MachinePageProps) {
   const currentLocation = getCityName(location);
   const content = selectedMachine.content;
   const specifications = content?.specifications;
+  const deliveryFlatRate = getDeliveryFlatRate(selectedMachine, location);
+  const showWinterServiceTeaser =
+    location === winterServicePageData.location &&
+    machineSlug === winterServicePageData.machineSlug;
   const hasIntroContent = Boolean(content?.title || content?.description);
 
   return (
@@ -118,9 +124,6 @@ export default async function MachinePage({ params }: MachinePageProps) {
           </Link>
 
           <div className="mb-8">
-            <Eyebrow icon={MapPin} className="mb-4">
-              Standort {currentLocation}
-            </Eyebrow>
             <Headline as="h1" size="lg">
               {selectedMachine.name}{" "}
               <span className="text-primary">in {currentLocation}</span>
@@ -164,6 +167,8 @@ export default async function MachinePage({ params }: MachinePageProps) {
                 </div>
               )}
 
+              {showWinterServiceTeaser && <WinterServiceTeaser />}
+
               {specifications && (
                 <MachineSpecifications
                   model={selectedMachine.model}
@@ -183,7 +188,25 @@ export default async function MachinePage({ params }: MachinePageProps) {
                   <h2 className="font-bold text-2xl mb-4">
                     Preise & Konditionen
                   </h2>
-                  <PriceTable machine={selectedMachine} size="lg" />
+                  <PriceTable
+                    machine={selectedMachine}
+                    location={location}
+                    size="lg"
+                  />
+                  {deliveryFlatRate !== undefined && (
+                    <div className="mt-4 flex items-center gap-3 rounded-2xl border border-primary/40 bg-primary/10 p-4">
+                      <Truck
+                        className="h-5 w-5 shrink-0 text-primary"
+                        aria-hidden="true"
+                      />
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold text-secondary">
+                          Pauschallieferung {deliveryFlatRate} €
+                        </span>{" "}
+                        netto, standortübergreifend zum Festpreis
+                      </p>
+                    </div>
+                  )}
                   <PriceAddition info={timeTable} />
                 </SurfaceCard>
               </div>

@@ -1,7 +1,6 @@
 import { type ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import Section from "@/components/shared/Section";
-import Eyebrow from "@/components/shared/Eyebrow";
 import Headline from "@/components/shared/Headline";
 import BlueprintGrid from "@/components/shared/BlueprintGrid";
 import Glow from "@/components/shared/Glow";
@@ -13,7 +12,6 @@ type IntroItem = {
 };
 
 type IntroProps = {
-  eyebrow: string;
   title: ReactNode;
   lead: string;
   services: {
@@ -24,7 +22,6 @@ type IntroProps = {
 };
 
 export default function Intro({
-  eyebrow,
   title,
   lead,
   services,
@@ -40,9 +37,6 @@ export default function Intro({
         <div className="relative px-6 py-10 md:px-10 lg:px-14 lg:py-12">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
             <div className="lg:col-span-7 flex flex-col">
-              <Eyebrow pulse className="mb-6">
-                {eyebrow}
-              </Eyebrow>
               <Headline size="lg">{title}</Headline>
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-600">
                 {lead}

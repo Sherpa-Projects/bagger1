@@ -3,6 +3,7 @@ import type { LucideIcon } from "lucide-react";
 import BlueprintGrid from "@/components/shared/BlueprintGrid";
 import Glow from "@/components/shared/Glow";
 import Container from "@/components/shared/Container";
+import { cn } from "@/lib/cn";
 
 type HeroProps = {
   image: string;
@@ -10,6 +11,8 @@ type HeroProps = {
   subtitle?: string;
   children?: ReactNode;
   badges?: ReadonlyArray<{ label: string; Icon: LucideIcon }>;
+  // Für lange Titel, z. B. eine kleinere Schriftgröße
+  titleClassName?: string;
 };
 
 function splitLastWord(text: string) {
@@ -24,6 +27,7 @@ export default function Hero({
   subtitle,
   children,
   badges,
+  titleClassName,
 }: HeroProps) {
   const { head, last } = splitLastWord(title);
   // Ohne Untertitel ist der Titel die H1 der Seite (z. B. Standortseiten)
@@ -53,7 +57,12 @@ export default function Hero({
 
       <Container className="relative px-4 py-14 lg:py-24">
         <div className="max-w-2xl space-y-5">
-          <TitleTag className="font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-wide">
+          <TitleTag
+            className={cn(
+              "font-extrabold text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-wide",
+              titleClassName,
+            )}
+          >
             {head}
             <span className="text-primary">{last}</span>
           </TitleTag>

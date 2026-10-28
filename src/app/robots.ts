@@ -14,6 +14,11 @@ const AI_BOTS = [
   "Google-Extended",
   "Applebot-Extended",
   "CCBot",
+  "meta-externalagent",
+  "meta-externalfetcher",
+  "Amazonbot",
+  "DuckAssistBot",
+  "MistralAI-User",
 ];
 
 export default function robots(): MetadataRoute.Robots {

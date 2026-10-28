@@ -1,25 +1,20 @@
+import type { ReactNode } from "react";
 import { LocalUseCase } from "@/types/LocalUseCase";
-import { localUsesCasesData } from "@/lib/content/components/localUseCasesData";
 import { Card } from "@/components/ui/card";
 import Section from "@/components/shared/Section";
-import SectionHeader from "@/components/shared/SectionHeader";
+import Headline from "@/components/shared/Headline";
 import BlueprintGrid from "@/components/shared/BlueprintGrid";
 
 type LocalUseCasesProps = {
-  locationName: string;
-  useCases: LocalUseCase[];
+  title: ReactNode;
+  useCases: ReadonlyArray<LocalUseCase>;
 };
 
-export default function LocalUseCases({
-  locationName,
-  useCases,
-}: LocalUseCasesProps) {
+// Einsatzbereiche als Kacheln (Standortseiten, Winterdienst)
+export default function LocalUseCases({ title, useCases }: LocalUseCasesProps) {
   return (
     <Section spacing="compact">
-      <SectionHeader
-        eyebrow="Einsatzbereiche"
-        title={`${localUsesCasesData.title} ${locationName}`}
-      />
+      <Headline className="mb-6 text-center lg:mb-8">{title}</Headline>
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {useCases?.map((item, index) => {
           const Icon = item.icon;

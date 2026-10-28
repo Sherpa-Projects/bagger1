@@ -7,7 +7,6 @@ import { mailHref, phoneHref, whatsappHref } from "@/lib/contact";
 import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 import Container from "@/components/shared/Container";
-import Eyebrow from "@/components/shared/Eyebrow";
 import Headline from "@/components/shared/Headline";
 import Glow from "@/components/shared/Glow";
 
@@ -51,9 +50,6 @@ export default function Footer() {
         <Container className="relative px-4 py-14 lg:py-20">
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 lg:items-end">
             <div className="lg:col-span-5">
-              <Eyebrow variant="label" className="mb-4">
-                Kontakt
-              </Eyebrow>
               <Headline size="lg">
                 Fragen zur Miete?
                 <br />
@@ -85,43 +81,10 @@ export default function Footer() {
           </div>
 
           <div className="mt-12 lg:mt-16 pt-10 lg:pt-12 border-t border-white/10 grid md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-14">
-            <div className="lg:col-span-4">
-              <Image
-                src="/images/logo_orange.svg"
-                alt="BAGGER1 Logo"
-                width={188}
-                height={40}
-                className="h-10 w-auto mb-4"
-              />
-              <p className="text-gray-300 mb-6">
-                Ihre Nummer 1 für Bagger und Maschinen.
-              </p>
-              <Link
-                href="https://www.bbi-online.org/"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="flex items-center gap-4 rounded-2xl bg-white/5 border border-white/10 p-4 transition-colors hover:border-primary/60 hover:bg-white/10"
-              >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white p-1.5">
-                  <Image
-                    src="/images/bbi_logo.png"
-                    alt="BBI Logo"
-                    width={40}
-                    height={40}
-                    className="h-full w-auto"
-                  />
-                </span>
-                <span className="text-sm text-gray-300 leading-snug">
-                  Mitglied im Bundesverband der Baumaschinen-, Baugeräte- und
-                  Industriemaschinen-Firmen e.V.
-                </span>
-              </Link>
-            </div>
-
-            <div className="lg:col-span-5">
-              <Eyebrow variant="label" as="h3" className="mb-4">
+            <div className="lg:col-span-6">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
                 Standorte
-              </Eyebrow>
+              </h3>
               <ul className="grid grid-cols-2 gap-3">
                 {locationData.map((location) => (
                   <li key={location.slug}>
@@ -150,10 +113,10 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="lg:col-span-3">
-              <Eyebrow variant="label" as="h3" className="mb-4">
+            <div className="lg:col-span-4 lg:col-start-9">
+              <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
                 {company.openingHours.title}
-              </Eyebrow>
+              </h3>
               <ul className="space-y-3 text-gray-300">
                 {openingHoursLines.map((line) => (
                   <li key={line} className="flex items-center gap-2">
@@ -167,6 +130,42 @@ export default function Footer() {
                 ))}
               </ul>
             </div>
+          </div>
+
+          {/* Marke und Verbandsmitgliedschaft als eigene Zeile */}
+          <div className="mt-10 lg:mt-12 pt-8 border-t border-white/10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
+              <Image
+                src="/images/logo_orange.svg"
+                alt="BAGGER1 Logo"
+                width={188}
+                height={40}
+                className="h-9 w-auto"
+              />
+              <p className="text-gray-300 sm:border-l sm:border-white/10 sm:pl-5">
+                Ihre Nummer 1 für Bagger und Maschinen.
+              </p>
+            </div>
+            <Link
+              href="https://www.bbi-online.org/"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="flex items-center gap-4 rounded-2xl bg-white/5 border border-white/10 p-3 pr-5 transition-colors hover:border-primary/60 hover:bg-white/10 md:max-w-md"
+            >
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white p-1.5">
+                <Image
+                  src="/images/bbi_logo.png"
+                  alt="BBI Logo"
+                  width={40}
+                  height={40}
+                  className="h-full w-auto"
+                />
+              </span>
+              <span className="text-sm text-gray-300 leading-snug">
+                Mitglied im Bundesverband der Baumaschinen-, Baugeräte- und
+                Industriemaschinen-Firmen e.V.
+              </span>
+            </Link>
           </div>
         </Container>
       </div>

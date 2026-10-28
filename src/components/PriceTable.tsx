@@ -5,10 +5,15 @@ import { Calendar1 } from "lucide-react";
 
 export type PriceTableProps = {
   machine: Machine;
+  location: string;
   size?: "sm" | "lg";
 };
 
-export default function PriceTable({ machine, size = "lg" }: PriceTableProps) {
+export default function PriceTable({
+  machine,
+  location,
+  size = "lg",
+}: PriceTableProps) {
   const { timeTable } = machinePageData;
   const isSmall = size === "sm";
   const itemPadding = isSmall ? "px-3 py-2.5" : "px-4 py-3.5";
@@ -21,7 +26,7 @@ export default function PriceTable({ machine, size = "lg" }: PriceTableProps) {
       maximumFractionDigits: 0,
     }).format(value);
 
-  const minRentalDays = getMinRentalDays(machine);
+  const minRentalDays = getMinRentalDays(machine, location);
 
   // Staffeln unterhalb der Mindestmietdauer werden ausgeblendet
   const effectivePrice = [

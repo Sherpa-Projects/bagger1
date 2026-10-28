@@ -1,11 +1,25 @@
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
-import { steps, title } from "@/lib/content/components/bookingStepsData";
+import type { ReactNode } from "react";
+import {
+  steps as defaultSteps,
+  title as defaultTitle,
+  type Step,
+} from "@/lib/content/components/bookingStepsData";
 import { Card } from "@/components/ui/card";
 import Section from "@/components/shared/Section";
 import Headline from "@/components/shared/Headline";
 
-export default function BookingSteps() {
+type BookingStepsProps = {
+  title?: ReactNode;
+  steps?: ReadonlyArray<Step>;
+};
+
+// Standardmäßig die allgemeinen Buchungsschritte; Unterseiten können eigene Texte übergeben
+export default function BookingSteps({
+  title = defaultTitle,
+  steps = defaultSteps,
+}: BookingStepsProps) {
   return (
     <Section>
       <Headline className="pb-8 lg:pb-10 text-center">{title}</Headline>

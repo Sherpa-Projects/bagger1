@@ -12,7 +12,7 @@ export const title = (
   </>
 );
 
-type Step = {
+export type Step = {
   title: string;
   description: string;
   Icon: LucideIcon;

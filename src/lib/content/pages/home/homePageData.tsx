@@ -18,7 +18,6 @@ export const homePageData = {
     image: "/images/hero.jpg",
   },
   intro: {
-    eyebrow: "Warum BAGGER1",
     title: (
       <>
         Faire Preise.

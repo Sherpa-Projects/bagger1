@@ -7,8 +7,11 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import BookingContext from "@/components/BookingContext";
 import LocalUseCases from "@/components/LocalUseCases";
+import { localUsesCasesData } from "@/lib/content/components/localUseCasesData";
 import MachineCard from "@/components/MachineCard";
 import CrossLocationDeliveryNote from "@/components/CrossLocationDeliveryNote";
+import WinterServiceTeaser from "@/components/WinterServiceTeaser";
+import Container from "@/components/shared/Container";
 import Hero from "@/components/Hero";
 import GoogleReviewButton, {
   getGoogleReviewLink,
@@ -17,6 +20,7 @@ import JsonLd from "@/components/shared/JsonLd";
 import { locationData } from "@/lib/content/locationData";
 import { faq } from "@/lib/content/components/faqData";
 import { locationPageData } from "@/lib/content/pages/location/locationPageData";
+import { winterServicePageData } from "@/lib/content/pages/winterdienst/winterServicePageData";
 import { homePageData } from "@/lib/content/pages/home/homePageData";
 import { locationSeoBySlug } from "@/lib/content/locationSeoData";
 import {
@@ -152,6 +156,13 @@ export default async function LocationPage({ params }: LocationPageProps) {
             linkLabel={crossLocationDelivery.linkLabel}
           />
         )}
+        {location === winterServicePageData.location && (
+          <div className="px-4 -mt-4 pb-6 lg:-mt-6 lg:pb-10">
+            <Container>
+              <WinterServiceTeaser className="mx-auto max-w-3xl" />
+            </Container>
+          </div>
+        )}
         <BookingContext data={bookingContext} />
         <LocationSeoContent
           locationSlug={location}
@@ -159,7 +170,7 @@ export default async function LocationPage({ params }: LocationPageProps) {
         />
         {cfg.localUseCases && (
           <LocalUseCases
-            locationName={currentLocation.name}
+            title={`${localUsesCasesData.title} ${currentLocation.name}`}
             useCases={cfg.localUseCases}
           />
         )}

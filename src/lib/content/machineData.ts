@@ -12,6 +12,18 @@ export const machineData: Machine[] = [
     },
     price: { perDay: 140, perWeek: 110, perMonth: 70 },
     minRentalDays: 5,
+    // In Hennef weiterhin ab 1 Tag mietbar
+    minRentalDaysByLocation: {
+      hennef: 1,
+      bruchsal: 5,
+      mannheim: 5,
+      aschaffenburg: 5,
+    },
+    deliveryFlatRateByLocation: {
+      bruchsal: 399,
+      mannheim: 399,
+      aschaffenburg: 399,
+    },
     content: {
       title: "",
       description: "",
@@ -27,6 +39,9 @@ export const machineData: Machine[] = [
     },
     inventory: {
       hennef: [{ articleId: "OCVQU4" }],
+      bruchsal: [{ articleId: "7TMFHO" }],
+      mannheim: [{ articleId: "7TMFHO" }],
+      aschaffenburg: [{ articleId: "7TMFHO" }],
     },
   },
   {
@@ -134,7 +149,7 @@ export const machineData: Machine[] = [
     },
     inventory: {
       bruchsal: [{ articleId: "VXNK8E" }],
-      mannheim: [{ articleId: "VXNK8E" }],
+      mannheim: [{ articleId: "N7WLK5" }],
     },
   },
   {
@@ -154,7 +169,7 @@ export const machineData: Machine[] = [
     },
     inventory: {
       bruchsal: [{ articleId: "AEED4F" }],
-      mannheim: [{ articleId: "AEED4F" }],
+      mannheim: [{ articleId: "R8WGRM" }],
       aschaffenburg: [{ articleId: "4X636F" }],
     },
   },
@@ -214,6 +229,7 @@ export const machineData: Machine[] = [
     inventory: {
       hennef: [{ articleId: "JVXZF6" }],
       bruchsal: [{ articleId: "RUUP9N" }],
+      mannheim: [{ articleId: "J7L23N" }],
     },
   },
   {
@@ -234,7 +250,7 @@ export const machineData: Machine[] = [
     inventory: {
       hennef: [{ articleId: "I9KAW8" }],
       bruchsal: [{ articleId: "P5DPKR" }],
-      mannheim: [{ articleId: "P5DPKR" }],
+      mannheim: [{ articleId: "8HN2SJ" }],
       aschaffenburg: [{ articleId: "YYTU19" }],
     },
   },
@@ -256,7 +272,7 @@ export const machineData: Machine[] = [
     inventory: {
       hennef: [{ articleId: "CRFM16" }],
       bruchsal: [{ articleId: "F4P7SJ" }],
-      mannheim: [{ articleId: "F4P7SJ" }],
+      mannheim: [{ articleId: "B2TT34" }],
       aschaffenburg: [{ articleId: "IW2G8Y" }],
     },
   },
@@ -292,6 +308,18 @@ export const machineData: Machine[] = [
     },
     price: { perDay: 150, perWeek: 120, perMonth: 80 },
     minRentalDays: 5,
+    // In Hennef weiterhin ab 1 Tag mietbar
+    minRentalDaysByLocation: {
+      hennef: 1,
+      bruchsal: 5,
+      mannheim: 5,
+      aschaffenburg: 5,
+    },
+    deliveryFlatRateByLocation: {
+      bruchsal: 399,
+      mannheim: 399,
+      aschaffenburg: 399,
+    },
     content: {
       title: "",
       description: "",
@@ -312,6 +340,9 @@ export const machineData: Machine[] = [
     },
     inventory: {
       hennef: [{ articleId: "SVZ5P1" }],
+      bruchsal: [{ articleId: "O2Z4PS" }],
+      mannheim: [{ articleId: "O2Z4PS" }],
+      aschaffenburg: [{ articleId: "O2Z4PS" }],
     },
   },
 ] as const;
