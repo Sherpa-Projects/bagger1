@@ -19,7 +19,10 @@ import {
 export const winterServicePageData = {
   path: "/winterdienst",
   location: "hennef",
-  machineSlug: "radlader-kramer-5045",
+  // Eigener Mieteintrag mit Schneeschild (Buchung, Link "Verfügbarkeit prüfen")
+  machineSlug: "radlader-kramer-5045-schneeschild",
+  // Radlader ohne Schild: Preistabelle (+ Schneeschild-Aufpreis) und Teaser auf seiner Seite
+  baseMachineSlug: "radlader-kramer-5045",
   snowPlowPricePerDay: 25,
   seo: {
     metaTitle: "Radlader mit Schneeschild mieten – Hennef & Bonn | BAGGER1",
@@ -27,7 +30,7 @@ export const winterServicePageData = {
       google:
         "Radlader mit Schneeschild mieten für den Winterdienst in Hennef, Bonn, Siegburg und im Rhein-Sieg-Kreis. Mit Lieferung und Einweisung, ab 80 € netto/Tag.",
       openGraph:
-        "Winterdienst in Eigenregie: Kramer 5045 mit hydraulischem Schneeschild für Parkplätze, Hofflächen und Zufahrten. Geliefert, eingewiesen, einsatzbereit.",
+        "Kramer 5045 mit hydraulischem Schneeschild für Parkplätze, Hofflächen und Zufahrten. Geliefert, eingewiesen, einsatzbereit.",
       twitter:
         "Radlader mit Schneeschild mieten – Winterdienst in Hennef, Bonn und im Rhein-Sieg-Kreis.",
     },
@@ -35,15 +38,37 @@ export const winterServicePageData = {
       "Gelber Hintergrund mit schwarzem Text: BAGGER1 in großer Schrift und darunter Ihre Nummer 1 für Bagger und Baumaschinen in kleinerer Schrift.",
   },
   hero: {
-    title: "Radlader mit Schneeschild mieten – Winterdienst in Eigenregie",
+    title: "Radlader mit Schneeschild mieten",
     subline:
       "Kramer 5045 mit hydraulischem Schneeschild für Parkplätze, Hofflächen und Zufahrten. Geliefert, eingewiesen, einsatzbereit – ab 80 € netto pro Tag.",
-    image: "/images/locations/hennef.jpg",
+    image: "/images/locations/winterdienst.jpg",
     ctaLabel: "Verfügbarkeit prüfen",
     badges: [
       { label: "Lieferung & Abholung", Icon: Truck },
       { label: "Einweisung inklusive", Icon: GraduationCap },
       { label: "Schild hydraulisch schwenkbar", Icon: Snowflake },
+    ],
+  },
+  introTitle: "Winterdienst in Eigenregie",
+  benefits: {
+    title: "Ihre Vorteile",
+    items: [
+      {
+        text: "Kein Winterdienstvertrag: Sie räumen selbst, wann es nötig ist.",
+        Icon: CalendarCheck,
+      },
+      {
+        text: "Keine eigene Maschine: Mieten statt Kapital binden.",
+        Icon: Repeat,
+      },
+      {
+        text: "Kein Warten: Flächen frei, bevor der erste Kunde kommt.",
+        Icon: Snowflake,
+      },
+      {
+        text: "Schaufel an Bord: Streugut laden und Schneehaufen versetzen.",
+        Icon: Truck,
+      },
     ],
   },
   intro: [
@@ -53,16 +78,6 @@ export const winterServicePageData = {
   machine: {
     title: "Die Maschine: Kramer 5045 mit Schneeschild",
     text: "Ein Radlader räumt schneller als Schneefräse oder Handgerät und bleibt dabei kompakt genug für Zufahrten und Parkreihen. Anders als ein Traktor mit Schild nimmt er den Schnee auch mit: Schaufel dran, Schneehaufen aufnehmen, an den Rand oder auf den Hänger kippen. Mit der Schaufel befüllen Sie außerdem Streuer und Salzkisten.",
-    facts: [
-      { value: "2 m", label: "Schildbreite, bis 30° schwenkbar" },
-      { value: "1,59 m", label: "Maschinenbreite" },
-      { value: "25 PS", label: "Kramer 5045, ca. 2,7 t" },
-      { value: "0,45 m³", label: "Schaufel immer dabei" },
-    ],
-  },
-  prices: {
-    title: "Preise",
-    text: "Alle Preise netto pro Miettag (1 Miettag = 8 Betriebsstunden), zuzüglich 10 % Maschinenbruchversicherung und 19 % MwSt. Keine versteckten Kosten. Für den Winter lohnt sich der Projektpreis: Ab 20 Miettagen kostet der Radlader 80 € netto pro Tag.",
   },
   useCases: {
     title: "Einsatzbereiche",
@@ -118,7 +133,7 @@ export const winterServicePageData = {
       {
         title: "Zeitraum wählen",
         description:
-          "Zeitraum festlegen – ein Tag, eine Woche oder die ganze Saison – und Verfügbarkeit online prüfen.",
+          "Zeitraum festlegen – ab 5 Miettagen bis zur ganzen Saison – und Verfügbarkeit online prüfen.",
         Icon: CalendarCheck,
         image: "/images/illustrations/calendar.svg",
       },
@@ -152,7 +167,7 @@ export const winterServicePageData = {
       },
       {
         title: "Privatkunden",
-        text: "Für lange Zufahrten, Höfe und Wochenendgrundstücke mieten Sie tageweise, ganz ohne Vorkenntnisse. Wir liefern die Maschine, weisen Sie vor Ort ein und holen sie wieder ab.",
+        text: "Für lange Zufahrten, Höfe und Wochenendgrundstücke mieten Sie ab 5 Miettagen, ganz ohne Vorkenntnisse. Wir liefern die Maschine, weisen Sie vor Ort ein und holen sie wieder ab.",
         Icon: Home,
       },
     ],
@@ -162,7 +177,7 @@ export const winterServicePageData = {
     // Die Orte kommen als Kacheln aus dem Liefergebiet des Standorts
     text: "Der Radlader mit Schneeschild steht am Standort Hennef bereit. Wir liefern nach:",
     otherLocations:
-      "Bruchsal, Aschaffenburg und Mannheim: auf Anfrage und ab 5 Miettagen.",
+      "Bruchsal, Aschaffenburg und Mannheim: ebenfalls ab 5 Miettagen, zzgl. Pauschallieferung 399 € netto.",
   },
   cta: {
     title: "Jetzt Radlader mit Schneeschild in Hennef anfragen",
@@ -210,7 +225,7 @@ export const winterServicePageData = {
       {
         question: "Was kostet der Radlader mit Schneeschild?",
         answer:
-          "Der Kramer 5045 kostet 150 € netto pro Tag, ab 5 Miettagen 120 € und ab 20 Miettagen 80 € netto pro Tag; das Schneeschild 25 € netto pro Tag. Hinzu kommen 10 % Maschinenbruchversicherung und 19 % MwSt. Ein Miettag entspricht 8 Betriebsstunden – für die Wintersaison ist der Projektpreis ab 20 Tagen die günstigste Variante.",
+          "Der Radlader mit Schneeschild ist ab 5 Miettagen buchbar. Der Kramer 5045 kostet ab 5 Miettagen 120 € und ab 20 Miettagen 80 € netto pro Tag; das Schneeschild 25 € netto pro Tag. Hinzu kommen 10 % Maschinenbruchversicherung und 19 % MwSt. Ein Miettag entspricht 8 Betriebsstunden – für die Wintersaison ist der Projektpreis ab 20 Tagen die günstigste Variante.",
       },
       {
         question:

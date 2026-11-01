@@ -7,7 +7,9 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import PriceTable from "@/components/PriceTable";
+import MachineSpecifications from "@/components/MachineSpecifications";
 import PriceAddition from "@/components/PriceAddition";
+import BookingWidget from "@/components/BookingWidget";
 import BookingSteps from "@/components/BookingSteps";
 import FaqAccordion from "@/components/FaqAccordion";
 import FaqContactBox from "@/components/FaqContactBox";
@@ -15,6 +17,7 @@ import LocalUseCases from "@/components/LocalUseCases";
 import Section from "@/components/shared/Section";
 import Headline from "@/components/shared/Headline";
 import SurfaceCard from "@/components/shared/SurfaceCard";
+import PartnerList from "@/components/PartnerList";
 import JsonLd from "@/components/shared/JsonLd";
 import { winterServicePageData } from "@/lib/content/pages/winterdienst/winterServicePageData";
 import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
@@ -47,11 +50,13 @@ export default function WinterServicePage() {
   const {
     location,
     machineSlug,
+    baseMachineSlug,
     snowPlowPricePerDay,
     hero,
     intro,
+    introTitle,
+    benefits,
     machine,
-    prices,
     useCases,
     bookingSteps,
     audiences,
@@ -59,7 +64,9 @@ export default function WinterServicePage() {
     cta,
     faq,
   } = winterServicePageData;
-  const radlader = getMachineBySlug(machineSlug);
+  const radlader = getMachineBySlug(baseMachineSlug);
+  const bookingMachine = getMachineBySlug(machineSlug);
+  const bookingArticle = bookingMachine?.inventory[location]?.[0];
   const machineHref = `/${location}/${machineSlug}`;
   const serviceAreas = locationSeoBySlug[location].serviceAreas ?? [];
   const telephone = company.contact.telephone;
@@ -72,7 +79,7 @@ export default function WinterServicePage() {
           { name: "Winterdienst", path },
         ])}
       />
-      <Navigation slug={location} />
+      <Navigation />
       <main>
         <Hero
           image={hero.image}
@@ -101,74 +108,95 @@ export default function WinterServicePage() {
         {/* Einleitung */}
         <Section
           className="px-4 pt-10 lg:pt-20"
-          containerClassName="grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-10"
+          containerClassName="grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-12"
         >
-          <div className="space-y-5 text-lg leading-relaxed text-gray-700 lg:col-span-7 lg:text-xl">
-            {intro.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-          {radlader?.image.url && (
-            <div className="flex justify-center lg:col-span-5">
-              <Image
-                // Feste Höhe, damit das Bild auf Retina-Displays nicht kleiner wird
-                className="h-[320px] w-auto max-w-full object-contain lg:h-[420px]"
-                src={radlader.image.url}
-                alt={radlader.image.alt || radlader.name}
-                width={600}
-                height={800}
-                sizes="(min-width: 1024px) 315px, 240px"
-                priority
-              />
+          <div className="lg:col-span-7">
+            <Headline>{introTitle}</Headline>
+            <div className="mt-6 space-y-5 text-lg leading-relaxed text-gray-700">
+              {intro.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
-          )}
+          </div>
+          <div className="lg:col-span-5">
+            <PartnerList title={benefits.title} items={benefits.items} />
+          </div>
         </Section>
 
-        {/* Maschine und Preise */}
+        {/* Maschine und Preise: Aufbau wie auf den Maschinenseiten */}
         <Section containerClassName="grid gap-8 lg:grid-cols-12 lg:gap-10">
-          <div className="min-w-0 lg:col-span-7">
-            <Headline>{machine.title}</Headline>
-            <p className="mt-5 text-lg leading-relaxed text-gray-600">
-              {machine.text}
-            </p>
-            <ul className="mt-8 grid grid-cols-2 gap-3">
-              {machine.facts.map(({ value, label }) => (
-                <li
-                  key={label}
-                  className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm"
-                >
-                  <p className="text-2xl font-extrabold text-secondary">
-                    {value}
-                  </p>
-                  <p className="mt-1 text-sm text-gray-500">{label}</p>
-                </li>
-              ))}
-            </ul>
+          <div className="min-w-0 space-y-8 lg:col-span-7">
+            {bookingMachine?.image.url && (
+              <div className="flex justify-center">
+                <Image
+                  // Feste Höhe, damit das Bild auf Retina-Displays nicht kleiner wird
+                  className="h-[420px] w-auto max-w-full object-contain lg:h-[600px]"
+                  src={bookingMachine.image.url}
+                  alt={bookingMachine.image.alt || bookingMachine.name}
+                  width={600}
+                  height={800}
+                  sizes="(min-width: 1024px) 450px, 315px"
+                />
+              </div>
+            )}
+
+            <div>
+              <h2 className="mb-3 text-2xl font-bold md:text-3xl">
+                {machine.title}
+              </h2>
+              <p className="text-lg leading-relaxed text-gray-600">
+                {machine.text}
+              </p>
+            </div>
+
+            {bookingMachine?.content?.specifications && (
+              <MachineSpecifications
+                model={bookingMachine.model}
+                specifications={bookingMachine.content.specifications}
+              />
+            )}
           </div>
 
-          <div className="min-w-0 lg:col-span-5">
-            <SurfaceCard className="p-5 sm:p-6 lg:sticky lg:top-32">
-              <h2 className="mb-3 text-2xl font-bold">{prices.title}</h2>
-              <p className="mb-5 text-sm leading-relaxed text-gray-600">
-                {prices.text}
-              </p>
-              {radlader && (
-                <PriceTable machine={radlader} location={location} size="lg" />
+          {/* Rechte Spalte: Buchung und Preise, auf dem Desktop mitlaufend */}
+          <div className="order-first min-w-0 lg:order-none lg:col-span-5">
+            <div className="space-y-6 lg:sticky lg:top-32">
+              {bookingArticle && (
+                <div className="rounded-3xl border border-gray-200 bg-white p-4 shadow-sm sm:p-6 empty:hidden">
+                  <BookingWidget articleId={bookingArticle.articleId} />
+                </div>
               )}
-              <div className="mt-4 flex items-center gap-3 rounded-2xl border border-primary/40 bg-primary/10 p-4">
-                <Snowflake
-                  className="h-5 w-5 shrink-0 text-primary"
-                  aria-hidden="true"
-                />
-                <p className="text-sm text-gray-700">
-                  <span className="font-semibold text-secondary">
-                    Schneeschild +{snowPlowPricePerDay} €
-                  </span>{" "}
-                  netto pro Tag
-                </p>
-              </div>
-              <PriceAddition info={machinePageData.timeTable} />
-            </SurfaceCard>
+
+              <SurfaceCard className="p-5 sm:p-6">
+                <h2 className="mb-4 text-2xl font-bold">
+                  Preise & Konditionen
+                </h2>
+                {radlader && (
+                  <PriceTable
+                    // Radlader-Preise mit der Mindestmietdauer des Schneeschild-Eintrags
+                    machine={{
+                      ...radlader,
+                      minRentalDays: bookingMachine?.minRentalDays,
+                      minRentalDaysByLocation: undefined,
+                    }}
+                    location={location}
+                    size="lg"
+                  />
+                )}
+                <div className="mt-4 flex items-center gap-3 rounded-2xl border border-primary/40 bg-primary/10 p-4">
+                  <Snowflake
+                    className="h-5 w-5 shrink-0 text-primary"
+                    aria-hidden="true"
+                  />
+                  <p className="text-sm text-gray-700">
+                    <span className="font-semibold text-secondary">
+                      Schneeschild +{snowPlowPricePerDay} €
+                    </span>{" "}
+                    netto pro Tag
+                  </p>
+                </div>
+                <PriceAddition info={machinePageData.timeTable} />
+              </SurfaceCard>
+            </div>
           </div>
         </Section>
 
@@ -178,7 +206,9 @@ export default function WinterServicePage() {
 
         {/* Zielgruppen */}
         <Section>
-          <Headline className="mb-8 text-center lg:mb-10">{audiences.title}</Headline>
+          <Headline className="mb-8 text-center lg:mb-10">
+            {audiences.title}
+          </Headline>
           <div className="grid gap-4 md:grid-cols-3 lg:gap-6">
             {audiences.items.map(({ title, text, Icon }) => (
               <SurfaceCard key={title} className="h-full p-6 sm:p-8">

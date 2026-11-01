@@ -345,4 +345,45 @@ export const machineData: Machine[] = [
       aschaffenburg: [{ articleId: "O2Z4PS" }],
     },
   },
+  {
+    name: "Radlader mit Schneeschild",
+    slug: "radlader-kramer-5045-schneeschild",
+    model: "Radlader Kramer 5045 mit Schneeschild",
+    category: "bagger",
+    image: {
+      url: "/images/machines/kramer-radlader-schneeschild.png",
+      alt: "Radlader Kramer 5045 mit gelbem Schneeschild für den Winterdienst.",
+    },
+    // Radlader 150 / 120 / 80 € plus Schneeschild 25 € netto pro Tag
+    price: { perDay: 175, perWeek: 145, perMonth: 105 },
+    // An allen Standorten erst ab 5 Miettagen
+    minRentalDays: 5,
+    deliveryFlatRateByLocation: {
+      bruchsal: 399,
+      mannheim: 399,
+      aschaffenburg: 399,
+    },
+    content: {
+      title: "",
+      description: "",
+      specifications: {
+        dimensions: {
+          width: "1,59 m",
+          weight: "ca. 2,7 t",
+        },
+        power: "18,5 kW (25 PS)",
+        workingRange: {
+          bucketCapacity: "0,45 m³",
+          payloadS125: "ca. 1.310 kg",
+          tippingLoadBucket: "2.270 kg",
+        },
+      },
+    },
+    inventory: {
+      hennef: [{ articleId: "O2Z4PS" }],
+      bruchsal: [{ articleId: "O2Z4PS" }],
+      mannheim: [{ articleId: "O2Z4PS" }],
+      aschaffenburg: [{ articleId: "O2Z4PS" }],
+    },
+  },
 ] as const;
