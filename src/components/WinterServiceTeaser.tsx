@@ -5,8 +5,10 @@ import { winterServicePageData } from "@/lib/content/pages/winterdienst/winterSe
 
 // Kurzer Hinweis mit Link auf die Winterdienst-Seite (Standortseite, Radlader-Seite)
 export default function WinterServiceTeaser({
+  cityName,
   className,
 }: {
+  cityName: string;
   className?: string;
 }) {
   const { path, teaser } = winterServicePageData;
@@ -27,7 +29,7 @@ export default function WinterServiceTeaser({
           {teaser.title}
         </span>
         <span className="mt-0.5 block text-sm text-gray-600">
-          {teaser.text}
+          {teaser.text(cityName)}
         </span>
       </span>
       <span className="hidden shrink-0 items-center gap-1.5 text-sm font-semibold text-secondary sm:inline-flex">

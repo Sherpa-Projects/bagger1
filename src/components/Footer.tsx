@@ -48,20 +48,21 @@ export default function Footer() {
         <Glow className="-top-48 -left-40 h-[30rem] w-[30rem] bg-primary/15" />
 
         <Container className="relative px-4 py-14 lg:py-20">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-14 lg:items-end">
-            <div className="lg:col-span-5">
+          {/* Ebene 1: Headline | Kontaktkanäle */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 lg:items-end">
+            <div>
               <Headline size="lg">
                 Fragen zur Miete?
                 <br />
                 <span className="text-primary">Wir sind für Sie da.</span>
               </Headline>
             </div>
-            <ul className="lg:col-span-7 grid sm:grid-cols-3 gap-3">
+            <ul className="grid sm:grid-cols-3 gap-3">
               {contactItems.map(({ label, value, href, icon }) => (
                 <li key={label}>
                   <Link
                     href={href}
-                    className="group flex h-full items-center sm:items-start sm:flex-col gap-4 rounded-2xl bg-white/5 border border-white/10 p-5 transition-colors hover:border-primary/60 hover:bg-white/10"
+                    className="group flex h-full items-center sm:items-start sm:flex-col lg:items-center lg:text-center gap-4 rounded-2xl bg-white/5 border border-white/10 p-5 transition-colors hover:border-primary/60 hover:bg-white/10"
                   >
                     <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary">
                       {icon}
@@ -70,7 +71,7 @@ export default function Footer() {
                       <span className="block text-sm text-gray-400">
                         {label}
                       </span>
-                      <span className="block text-lg font-semibold break-words group-hover:text-primary transition-colors">
+                      <span className="block text-lg lg:text-base xl:text-lg font-semibold break-words group-hover:text-primary transition-colors">
                         {value}
                       </span>
                     </span>
@@ -80,8 +81,9 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="mt-12 lg:mt-16 pt-10 lg:pt-12 border-t border-white/10 grid md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-14">
-            <div className="lg:col-span-6">
+          {/* Ebene 2: Standorte | Öffnungszeiten */}
+          <div className="mt-12 lg:mt-16 pt-10 lg:pt-12 border-t border-white/10 grid md:grid-cols-2 gap-10 lg:gap-14">
+            <div>
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
                 Standorte
               </h3>
@@ -113,7 +115,7 @@ export default function Footer() {
               </ul>
             </div>
 
-            <div className="lg:col-span-4 lg:col-start-9">
+            <div className="lg:justify-self-center">
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-widest text-primary">
                 {company.openingHours.title}
               </h3>
@@ -132,8 +134,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Marke und Verbandsmitgliedschaft als eigene Zeile */}
-          <div className="mt-10 lg:mt-12 pt-8 border-t border-white/10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          {/* Ebene 3: Marke | Verbandsmitgliedschaft */}
+          <div className="mt-10 lg:mt-12 pt-8 border-t border-white/10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between lg:grid lg:grid-cols-2 lg:gap-14">
             <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
               <Image
                 src="/images/logo_orange.svg"
@@ -150,7 +152,7 @@ export default function Footer() {
               href="https://www.bbi-online.org/"
               target="_blank"
               rel="noreferrer noopener"
-              className="flex items-center gap-4 rounded-2xl bg-white/5 border border-white/10 p-3 pr-5 transition-colors hover:border-primary/60 hover:bg-white/10 md:max-w-md"
+              className="flex items-center gap-4 rounded-2xl bg-white/5 border border-white/10 p-3 pr-5 transition-colors hover:border-primary/60 hover:bg-white/10 md:max-w-md lg:justify-self-center"
             >
               <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white p-1.5">
                 <Image

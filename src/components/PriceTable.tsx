@@ -49,7 +49,10 @@ export default function PriceTable({
       value: machine.price.perMonth,
       note: "Projektpreis",
     },
-  ].filter((price) => price.days >= minRentalDays);
+  ].filter(
+    (price): price is typeof price & { value: number } =>
+      price.days >= minRentalDays && price.value !== undefined,
+  );
 
   return (
     <div className="w-full">

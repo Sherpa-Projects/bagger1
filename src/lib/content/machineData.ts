@@ -308,7 +308,6 @@ export const machineData: Machine[] = [
     },
     price: { perDay: 150, perWeek: 120, perMonth: 80 },
     minRentalDays: 5,
-    // In Hennef weiterhin ab 1 Tag mietbar
     minRentalDaysByLocation: {
       hennef: 1,
       bruchsal: 5,
@@ -346,17 +345,15 @@ export const machineData: Machine[] = [
     },
   },
   {
-    name: "Radlader mit Schneeschild",
+    name: "Radlader mit Schneeschild & Salzstreuer",
     slug: "radlader-kramer-5045-schneeschild",
-    model: "Radlader Kramer 5045 mit Schneeschild",
+    model: "Radlader Kramer 5045 mit Schneeschild & Salzstreuer",
     category: "bagger",
     image: {
       url: "/images/machines/kramer-radlader-schneeschild.png",
-      alt: "Radlader Kramer 5045 mit gelbem Schneeschild für den Winterdienst.",
+      alt: "Radlader Kramer 5045 mit gelbem Schneeschild und Salzstreuer für den Winterdienst.",
     },
-    // Radlader 150 / 120 / 80 € plus Schneeschild 25 € netto pro Tag
-    price: { perDay: 175, perWeek: 145, perMonth: 105 },
-    // An allen Standorten erst ab 5 Miettagen
+    price: { perWeek: 160, perMonth: 110 },
     minRentalDays: 5,
     deliveryFlatRateByLocation: {
       bruchsal: 399,
@@ -380,7 +377,7 @@ export const machineData: Machine[] = [
       },
     },
     inventory: {
-      hennef: [{ articleId: "O2Z4PS" }],
+      hennef: [{ articleId: "SVZ5P1" }],
       bruchsal: [{ articleId: "O2Z4PS" }],
       mannheim: [{ articleId: "O2Z4PS" }],
       aschaffenburg: [{ articleId: "O2Z4PS" }],

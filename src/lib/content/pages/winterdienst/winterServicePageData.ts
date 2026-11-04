@@ -14,39 +14,38 @@ import {
   Warehouse,
 } from "lucide-react";
 
-// Variante A: ein Standort mit Schneeschild. Bietet ein weiterer Standort
-// ein Schneeschild an, bekommt die Seite einen weiteren Standort-Abschnitt.
 export const winterServicePageData = {
   path: "/winterdienst",
   location: "hennef",
-  // Eigener Mieteintrag mit Schneeschild (Buchung, Link "Verfügbarkeit prüfen")
+  // An allen Standorten mietbar; die Area-Sektion zeigt jeden mit Liefergebiet
+  locations: ["hennef", "bruchsal", "mannheim", "aschaffenburg"],
   machineSlug: "radlader-kramer-5045-schneeschild",
-  // Radlader ohne Schild: Preistabelle (+ Schneeschild-Aufpreis) und Teaser auf seiner Seite
   baseMachineSlug: "radlader-kramer-5045",
-  snowPlowPricePerDay: 25,
   seo: {
-    metaTitle: "Radlader mit Schneeschild mieten – Hennef & Bonn | BAGGER1",
+    metaTitle: "Radlader mit Schneeschild & Salzstreuer mieten | BAGGER1",
     metaDescription: {
       google:
-        "Radlader mit Schneeschild mieten für den Winterdienst in Hennef, Bonn, Siegburg und im Rhein-Sieg-Kreis. Mit Lieferung und Einweisung, ab 80 € netto/Tag.",
+        "Radlader mit Schneeschild und Salzstreuer für den Winterdienst mieten – in Hennef, Bonn, Bruchsal, Karlsruhe, Mannheim, Heidelberg und Aschaffenburg. Mit Lieferung, ab 110 € netto/Tag.",
       openGraph:
-        "Kramer 5045 mit hydraulischem Schneeschild für Parkplätze, Hofflächen und Zufahrten. Geliefert, eingewiesen, einsatzbereit.",
+        "Kramer 5045 mit hydraulischem Schneeschild und Salzstreuer in Hennef, Bruchsal, Mannheim und Aschaffenburg. Geliefert, eingewiesen, einsatzbereit.",
       twitter:
-        "Radlader mit Schneeschild mieten – Winterdienst in Hennef, Bonn und im Rhein-Sieg-Kreis.",
+        "Radlader mit Schneeschild und Salzstreuer mieten – Winterdienst in Hennef, Bruchsal, Mannheim und Aschaffenburg.",
     },
     imageAlt:
       "Gelber Hintergrund mit schwarzem Text: BAGGER1 in großer Schrift und darunter Ihre Nummer 1 für Bagger und Baumaschinen in kleinerer Schrift.",
   },
   hero: {
-    title: "Radlader mit Schneeschild mieten",
+    title: "Radlader mit Schneeschild & Salzstreuer mieten",
     subline:
-      "Kramer 5045 mit hydraulischem Schneeschild für Parkplätze, Hofflächen und Zufahrten. Geliefert, eingewiesen, einsatzbereit – ab 80 € netto pro Tag.",
+      "Kramer 5045 mit hydraulischem Schneeschild und Salzstreuer, Schneeketten auf Wunsch – in Hennef, Bruchsal, Mannheim und Aschaffenburg. Geliefert, eingewiesen, einsatzbereit – ab 110 € netto pro Tag.",
     image: "/images/locations/winterdienst.jpg",
     ctaLabel: "Verfügbarkeit prüfen",
     badges: [
       { label: "Lieferung & Abholung", Icon: Truck },
       { label: "Einweisung inklusive", Icon: GraduationCap },
       { label: "Schild hydraulisch schwenkbar", Icon: Snowflake },
+      { label: "Salzstreuer inklusive", Icon: Sprout },
+      { label: "Schneeketten verfügbar", Icon: Snowflake },
     ],
   },
   introTitle: "Winterdienst in Eigenregie",
@@ -66,18 +65,18 @@ export const winterServicePageData = {
         Icon: Snowflake,
       },
       {
-        text: "Schaufel an Bord: Streugut laden und Schneehaufen versetzen.",
+        text: "Räumen und streuen: Schneeschild und Salzstreuer an einer Maschine.",
         Icon: Truck,
       },
     ],
   },
   intro: [
-    "Wenn es schneit, zählt jede Stunde: Kundenparkplätze, Betriebshöfe und Zufahrten müssen frei sein, bevor der erste Mitarbeiter oder Kunde kommt. Mit einem gemieteten Radlader mit Schneeschild räumen Sie große Flächen selbst – ohne Winterdienstvertrag, ohne eigene Maschine und ohne Warten auf den Dienstleister.",
-    "BAGGER1 liefert den Kramer 5045 mit angebautem Schneeschild direkt zu Ihnen, weist Sie ein und holt die Maschine nach der Saison wieder ab. Die Schaufel bleibt an Bord: Damit laden Sie Streugut, schieben Schneehaufen zusammen und nutzen den Lader an schneefreien Tagen ganz normal auf dem Hof.",
+    "Wenn es schneit, zählt jede Stunde: Kundenparkplätze, Betriebshöfe und Zufahrten müssen frei sein, bevor der erste Mitarbeiter oder Kunde kommt. Mit einem gemieteten Radlader mit Schneeschild und Salzstreuer räumen und streuen Sie große Flächen selbst – ohne Winterdienstvertrag, ohne eigene Maschine und ohne Warten auf den Dienstleister.",
+    "BAGGER1 liefert den Kramer 5045 mit angebautem Schneeschild und Salzstreuer – auf Wunsch auch mit Schneeketten – direkt zu Ihnen, weist Sie ein und holt die Maschine nach der Saison wieder ab. Die Schaufel bleibt an Bord: Damit laden Sie Streugut, schieben Schneehaufen zusammen und nutzen den Lader an schneefreien Tagen ganz normal auf dem Hof.",
   ],
   machine: {
-    title: "Die Maschine: Kramer 5045 mit Schneeschild",
-    text: "Ein Radlader räumt schneller als Schneefräse oder Handgerät und bleibt dabei kompakt genug für Zufahrten und Parkreihen. Anders als ein Traktor mit Schild nimmt er den Schnee auch mit: Schaufel dran, Schneehaufen aufnehmen, an den Rand oder auf den Hänger kippen. Mit der Schaufel befüllen Sie außerdem Streuer und Salzkisten.",
+    title: "Die Maschine: Kramer 5045 mit Schneeschild & Salzstreuer",
+    text: "Ein Radlader räumt schneller als Schneefräse oder Handgerät und bleibt dabei kompakt genug für Zufahrten und Parkreihen. Anders als ein Traktor mit Schild nimmt er den Schnee auch mit: Schaufel dran, Schneehaufen aufnehmen, an den Rand oder auf den Hänger kippen. Mit dem mitgelieferten Salzstreuer streuen Sie die geräumten Flächen direkt im Anschluss ab, für steile oder vereiste Zufahrten sind Schneeketten verfügbar.",
   },
   useCases: {
     title: "Einsatzbereiche",
@@ -126,7 +125,7 @@ export const winterServicePageData = {
       {
         title: "Standort & Maschine wählen",
         description:
-          "Standort wählen und „Radlader mit Schneeschild“ auswählen.",
+          "Standort wählen, „Radlader mit Schneeschild & Salzstreuer“ auswählen und Schneeschild und Salzstreuer als Ausstattung hinzufügen – bei Bedarf auch Schneeketten.",
         Icon: SquareMousePointer,
         image: "/images/illustrations/choose.svg",
       },
@@ -146,7 +145,7 @@ export const winterServicePageData = {
       {
         title: "Lieferung & Einweisung",
         description:
-          "Lieferung zum Einsatzort mit Einweisung: Schild an- und abbauen, schwenken, Schürfleiste einstellen, sicher auf Schnee und Eis fahren.",
+          "Lieferung zum Einsatzort mit Einweisung: Schild an- und abbauen, schwenken, Schürfleiste einstellen, Salzstreuer bedienen, sicher auf Schnee und Eis fahren.",
         Icon: Truck,
         image: "/images/illustrations/delivery.svg",
       },
@@ -174,18 +173,31 @@ export const winterServicePageData = {
   },
   area: {
     title: "Standort und Liefergebiet",
-    // Die Orte kommen als Kacheln aus dem Liefergebiet des Standorts
-    text: "Der Radlader mit Schneeschild steht am Standort Hennef bereit. Wir liefern nach:",
-    otherLocations:
-      "Bruchsal, Aschaffenburg und Mannheim: ebenfalls ab 5 Miettagen, zzgl. Pauschallieferung 399 € netto.",
+    // Die Orte kommen als Kacheln aus dem Liefergebiet des jeweiligen Standorts
+    text: "Den Radlader mit Schneeschild und Salzstreuer gibt es an allen vier BAGGER1-Standorten – jeweils ab 5 Miettagen. Wir liefern in diese Orte und das Umland:",
+    regions: {
+      hennef: "Bonn & Rhein-Sieg-Kreis",
+      bruchsal: "Karlsruhe & Landkreis Karlsruhe",
+      mannheim: "Heidelberg & Rhein-Neckar",
+      aschaffenburg: "Bayerischer Untermain",
+    },
+    locationLinkLabel: "Verfügbarkeit prüfen",
+  },
+  priceNote:
+    "Preise inkl. Schneeschild und Salzstreuer, an allen Standorten ab 5 Miettagen. Bitte wählen Sie beides bei der Buchung als Ausstattung aus; Schneeketten sind zusätzlich verfügbar.",
+  locationPicker: {
+    id: "verfuegbarkeit",
+    title: "Standort wählen",
+    text: "Verfügbarkeit und Buchung finden Sie auf der Seite Ihres Standorts:",
   },
   cta: {
-    title: "Jetzt Radlader mit Schneeschild in Hennef anfragen",
+    title: "Jetzt Radlader mit Schneeschild & Salzstreuer anfragen",
     text: "Bei angekündigtem Schneefall sind Winterdienstmaschinen schnell vergriffen – reservieren Sie früh. Fragen beantworten wir Mo–Fr 8–17 Uhr und Sa 8–13 Uhr unter 0800 22 44 37 1 oder per WhatsApp an 0160 22 44 37 1.",
   },
   teaser: {
-    title: "Winterdienst: Radlader mit Schneeschild mieten",
-    text: "Den Kramer 5045 gibt es in Hennef auch mit hydraulischem Schneeschild – für Parkplätze, Hofflächen und Zufahrten.",
+    title: "Winterdienst: Radlader mit Schneeschild & Salzstreuer mieten",
+    text: (cityName: string) =>
+      `Den Kramer 5045 gibt es in ${cityName} auch mit hydraulischem Schneeschild und Salzstreuer – für Parkplätze, Hofflächen und Zufahrten.`,
     linkLabel: "Zum Winterdienst",
   },
   faq: {
@@ -194,12 +206,13 @@ export const winterServicePageData = {
       {
         question: "Welche Maschine bekomme ich für den Winterdienst?",
         answer:
-          "Den Radlader Kramer 5045 (2,7 t, 25 PS, 1,59 m breit) mit angebautem Schneeschild. Die Schaufel mit 0,45 m³ ist immer dabei – zum Aufnehmen von Schneehaufen, zum Beladen von Streuern und für normale Hofarbeiten an schneefreien Tagen.",
+          "Den Radlader Kramer 5045 (2,7 t, 25 PS, 1,59 m breit) mit angebautem Schneeschild und Salzstreuer, auf Wunsch mit Schneeketten. Die Schaufel mit 0,45 m³ ist immer dabei – zum Aufnehmen von Schneehaufen, zum Beladen von Streuern und für normale Hofarbeiten an schneefreien Tagen.",
       },
       {
-        question: "Kann ich das Schneeschild auch ohne Radlader mieten?",
+        question:
+          "Kann ich Schneeschild oder Salzstreuer auch ohne Radlader mieten?",
         answer:
-          "Nein, das Schneeschild wird nur zusammen mit dem Kramer 5045 vermietet. Wir bauen es bei der Lieferung an und zeigen Ihnen, wie Sie zwischen Schild und Schaufel wechseln.",
+          "Nein, Schneeschild und Salzstreuer werden nur zusammen mit dem Kramer 5045 vermietet. Wir bauen beides bei der Lieferung an und zeigen Ihnen, wie Sie zwischen Schild und Schaufel wechseln.",
       },
       {
         question:
@@ -220,12 +233,12 @@ export const winterServicePageData = {
       {
         question: "Kann ich mit dem Radlader auch streuen?",
         answer:
-          "Mit der Schaufel laden Sie Salz oder Splitt schnell in Streuwagen und Streukisten. Einen Anbaustreuer bieten wir derzeit nicht an; für Gehwege und kleinere Flächen bleibt der Handstreuwagen das richtige Gerät.",
+          "Ja, der Salzstreuer ist im Preis enthalten – wählen Sie ihn bei der Buchung als Ausstattung aus. Damit streuen Sie Parkplätze, Hofflächen und Zufahrten direkt nach dem Räumen ab. Für schmale Gehwege und Treppen bleibt der Handstreuwagen das richtige Gerät.",
       },
       {
-        question: "Was kostet der Radlader mit Schneeschild?",
+        question: "Was kostet der Radlader mit Schneeschild und Salzstreuer?",
         answer:
-          "Der Radlader mit Schneeschild ist ab 5 Miettagen buchbar. Der Kramer 5045 kostet ab 5 Miettagen 120 € und ab 20 Miettagen 80 € netto pro Tag; das Schneeschild 25 € netto pro Tag. Hinzu kommen 10 % Maschinenbruchversicherung und 19 % MwSt. Ein Miettag entspricht 8 Betriebsstunden – für die Wintersaison ist der Projektpreis ab 20 Tagen die günstigste Variante.",
+          "Der Radlader mit Schneeschild und Salzstreuer ist an allen Standorten ab 5 Miettagen buchbar und kostet ab 5 Miettagen 160 € und ab 20 Miettagen 110 € netto pro Tag – Schneeschild und Salzstreuer sind im Preis enthalten. Wählen Sie beides bei der Buchung als Ausstattung aus; ohne Ausstattung buchen Sie den reinen Radlader. Schneeketten sind zusätzlich verfügbar. Hinzu kommen 10 % Maschinenbruchversicherung und 19 % MwSt. Ein Miettag entspricht 8 Betriebsstunden – für die Wintersaison ist der Projektpreis ab 20 Tagen die günstigste Variante.",
       },
       {
         question:

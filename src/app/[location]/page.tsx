@@ -156,10 +156,13 @@ export default async function LocationPage({ params }: LocationPageProps) {
             linkLabel={crossLocationDelivery.linkLabel}
           />
         )}
-        {location === winterServicePageData.location && (
+        {winterServicePageData.locations.includes(location) && (
           <div className="px-4 -mt-4 pb-6 lg:-mt-6 lg:pb-10">
             <Container>
-              <WinterServiceTeaser className="mx-auto max-w-3xl" />
+              <WinterServiceTeaser
+                cityName={currentLocation.name}
+                className="mx-auto max-w-3xl"
+              />
             </Container>
           </div>
         )}

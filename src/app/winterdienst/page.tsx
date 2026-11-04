@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, MapPin, Phone, Snowflake } from "lucide-react";
+import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { SiWhatsapp } from "@icons-pack/react-simple-icons";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -9,7 +9,6 @@ import Hero from "@/components/Hero";
 import PriceTable from "@/components/PriceTable";
 import MachineSpecifications from "@/components/MachineSpecifications";
 import PriceAddition from "@/components/PriceAddition";
-import BookingWidget from "@/components/BookingWidget";
 import BookingSteps from "@/components/BookingSteps";
 import FaqAccordion from "@/components/FaqAccordion";
 import FaqContactBox from "@/components/FaqContactBox";
@@ -22,6 +21,7 @@ import JsonLd from "@/components/shared/JsonLd";
 import { winterServicePageData } from "@/lib/content/pages/winterdienst/winterServicePageData";
 import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
 import { locationSeoBySlug } from "@/lib/content/locationSeoData";
+import { getCityName } from "@/lib/locations";
 import { company } from "@/lib/content/company";
 import { getMachineBySlug } from "@/lib/machines";
 import { phoneHref, whatsappHref } from "@/lib/contact";
@@ -49,9 +49,8 @@ const darkButtonClass =
 export default function WinterServicePage() {
   const {
     location,
+    locations,
     machineSlug,
-    baseMachineSlug,
-    snowPlowPricePerDay,
     hero,
     intro,
     introTitle,
@@ -61,14 +60,21 @@ export default function WinterServicePage() {
     bookingSteps,
     audiences,
     area,
+    locationPicker,
+    priceNote,
     cta,
     faq,
   } = winterServicePageData;
-  const radlader = getMachineBySlug(baseMachineSlug);
   const bookingMachine = getMachineBySlug(machineSlug);
-  const bookingArticle = bookingMachine?.inventory[location]?.[0];
-  const machineHref = `/${location}/${machineSlug}`;
-  const serviceAreas = locationSeoBySlug[location].serviceAreas ?? [];
+  const pickerHref = `#${locationPicker.id}`;
+  // Pro Standort: Liefergebiet und Link zur Maschinenseite
+  const areaLocations = locations.map((slug) => ({
+    slug,
+    cityName: getCityName(slug),
+    region: area.regions[slug],
+    serviceAreas: locationSeoBySlug[slug].serviceAreas ?? [],
+    href: `/${slug}/${machineSlug}`,
+  }));
   const telephone = company.contact.telephone;
 
   return (
@@ -91,13 +97,13 @@ export default function WinterServicePage() {
             {hero.subline}
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href={machineHref} className={primaryButtonClass}>
+            <a href={pickerHref} className={primaryButtonClass}>
               {hero.ctaLabel}
               <ArrowRight
                 className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
                 aria-hidden="true"
               />
-            </Link>
+            </a>
             <a href={phoneHref(telephone)} className={darkButtonClass}>
               <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
               {telephone}
@@ -157,43 +163,58 @@ export default function WinterServicePage() {
             )}
           </div>
 
-          {/* Rechte Spalte: Buchung und Preise, auf dem Desktop mitlaufend */}
           <div className="order-first min-w-0 lg:order-none lg:col-span-5">
             <div className="space-y-6 lg:sticky lg:top-32">
-              {bookingArticle && (
-                <div className="rounded-3xl border border-gray-200 bg-white p-4 shadow-sm sm:p-6 empty:hidden">
-                  <BookingWidget articleId={bookingArticle.articleId} />
-                </div>
-              )}
+              {/* Statt Direktbuchung: Verweis auf die Maschinenseite je Standort */}
+              <div id={locationPicker.id} className="scroll-mt-32">
+                <SurfaceCard className="p-5 sm:p-6">
+                  <h2 className="mb-2 text-2xl font-bold">
+                    {locationPicker.title}
+                  </h2>
+                  <p className="mb-4 text-gray-600">{locationPicker.text}</p>
+                  <ul className="space-y-2">
+                    {areaLocations.map(({ slug, cityName, region, href }) => (
+                      <li key={slug}>
+                        <Link
+                          href={href}
+                          className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 transition-all duration-300 hover:border-primary hover:shadow-sm"
+                        >
+                          <MapPin
+                            className="h-5 w-5 shrink-0 text-primary"
+                            aria-hidden="true"
+                          />
+                          <span className="min-w-0 flex-1">
+                            <span className="block font-semibold text-secondary">
+                              {cityName}
+                            </span>
+                            <span className="block text-sm text-gray-500">
+                              {region}
+                            </span>
+                          </span>
+                          <ArrowRight
+                            className="h-5 w-5 shrink-0 text-primary transition-transform duration-300 group-hover:translate-x-1"
+                            aria-hidden="true"
+                          />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </SurfaceCard>
+              </div>
 
               <SurfaceCard className="p-5 sm:p-6">
                 <h2 className="mb-4 text-2xl font-bold">
                   Preise & Konditionen
                 </h2>
-                {radlader && (
+                {/* Paketpreise inkl. Schneeschild & Salzstreuer, überall ab 5 Miettagen */}
+                {bookingMachine && (
                   <PriceTable
-                    // Radlader-Preise mit der Mindestmietdauer des Schneeschild-Eintrags
-                    machine={{
-                      ...radlader,
-                      minRentalDays: bookingMachine?.minRentalDays,
-                      minRentalDaysByLocation: undefined,
-                    }}
+                    machine={bookingMachine}
                     location={location}
                     size="lg"
                   />
                 )}
-                <div className="mt-4 flex items-center gap-3 rounded-2xl border border-primary/40 bg-primary/10 p-4">
-                  <Snowflake
-                    className="h-5 w-5 shrink-0 text-primary"
-                    aria-hidden="true"
-                  />
-                  <p className="text-sm text-gray-700">
-                    <span className="font-semibold text-secondary">
-                      Schneeschild +{snowPlowPricePerDay} €
-                    </span>{" "}
-                    netto pro Tag
-                  </p>
-                </div>
+                <p className="mt-4 text-sm text-gray-600">{priceNote}</p>
                 <PriceAddition info={machinePageData.timeTable} />
               </SurfaceCard>
             </div>
@@ -226,31 +247,55 @@ export default function WinterServicePage() {
           </div>
         </Section>
 
-        {/* Standort, Liefergebiet und Abschluss-CTA */}
         <Section>
           <div className="rounded-3xl bg-secondary px-6 py-10 text-white md:px-10 lg:p-14">
             <Headline className="mb-6">{area.title}</Headline>
             <p className="max-w-3xl text-base leading-relaxed text-gray-300 lg:text-lg">
               {area.text}
             </p>
-            <ul className="mt-8 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
-              {serviceAreas.map((name) => (
-                <li
-                  key={name}
-                  className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-3 transition-colors hover:border-primary/60 hover:bg-white/10 sm:px-4"
-                >
-                  <MapPin
-                    className="shrink-0 text-primary"
-                    size={18}
-                    aria-hidden="true"
-                  />
-                  <span className="text-[15px] leading-tight sm:text-base">
-                    {name}
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <p className="mt-6 text-sm text-gray-400">{area.otherLocations}</p>
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              {areaLocations.map(
+                ({ slug, cityName, region, serviceAreas, href }) => (
+                  <div
+                    key={slug}
+                    className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-5 sm:p-6"
+                  >
+                    <h3 className="text-xl font-bold leading-tight md:text-2xl">
+                      Standort {cityName}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-400">{region}</p>
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {serviceAreas.map((name) => (
+                        <li
+                          key={name}
+                          className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-sm leading-tight"
+                        >
+                          <MapPin
+                            className="shrink-0 text-primary"
+                            size={14}
+                            aria-hidden="true"
+                          />
+                          {name}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-auto flex justify-end pt-6">
+                      <Link
+                        href={href}
+                        className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                      >
+                        {area.locationLinkLabel}
+                        <span className="sr-only"> in {cityName}</span>
+                        <ArrowRight
+                          className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                ),
+              )}
+            </div>
 
             <div className="mt-12 border-t border-white/10 pt-10 lg:mt-16 lg:pt-12">
               <h3 className="mb-4 text-2xl font-bold md:text-3xl">
@@ -260,13 +305,13 @@ export default function WinterServicePage() {
                 {cta.text}
               </p>
               <div className="flex flex-wrap gap-3">
-                <Link href={machineHref} className={primaryButtonClass}>
+                <a href={pickerHref} className={primaryButtonClass}>
                   {hero.ctaLabel}
                   <ArrowRight
                     className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
                     aria-hidden="true"
                   />
-                </Link>
+                </a>
                 <a href={phoneHref(telephone)} className={darkButtonClass}>
                   <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
                   {telephone}

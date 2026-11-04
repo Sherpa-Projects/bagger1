@@ -1,5 +1,6 @@
 export type Price = {
-  perDay: number;
+  // Optional für Maschinen, die erst ab 5 Miettagen mietbar sind
+  perDay?: number;
   perWeek: number;
   perMonth: number;
 };

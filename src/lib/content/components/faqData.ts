@@ -34,7 +34,7 @@ const rentalConditionsFaq: FaqItemProps[] = [
   {
     question: "Kann ich bei BAGGER1 einen Radlader mit Schneeschild mieten?",
     answer:
-      "Ja, für unseren Radlader können Sie ein Schneeschild als zusätzlichen Aufsatz buchen. Damit lassen sich beispielsweise Einfahrten, Hofflächen und Parkplätze von Schnee räumen. Bitte geben Sie den gewünschten Aufsatz bei Ihrer Anfrage an, damit wir die Verfügbarkeit prüfen können.",
+      "Ja, unseren Radlader können Sie mit Schneeschild und Salzstreuer buchen, Schneeketten sind ebenfalls verfügbar. Damit lassen sich beispielsweise Einfahrten, Hofflächen und Parkplätze von Schnee räumen und anschließend abstreuen. Bitte geben Sie den gewünschten Aufsatz bei Ihrer Anfrage an, damit wir die Verfügbarkeit prüfen können.",
   },
 ];
 

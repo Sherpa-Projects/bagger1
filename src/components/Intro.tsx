@@ -30,7 +30,6 @@ export default function Intro({
   return (
     <Section>
       <div className="relative overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-white via-white to-orange-50/70 text-secondary shadow-sm">
-        {/* Bauplan-Raster als Hintergrund */}
         <BlueprintGrid className="bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_at_top_right,black_10%,transparent_70%)]" />
         <Glow className="-top-32 -right-32 h-96 w-96 bg-primary/15" />
 
@@ -76,7 +75,7 @@ export default function Intro({
                 {services.items.map(({ title, text, Icon }, index) => (
                   <li
                     key={title}
-                    className="group relative flex gap-4 lg:flex-col"
+                    className="group relative flex gap-4 lg:flex-col lg:max-w-[150px]"
                   >
                     <span className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white ring-2 ring-primary shadow-sm transition-colors group-hover:bg-primary/15">
                       <Icon

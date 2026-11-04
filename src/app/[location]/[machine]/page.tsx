@@ -93,7 +93,7 @@ export default async function MachinePage({ params }: MachinePageProps) {
   const specifications = content?.specifications;
   const deliveryFlatRate = getDeliveryFlatRate(selectedMachine, location);
   const showWinterServiceTeaser =
-    location === winterServicePageData.location &&
+    winterServicePageData.locations.includes(location) &&
     machineSlug === winterServicePageData.baseMachineSlug;
   const hasIntroContent = Boolean(content?.title || content?.description);
 
@@ -167,7 +167,9 @@ export default async function MachinePage({ params }: MachinePageProps) {
                 </div>
               )}
 
-              {showWinterServiceTeaser && <WinterServiceTeaser />}
+              {showWinterServiceTeaser && (
+                <WinterServiceTeaser cityName={currentLocation} />
+              )}
 
               {specifications && (
                 <MachineSpecifications
