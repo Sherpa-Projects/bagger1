@@ -1,41 +1,27 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import BranchContent from "./BranchContent";
 import { locationData } from "@/lib/content/locationData";
-import { LocationDataProps } from "@/app/types/Location";
-import { ConsentLevel, readConsent } from "@/lib/consent";
+import { LocationDataProps } from "@/types/Location";
+import { useConsentLevel } from "@/hooks/useConsentLevel";
 import { branchCardData } from "@/lib/content/components/branchCardData";
-import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/cn";
+import Container from "@/components/shared/Container";
+import Headline from "@/components/shared/Headline";
 
-export default function BranchCard() {
+type BranchCardProps = {
+  dark?: boolean;
+};
+
+export default function BranchCard({ dark = false }: BranchCardProps) {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
   const [locations, setLocations] = useState<LocationDataProps[]>([]);
-  const [level, setLevel] = useState<ConsentLevel>("unset");
-
-  const comingSoonLocations = [
-    {
-      name: "Leipzig",
-      map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d159509.7300766179!2d12.228828673211801!3d51.34166687916191!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a6f818200f2c73%3A0x93df80d2b9b4f552!2sLeipzig!5e0!3m2!1sde!2sde!4v1761466765071!5m2!1sde!2sde",
-    },
-    {
-      name: "Hannover",
-      map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155871.76672528224!2d9.596665497376383!3d52.379551797928855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b00b514d494f85%3A0x425ac6d94ac4720!2sHannover!5e0!3m2!1sde!2sde!4v1761466827313!5m2!1sde!2sde",
-    },
-  ];
-
-  useEffect(() => {
-    setLevel(readConsent());
-    // Reagiere live, wenn sich Consent in einem anderen Tab ändert
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === "consentLevel") setLevel(readConsent());
-    };
-    window.addEventListener("storage", onStorage);
-    return () => window.removeEventListener("storage", onStorage);
-  }, []);
+  const level = useConsentLevel();
+  const { comingSoonLocations } = branchCardData;
 
   useEffect(() => {
     const path = window.location.pathname;
@@ -50,44 +36,34 @@ export default function BranchCard() {
   }, []);
 
   return (
-    <div className={`${locations.length > 1 && "px-4 py-10 lg:py-20"}`}>
-      <div className="container mx-auto md:max-w-4xl lg:max-w-5xl xl:max-w-6xl">
+    <div className={cn(locations.length > 1 && "px-4 py-10 lg:py-20")}>
+      <Container>
         {locations.length > 1 && (
-          <h2 className="font-bold text-3xl md:text-4xl lg:text-3xl pb-4 lg:pb-6 lg:leading-tight text-center">
+          <Headline className="pb-8 lg:pb-10 text-center">
             {branchCardData.title}
-          </h2>
+          </Headline>
         )}
         <div
-          className={`${locations.length > 1 && "grid lg:grid-cols-3 gap-6"}`}
-        >
-          <BranchContent locations={locations} level={level} />
-          {isHome && (
-            <>
-              {" "}
-              {comingSoonLocations.map((loc, index) => (
-                <Card
-                  key={index}
-                  className={`group p-6 lg:p-4 ${
-                    locations.length === 1 &&
-                    "w-full lg:w-auto lg:min-w-lg xl:min-w-xl"
-                  }`}
-                >
-                  <h3 className="text-center text-2xl font-semibold mb-16">
-                    {loc.name}
-                  </h3>
-                  {comingSoonLocations.length > 1 && (
-                    <div className="w-full flex justify-center">
-                      <span className="text-xl text-gray-300 mt-6 self-start transition-colors duration-300 group-hover:text-primary">
-                        Coming Soon
-                      </span>
-                    </div>
-                  )}
-                </Card>
-              ))}
-            </>
+          className={cn(
+            locations.length > 1 &&
+              "grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 items-stretch",
           )}
+        >
+          <BranchContent locations={locations} level={level} dark={dark} />
+          {isHome &&
+            comingSoonLocations.map(({ name }) => (
+              <div
+                key={name}
+                className="flex min-h-48 flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-gray-200 bg-gray-50/60 p-6 text-center"
+              >
+                <h3 className="text-2xl font-bold text-gray-400">{name}</h3>
+                <span className="rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-primary">
+                  Coming Soon
+                </span>
+              </div>
+            ))}
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

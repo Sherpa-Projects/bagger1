@@ -1,0 +1,351 @@
+import { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, MapPin, Phone } from "lucide-react";
+import { SiWhatsapp } from "@icons-pack/react-simple-icons";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
+import PriceTable from "@/components/PriceTable";
+import MachineSpecifications from "@/components/MachineSpecifications";
+import PriceAddition from "@/components/PriceAddition";
+import BookingSteps from "@/components/BookingSteps";
+import FaqAccordion from "@/components/FaqAccordion";
+import FaqContactBox from "@/components/FaqContactBox";
+import LocalUseCases from "@/components/LocalUseCases";
+import Section from "@/components/shared/Section";
+import Headline from "@/components/shared/Headline";
+import SurfaceCard from "@/components/shared/SurfaceCard";
+import PartnerList from "@/components/PartnerList";
+import JsonLd from "@/components/shared/JsonLd";
+import { winterServicePageData } from "@/lib/content/pages/winterdienst/winterServicePageData";
+import { machinePageData } from "@/lib/content/pages/machine/machinePageData";
+import { locationSeoBySlug } from "@/lib/content/locationSeoData";
+import { getCityName } from "@/lib/locations";
+import { company } from "@/lib/content/company";
+import { getMachineBySlug } from "@/lib/machines";
+import { phoneHref, whatsappHref } from "@/lib/contact";
+import { pageMetadata } from "@/lib/metadata";
+import { SITE_NAME } from "@/lib/site";
+import { getBreadcrumbJsonLd } from "@/lib/content/seo/breadcrumbSeo";
+
+const { path, seo } = winterServicePageData;
+
+export const generateMetadata = (): Metadata =>
+  pageMetadata({
+    title: seo.metaTitle,
+    description: seo.metaDescription.google,
+    openGraphDescription: seo.metaDescription.openGraph,
+    twitterDescription: seo.metaDescription.twitter,
+    path,
+    imageAlt: seo.imageAlt,
+  });
+
+const primaryButtonClass =
+  "group inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 font-semibold text-secondary shadow-sm transition-all duration-300 hover:bg-primary/90 hover:shadow-md";
+const darkButtonClass =
+  "inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-3 font-semibold text-white backdrop-blur-md transition-all duration-300 hover:border-primary/60 hover:bg-white/10";
+
+export default function WinterServicePage() {
+  const {
+    location,
+    locations,
+    machineSlug,
+    hero,
+    intro,
+    introTitle,
+    benefits,
+    machine,
+    useCases,
+    bookingSteps,
+    audiences,
+    area,
+    locationPicker,
+    priceNote,
+    cta,
+    faq,
+  } = winterServicePageData;
+  const bookingMachine = getMachineBySlug(machineSlug);
+  const pickerHref = `#${locationPicker.id}`;
+  // Pro Standort: Liefergebiet und Link zur Maschinenseite
+  const areaLocations = locations.map((slug) => ({
+    slug,
+    cityName: getCityName(slug),
+    region: area.regions[slug],
+    serviceAreas: locationSeoBySlug[slug].serviceAreas ?? [],
+    href: `/${slug}/${machineSlug}`,
+  }));
+  const telephone = company.contact.telephone;
+
+  return (
+    <>
+      <JsonLd
+        data={getBreadcrumbJsonLd([
+          { name: SITE_NAME, path: "/" },
+          { name: "Winterdienst", path },
+        ])}
+      />
+      <Navigation />
+      <main>
+        <Hero
+          image={hero.image}
+          title={hero.title}
+          titleClassName="text-4xl md:text-5xl lg:text-6xl"
+          badges={hero.badges}
+        >
+          <p className="mb-6 max-w-xl text-lg text-gray-300 md:text-xl">
+            {hero.subline}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a href={pickerHref} className={primaryButtonClass}>
+              {hero.ctaLabel}
+              <ArrowRight
+                className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </a>
+            <a href={phoneHref(telephone)} className={darkButtonClass}>
+              <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
+              {telephone}
+            </a>
+          </div>
+        </Hero>
+
+        {/* Einleitung */}
+        <Section
+          className="px-4 pt-10 lg:pt-20"
+          containerClassName="grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-12"
+        >
+          <div className="lg:col-span-7">
+            <Headline>{introTitle}</Headline>
+            <div className="mt-6 space-y-5 text-lg leading-relaxed text-gray-700">
+              {intro.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+          <div className="lg:col-span-5">
+            <PartnerList title={benefits.title} items={benefits.items} />
+          </div>
+        </Section>
+
+        {/* Maschine und Preise: Aufbau wie auf den Maschinenseiten */}
+        <Section containerClassName="grid gap-8 lg:grid-cols-12 lg:gap-10">
+          <div className="min-w-0 space-y-8 lg:col-span-7">
+            {bookingMachine?.image.url && (
+              <div className="flex justify-center">
+                <Image
+                  // Feste Höhe, damit das Bild auf Retina-Displays nicht kleiner wird
+                  className="h-[420px] w-auto max-w-full object-contain lg:h-[600px]"
+                  src={bookingMachine.image.url}
+                  alt={bookingMachine.image.alt || bookingMachine.name}
+                  width={600}
+                  height={800}
+                  sizes="(min-width: 1024px) 450px, 315px"
+                />
+              </div>
+            )}
+
+            <div>
+              <h2 className="mb-3 text-2xl font-bold md:text-3xl">
+                {machine.title}
+              </h2>
+              <p className="text-lg leading-relaxed text-gray-600">
+                {machine.text}
+              </p>
+            </div>
+
+            {bookingMachine?.content?.specifications && (
+              <MachineSpecifications
+                model={bookingMachine.model}
+                specifications={bookingMachine.content.specifications}
+              />
+            )}
+          </div>
+
+          <div className="order-first min-w-0 lg:order-none lg:col-span-5">
+            <div className="space-y-6 lg:sticky lg:top-32">
+              {/* Statt Direktbuchung: Verweis auf die Maschinenseite je Standort */}
+              <div id={locationPicker.id} className="scroll-mt-32">
+                <SurfaceCard className="p-5 sm:p-6">
+                  <h2 className="mb-2 text-2xl font-bold">
+                    {locationPicker.title}
+                  </h2>
+                  <p className="mb-4 text-gray-600">{locationPicker.text}</p>
+                  <ul className="space-y-2">
+                    {areaLocations.map(({ slug, cityName, region, href }) => (
+                      <li key={slug}>
+                        <Link
+                          href={href}
+                          className="group flex items-center gap-3 rounded-xl border border-gray-200 bg-white px-4 py-3 transition-all duration-300 hover:border-primary hover:shadow-sm"
+                        >
+                          <MapPin
+                            className="h-5 w-5 shrink-0 text-primary"
+                            aria-hidden="true"
+                          />
+                          <span className="min-w-0 flex-1">
+                            <span className="block font-semibold text-secondary">
+                              {cityName}
+                            </span>
+                            <span className="block text-sm text-gray-500">
+                              {region}
+                            </span>
+                          </span>
+                          <ArrowRight
+                            className="h-5 w-5 shrink-0 text-primary transition-transform duration-300 group-hover:translate-x-1"
+                            aria-hidden="true"
+                          />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </SurfaceCard>
+              </div>
+
+              <SurfaceCard className="p-5 sm:p-6">
+                <h2 className="mb-4 text-2xl font-bold">
+                  Preise & Konditionen
+                </h2>
+                {/* Paketpreise inkl. Schneeschild & Salzstreuer, überall ab 5 Miettagen */}
+                {bookingMachine && (
+                  <PriceTable
+                    machine={bookingMachine}
+                    location={location}
+                    size="lg"
+                  />
+                )}
+                <p className="mt-4 text-sm text-gray-600">{priceNote}</p>
+                <PriceAddition info={machinePageData.timeTable} />
+              </SurfaceCard>
+            </div>
+          </div>
+        </Section>
+
+        <LocalUseCases title={useCases.title} useCases={useCases.items} />
+
+        <BookingSteps title={bookingSteps.title} steps={bookingSteps.steps} />
+
+        {/* Zielgruppen */}
+        <Section>
+          <Headline className="mb-8 text-center lg:mb-10">
+            {audiences.title}
+          </Headline>
+          <div className="grid gap-4 md:grid-cols-3 lg:gap-6">
+            {audiences.items.map(({ title, text, Icon }) => (
+              <SurfaceCard key={title} className="h-full p-6 sm:p-8">
+                <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15">
+                  <Icon className="h-5 w-5 text-primary" aria-hidden="true" />
+                </span>
+                <h3 className="mb-2 text-xl font-bold leading-tight">
+                  {title}
+                </h3>
+                <p className="text-base leading-relaxed text-gray-600">
+                  {text}
+                </p>
+              </SurfaceCard>
+            ))}
+          </div>
+        </Section>
+
+        <Section>
+          <div className="rounded-3xl bg-secondary px-6 py-10 text-white md:px-10 lg:p-14">
+            <Headline className="mb-6">{area.title}</Headline>
+            <p className="max-w-3xl text-base leading-relaxed text-gray-300 lg:text-lg">
+              {area.text}
+            </p>
+            <div className="mt-8 grid gap-6 lg:grid-cols-2">
+              {areaLocations.map(
+                ({ slug, cityName, region, serviceAreas, href }) => (
+                  <div
+                    key={slug}
+                    className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-5 sm:p-6"
+                  >
+                    <h3 className="text-xl font-bold leading-tight md:text-2xl">
+                      Standort {cityName}
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-400">{region}</p>
+                    <ul className="mt-5 flex flex-wrap gap-2">
+                      {serviceAreas.map((name) => (
+                        <li
+                          key={name}
+                          className="flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/5 px-2.5 py-1.5 text-sm leading-tight"
+                        >
+                          <MapPin
+                            className="shrink-0 text-primary"
+                            size={14}
+                            aria-hidden="true"
+                          />
+                          {name}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-auto flex justify-end pt-6">
+                      <Link
+                        href={href}
+                        className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                      >
+                        {area.locationLinkLabel}
+                        <span className="sr-only"> in {cityName}</span>
+                        <ArrowRight
+                          className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    </div>
+                  </div>
+                ),
+              )}
+            </div>
+
+            <div className="mt-12 border-t border-white/10 pt-10 lg:mt-16 lg:pt-12">
+              <h3 className="mb-4 text-2xl font-bold md:text-3xl">
+                {cta.title}
+              </h3>
+              <p className="mb-8 max-w-3xl leading-relaxed text-gray-300 lg:text-lg">
+                {cta.text}
+              </p>
+              <div className="flex flex-wrap gap-3">
+                <a href={pickerHref} className={primaryButtonClass}>
+                  {hero.ctaLabel}
+                  <ArrowRight
+                    className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </a>
+                <a href={phoneHref(telephone)} className={darkButtonClass}>
+                  <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
+                  {telephone}
+                </a>
+                <a
+                  href={whatsappHref(company.contact.whatsapp)}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className={darkButtonClass}
+                >
+                  <SiWhatsapp size={18} color="default" aria-hidden="true" />
+                  WhatsApp
+                </a>
+              </div>
+            </div>
+          </div>
+        </Section>
+
+        {/* FAQ mit FAQPage-Schema */}
+        <Section id="faq">
+          <div className="grid gap-5 lg:grid-cols-12 lg:gap-12">
+            <div className="min-w-0 lg:col-span-4">
+              <div className="space-y-6 lg:sticky lg:top-32">
+                <Headline>{faq.title}</Headline>
+                <FaqContactBox className="hidden lg:block" />
+              </div>
+            </div>
+            <div className="min-w-0 lg:col-span-8">
+              <FaqAccordion id="faq-winterdienst" items={faq.items} />
+            </div>
+          </div>
+        </Section>
+      </main>
+      <Footer />
+    </>
+  );
+}

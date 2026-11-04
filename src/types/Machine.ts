@@ -1,7 +1,6 @@
-export type LocationSlug = "mannheim" | "hennef" | "bruchsal";
-
 export type Price = {
-  perDay: number;
+  // Optional für Maschinen, die erst ab 5 Miettagen mietbar sind
+  perDay?: number;
   perWeek: number;
   perMonth: number;
 };
@@ -21,6 +20,12 @@ export type Machine = {
   category: string;
   image: { url: string; alt: string };
   price: Price;
+  minRentalDays?: number; // Mindestmietdauer in Tagen, Standard: 1
+  // Abweichende Mindestmietdauer je Standort, z. B. { hennef: 1 }
+  minRentalDaysByLocation?: Partial<Record<string, number>>;
+  // Pauschallieferung in € je Standort, z. B. { bruchsal: 399 }.
+  // Maschinen mit Pauschale stehen in der Standortliste am Ende.
+  deliveryFlatRateByLocation?: Partial<Record<string, number>>;
   content?: {
     title?: string;
     description?: string;

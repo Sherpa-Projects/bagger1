@@ -1,5 +1,6 @@
-import { getCityName } from "@/lib/utils";
-import { LocationDataProps } from "@/app/types/Location";
+import { getCityName } from "@/lib/locations";
+import { BASE_URL } from "@/lib/site";
+import { LocationDataProps } from "@/types/Location";
 
 export function getLocationSeoTexts(location: string) {
   const cityName = getCityName(location);
@@ -21,7 +22,7 @@ export function getLocationSeoTexts(location: string) {
 }
 
 export function getLocationServiceJsonLd(location: LocationDataProps) {
-  const baseUrl = "https://bagger1.de";
+  const baseUrl = BASE_URL;
 
   return {
     "@context": "https://schema.org",

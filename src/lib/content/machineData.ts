@@ -1,4 +1,4 @@
-import { Machine } from "@/app/types/Machine";
+import { Machine } from "@/types/Machine";
 
 export const machineData: Machine[] = [
   {
@@ -11,6 +11,19 @@ export const machineData: Machine[] = [
       alt: "Oranger Bagger mit Fahrerkabine steht auf Betonboden.",
     },
     price: { perDay: 140, perWeek: 110, perMonth: 70 },
+    minRentalDays: 5,
+    // In Hennef weiterhin ab 1 Tag mietbar
+    minRentalDaysByLocation: {
+      hennef: 1,
+      bruchsal: 5,
+      mannheim: 5,
+      aschaffenburg: 5,
+    },
+    deliveryFlatRateByLocation: {
+      bruchsal: 399,
+      mannheim: 399,
+      aschaffenburg: 399,
+    },
     content: {
       title: "",
       description: "",
@@ -26,7 +39,9 @@ export const machineData: Machine[] = [
     },
     inventory: {
       hennef: [{ articleId: "OCVQU4" }],
-      // mannheim: [{ articleId: "2AT3K3", priceOverride: { perDay: 110 } }],
+      bruchsal: [{ articleId: "7TMFHO" }],
+      mannheim: [{ articleId: "7TMFHO" }],
+      aschaffenburg: [{ articleId: "7TMFHO" }],
     },
   },
   {
@@ -56,7 +71,7 @@ export const machineData: Machine[] = [
     inventory: {
       mannheim: [{ articleId: "TK9WPV" }],
       bruchsal: [{ articleId: "ZHLFH1" }],
-      hennef: [{ articleId: "PTSQZK" }],
+      aschaffenburg: [{ articleId: "PTSQZK" }],
     },
   },
   {
@@ -83,7 +98,7 @@ export const machineData: Machine[] = [
       },
     },
     inventory: {
-      aschaffenburg: [{ articleId: "ACEQK6" }],
+      hennef: [{ articleId: "ACEQK6" }],
     },
   },
   {
@@ -113,6 +128,8 @@ export const machineData: Machine[] = [
     inventory: {
       hennef: [{ articleId: "QHP8S7" }],
       bruchsal: [{ articleId: "H6QGO8" }],
+      mannheim: [{ articleId: "G3HY7T" }],
+      aschaffenburg: [{ articleId: "XL7RZE" }],
     },
   },
   {
@@ -132,7 +149,7 @@ export const machineData: Machine[] = [
     },
     inventory: {
       bruchsal: [{ articleId: "VXNK8E" }],
-      mannheim: [{ articleId: "VXNK8E" }],
+      mannheim: [{ articleId: "N7WLK5" }],
     },
   },
   {
@@ -152,7 +169,7 @@ export const machineData: Machine[] = [
     },
     inventory: {
       bruchsal: [{ articleId: "AEED4F" }],
-      mannheim: [{ articleId: "AEED4F" }],
+      mannheim: [{ articleId: "R8WGRM" }],
       aschaffenburg: [{ articleId: "4X636F" }],
     },
   },
@@ -212,6 +229,7 @@ export const machineData: Machine[] = [
     inventory: {
       hennef: [{ articleId: "JVXZF6" }],
       bruchsal: [{ articleId: "RUUP9N" }],
+      mannheim: [{ articleId: "J7L23N" }],
     },
   },
   {
@@ -232,7 +250,7 @@ export const machineData: Machine[] = [
     inventory: {
       hennef: [{ articleId: "I9KAW8" }],
       bruchsal: [{ articleId: "P5DPKR" }],
-      mannheim: [{ articleId: "P5DPKR" }],
+      mannheim: [{ articleId: "8HN2SJ" }],
       aschaffenburg: [{ articleId: "YYTU19" }],
     },
   },
@@ -249,12 +267,12 @@ export const machineData: Machine[] = [
     content: {
       title: "Muck Truck MAX II Dumper",
       description:
-        "Muck Truck MAX II Dumper mit einer Tragfähigkeit von bis zu 365 kg – robuster und wendiger Baustellen-Transporter für Materialbewegung.",
+        "Muck Truck MAX II Dumper mit einer Tragfähigkeit von bis zu 550 kg – robuster und wendiger Baustellen-Transporter für Materialbewegung.",
     },
     inventory: {
       hennef: [{ articleId: "CRFM16" }],
       bruchsal: [{ articleId: "F4P7SJ" }],
-      mannheim: [{ articleId: "F4P7SJ" }],
+      mannheim: [{ articleId: "B2TT34" }],
       aschaffenburg: [{ articleId: "IW2G8Y" }],
     },
   },
@@ -289,6 +307,18 @@ export const machineData: Machine[] = [
       alt: "Schwarzgelber Radlader.",
     },
     price: { perDay: 150, perWeek: 120, perMonth: 80 },
+    minRentalDays: 5,
+    minRentalDaysByLocation: {
+      hennef: 1,
+      bruchsal: 5,
+      mannheim: 5,
+      aschaffenburg: 5,
+    },
+    deliveryFlatRateByLocation: {
+      bruchsal: 399,
+      mannheim: 399,
+      aschaffenburg: 399,
+    },
     content: {
       title: "",
       description: "",
@@ -309,6 +339,48 @@ export const machineData: Machine[] = [
     },
     inventory: {
       hennef: [{ articleId: "SVZ5P1" }],
+      bruchsal: [{ articleId: "O2Z4PS" }],
+      mannheim: [{ articleId: "O2Z4PS" }],
+      aschaffenburg: [{ articleId: "O2Z4PS" }],
+    },
+  },
+  {
+    name: "Radlader mit Schneeschild & Salzstreuer",
+    slug: "radlader-kramer-5045-schneeschild",
+    model: "Radlader Kramer 5045 mit Schneeschild & Salzstreuer",
+    category: "bagger",
+    image: {
+      url: "/images/machines/kramer-radlader-schneeschild.png",
+      alt: "Radlader Kramer 5045 mit gelbem Schneeschild und Salzstreuer für den Winterdienst.",
+    },
+    price: { perWeek: 160, perMonth: 110 },
+    minRentalDays: 5,
+    deliveryFlatRateByLocation: {
+      bruchsal: 399,
+      mannheim: 399,
+      aschaffenburg: 399,
+    },
+    content: {
+      title: "",
+      description: "",
+      specifications: {
+        dimensions: {
+          width: "1,59 m",
+          weight: "ca. 2,7 t",
+        },
+        power: "18,5 kW (25 PS)",
+        workingRange: {
+          bucketCapacity: "0,45 m³",
+          payloadS125: "ca. 1.310 kg",
+          tippingLoadBucket: "2.270 kg",
+        },
+      },
+    },
+    inventory: {
+      hennef: [{ articleId: "SVZ5P1" }],
+      bruchsal: [{ articleId: "O2Z4PS" }],
+      mannheim: [{ articleId: "O2Z4PS" }],
+      aschaffenburg: [{ articleId: "O2Z4PS" }],
     },
   },
 ] as const;

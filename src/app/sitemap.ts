@@ -1,9 +1,11 @@
 import { MetadataRoute } from "next";
 import { locationData } from "@/lib/content/locationData";
-import { getLocationMachineRouteParams } from "@/lib/utils";
+import { getLocationMachineRouteParams } from "@/lib/machines";
+import { BASE_URL } from "@/lib/site";
+import { winterServicePageData } from "@/lib/content/pages/winterdienst/winterServicePageData";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://bagger1.de";
+  const baseUrl = BASE_URL;
 
   const locationPages = locationData.map((loc) => ({
     url: `${baseUrl}/${loc.slug}`,
@@ -20,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const partnerPage = `${baseUrl}/partner`;
+  const winterServicePage = `${baseUrl}${winterServicePageData.path}`;
 
   return [
     {
@@ -33,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.7,
+    },
+    {
+      url: winterServicePage,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
     },
     ...locationPages,
     ...machinePages,

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Section from "@/components/shared/Section";
+import Glow from "@/components/shared/Glow";
 
 type PromoBannerProps = {
   image: string;
@@ -18,33 +20,44 @@ export default function PromoBanner({
   button,
 }: PromoBannerProps) {
   return (
-    <div
-      className="mt-17 md:mt-24 relative py-12 flex justify-center items-center bg-cover bg-center my-20"
-      style={{
-        backgroundImage: `url(${image})`,
-      }}
-    >
-      <div className="absolute inset-0 bg-black/70 z-0" />
-      <div className="relative text-white text-center md:max-w-4xl lg:max-w-5xl xl:max-w-7xl px-4 space-y-6">
-        <h2 className="text-4xl lg:text-6xl font-semibold leading-normal">
-          {title}
-        </h2>
-        <p className="text-center text-xl lg:text-3xl max-w-3xl leading-normal lg:leading-snug">
-          {text}
-        </p>
-        <div className="flex justify-center items-center">
-          <Link href={button.link} className="group">
-            <div className="w-full flex justify-end lg:justify-start py-3 px-4 bg-white/20 rounded-xl border border-white/30 backdrop-blur-md shadow-md">
-              <span className="group text-xl self-start group-hover:text-primary transition-all duration-300 transform">
-                {button.label}
-                <span className="ml-2 text-primary inline-block group-hover:translate-x-1 transition-transform duration-300">
-                  <ArrowRight size={18} />
-                </span>
-              </span>
-            </div>
+    <Section>
+      <div className="relative grid overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-md lg:grid-cols-2">
+        <Glow className="-bottom-32 -left-32 h-80 w-80 bg-primary/15" />
+
+        <div className="relative order-2 lg:order-1 flex flex-col justify-center px-6 py-10 md:px-10 lg:p-14">
+          <h2 className="font-bold text-3xl md:text-4xl lg:text-5xl leading-tight mb-4">
+            {title}
+          </h2>
+          <p className="text-lg leading-relaxed text-gray-600 max-w-md">
+            {text}
+          </p>
+          <Link
+            href={button.link}
+            className="group mt-8 inline-flex w-fit items-center gap-2 rounded-xl border border-gray-200 bg-white px-5 py-2.5 text-lg font-semibold text-secondary shadow-sm transition-all duration-300 hover:border-primary hover:shadow-md"
+          >
+            {button.label}
+            <ArrowRight
+              size={20}
+              className="text-primary transition-transform duration-300 group-hover:translate-x-1"
+              aria-hidden="true"
+            />
           </Link>
         </div>
+
+        <div className="relative order-1 lg:order-2 min-h-56 md:min-h-72">
+          <div
+            className="absolute inset-0 bg-cover bg-center lg:[clip-path:polygon(18%_0,100%_0,100%_100%,0_100%)]"
+            style={{
+              backgroundImage: `url(${image})`,
+            }}
+            aria-hidden="true"
+          />
+          <div
+            className="hidden lg:block absolute inset-0 bg-primary [clip-path:polygon(18%_0,20%_0,2%_100%,0_100%)]"
+            aria-hidden="true"
+          />
+        </div>
       </div>
-    </div>
+    </Section>
   );
 }
